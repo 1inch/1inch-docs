@@ -31,3 +31,40 @@ $ GIT_USER=<Your GitHub username> USE_SSH=true yarn deploy
 ```
 
 If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+
+
+## Domains
+- Trading (Aggregation Protocol) (https://docs.1inch.io/api/)
+    - Overview
+        - Referal program & Spread Surplus & Governance
+    - Smartcontract (markdown import)
+        - Front contract (audited & secured)
+        - Implementation (extendable)
+    - API (markdown import + swagger)
+    - Guide (using SDK/Utils)
+
+
+- Limit Order Protocol (https://docs.1inch.io/limit-order-protocol/)
+    - Overview
+    - Smartcontract (markdown import)
+    - API (markdown import + swagger)
+    - Guide (using SDK/Utils)
+
+
+- Liquidity Protocol
+    - Overview
+        - Whitepaper & changes
+    - Smartcontract (markdown import)
+    - API (markdown import + swagger)
+    - Guide (using SDK/Utils)
+
+
+- Opensource
+    - Smartcontracts
+        - cumulative-merkle-drop
+        - offchain-oracle
+        - ...
+    - Web3
+        - permit-signed-approvals-utils
+        - multicall
+        - ...
