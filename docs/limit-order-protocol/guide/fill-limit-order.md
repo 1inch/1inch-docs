@@ -10,7 +10,7 @@ sidebar_position: 4
 
 | Field             | Type                  | Description                                                                      |
 | ----------------- | --------------------- | -------------------------------------------------------------------------------- |
-| `order`           | `LimitOrder`          | a limit order structure. See [Limit order structure](./limit-order-structure.md) |
+| `order`           | `LimitOrder`          | a limit order structure. See [Limit order structure](docs/limit-order-protocol/guide/limit-order-structure.mdguide/limit-order-structure.md) |
 | `signature`       | `LimitOrderSignature` | signature of a limit order                                                       |
 | `makerAmount`     | `String`              | amount of maker asset (in token units)                                           |
 | `takerAmount`     | `String`              | amount of taker asset (in token units)                                           |

@@ -1,0 +1,23 @@
+---
+sidebar_position: 4
+---
+
+# API
+import {Buffer} from 'buffer';
+window['Buffer'] = Buffer;
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import SwaggerUI from 'swagger-ui-react';
+import 'swagger-ui-react/swagger-ui.css';
+
+<Tabs>
+    <TabItem value="ethereum" label="Ethereum" default>
+        <SwaggerUI url="https://api.allorigins.win/raw?url=https://limit-orders.1inch.io/swagger/ethereum-json" />
+    </TabItem>
+    <TabItem value="BSC" label="Binance Smart Chain">
+        <SwaggerUI url="https://api.allorigins.win/raw?url=https://limit-orders.1inch.io/swagger/binance-json" />
+    </TabItem>
+    <TabItem value="polygon" label="Polygon">
+        <SwaggerUI url="https://api.allorigins.win/raw?url=https://limit-orders.1inch.io/swagger/polygon-json" />
+    </TabItem>
+</Tabs>

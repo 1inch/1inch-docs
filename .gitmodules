@@ -1,0 +1,6 @@
+[submodule "limit-order-protocol"]
+	path = limit-order-protocol
+	url = https://github.com/1inch/limit-order-protocol.git
+[submodule "git-submodules/limit-order-protocol"]
+	path = git-submodules/limit-order-protocol
+	url = https://github.com/1inch/limit-order-protocol.git

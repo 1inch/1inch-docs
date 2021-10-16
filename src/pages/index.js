@@ -24,6 +24,9 @@ export default function Home() {
       description="The 1inch Network unites decentralized protocols whose synergy enables the most lucrative, fastest and protected operations in the DeFi space.">
       <HomepageHeader />
       <main>
+          <h3>
+              Opensource / Whitepaper / Audits / Grant program / Bug bounty
+          </h3>
         <HomepageFeatures />
       </main>
     </Layout>
