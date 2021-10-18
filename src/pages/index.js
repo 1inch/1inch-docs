@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import Layout from '@theme/Layout';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './index.module.css';
-import HomepageFeatures from '../components/HomepageFeatures';
+import HomepageFeatures from '../components/homepage-features/HomepageFeatures';
 
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();

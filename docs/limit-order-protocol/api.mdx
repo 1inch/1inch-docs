@@ -3,21 +3,24 @@ sidebar_position: 4
 ---
 
 # API
-import {Buffer} from 'buffer';
-window['Buffer'] = Buffer;
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import SwaggerUI from 'swagger-ui-react';
-import 'swagger-ui-react/swagger-ui.css';
+import {SwaggerDoc} from '../../src/components/swagger-doc/SwaggerDoc';
 
 <Tabs>
     <TabItem value="ethereum" label="Ethereum" default>
-        <SwaggerUI url="https://api.allorigins.win/raw?url=https://limit-orders.1inch.io/swagger/ethereum-json" />
+        <SwaggerDoc url="https://api.allorigins.win/raw?url=https://limit-orders.1inch.io/swagger/ethereum-json" />
     </TabItem>
     <TabItem value="BSC" label="Binance Smart Chain">
-        <SwaggerUI url="https://api.allorigins.win/raw?url=https://limit-orders.1inch.io/swagger/binance-json" />
+        <SwaggerDoc url="https://api.allorigins.win/raw?url=https://limit-orders.1inch.io/swagger/binance-json" />
     </TabItem>
     <TabItem value="polygon" label="Polygon">
-        <SwaggerUI url="https://api.allorigins.win/raw?url=https://limit-orders.1inch.io/swagger/polygon-json" />
+        <SwaggerDoc url="https://api.allorigins.win/raw?url=https://limit-orders.1inch.io/swagger/polygon-json" />
+    </TabItem>
+    <TabItem value="optimism" label="Optimism">
+        Currently, 1inch Limit Order Protocol is not available on Optimism network.
+    </TabItem>
+    <TabItem value="arbitrum" label="Arbitrum">
+        <SwaggerDoc url="https://api.allorigins.win/raw?url=https://limit-orders.1inch.io/swagger/arbitrum-json" />
     </TabItem>
 </Tabs>

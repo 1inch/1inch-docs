@@ -6,8 +6,8 @@ import Link from "@docusaurus/Link";
 const FeatureList = [
   {
     title: 'Aggregation protocol',
-    link: 'docs/aggregation-protocol',
-    image: require('../../static/img/aggregation-protocol.png').default,
+    link: 'docs/aggregation-protocol/about',
+    image: require('../../../static/img/aggregation-protocol.png').default,
     description: (
       <>
           The protocol sources liquidity from various exchanges and is capable
@@ -17,8 +17,8 @@ const FeatureList = [
   },
   {
     title: 'Liquidity protocol',
-    link: 'docs/liquidity-protocol/about',
-    image: require('../../static/img/liquidity-protocol.png').default,
+    link: 'docs/liquidity-protocol',
+    image: require('../../../static/img/liquidity-protocol.png').default,
     description: (
       <>
           Earn with 1inch by providing liquidity to pools and collect extra
@@ -28,8 +28,8 @@ const FeatureList = [
   },
   {
     title: 'Limit order protocol',
-    link: 'docs/limit-order-protocol',
-    image: require('../../static/img/limit-order-protocol.png').default,
+    link: 'docs/limit-order-protocol/about',
+    image: require('../../../static/img/limit-order-protocol.png').default,
     description: (
       <>
           Enjoy the most innovative and flexible limit order functionality in DeFi

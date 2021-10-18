@@ -55,10 +55,9 @@ const config = {
             position: 'left',
           },
           {
-            type: 'doc',
-            docId: 'aggregation-protocol',
-            position: 'left',
+            href: '/docs/aggregation-protocol/about',
             label: 'Do swaps',
+            position: 'left',
           },
           {
             type: 'doc',
