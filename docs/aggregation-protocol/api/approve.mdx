@@ -1,0 +1,131 @@
+---
+sidebar_position: 2
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Approve
+
+>Get calldata for approve transaction and spender address
+
+## Approve Calldata
+#### [Test Approve Calldata in Swagger](./swagger)
+
+:::info
+
+All requests and examples are made for Ethereum mainnet, if you plan to use the API on other chains, change the request url as follows:
+`https://api.1inch.exchange/v3.0/**56**/[method]`  — for Binance Smart Chain
+`https://api.1inch.exchange/v3.0/**137**/[method]` — for Polygon
+
+:::
+
+:::caution
+
+Do not combine amount parameter with infinity parameter, only one must be sent.
+
+:::
+
+:::info
+
+amount is set in minimal divisible units: for example, to unlock 1 DAI, amount should be 1000000000000000000, to unlock 1.03 USDC, amount should be 1030000.
+
+:::
+
+---
+
+Request url to unlock 5000 DAI tokens
+```
+https://api.1inch.exchange/v3.0/1/approve/calldata?amount=5000000000000000000000&tokenAddress=0x6b175474e89094c44da98b954eedeac495271d0f
+```
+
+Curl
+```
+curl -X GET "https://api.1inch.exchange/v3.0/1/approve/calldata?amount=5000000000000000000000&tokenAddress=0x6b175474e89094c44da98b954eedeac495271d0f" -H "accept: application/json"
+```
+
+<Tabs>
+<TabItem value="body" label="Response body" default>
+
+```json
+{
+    "data": "0x095ea7b300000000000000000000000011111112542d85b3ef69ae05771c2dccff4faa26ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+    "gasPrice": "51000000000",
+    "to": "0x6b175474e89094c44da98b954eedeac495271d0f",
+    "value": "0"
+}
+```
+
+</TabItem>
+<TabItem value="headers" label="Response headers">
+
+```
+access-control-allow-origin: *
+cache-control: public,max-age=300,s-maxage=300
+cf-cache-status: EXPIRED
+cf-ray: 5f4206653b48e69c-LHR
+cf-request-id: 067d2253420000e69c3e176000000001
+content-encoding: gzip
+content-type: application/json;
+charset=utf-8
+date: Wed,18 Nov 2020 13:26:45 GMT
+etag: W/"ec-iBWHynvCWl7Z7aoQEOVh6S9MqaM"
+expect-ct: max-age=604800,report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+server: cloudflare
+status: 200
+vary: Origin,Accept-Encoding
+x-powered-by: Express
+```
+
+</TabItem>
+</Tabs>
+
+:::caution
+
+Please, note some token contracts, like USDT, require to set approval back to zero, before increasing it.
+
+It is recommended to make an estimate of this transaction before sending it to the node.
+
+:::
+
+## Approve Spender
+#### [Test Approve Spender in Swagger](./swagger)
+
+Request url
+```
+https://api.1inch.io/v3.0/1/approve/spender
+```
+
+Curl
+```
+curl -X GET "https://api.1inch.io/v3.0/1/approve/spender" -H  "accept: application/json"
+```
+
+<Tabs>
+<TabItem value="body" label="Response body" default>
+
+```json
+{  "address": "0x11111112542d85b3ef69ae05771c2dccff4faa26"}
+```
+
+</TabItem>
+<TabItem value="headers" label="Response headers">
+
+```
+access-control-allow-origin: *
+cache-control: public,max-age=300,s-maxage=300
+cf-cache-status: REVALIDATED
+cf-ray: 5f4d1eb46d9807aa-LHR
+cf-request-id: 06841184c0000007aa76229000000001
+content-encoding: gzip
+content-type: application/json; charset=utf-8
+date: Thu,19 Nov 2020 21:45:44 GMT  etag: W/"38-OVahTHEixCdKnQb1Zt3v5Gr5QvY"
+expect-ct: max-age=604800,report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+server: cloudflare
+status: 304
+vary: Origin,Accept-Encoding
+x-powered-by: Express
+```
+
+</TabItem>
+</Tabs>

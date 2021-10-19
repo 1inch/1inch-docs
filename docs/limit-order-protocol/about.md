@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# About
+# Introduction
 
 <p align="center">
   <img src="https://app.1inch.io/assets/images/logo.svg" width="200" alt="1inch network" />

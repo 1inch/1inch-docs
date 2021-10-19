@@ -30,3 +30,8 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
 .swagger-ui pre {
   background-color: transparent!important;
 }
+
+.main-page-tags {
+  text-align: center;
+  margin-top: 20px;
+}
