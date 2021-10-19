@@ -1,5 +1,5 @@
 import {Buffer} from 'buffer';
-window['Buffer'] = Buffer;
+global['Buffer'] = Buffer;
 
 import SwaggerUI from 'swagger-ui-react';
 import 'swagger-ui-react/swagger-ui.css';
