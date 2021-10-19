@@ -11,7 +11,7 @@ But, if it becomes necessary to cancel the created RFQ order, then this can be d
 
 | Parameter | Type     | Description                                                                                           |
 | --------- | -------- | ----------------------------------------------------------------------------------------------------- |
-| `info`    | `String` | information about an RFQ order (see above in section [RFQ structure](docs/limit-order-protocol/guide/rfq-limit-orders/limit-order-rfq-structure.mdlimit-orders/limit-order-rfq-structure.md)) |
+| `info`    | `String` | information about an RFQ order (see above in section [RFQ structure](./limit-order-rfq-structure.md)) |
 
 ## Creating with a typescript/javascript:
 

@@ -10,7 +10,7 @@ sidebar_position: 5
 
 | Parameter | Type         | Description                                                                       |
 | --------- | ------------ | --------------------------------------------------------------------------------- |
-| `order`   | `LimitOrder` | Structure of limit order. See [Limit order structure](docs/limit-order-protocol/guide/limit-order-structure.mdguide/limit-order-structure.md) |
+| `order`   | `LimitOrder` | Structure of limit order. See [Limit order structure](./limit-order-structure.md) |
 
 ## Example:
 

@@ -16,7 +16,7 @@ sidebar_position: 3
 | `takerAddress`      | `String?` | the address of the taker for whom the limit order is being created. _This is an optional parameter_, if it is not specified, then the limit order will be available for execution for everyone |
 | `makerAmount`       | `String`  | the number of maker asset tokens that you want to sell (in token units). For example: 5 DAI = 5000000000000000000 units                                                                        |
 | `takerAmount`       | `String`  | the number of taker asset tokens that you want to receive for selling the maker asset (in token units). For example: 5 DAI = 5000000000000000000 units                                         |
-| `predicate`         | `String?` | a predicate call data. Default: `0x`. See [Predicate docs](docs/limit-order-protocol/guide/predicate.mder-protocol/guide/predicate.md)                                                                                                                     |
+| `predicate`         | `String?` | a predicate call data. Default: `0x`. See [Predicate docs](./predicate.md)                                                                                                                     |
 | `permit`            | `String?` | a permit call data. Default: `0x`                                                                                                                                                              |
 | `interaction`       | `String?` | an interaction call data. Default: `0x`                                                                                                                                                        |
 
@@ -67,7 +67,7 @@ const limitOrderHash = limitOrderBuilder.buildLimitOrderHash(
 );
 ```
 
-As result you will receive a structure of [limit order](docs/limit-order-protocol/guide/limit-order-structure.mdguide/limit-order-structure.md). Example:
+As result you will receive a structure of [limit order](./limit-order-structure.md). Example:
 
 ```json
 {

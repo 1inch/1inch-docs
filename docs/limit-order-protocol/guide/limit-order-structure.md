@@ -13,6 +13,6 @@ sidebar_position: 3
 | `takerAssetData` | `String` | the technical info about a taker asset and its amount                                                                              |
 | `getMakerAmount` | `String` | technical information to get the amount of the maker asset                                                                         |
 | `getTakerAmount` | `String` | technical information to get the amount of the taker asset                                                                         |
-| `predicate`      | `String` | a predicate call data. See [Predicate docs](docs/limit-order-protocol/guide/predicate.mder-protocol/guide/predicate.md)                                                                        |
+| `predicate`      | `String` | a predicate call data. See [Predicate docs](./predicate.md)                                                                        |
 | `permit`         | `String` | a permit call data                                                                                                                 |
 | `interaction`    | `String` | an interaction call data                                                                                                           |

@@ -73,7 +73,7 @@ npx limit-order-rfq-utils --\
 npx limit-order-rfq-utils
 ```
 
-As result you will receive a structure of [RFQ order](docs/limit-order-protocol/guide/rfq-limit-orders/limit-order-rfq-structure.mdlimit-orders/limit-order-rfq-structure.md). Example:
+As result you will receive a structure of [RFQ order](./limit-order-rfq-structure.md). Example:
 
 ```json
 {
