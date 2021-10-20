@@ -56,4 +56,3 @@ Trading or platform / algorithm ask market maker quotes, and if it match his nee
 -   You can use it right in [1inch dApp](https://app.1inch.io/#/1/limit-order/WETH/DAI)
 -   Smart Contracts [repository](https://github.com/1inch/limit-order-protocol/)
 -   Utils library [repository](https://github.com/1inch/limit-order-protocol-utils/)
--   REST API ([Ethereum](https://limit-orders.1inch.exchange/swagger/ethereum/), [BSC](https://limit-orders.1inch.exchange/swagger/binance/), [Polygon](https://limit-orders.1inch.exchange/swagger/polygon/))
