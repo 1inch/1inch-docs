@@ -16,8 +16,6 @@ const config = {
   organizationName: '1inch', // Usually your GitHub org/user name.
   projectName: '1inch-docs', // Usually your repo name.
 
-  plugins: ['@docusaurus/plugin-google-gtag'],
-
   presets: [
     [
       '@docusaurus/preset-classic',
@@ -87,9 +85,6 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
-      },
-      gtag: {
-        trackingID: 'UA-142133284-1'
       },
     }),
 };
