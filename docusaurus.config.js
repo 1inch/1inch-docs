@@ -12,7 +12,7 @@ const config = {
   baseUrl: '/new-docs/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/favicon/favicon.ico',
   organizationName: '1inch', // Usually your GitHub org/user name.
   projectName: '1inch-docs', // Usually your repo name.
 
@@ -57,18 +57,17 @@ const config = {
             position: 'left',
           },
           {
-            href: '/docs/aggregation-protocol/about',
+            href: '/docs/aggregation-protocol/introduction',
             label: 'Do swaps',
             position: 'left',
           },
           {
-            type: 'doc',
-            docId: 'liquidity-protocol',
-            position: 'left',
+            href: '/docs/liquidity-protocol/introduction',
             label: 'Manage liquidity',
+            position: 'left',
           },
           {
-            href: '/docs/limit-order-protocol/about',
+            href: '/docs/limit-order-protocol/introduction',
             label: 'Trade limit orders',
             position: 'left',
           },

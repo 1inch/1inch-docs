@@ -6,7 +6,7 @@ import Link from "@docusaurus/Link";
 const FeatureList = [
   {
     title: 'Aggregation protocol',
-    link: 'docs/aggregation-protocol/about',
+    link: 'docs/aggregation-protocol/introduction',
     image: require('../../../static/img/aggregation-protocol.png').default,
     description: (
       <>
@@ -17,7 +17,7 @@ const FeatureList = [
   },
   {
     title: 'Liquidity protocol',
-    link: 'docs/liquidity-protocol',
+    link: 'docs/liquidity-protocol/introduction',
     image: require('../../../static/img/liquidity-protocol.png').default,
     description: (
       <>
@@ -28,7 +28,7 @@ const FeatureList = [
   },
   {
     title: 'Limit order protocol',
-    link: 'docs/limit-order-protocol/about',
+    link: 'docs/limit-order-protocol/introduction',
     image: require('../../../static/img/limit-order-protocol.png').default,
     description: (
       <>
