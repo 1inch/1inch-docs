@@ -9,6 +9,8 @@ jobs:
     steps:
       - name: Clone source code
         uses: actions/checkout@v2
+        with:
+          submodules: recursive
 
       - name: Setup Node
         uses: actions/setup-node@v1
