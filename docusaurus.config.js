@@ -9,7 +9,7 @@ const config = {
   title: '1inch Network',
   tagline: 'The 1inch Network unites decentralized protocols whose synergy enables the most lucrative, fastest and protected operations in the DeFi space.',
   url: 'https://1inch.io',
-  baseUrl: '/new-docs/',
+  baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon/favicon.ico',
