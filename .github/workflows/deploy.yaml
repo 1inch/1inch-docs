@@ -1,0 +1,87 @@
+name: Deploy
+on:
+  push:
+    branches:
+      - master
+  # manual trigger
+  workflow_dispatch:
+jobs:
+  # Wait for up to a minute for previous run to complete, abort if not done by then
+  pre-run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: 'Block Concurrent Executions'
+        uses: softprops/turnstyle@v1
+        with:
+          poll-interval-seconds: 10
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  bump_version:
+    name: Bump Version
+    needs: pre-run
+    runs-on: ubuntu-latest
+    outputs:
+      new_tag: ${{ steps.github_tag_action.outputs.new_tag }}
+      changelog: ${{ steps.github_tag_action.outputs.changelog }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - name: Bump version and push tag
+        id: github_tag_action
+        uses: mathieudutour/github-tag-action@v4.5
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          release_branches: main
+
+  create_release:
+    name: Create Release
+    runs-on: ubuntu-latest
+    needs: bump_version
+    if: ${{ needs.bump_version.outputs.new_tag != null }}
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2.3.1
+
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14.17.0'
+
+      - name: Install yarn
+        run: npm install --global yarn
+
+      - name: Cache dependencies
+        uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install Dependencies
+        run: |
+          yarn install --frozen-lockfile
+
+      - name: Build
+        run: |
+          yarn run build
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@4.1.0
+        with:
+          branch: gh-pages # The branch the action should deploy to.
+          folder: build # The folder the action should deploy.
+
+      - name: Create GitHub Release
+        id: create_release
+        uses: actions/create-release@v1.1.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ needs.bump_version.outputs.new_tag }}
+          release_name: Release ${{ needs.bump_version.outputs.new_tag }}
+          body: |
+            New version ${{ needs.bump_version.outputs.new_tag }}
