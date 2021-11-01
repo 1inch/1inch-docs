@@ -13,7 +13,7 @@
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
     "postinstall": "yarn run copy:lo-smartcontract-docs",
-    "copy:lo-smartcontract-docs": "git submodule update --remote --merge && rimraf docs/limit-order-protocol/smart-contract/* && cp -R git-submodules/limit-order-protocol/docgen/docs/* docs/limit-order-protocol/smart-contract/"
+    "copy:lo-smartcontract-docs": "git submodule update --remote --merge --allow-unrelated-histories && rimraf docs/limit-order-protocol/smart-contract/* && cp -R git-submodules/limit-order-protocol/docgen/docs/* docs/limit-order-protocol/smart-contract/"
   },
   "dependencies": {
     "@docusaurus/core": "2.0.0-beta.6",
