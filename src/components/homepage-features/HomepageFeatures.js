@@ -16,17 +16,6 @@ const FeatureList = [
     ),
   },
   {
-    title: 'Liquidity protocol',
-    link: 'docs/liquidity-protocol/introduction',
-    image: require('../../../static/img/liquidity-protocol.png').default,
-    description: (
-      <>
-          Earn with 1inch by providing liquidity to pools and collect extra
-          rewards in 1INCH tokens for participating in liquidity mining programs.
-      </>
-    ),
-  },
-  {
     title: 'Limit order protocol',
     link: 'docs/limit-order-protocol/introduction',
     image: require('../../../static/img/limit-order-protocol.png').default,

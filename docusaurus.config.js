@@ -60,11 +60,6 @@ const config = {
             position: 'left',
           },
           {
-            href: '/docs/liquidity-protocol/introduction',
-            label: 'Manage liquidity',
-            position: 'left',
-          },
-          {
             href: '/docs/limit-order-protocol/introduction',
             label: 'Trade limit orders',
             position: 'left',
