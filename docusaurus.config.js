@@ -61,6 +61,11 @@ const config = {
           },
           {
             href: '/docs/limit-order-protocol/introduction',
+            label: 'Protocols',
+            position: 'left',
+          },
+          {
+            href: '/docs/limit-order-protocol/introduction',
             label: 'Trade limit orders',
             position: 'left',
           },

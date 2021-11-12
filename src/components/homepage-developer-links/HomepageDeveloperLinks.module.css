@@ -1,0 +1,30 @@
+.developerList {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 16px;
+}
+
+.developerCard {
+    border: 1px solid var(--1inch-border-color-1);
+    border-radius: 16px;
+    padding: 32px 24px;
+    text-decoration: none;
+}
+
+.developerTitleColor{
+    color: var(--1inch-title-color-1);
+}
+
+.developerText{
+    color: var(--1inch-text-color-1);
+}
+
+.imageCard{
+    width: 64px;
+    height: 64px;
+    margin-bottom: 24px;
+}
+
+.linkCard{
+    text-decoration: none;
+}

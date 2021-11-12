@@ -1,17 +1,27 @@
-.features {
+.featureList {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 16px;
+}
+
+.featureCard {
+  border: 1px solid var(--1inch-border-color-1);
+  border-radius: 16px;
+  padding: 32px 24px;
+}
+
+.featureCard:hover {
+  text-decoration: none;
+}
+
+.featureCardTitle {
+  color: var(--1inch-title-color-1);
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  padding: 2rem 0;
-  width: 100%;
 }
 
-.featureSvg {
-  height: 200px;
-  width: 200px;
-  border-radius: 50%;
-  margin-bottom: 10px;
-}
 
-.feature-item {
-  color: #000;
+.featureCardText {
+  color: var(--1inch-text-color-1);
 }
