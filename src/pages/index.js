@@ -11,7 +11,7 @@ function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <header className="">
-      <div className="container">
+      <div className="container mainTitle">
         <h1>Documentation Portal</h1>
       </div>
     </header>

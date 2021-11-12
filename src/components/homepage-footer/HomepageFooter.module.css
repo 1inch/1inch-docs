@@ -1,7 +1,6 @@
 .footerCard {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    vertical-align: center;
 }
 
 .textColor {
