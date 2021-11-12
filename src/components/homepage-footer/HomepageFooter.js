@@ -30,7 +30,7 @@ export default function homepageFooter () {
     return (
         <section>
             <div className="container">
-                <h2>1inch dApp</h2>
+                <h2 className={styles.titleFooter}>1inch dApp</h2>
                 <div className={styles.developerList}>
                     {FooterList.map((props, idx) => (
                         <FooterLink key={idx} {...props} />

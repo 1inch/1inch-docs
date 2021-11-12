@@ -1,9 +1,14 @@
 .footerCard {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    vertical-align: center;
 }
 
 .textColor {
     color: var(--1inch-text-color-1);
     width: 415px;
+}
+
+.titleFooter{
+    margin-top: 340px;
 }
