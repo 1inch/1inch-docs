@@ -121,7 +121,7 @@ const config = {
         copyright: `Copyright © ${new Date().getFullYear()} 1inch Network.`,
       },
       prism: {
-        theme: lightCodeTheme,
+        // theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
     }),

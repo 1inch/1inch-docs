@@ -11,7 +11,7 @@ const FeatureList = [
         title_1: 'Documentation',
         link_1: 'https://docs.1inch.io/api/',
         title_2: 'API (swagger)',
-        link_2: 'http://localhost:3001/docs/aggregation-protocol/api/approve',
+        link_2: 'https://1inch.io',
         title3: 'Contacts',
         link_3: 'https://1inch.io/api/',
         image: require('../../../static/img/aggregationProtocol.png').default,

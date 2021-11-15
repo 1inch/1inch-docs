@@ -10,22 +10,23 @@
     border-radius: 16px;
     padding: 32px 24px;
     text-decoration: none;
+    height: 326px;
 }
 
-.developerTitleColor{
+.developerTitleColor {
     color: var(--1inch-title-color-1);
 }
 
-.developerText{
+.developerText {
     color: var(--1inch-text-color-1);
 }
 
-.imageCard{
+.imageCard {
     width: 64px;
     height: 64px;
     margin-bottom: 24px;
 }
 
-.linkCard{
+.linkCard {
     text-decoration: none;
 }

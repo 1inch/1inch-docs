@@ -19,6 +19,10 @@ function FooterLink({title, text, buttonText, linkButton, image}) {
           <div>
               <h2>{title}</h2>
               <p className={styles.textColor}>{text}</p>
+              <Link href={linkButton} className={styles.buttonFooter}>
+                  <span>Launch dApp</span>
+                  <img src='../../../static/img/chevron-right.svg' />
+              </Link>
           </div>
         <img className={styles.imgFooter} src={image} alt={image} />
       </div>

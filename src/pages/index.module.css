@@ -21,3 +21,34 @@
   align-items: center;
   justify-content: center;
 }
+
+.startImage {
+  position: absolute;
+  width: 552px;
+  height: 648px;
+  z-index: -1;
+  right: 0;
+}
+
+.mainLayout {
+  position: relative;
+}
+
+.topGradient {
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  width: 100%;
+}
+
+.bottomGradient {
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  width: 100%;
+}
+

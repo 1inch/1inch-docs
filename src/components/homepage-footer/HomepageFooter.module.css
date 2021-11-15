@@ -8,6 +8,21 @@
     width: 415px;
 }
 
-.titleFooter{
+.titleFooter {
     margin-top: 340px;
+}
+
+.buttonFooter {
+    display: inline-flex;
+    align-items: center;
+    padding: 16px 40px;
+    border-radius: 12px;
+    font-size: 16px;
+    line-height: 26px;
+    cursor: pointer;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    background-color: var(--1inch-button-color-1);
+    margin-top: 48px;
 }
