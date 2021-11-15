@@ -41,7 +41,7 @@ const DeveloperList = [
     {
         link: 'https://1inch.io',
         image: require('../homepage-developer-links/img/grants-program.png').default,
-        title: 'Grants program',
+        title: 'Web 3.0',
         description: (
             <ul>
                 <li>cumukative-merkle-drop</li>

@@ -50,24 +50,62 @@ const config = {
         },
         items: [
           {
-            href: 'https://app.1inch.io',
-            label: 'App',
-            position: 'left',
-          },
-          {
-            href: '/docs/aggregation-protocol/introduction',
-            label: 'Do swaps',
-            position: 'left',
-          },
-          {
-            href: '/docs/limit-order-protocol/introduction',
             label: 'Protocols',
             position: 'left',
+            items: [
+              {
+                label: 'Aggregation protocol',
+                href: '/',
+              },
+              {
+                label: 'Limit order protocol',
+                href: '/'
+              },
+              {
+                label: 'Liquidity protocol',
+                href: '/'
+              }
+            ]
           },
           {
-            href: '/docs/limit-order-protocol/introduction',
-            label: 'Trade limit orders',
+            label: 'Opensource',
             position: 'left',
+            items: [
+              {
+                label: 'Grants Program',
+                href: '/'
+              },
+              {
+                label: 'Bug bounty',
+                href: '/'
+              },
+              {
+                label: 'Smartcontracts',
+                href: '/'
+              },
+              {
+                label: 'Web 3.0',
+                href: '/'
+              }
+            ]
+          },
+          {
+            label: 'More',
+            position: 'left',
+            items: [
+              {
+                label: 'Aggregation protocol',
+                href: '/',
+              },
+              {
+                label: 'Limit order protocol',
+                href: '/'
+              },
+              {
+                label: 'Liquidity protocol',
+                href: '/'
+              }
+            ]
           },
           {
             href: 'https://github.com/1inch',
