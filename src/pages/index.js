@@ -5,12 +5,13 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './index.module.css';
 import HomepageFeatures from '../components/homepage-features/HomepageFeatures';
 import HomepageDeveloperLinks from "../components/homepage-developer-links/HomepageDeveloperLinks";
+import HomepagePreFooter from "../components/homepage-prefooter/HomepagePreFooter";
 import HomepageFooter from "../components/homepage-footer/HomepageFooter";
 
 function HomepageHeader() {
     const {siteConfig} = useDocusaurusContext();
     return (
-        <header className="">
+        <header>
             <div className="container">
                 <h1 className={styles.mainTitle}>Documentation Portal</h1>
             </div>
@@ -29,7 +30,8 @@ export default function Home() {
                 <main>
                     <HomepageFeatures/>
                     <HomepageDeveloperLinks/>
-                    <HomepageFooter/>
+                    <HomepagePreFooter/>
+                    <HomepageFooter />
                 </main>
                 <img src="../../static/img/bottom-gradient.png" alt="Bottom gradient" className={styles.bottomGradient} />
             </div>
