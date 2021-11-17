@@ -21,16 +21,17 @@ const DeveloperList = [
         title: 'Bug bounty',
         description: (
             <>
-                Engaging adopters and maximizing the network's decentralization through growing stakeowner numbers and their participation
+                Engaging adopters and maximizing the network's decentralization through growing stakeowner numbers and
+                their participation
             </>
         ),
     },
     {
         link: 'https://1inch.io',
-        image: require('../homepage-developer-links/img/grants-program.png').default,
+        image: require('../homepage-developer-links/img/smart.png').default,
         title: 'Smartcontracts',
         description: (
-            <ul>
+            <ul className={styles.developerCardList}>
                 <li>cumukative-merkle-drop</li>
                 <li>offchain-oracle</li>
                 <li>cumukative-merkle-drop</li>
@@ -40,10 +41,10 @@ const DeveloperList = [
     },
     {
         link: 'https://1inch.io',
-        image: require('../homepage-developer-links/img/grants-program.png').default,
+        image: require('../homepage-developer-links/img/web-3-0.png').default,
         title: 'Web 3.0',
         description: (
-            <ul>
+            <ul className={styles.developerCardList}>
                 <li>cumukative-merkle-drop</li>
                 <li>offchain-oracle</li>
                 <li>cumukative-merkle-drop</li>
@@ -55,26 +56,24 @@ const DeveloperList = [
 
 function DeveloperLink({image, title, description, link}) {
     return (
-        <Link className={styles.linkCard} to={link}>
-            <div className={styles.developerCard}>
-                <img className={styles.imageCard} src={image} alt=""/>
-                <h3 className={styles.developerTitleColor}>{title}</h3>
-                <div className={styles.developerText}>{description}</div>
-            </div>
+        <Link className={styles.developerCard} to={link}>
+            <img className={styles.developerCardImage} src={image} alt={title}/>
+            <h3 className={styles.developerCardTitle}>{title}</h3>
+            <div className={styles.developerCardText}>{description}</div>
         </Link>
     );
 }
 
 export default function HomepageDeveloperLinks() {
     return (
-        <section>
-            <div className="container">
-                <h2>Developer links</h2>
-                <div className={styles.developerList}>
-                    {DeveloperList.map((props, idx) => (
+        <section className="page-container">
+            <h2 className={styles.developerLinksTitle}>Developer links</h2>
+            <div className={styles.developerLinksWrap}>
+                {
+                    DeveloperList.map((props, idx) => (
                         <DeveloperLink key={idx} {...props} />
-                    ))}
-                </div>
+                    ))
+                }
             </div>
         </section>
     );

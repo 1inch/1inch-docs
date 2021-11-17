@@ -1,55 +1,72 @@
-p, a, h3 {
-  margin: 0;
+.footerTopBorder {
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+    padding-top: 72px;
 }
 
 .footer {
-    display: flex;
-}
-
-.footerLinksBlock{
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    margin-right: 64px;
-    grid-column-gap: 32px;
+    grid-template-columns: 1fr 348px;
+    grid-column-gap: 114px;
 }
 
-.footerTitle{
-    font-size: 20px;
-    font-weight: 500;
-    margin-bottom: 18px;
-}
-
-.colorText{
-    color: rgba(255, 255, 255, 0.6);
-    margin-bottom: 24px;
-}
-
-.buttonText{
-    color: rgba(251, 251, 251, 1);
-}
-
-.buttonFooter {
-    display: inline-flex;
-    align-items: center;
-    padding: 16px 140px;
-    border: 1px solid #fff;
-    border-radius: 12px;
-    font-size: 16px;
-    line-height: 26px;
-    cursor: pointer;
-    color: #fff;
-    text-decoration: none;
-    font-weight: 500;
-    background-color: transparent;
-}
-
-.socialMedia{
+.footerColumnWrap {
     display: flex;
     justify-content: space-between;
 }
 
-.footerLink {
+.footerColumnTitle {
     display: block;
-    margin-bottom: 18px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 28px;
+    margin-bottom: 20px;
+}
+
+.footerColumnLink {
+    display: block;
+    margin-bottom: 20px;
+    color: var(--1inch-text-color-1);
+}
+
+.footerColumnLink:hover {
     text-decoration: none;
+}
+
+.footerSubscribeTitle {
+    color: var(--1inch-title-color-1);
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 28px;
+    margin-bottom: 8px;
+}
+
+.footerSubscribeText {
+    color: var(--1inch-text-color-1);
+    margin-bottom: 24px;
+}
+
+.footerSubscribeButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--1inch-title-color-1);
+    font-weight: 500;
+    font-size: 16px;
+    padding: 16px 0;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 16px;
+    margin-bottom: 16px;
+}
+
+.footerSubscribeButton:hover {
+    text-decoration: none;
+}
+
+.footerSubscribeButton img {
+    margin-bottom: -2px;
+}
+
+.socialMediaWrap {
+    display: flex;
+    justify-content: space-between;
 }

@@ -1,28 +1,45 @@
-.footerCard {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
-
-.textColor {
-    color: var(--1inch-text-color-1);
-    width: 415px;
-}
-
-.titleFooter {
-    margin-top: 340px;
-}
-
-.buttonPreFooter {
-    display: inline-flex;
+.prefooterWrap {
+    display: flex;
     align-items: center;
-    padding: 16px 40px;
-    border-radius: 12px;
+    justify-content: space-between;
+}
+
+.prefooterFirstColumn {
+    max-width: 415px;
+}
+
+.prefooterTitle {
+    color: var(--1inch-title-color-1);
+    font-weight: 900;
+    font-size: 54px;
+    line-height: 63px;
+    margin-bottom: 16px;
+}
+
+.prefooterText {
+    color: var(--1inch-text-color-1);
     font-size: 16px;
     line-height: 26px;
-    cursor: pointer;
-    color: #fff;
-    text-decoration: none;
+    margin-bottom: 48px;
+}
+
+.prefooterImage {
+    max-width: 530px;
+}
+
+.prefooterButton {
+    display: inline-flex;
+    align-items: center;
+    padding: 16px 32px 16px 40px;
+    border-radius: 16px;
     font-weight: 500;
+    font-size: 16px;
+    color: var(--1inch-title-color-1);
+    cursor: pointer;
+    text-decoration: none;
     background-color: var(--1inch-button-color-1);
-    margin-top: 48px;
+}
+
+.prefooterButton img {
+    margin-bottom: -4px;
 }

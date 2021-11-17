@@ -1,7 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
 import Layout from '@theme/Layout';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './index.module.css';
 import HomepageFeatures from '../components/homepage-features/HomepageFeatures';
 import HomepageDeveloperLinks from "../components/homepage-developer-links/HomepageDeveloperLinks";
@@ -9,32 +8,34 @@ import HomepagePreFooter from "../components/homepage-prefooter/HomepagePreFoote
 import HomepageFooter from "../components/homepage-footer/HomepageFooter";
 
 function HomepageHeader() {
-    const {siteConfig} = useDocusaurusContext();
     return (
-        <header>
-            <div className="container">
-                <h1 className={styles.mainTitle}>Documentation Portal</h1>
-            </div>
+        <header className={clsx('page-container', styles.headerWrap)}>
+            <h1 className={styles.mainTitle}>Documentation Portal</h1>
+            <div className={styles.searchWrap}>Search</div>
         </header>
     );
 }
 
 export default function Home() {
     return (
-        <Layout
+        <Layout pageClassName={styles.mainLayout}
             title="1inch Network | Leading high capital efficient DeFi protocols"
             description="The 1inch Network unites decentralized protocols whose synergy enables the most lucrative, fastest and protected operations in the DeFi space.">
-            <div class={styles.mainLayout}>
-                <img className={styles.startImage} src='../../static/img/start-image.png'/>
-                <HomepageHeader/>
-                <main>
+            <img className={styles.bgImage} src='../../static/img/start-image.png' alt="bg-image"/>
+            <HomepageHeader/>
+            <main>
+                <div className={styles.section}>
                     <HomepageFeatures/>
+                </div>
+                <div className={styles.section2}>
                     <HomepageDeveloperLinks/>
+                </div>
+                <div className={styles.section3}>
                     <HomepagePreFooter/>
-                    <HomepageFooter />
-                </main>
-                <img src="../../static/img/bottom-gradient.png" alt="Bottom gradient" className={styles.bottomGradient} />
-            </div>
+                </div>
+                <HomepageFooter />
+            </main>
+            <img src="../../static/img/bottom-gradient.png" alt="Bottom gradient" className={styles.bottomGradient} />
         </Layout>
     );
 }

@@ -1,32 +1,41 @@
-.developerList {
+.developerLinksTitle {
+    font-size: 32px;
+    margin-bottom: 24px;
+}
+
+.developerLinksWrap {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-column-gap: 16px;
-    margin-bottom: 349px;
+    grid-column-gap: 28px;
 }
 
 .developerCard {
     border: 1px solid var(--1inch-border-color-1);
     border-radius: 16px;
     padding: 32px 24px;
+}
+
+.developerCard:hover {
     text-decoration: none;
-    height: 326px;
 }
 
-.developerTitleColor {
-    color: var(--1inch-title-color-1);
-}
-
-.developerText {
-    color: var(--1inch-text-color-1);
-}
-
-.imageCard {
+.developerCardImage {
     width: 64px;
     height: 64px;
     margin-bottom: 24px;
 }
 
-.linkCard {
-    text-decoration: none;
+.developerCardTitle {
+    color: var(--1inch-title-color-1);
+    margin-bottom: 16px;
+}
+
+.developerCardText {
+    color: var(--1inch-text-color-1);
+    font-size: 16px;
+    line-height: 26px;
+}
+
+.developerCardList {
+    padding-left: 24px;
 }
