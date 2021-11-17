@@ -9,7 +9,7 @@
 }
 
 .prefooterTitle {
-    color: var(--1inch-title-color-1);
+    color: var(--1inch-title);
     font-weight: 900;
     font-size: 54px;
     line-height: 63px;
@@ -17,7 +17,7 @@
 }
 
 .prefooterText {
-    color: var(--1inch-text-color-1);
+    color: var(--1inch-text);
     font-size: 16px;
     line-height: 26px;
     margin-bottom: 48px;
@@ -34,10 +34,10 @@
     border-radius: 16px;
     font-weight: 500;
     font-size: 16px;
-    color: var(--1inch-title-color-1);
+    color: var(--1inch-common-title);
     cursor: pointer;
     text-decoration: none;
-    background-color: var(--1inch-button-color-1);
+    background-color: var(--1inch-button);
 }
 
 .prefooterButton img {

@@ -4,7 +4,7 @@ import Link from '@docusaurus/Link';
 import grantsProgramImage from '../../../static/img/grants-program.png';
 import bugBountyImage from '../../../static/img/bug-bounty.png';
 import smartImage from '../../../static/img/smart.png';
-import web3Image from '../../../static/img/web-3-0.png';
+import web3Image from '../../../static/img/web3.png';
 
 const DeveloperList = [
     {

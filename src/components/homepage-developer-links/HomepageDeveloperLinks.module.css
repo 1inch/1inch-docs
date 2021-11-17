@@ -1,6 +1,7 @@
 .developerLinksTitle {
     font-size: 32px;
     margin-bottom: 24px;
+    color: var(--1inch-title);
 }
 
 .developerLinksWrap {
@@ -10,7 +11,7 @@
 }
 
 .developerCard {
-    border: 1px solid var(--1inch-border-color-1);
+    border: 1px solid var(--1inch-border);
     border-radius: 16px;
     padding: 32px 24px;
 }
@@ -26,12 +27,12 @@
 }
 
 .developerCardTitle {
-    color: var(--1inch-title-color-1);
+    color: var(--1inch-title);
     margin-bottom: 16px;
 }
 
 .developerCardText {
-    color: var(--1inch-text-color-1);
+    color: var(--1inch-text);
     font-size: 16px;
     line-height: 26px;
 }

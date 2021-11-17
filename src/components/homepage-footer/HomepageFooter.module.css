@@ -1,5 +1,5 @@
 .footerTopBorder {
-    border-top: 1px solid rgba(255, 255, 255, 0.25);
+    border-top: 1px solid var(--1inch-border);
     padding-top: 72px;
 }
 
@@ -20,12 +20,13 @@
     font-size: 20px;
     line-height: 28px;
     margin-bottom: 20px;
+    color: var(--1inch-title);
 }
 
 .footerColumnLink {
     display: block;
     margin-bottom: 20px;
-    color: var(--1inch-text-color-1);
+    color: var(--1inch-text);
 }
 
 .footerColumnLink:hover {
@@ -33,7 +34,7 @@
 }
 
 .footerSubscribeTitle {
-    color: var(--1inch-title-color-1);
+    color: var(--1inch-title);
     font-weight: 500;
     font-size: 20px;
     line-height: 28px;
@@ -41,7 +42,7 @@
 }
 
 .footerSubscribeText {
-    color: var(--1inch-text-color-1);
+    color: var(--1inch-text);
     margin-bottom: 24px;
 }
 
@@ -49,11 +50,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--1inch-title-color-1);
+    color: var(--1inch-title);
     font-weight: 500;
     font-size: 16px;
     padding: 16px 0;
-    border: 1px solid rgba(255, 255, 255, 0.25);
+    border: 1px solid var(--1inch-border);
     border-radius: 16px;
     margin-bottom: 16px;
 }
@@ -79,6 +80,6 @@
     padding: 33px 0 146px;
     font-size: 16px;
     line-height: 26px;
-    border-top: 1px solid rgba(255, 255, 255, 0.25);
-    color: var(--1inch-text-color-1);
+    border-top: 1px solid var(--1inch-border);
+    color: var(--1inch-text);
 }

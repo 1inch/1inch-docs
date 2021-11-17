@@ -15,11 +15,11 @@ const FeatureList = [
         links: [
             {
                 title: 'Documentation',
-                href: ''
+                href: '/docs/aggregation-protocol/introduction'
             },
             {
                 title: 'API (swagger)',
-                href: ''
+                href: '/docs/aggregation-protocol/swagger'
             },
             {
                 title: 'Contacts',
@@ -35,11 +35,11 @@ const FeatureList = [
         links: [
             {
                 title: 'Documentation',
-                href: ''
+                href: '/docs/limit-order-protocol/introduction'
             },
             {
                 title: 'API (swagger)',
-                href: ''
+                href: '/docs/limit-order-protocol/api'
             },
             {
                 title: 'Contacts',

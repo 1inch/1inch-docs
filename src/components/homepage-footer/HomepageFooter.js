@@ -145,12 +145,12 @@ export default function HomepageFooter() {
                     <Link to='https://cdn.forms-content.sg-form.com/b14fb08e-939b-11eb-873a-46ac7bfee17b'
                           className={styles.footerSubscribeButton}>
                         <span>Subscribe</span>
-                        <img src="../../../static/img/chevron-right.svg"/>
+                        <img src="../../../static/img/chevron-right.svg" alt="chevron-right"/>
                     </Link>
                     <div className={styles.socialMediaWrap}>
                         {
                             FooterLinks.socialMedia.map((media, idx) => (
-                                <Link className={styles.footerColumnLink} to={media.href} key={idx}>
+                                <Link to={media.href} key={idx}>
                                     <img src={media.image} alt={media.link}/>
                                 </Link>
                             ))

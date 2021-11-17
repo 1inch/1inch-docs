@@ -55,11 +55,11 @@ const config = {
             items: [
               {
                 label: 'Aggregation protocol',
-                href: '/',
+                href: '/docs/aggregation-protocol/introduction',
               },
               {
                 label: 'Limit order protocol',
-                href: '/'
+                href: '/docs/limit-order-protocol/introduction'
               },
               {
                 label: 'Liquidity protocol',
