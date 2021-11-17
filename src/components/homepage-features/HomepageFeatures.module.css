@@ -9,7 +9,6 @@
     border-radius: 16px;
     padding: 32px 24px;
     backdrop-filter: blur(100px);
-    color: var(--1inch-title);
 }
 
 .featureCard:hover {
@@ -21,6 +20,11 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 16px;
+}
+
+.featureCardTitle {
+    color: var(--1inch-title);
+    font-weight: 500;
 }
 
 .featureCardGithubLink {
@@ -57,4 +61,5 @@
 
 .featureCardLinkWrap:hover {
     cursor: pointer;
+    text-decoration: none;
 }

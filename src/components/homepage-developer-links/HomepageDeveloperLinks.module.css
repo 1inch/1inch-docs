@@ -29,6 +29,7 @@
 .developerCardTitle {
     color: var(--1inch-title);
     margin-bottom: 16px;
+    font-weight: 500;
 }
 
 .developerCardText {

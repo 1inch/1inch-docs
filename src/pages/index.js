@@ -18,18 +18,6 @@ function HomepageHeader() {
 }
 
 export default function Home() {
-    document.addEventListener('scroll', function (e) {
-        const scrollPosition = window.scrollY;
-        const navbar = window.document.getElementsByClassName('navbar')[0];
-
-        if (scrollPosition > 0) {
-            navbar.classList.add('navbarFixed');
-        } else {
-            navbar.classList.remove('navbarFixed');
-        }
-    });
-
-
     return (
         <Layout pageClassName={styles.mainLayout}
                 title="1inch Network | Leading high capital efficient DeFi protocols"

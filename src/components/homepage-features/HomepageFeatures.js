@@ -75,7 +75,7 @@ function Feature({title, description, image, href, hrefGithub, links}) {
     return (
         <div className={styles.featureCard}>
             <div className={styles.featureCardTitleWrap}>
-                <h3>{title}</h3>
+                <h3 className={styles.featureCardTitle}>{title}</h3>
                 <Link className={styles.featureCardGithubLink} to={hrefGithub}>
                     <GithubImage/>
                     {/*<img className='icons-card' src='img/icons/github-link.svg' alt="github"/>*/}

@@ -89,24 +89,12 @@ const config = {
               }
             ]
           },
-          {
-            label: 'More',
-            position: 'left',
-            items: [
-              {
-                label: 'Aggregation protocol',
-                href: '/',
-              },
-              {
-                label: 'Limit order protocol',
-                href: '/'
-              },
-              {
-                label: 'Liquidity protocol',
-                href: '/'
-              }
-            ]
-          },
+          // {
+          //   label: 'More',
+          //   position: 'left',
+          //   items: [
+          //   ]
+          // },
           {
             href: 'https://github.com/1inch',
             label: 'GitHub',
