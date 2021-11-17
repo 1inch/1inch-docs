@@ -70,3 +70,15 @@
     display: flex;
     justify-content: space-between;
 }
+
+.afterFooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 68px;
+    padding: 33px 0 146px;
+    font-size: 16px;
+    line-height: 26px;
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+    color: var(--1inch-text-color-1);
+}

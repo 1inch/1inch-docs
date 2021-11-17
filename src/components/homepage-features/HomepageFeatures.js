@@ -2,12 +2,15 @@ import React from 'react';
 import clsx from 'clsx';
 import styles from './HomepageFeatures.module.css';
 import Link from '@docusaurus/Link';
+import aggregationProtocolImage from '../../../static/img/aggregationProtocol.png'
+import limitOrderProtocolImage from '../../../static/img/limit-order-protocol.png'
+import liquidityProtocolImage from '../../../static/img/liquidity-protocol.png'
 
 const FeatureList = [
     {
         title: 'Aggregation protocol',
         description: 'Engaging adopters and maximizing the network\'s decentralization through growing stakeowner numbers',
-        image: require('../../../static/img/aggregationProtocol.png').default,
+        image: aggregationProtocolImage,
         hrefGithub: 'https://github.com/1inch',
         links: [
             {
@@ -27,7 +30,7 @@ const FeatureList = [
     {
         title: 'Limit order protocol',
         description: 'Running yield farming programs that have proven to be efficient bootstrapping tools for potential bluechips of the DeFi space',
-        image: require('../../../static/img/limit-order-protocol.png').default,
+        image: limitOrderProtocolImage,
         hrefGithub: 'https://github.com/1inch',
         links: [
             {
@@ -47,7 +50,7 @@ const FeatureList = [
     {
         title: 'Liquidity protocol',
         description: 'Incentivizing individual developers and teams to build on the 1inch Network\'s protocols',
-        image: require('../../../static/img/liquidity-protocol.png').default,
+        image: liquidityProtocolImage,
         hrefGithub: 'https://github.com/1inch',
         links: [
             {

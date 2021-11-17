@@ -150,13 +150,18 @@ export default function HomepageFooter() {
                     <div className={styles.socialMediaWrap}>
                         {
                             FooterLinks.socialMedia.map((media, idx) => (
-                                <Link className={styles.footerColumnLink} to={media.link} key={idx}>
+                                <Link className={styles.footerColumnLink} to={media.href} key={idx}>
                                     <img src={media.image} alt={media.link}/>
                                 </Link>
                             ))
                         }
                     </div>
                 </div>
+            </div>
+            <div className={clsx('page-container', styles.afterFooter)}>
+                <span>{new Date().getFullYear()} 1inch Network</span>
+                <span>ENS: 1inch.eth</span>
+                <span>BUIDL @ETHNewYork 2019</span>
             </div>
         </section>
     );

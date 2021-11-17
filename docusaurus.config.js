@@ -114,12 +114,6 @@ const config = {
           },
         ],
       },
-      footer: {
-        style: 'dark',
-        links: [
-        ],
-        copyright: `Copyright © ${new Date().getFullYear()} 1inch Network.`,
-      },
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,

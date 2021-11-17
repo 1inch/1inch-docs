@@ -1,12 +1,15 @@
 import React from 'react';
-import clsx from 'clsx';
 import styles from './HomepageDeveloperLinks.module.css';
-import Link from "@docusaurus/Link";
+import Link from '@docusaurus/Link';
+import grantsProgramImage from '../../../static/img/grants-program.png';
+import bugBountyImage from '../../../static/img/bug-bounty.png';
+import smartImage from '../../../static/img/smart.png';
+import web3Image from '../../../static/img/web-3-0.png';
 
 const DeveloperList = [
     {
         link: 'https://1inch.io',
-        image: require('../homepage-developer-links/img/grants-program.png').default,
+        image: grantsProgramImage,
         title: 'Grants program',
         description: (
             <>
@@ -17,7 +20,7 @@ const DeveloperList = [
     },
     {
         link: 'https://1inch.io',
-        image: require('../homepage-developer-links/img/bug-bounty.png').default,
+        image: bugBountyImage,
         title: 'Bug bounty',
         description: (
             <>
@@ -28,7 +31,7 @@ const DeveloperList = [
     },
     {
         link: 'https://1inch.io',
-        image: require('../homepage-developer-links/img/smart.png').default,
+        image: smartImage,
         title: 'Smartcontracts',
         description: (
             <ul className={styles.developerCardList}>
@@ -41,7 +44,7 @@ const DeveloperList = [
     },
     {
         link: 'https://1inch.io',
-        image: require('../homepage-developer-links/img/web-3-0.png').default,
+        image: web3Image,
         title: 'Web 3.0',
         description: (
             <ul className={styles.developerCardList}>
