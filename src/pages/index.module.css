@@ -15,8 +15,8 @@
     width: 275px;
     height: 50px;
     padding: 15px 19px;
-    background: var(--1inch-border);
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.25);
+    background: var(--1inch-bg-2);
+    box-shadow: var(--1inch-shadow-1);
     border-radius: 12px;
     display: flex;
     align-items: center;
@@ -64,4 +64,22 @@
 
 .section3 {
     margin-bottom: 86px;
+}
+
+@media (max-width: 768px) {
+    .section {
+        margin-bottom: 80px;
+    }
+
+    .section2 {
+        margin-bottom: 152px;
+    }
+}
+
+
+@media (max-width: 600px) {
+    .mainTitle {
+        font-size: 36px;
+        line-height: 42px;
+    }
 }

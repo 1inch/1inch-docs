@@ -133,7 +133,7 @@ export default function HomepageFooter() {
                 <div className={styles.footerColumnWrap}>
                     {
                         FooterLinks.links.map((props, idx) => (
-                            <div key={idx}>
+                            <div className={styles.footerColumn} key={idx}>
                                 <span className={styles.footerColumnTitle}>{props.title}</span>
                                 {
                                     props.links.map((linkProps, index) => (

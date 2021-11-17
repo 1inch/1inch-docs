@@ -14,6 +14,7 @@
     border: 1px solid var(--1inch-border);
     border-radius: 16px;
     padding: 32px 24px;
+    display: block;
 }
 
 .developerCard:hover {
@@ -40,4 +41,26 @@
 
 .developerCardList {
     padding-left: 24px;
+    margin-bottom: 0;
+}
+
+
+@media (max-width: 1200px) {
+    .developerLinksWrap {
+        grid-column-gap: 16px;
+    }
+}
+
+@media (max-width: 900px) {
+    .developerLinksWrap {
+        grid-template-columns: 1fr 1fr;
+        grid-row-gap: 16px;
+    }
+}
+
+
+@media (max-width: 600px) {
+    .developerLinksWrap {
+        grid-template-columns: 1fr;
+    }
 }

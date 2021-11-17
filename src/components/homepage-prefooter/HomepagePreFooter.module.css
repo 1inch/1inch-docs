@@ -6,6 +6,7 @@
 
 .prefooterFirstColumn {
     max-width: 415px;
+    margin-right: 28px;
 }
 
 .prefooterTitle {
@@ -47,4 +48,33 @@
 
 .prefooterButton img {
     margin-bottom: -4px;
+}
+
+@media (max-width: 900px) {
+    .prefooterImage {
+        max-width: 360px;
+    }
+}
+
+@media (max-width: 768px) {
+    .prefooterWrap {
+        flex-direction: column-reverse;
+    }
+
+    .prefooterFirstColumn {
+        max-width: 100%;
+        margin-right: 0;
+    }
+
+    .prefooterImage {
+        max-width: 530px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .prefooterTitle {
+        font-size: 36px;
+        line-height: 42px;
+    }
 }

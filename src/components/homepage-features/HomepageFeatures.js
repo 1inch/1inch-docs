@@ -74,23 +74,27 @@ const FeatureList = [
 function Feature({title, description, image, href, hrefGithub, links}) {
     return (
         <div className={styles.featureCard}>
-            <div className={styles.featureCardTitleWrap}>
-                <h3 className={styles.featureCardTitle}>{title}</h3>
-                <Link className={styles.featureCardGithubLink} to={hrefGithub}>
-                    <GithubImage/>
-                    {/*<img className='icons-card' src='img/icons/github-link.svg' alt="github"/>*/}
-                </Link>
-            </div>
-            <p className={styles.featureCardText}>{description}</p>
-            <img className={styles.featureCardImage} src={image} alt={title}/>
-            {
-                links.map((link, index) => (
-                    <Link to={link.href} className={styles.featureCardLinkWrap} key={index}>
-                        <p>{link.title}</p>
-                        <ArrowOutside/>
+            <div>
+                <div className={styles.featureCardTitleWrap}>
+                    <h3 className={styles.featureCardTitle}>{title}</h3>
+                    <Link className={styles.featureCardGithubLink} to={hrefGithub}>
+                        <GithubImage/>
+                        {/*<img className='icons-card' src='img/icons/github-link.svg' alt="github"/>*/}
                     </Link>
-                ))
-            }
+                </div>
+                <p className={styles.featureCardText}>{description}</p>
+            </div>
+            <img className={styles.featureCardImage} src={image} alt={title}/>
+            <div>
+                {
+                    links.map((link, index) => (
+                        <Link to={link.href} className={styles.featureCardLinkWrap} key={index}>
+                            <p>{link.title}</p>
+                            <ArrowOutside/>
+                        </Link>
+                    ))
+                }
+            </div>
         </div>
     );
 }

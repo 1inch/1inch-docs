@@ -22,7 +22,7 @@ export default function Home() {
         <Layout pageClassName={styles.mainLayout}
                 title="1inch Network | Leading high capital efficient DeFi protocols"
                 description="The 1inch Network unites decentralized protocols whose synergy enables the most lucrative, fastest and protected operations in the DeFi space.">
-            <StartImage className={styles.bgImage}/>
+            {/*<StartImage className={styles.bgImage}/>*/}
             <HomepageHeader/>
             <main>
                 <div className={styles.section}>

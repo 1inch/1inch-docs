@@ -9,6 +9,9 @@
     border-radius: 16px;
     padding: 32px 24px;
     backdrop-filter: blur(100px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .featureCard:hover {
@@ -20,6 +23,7 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 16px;
+    grid-column-gap: 16px;
 }
 
 .featureCardTitle {
@@ -62,4 +66,23 @@
 .featureCardLinkWrap:hover {
     cursor: pointer;
     text-decoration: none;
+}
+
+@media (max-width: 1200px) {
+    .featureList {
+        grid-column-gap: 16px;
+    }
+}
+
+@media (max-width: 900px) {
+    .featureList {
+        grid-template-columns: 1fr 1fr;
+        grid-row-gap: 16px;
+    }
+}
+
+@media (max-width: 640px) {
+    .featureList {
+        grid-template-columns: 1fr;
+    }
 }
