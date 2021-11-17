@@ -1,7 +1,8 @@
 :root {
     --1inch-common-title: #FBFBFB;
 
-    --1inch-page-bg: #131722;
+    --1inch-page-bg: #06070A;
+    --1inch-bg-image: rgba(255, 255, 255, 0.09);
     --1inch-title: #FBFBFB;
     --1inch-text: rgba(255, 255, 255, 0.6);
     --1inch-border: rgba(255, 255, 255, 0.25);
@@ -10,6 +11,7 @@
 
 :root[data-theme='light'] {
     --1inch-page-bg: #f3f5fa;
+    --1inch-bg-image: rgba(108, 134, 173, 0.12);
     --1inch-title: #06070A;
     --1inch-text: #6C86AD;
     --1inch-border: rgba(0, 0, 0, 0.24);
@@ -33,4 +35,14 @@ p, a, h1, h2, h3 {
 .navbar {
     background: transparent;
     height: 72px;
+    box-shadow: none;
+    border-bottom: 1px solid transparent;
 }
+
+.navbarFixed {
+    background: var(--1inch-page-bg);
+    border-bottom-color: var(--1inch-border);
+    height: 60px;
+    transition: 0.2s;
+}
+

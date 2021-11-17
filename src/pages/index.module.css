@@ -25,10 +25,11 @@
 .bgImage {
     position: absolute;
     width: 552px;
-    height: 648px;
+    height: 637px;
     right: 80px;
     top: -72px;
     z-index: -1;
+    color: var(--1inch-bg-image);
 }
 
 .mainLayout {

@@ -40,6 +40,11 @@
     background-color: var(--1inch-button);
 }
 
+.prefooterButton:hover {
+    text-decoration: none;
+    color: var(--1inch-common-title);
+}
+
 .prefooterButton img {
     margin-bottom: -4px;
 }

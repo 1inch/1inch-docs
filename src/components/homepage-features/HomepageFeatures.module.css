@@ -25,6 +25,7 @@
 
 .featureCardGithubLink {
     display: contents;
+    color: var(--1inch-text);
 }
 
 .featureCardText {
@@ -43,9 +44,17 @@
     font-size: 16px;
     line-height: 26px;
     margin-bottom: 4px;
+    color: rgba(108, 134, 173, 0.55);
+}
+
+.featureCardLinkWrap p {
     color: var(--1inch-title);
 }
 
 .featureCardLinkWrap:last-child {
     margin-bottom: 0;
+}
+
+.featureCardLinkWrap:hover {
+    cursor: pointer;
 }

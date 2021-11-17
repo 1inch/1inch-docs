@@ -1,7 +1,14 @@
 import React from 'react';
 import clsx from 'clsx';
 import styles from './HomepageFooter.module.css';
-import Link from "@docusaurus/Link";
+import Link from '@docusaurus/Link';
+import MediumImage from '../../../static/img/icons/medium.svg';
+import RedditImage from '../../../static/img/icons/reddit.svg';
+import TwitterImage from '../../../static/img/icons/twitter.svg';
+import DiscordImage from '../../../static/img/icons/discord.svg';
+import YoutubeImage from '../../../static/img/icons/youtube.svg';
+import TelegramImage from '../../../static/img/icons/telegram.svg';
+import GithubImage from '../../../static/img/icons/github.svg';
 
 
 const FooterLinks = {
@@ -90,31 +97,31 @@ const FooterLinks = {
     socialMedia: [
         {
             href: 'https://blog.1inch.io/',
-            image: '../../../static/img/icons/medium.svg'
+            image: <MediumImage/>
         },
         {
             href: 'https://www.reddit.com/r/1inch/',
-            image: '../../../static/img/icons/reddit.svg'
+            image: <RedditImage/>
         },
         {
             href: 'https://twitter.com/1inch',
-            image: '../../../static/img/icons/twitter.svg'
+            image: <TwitterImage/>
         },
         {
             href: 'https://discord.com/invite/1inch',
-            image: '../../../static/img/icons/discord.svg'
+            image: <DiscordImage/>
         },
         {
             href: 'https://www.youtube.com/channel/UCk0nvK4bHpteQXZKv7lkq5w',
-            image: '../../../static/img/icons/youtube.svg'
+            image: <YoutubeImage/>
         },
         {
             href: 'https://t.me/OneInchNetwork',
-            image: '../../../static/img/icons/telegram.svg'
+            image: <TelegramImage/>
         },
         {
             href: 'https://github.com/1inch',
-            image: '../../../static/img/icons/github.svg'
+            image: <GithubImage/>
         }
     ]
 }
@@ -150,8 +157,8 @@ export default function HomepageFooter() {
                     <div className={styles.socialMediaWrap}>
                         {
                             FooterLinks.socialMedia.map((media, idx) => (
-                                <Link to={media.href} key={idx}>
-                                    <img src={media.image} alt={media.link}/>
+                                <Link className={styles.socialMediaLink} to={media.href} key={idx}>
+                                    {media.image}
                                 </Link>
                             ))
                         }

@@ -61,6 +61,7 @@
 
 .footerSubscribeButton:hover {
     text-decoration: none;
+    color: var(--1inch-title);
 }
 
 .footerSubscribeButton img {
@@ -70,6 +71,10 @@
 .socialMediaWrap {
     display: flex;
     justify-content: space-between;
+}
+
+.socialMediaLink {
+    color: var(--1inch-text);
 }
 
 .afterFooter {
