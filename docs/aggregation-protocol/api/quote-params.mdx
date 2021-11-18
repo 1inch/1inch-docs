@@ -1,0 +1,204 @@
+---
+sidebar_position: 5
+---
+
+# Quote params
+
+## Find the best quote to exchange via 1inch router: [`/api/quote`](./swagger.mdx)
+
+### Description of query parameters
+
+<table>
+    <thead>
+    <tr>
+        <td>
+            <strong>Parameter name</strong>
+        </td>
+        <td>
+            <strong>Type</strong>
+        </td>
+        <td>
+            <strong>Description</strong>
+        </td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td><code>fromTokenAddress*</code></td>
+        <td>string</td>
+        <td>
+            contract address of a token to sell<br/>
+            e.g.: <code>0x6b175474e89094c44da98b954eedeac495271d0f</code>
+        </td>
+    </tr>
+    <tr>
+        <td><code>toTokenAddress*</code></td>
+        <td>string</td>
+        <td>
+            contract address of a token to buy<br/>
+            e.g.: <code>0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48</code>
+        </td>
+    </tr>
+    <tr>
+        <td><code>amount*</code></td>
+        <td>integer</td>
+        <td>
+            amount of a token to sell, set in minimal divisible units<br/>
+            e.g.:<br/>
+            <code>1.00 DAI</code> set as <code>1000000000000000000</code><br/>
+            <code>51.03 USDC</code> set as <code>51030000</code>
+        </td>
+    </tr>
+    <tr>
+        <td><code>fee</code></td>
+        <td>number</td>
+        <td>
+            this percentage of <code>fromTokenAddress</code> token amount will be sent to <code>referrerAddress</code>,<br/>
+            the rest will be used as input for a swap<br/>
+            <code>min: 0;</code> <code>max: 3;</code> <code>default: 0;</code><br/>
+            example to set a fee to 1.5%: <code>&fee=1.5</code>
+        </td>
+    </tr>
+    <tr>
+        <td><code>protocols</code></td>
+        <td>string</td>
+        <td>
+            specify liquidity protocols to use. If not set, all liquidity protocols will be used<br/>
+            e.g.: <code>&protocols=WETH,CURVE,BALANCER,...,ZRX</code><br/>
+            <code>default: all protocols can be used</code>
+        </td>
+    </tr>
+    <tr>
+        <td><code>gasPrice</code></td>
+        <td>string</td>
+        <td>
+            1inch takes in account gas expenses to determine exchange route. It is important to use the same gas price<br/>
+            on the quote and swap methods<br/>
+            gas price set in wei: <code>12.5 GWEI</code> set as <code>12500000000</code><br/>
+            <code>default: "fast" from the network</code>
+        </td>
+    </tr>
+    <tr>
+        <td><code>complexityLevel</code></td>
+        <td>string</td>
+        <td>
+            maximum number of token-connectors to be used in a transaction. The more is used — the longer route
+            estimation will take, the more complex route might be as a result. If not set, two token-connectors might be
+            used<br/>
+            <code>min: 0;</code> <code>max: 3;</code> <code>default: 2</code>
+        </td>
+    </tr>
+    <tr>
+        <td><code>connectorTokens</code></td>
+        <td>string</td>
+        <td>
+            token-connectors can be specified via this parameter. The more is set — the longer route estimation will
+            take. If not set, default token-connectors will be used. If token you want to exchange doesn't have a pool
+            with one of the default token-connectors, this parameter will help find the route;
+            should be the same for a quote and swap
+            e.g.:<br/>
+            <code>&connectorTokens=0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE,
+                0x6b175474e89094c44da98b954eedeac495271d0f</code><br/>
+            <code>default: list of dafault token-connectors</code>
+        </td>
+    </tr>
+    <tr>
+        <td><code>gasLimit</code></td>
+        <td>integer</td>
+        <td>
+            maximum amount of gas for a swap;<br/>
+            should be the same for a quote and swap<br/>
+            <code>default: 11500000;</code> <code>max: 11500000;</code>
+        </td>
+    </tr>
+    <tr>
+        <td><code>gasLimit</code></td>
+        <td>integer</td>
+        <td>
+            maximum amount of gas for a swap;<br/>
+            should be the same for a quote and swap<br/>
+            <code>default: 11500000;</code> <code>max: 11500000;</code>
+        </td>
+    </tr>
+    <tr>
+        <td><code>mainRouteParts</code></td>
+        <td>integer</td>
+        <td>
+            limit maximum number of main route parts;<br/>
+            should be the same for a quote and swap<br/>
+            <code>default: 20;</code> <code>max: 50;</code>
+        </td>
+    </tr>
+    <tr>
+        <td><code>parts</code></td>
+        <td>integer</td>
+        <td>
+            limit maximum number of parts each main route part can be split into; should be the same for a quote and swap<br/>
+            <code>default: 20;</code> <code>max: 100;</code>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+### Description of response parameters
+
+<table>
+    <thead>
+    <tr>
+        <td>
+            <strong>Parameter name</strong>
+        </td>
+        <td>
+            <strong>Type</strong>
+        </td>
+        <td>
+            <strong>Description</strong>
+        </td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td><code>fromToken</code></td>
+        <td>string</td>
+        <td>
+            parameters of a token to sell
+        </td>
+    </tr>
+    <tr>
+        <td><code>toToken</code></td>
+        <td>string</td>
+        <td>
+            parameters of a token to buy
+        </td>
+    </tr>
+    <tr>
+        <td><code>fromTokenAmount</code></td>
+        <td>string</td>
+        <td>
+            input amount of <code>fromToken</code> in minimal divisible units
+        </td>
+    </tr>
+    <tr>
+        <td><code>toTokenAmount</code></td>
+        <td>string</td>
+        <td>
+            result amount of <code>toToken</code> in minimal divisible units
+        </td>
+    </tr>
+    <tr>
+        <td><code>protocols</code></td>
+        <td>string</td>
+        <td>
+            route of the trade
+        </td>
+    </tr>
+    <tr>
+        <td><code>estimatedGas</code></td>
+        <td>string</td>
+        <td>
+            rough estimated amount of the gas limit for used protocols;<br/>
+            do not use <code>estimatedGas</code> from the quote method as the gas limit of a transaction
+        </td>
+    </tr>
+    </tbody>
+</table>
