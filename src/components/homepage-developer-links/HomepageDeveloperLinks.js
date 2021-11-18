@@ -19,7 +19,7 @@ const DeveloperList = [
         ),
     },
     {
-        link: 'https://1inch.io',
+        link: 'https://airtable.com/shrddQOOkm3hOLuzd',
         image: bugBountyImage,
         title: 'Bug bounty',
         description: (
