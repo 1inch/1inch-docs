@@ -55,15 +55,15 @@ p, a, h1, h2, h3 {
     text-decoration: none;
 }
 
-.mainLayout_src-pages-index-module {
+.main-wrapper:not(.docs-wrapper) {
     background: var(--1inch-page-bg);
     color: var(--1inch-text);
     font-family: 'Roboto', sans-serif;
 }
 
-.mainLayout_src-pages-index-module h1,
-.mainLayout_src-pages-index-module h2,
-.mainLayout_src-pages-index-module h3 {
+.main-wrapper:not(.docs-wrapper) h1,
+.main-wrapper:not(.docs-wrapper) h2,
+.main-wrapper:not(.docs-wrapper) h3 {
     color: var(--1inch-title);
 }
 
