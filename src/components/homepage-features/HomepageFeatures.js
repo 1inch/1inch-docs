@@ -49,32 +49,11 @@ const FeatureList = [
             }
         ]
     },
-    {
-        disabled: true,
-        title: 'Liquidity protocol',
-        description: 'Incentivizing individual developers and teams to build on the 1inch Network\'s protocols',
-        image: liquidityProtocolImage,
-        hrefGithub: 'https://github.com/1inch',
-        links: [
-            {
-                title: 'Documentation',
-                href: ''
-            },
-            {
-                title: 'API (swagger)',
-                href: ''
-            },
-            {
-                title: 'Contracts',
-                href: ''
-            }
-        ]
-    },
 ];
 
-function Feature({title, description, image, disabled, hrefGithub, links}) {
+function Feature({title, description, image, hrefGithub, links}) {
     return (
-        <div className={styles.featureCard && (disabled ? styles.featureCard_disabled : null)}>
+        <div className={styles.featureCard}>
             <div>
                 <div className={styles.featureCardTitleWrap}>
                     <h3 className={styles.featureCardTitle}>{title}</h3>
