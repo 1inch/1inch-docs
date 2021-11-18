@@ -13,10 +13,10 @@
 }
 
 :root[data-theme='light'] {
-    --1inch-page-bg: #f3f5fa;
+    --1inch-page-bg: #ffffff;
+    --1inch-text: #000000;
     --1inch-bg-image: rgba(108, 134, 173, 0.12);
     --1inch-title: #06070A;
-    --1inch-text: #6C86AD;
     --1inch-border: rgba(0, 0, 0, 0.24);
     --1inch-button: #2F8AF5;
     --1inch-bg-1: #FFFFFF;
