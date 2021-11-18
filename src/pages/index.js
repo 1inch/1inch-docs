@@ -7,6 +7,8 @@ import HomepageDeveloperLinks from '../components/homepage-developer-links/Homep
 import HomepagePreFooter from '../components/homepage-prefooter/HomepagePreFooter';
 import HomepageFooter from '../components/homepage-footer/HomepageFooter';
 import StartImage from '../../static/img/start-image.svg';
+import topBgImage from '../../static/img/topbg.svg';
+import footerGradientImage from '../../static/img/footer-gradient.svg';
 
 function HomepageHeader() {
     return (
@@ -36,8 +38,8 @@ export default function Home() {
                 </div>
                 <HomepageFooter/>
             </main>
-            <img src="../../static/img/topbg.svg" alt="top-gradient" className={styles.topGradient} />
-            <img src="../../static/img/footer-gradient.svg" alt="Bottom gradient" className={styles.bottomGradient} />
+            <img src={topBgImage} className={styles.topGradient} />
+            <img src={footerGradientImage} className={styles.bottomGradient} />
         </Layout>
     );
 }
