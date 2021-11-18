@@ -133,6 +133,10 @@ h1, h2, h3 {
     color: var(--1inch-title);
 }
 
+.swagger-ui pre.version {
+    background-color: transparent!important;
+}
+
 @media (max-width: 1200px) {
     .page-container {
         margin: 0 20px;

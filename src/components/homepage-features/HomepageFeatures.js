@@ -21,7 +21,7 @@ const FeatureList = [
             },
             {
                 title: 'API (swagger)',
-                href: '/docs/aggregation-protocol/swagger'
+                href: '/docs/aggregation-protocol/api/swagger'
             },
             {
                 title: 'Contracts',
