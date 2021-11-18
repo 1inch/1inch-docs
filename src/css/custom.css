@@ -13,8 +13,8 @@
 }
 
 :root[data-theme='light'] {
-    --1inch-page-bg: #ffffff;
-    --1inch-text: #000000;
+    --1inch-page-bg: #f3f5fa;
+    --1inch-text: #6C86AD;
     --1inch-bg-image: rgba(108, 134, 173, 0.12);
     --1inch-title: #06070A;
     --1inch-border: rgba(0, 0, 0, 0.24);
@@ -50,19 +50,20 @@
     src: url('../../static/fonts/KFOlCnqEu92Fr1MmYUtfBBc4AMP6lQ.woff2') format('woff2');
 }
 
-html {
+p, a, h1, h2, h3 {
+    margin: 0;
+    text-decoration: none;
+}
+
+.mainLayout_src-pages-index-module {
     background: var(--1inch-page-bg);
     color: var(--1inch-text);
     font-family: 'Roboto', sans-serif;
 }
 
-p, a, h1, h2, h3 {
-    margin: 0;
-    text-decoration: none;
-    font-family: 'Roboto', sans-serif;
-}
-
-h1, h2, h3 {
+.mainLayout_src-pages-index-module h1,
+.mainLayout_src-pages-index-module h2,
+.mainLayout_src-pages-index-module h3 {
     color: var(--1inch-title);
 }
 
