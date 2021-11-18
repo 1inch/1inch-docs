@@ -45,11 +45,12 @@ const FeatureList = [
             },
             {
                 title: 'Contracts',
-                href: ''
+                href: '/docs/limit-order-protocol/smart-contract/LimitOrderProtocol'
             }
         ]
     },
     {
+        disabled: true,
         title: 'Liquidity protocol',
         description: 'Incentivizing individual developers and teams to build on the 1inch Network\'s protocols',
         image: liquidityProtocolImage,
@@ -71,9 +72,9 @@ const FeatureList = [
     },
 ];
 
-function Feature({title, description, image, href, hrefGithub, links}) {
+function Feature({title, description, image, disabled, hrefGithub, links}) {
     return (
-        <div className={styles.featureCard}>
+        <div className={styles.featureCard && (disabled ? styles.featureCard_disabled : null)}>
             <div>
                 <div className={styles.featureCardTitleWrap}>
                     <h3 className={styles.featureCardTitle}>{title}</h3>

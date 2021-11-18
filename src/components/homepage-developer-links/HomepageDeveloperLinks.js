@@ -8,7 +8,7 @@ import web3Image from '../../../static/img/web3.png';
 
 const DeveloperList = [
     {
-        link: 'https://1inch.io',
+        link: 'https://1inch.io/foundation-grant-program/',
         image: grantsProgramImage,
         title: 'Grants program',
         description: (
@@ -30,28 +30,28 @@ const DeveloperList = [
         ),
     },
     {
-        link: 'https://1inch.io',
+        link: '',
         image: smartImage,
         title: 'Smartcontracts',
         description: (
             <ul className={styles.developerCardList}>
-                <li>cumukative-merkle-drop</li>
-                <li>offchain-oracle</li>
-                <li>cumukative-merkle-drop</li>
-                <li>offchain-oracle</li>
+                <li><a href="https://github.com/1inch/merkle-distribution">cumulative-merkle-drop</a></li>
+                <li><a href="https://github.com/1inch/offchain-oracle">off-chain-oracle</a></li>
+                <li><a href="https://github.com/1inch">more</a></li>
             </ul>
         ),
     },
     {
-        link: 'https://1inch.io',
+        link: '',
         image: web3Image,
         title: 'Web 3.0',
         description: (
             <ul className={styles.developerCardList}>
-                <li>permit-signed-approvals-utils</li>
-                <li>multicall</li>
-                <li>multicall</li>
-                <li>more</li>
+                <li><a href="https://github.com/1inch/permit-signed-approvals-utils">
+                    permit-signed-approvals-utils
+                </a></li>
+                <li><a href="https://github.com/1inch/multicall">multicall</a></li>
+                <li><a href="https://github.com/1inch">more</a></li>
             </ul>
         ),
     }

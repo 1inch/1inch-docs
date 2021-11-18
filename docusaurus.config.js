@@ -60,10 +60,6 @@ const config = {
               {
                 label: 'Limit order protocol',
                 href: '/docs/limit-order-protocol/introduction'
-              },
-              {
-                label: 'Liquidity protocol',
-                href: '/'
               }
             ]
           },
