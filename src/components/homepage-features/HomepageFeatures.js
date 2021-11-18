@@ -24,7 +24,7 @@ const FeatureList = [
                 href: '/docs/aggregation-protocol/swagger'
             },
             {
-                title: 'Contacts',
+                title: 'Contracts',
                 href: ''
             }
         ]
@@ -44,7 +44,7 @@ const FeatureList = [
                 href: '/docs/limit-order-protocol/api'
             },
             {
-                title: 'Contacts',
+                title: 'Contracts',
                 href: ''
             }
         ]
@@ -64,7 +64,7 @@ const FeatureList = [
                 href: ''
             },
             {
-                title: 'Contacts',
+                title: 'Contracts',
                 href: ''
             }
         ]

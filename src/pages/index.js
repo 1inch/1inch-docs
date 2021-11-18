@@ -36,7 +36,8 @@ export default function Home() {
                 </div>
                 <HomepageFooter/>
             </main>
-            {/*<img src="../../static/img/bottom-gradient.png" alt="Bottom gradient" className={styles.bottomGradient} />*/}
+            <img src="../../static/img/topbg.svg" alt="top-gradient" className={styles.topGradient} />
+            <img src="../../static/img/footer-gradient.svg" alt="Bottom gradient" className={styles.bottomGradient} />
         </Layout>
     );
 }

@@ -48,10 +48,10 @@ const DeveloperList = [
         title: 'Web 3.0',
         description: (
             <ul className={styles.developerCardList}>
-                <li>cumukative-merkle-drop</li>
-                <li>offchain-oracle</li>
-                <li>cumukative-merkle-drop</li>
-                <li>offchain-oracle</li>
+                <li>permit-signed-approvals-utils</li>
+                <li>multicall</li>
+                <li>multicall</li>
+                <li>more</li>
             </ul>
         ),
     }
