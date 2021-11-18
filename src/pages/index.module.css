@@ -1,23 +1,85 @@
-/**
- * CSS files with the .module.css suffix will be treated as CSS modules
- * and scoped locally.
- */
-
-.heroBanner {
-  padding: 4rem 0;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
+.headerWrap {
+    margin-top: 88px;
+    margin-bottom: 80px;
 }
 
-@media screen and (max-width: 966px) {
-  .heroBanner {
-    padding: 2rem;
-  }
+.mainTitle {
+    font-weight: 900;
+    font-size: 54px;
+    line-height: 63px;
+    color: var(--1inch-title);
 }
 
-.buttons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.searchWrap {
+    margin-top: 32px;
+    width: 275px;
+    height: 50px;
+    padding: 15px 19px;
+    background: var(--1inch-bg-2);
+    box-shadow: var(--1inch-shadow-1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.bgImage {
+    position: absolute;
+    width: 552px;
+    height: 637px;
+    right: 80px;
+    top: -72px;
+    z-index: -1;
+    color: var(--1inch-bg-image);
+}
+
+.mainLayout {
+    position: relative;
+}
+
+.topGradient {
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+}
+
+.bottomGradient {
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    width: 100%;
+}
+
+.section {
+    margin-bottom: 120px;
+}
+
+.section2 {
+    margin-bottom: 304px;
+}
+
+.section3 {
+    margin-bottom: 86px;
+}
+
+@media (max-width: 768px) {
+    .section {
+        margin-bottom: 80px;
+    }
+
+    .section2 {
+        margin-bottom: 152px;
+    }
+}
+
+
+@media (max-width: 600px) {
+    .mainTitle {
+        font-size: 36px;
+        line-height: 42px;
+    }
 }

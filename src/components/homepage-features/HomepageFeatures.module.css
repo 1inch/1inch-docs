@@ -1,17 +1,88 @@
-.features {
-  display: flex;
-  align-items: center;
-  padding: 2rem 0;
-  width: 100%;
+.featureList {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 28px;
 }
 
-.featureSvg {
-  height: 200px;
-  width: 200px;
-  border-radius: 50%;
-  margin-bottom: 10px;
+.featureCard {
+    border: 1px solid var(--1inch-border);
+    border-radius: 16px;
+    padding: 32px 24px;
+    backdrop-filter: blur(100px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.feature-item {
-  color: #000;
+.featureCard:hover {
+    text-decoration: none;
+}
+
+.featureCardTitleWrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    grid-column-gap: 16px;
+}
+
+.featureCardTitle {
+    color: var(--1inch-title);
+    font-weight: 500;
+}
+
+.featureCardGithubLink {
+    display: contents;
+    color: var(--1inch-text);
+}
+
+.featureCardText {
+    margin-bottom: 16px;
+}
+
+.featureCardImage {
+    display: block;
+    margin: 0 auto 24px;
+    max-height: 172px;
+}
+
+.featureCardLinkWrap {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    line-height: 26px;
+    margin-bottom: 4px;
+    color: rgba(108, 134, 173, 0.55);
+}
+
+.featureCardLinkWrap p {
+    color: var(--1inch-title);
+}
+
+.featureCardLinkWrap:last-child {
+    margin-bottom: 0;
+}
+
+.featureCardLinkWrap:hover {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+@media (max-width: 1200px) {
+    .featureList {
+        grid-column-gap: 16px;
+    }
+}
+
+@media (max-width: 900px) {
+    .featureList {
+        grid-template-columns: 1fr 1fr;
+        grid-row-gap: 16px;
+    }
+}
+
+@media (max-width: 640px) {
+    .featureList {
+        grid-template-columns: 1fr;
+    }
 }

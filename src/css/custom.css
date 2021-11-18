@@ -1,37 +1,145 @@
-/**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
- */
-
-/* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: rgb(33, 175, 144);
-  --ifm-color-primary-darker: rgb(31, 165, 136);
-  --ifm-color-primary-darkest: rgb(26, 136, 112);
-  --ifm-color-primary-light: rgb(70, 203, 174);
-  --ifm-color-primary-lighter: rgb(102, 212, 189);
-  --ifm-color-primary-lightest: rgb(146, 224, 208);
-  --ifm-code-font-size: 95%;
+    --1inch-common-title: #FBFBFB;
+
+    --1inch-page-bg: #06070A;
+    --1inch-bg-image: rgba(255, 255, 255, 0.09);
+    --1inch-title: #FBFBFB;
+    --1inch-text: rgba(255, 255, 255, 0.6);
+    --1inch-border: rgba(255, 255, 255, 0.25);
+    --1inch-button: #2F8AF5;
+    --1inch-bg-1: #000000;
+    --1inch-bg-2: #202835;
+    --1inch-shadow-1: 0 0 4px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.25);
 }
 
-.docusaurus-highlight-code-line {
-  background-color: rgba(0, 0, 0, 0.1);
-  display: block;
-  margin: 0 calc(-1 * var(--ifm-pre-padding));
-  padding: 0 var(--ifm-pre-padding);
+:root[data-theme='light'] {
+    --1inch-page-bg: #f3f5fa;
+    --1inch-text: #6C86AD;
+    --1inch-bg-image: rgba(108, 134, 173, 0.12);
+    --1inch-title: #06070A;
+    --1inch-border: rgba(0, 0, 0, 0.24);
+    --1inch-button: #2F8AF5;
+    --1inch-bg-1: #FFFFFF;
+    --1inch-bg-2: #FFFFFF;
+    --1inch-shadow-1: 0 0 4px rgba(71, 73, 79, 0.05), 0 1px 2px rgba(71, 73, 79, 0.05);
+
 }
 
-html[data-theme='dark'] .docusaurus-highlight-code-line {
-  background-color: rgba(0, 0, 0, 0.3);
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../../static/fonts/KFOmCnqEu92Fr1Mu4mxKKTU1Kg.woff2') format('woff2');
+}
+
+
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('../../static/fonts/KFOlCnqEu92Fr1MmEU9fBBc4AMP6lQ.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src: url('../../static/fonts/KFOlCnqEu92Fr1MmYUtfBBc4AMP6lQ.woff2') format('woff2');
+}
+
+p, a, h1, h2, h3 {
+    margin: 0;
+    text-decoration: none;
+}
+
+.mainLayout_src-pages-index-module {
+    background: var(--1inch-page-bg);
+    color: var(--1inch-text);
+    font-family: 'Roboto', sans-serif;
+}
+
+.mainLayout_src-pages-index-module h1,
+.mainLayout_src-pages-index-module h2,
+.mainLayout_src-pages-index-module h3 {
+    color: var(--1inch-title);
+}
+
+.page-container {
+    max-width: 1160px;
+    margin: 0 auto;
+}
+
+.navbar {
+    background: var(--1inch-page-bg);
+    box-shadow: none;
+    border-bottom: 1px solid var(--1inch-border);
+}
+
+.navbar__inner {
+    max-width: 1320px;
+    margin: 0 auto;
+}
+
+.navbar__title {
+    font-size: 24px;
+}
+
+.navbar__brand {
+    margin-right: 64px;
+}
+
+.navbar-sidebar__brand {
+    box-shadow: none;
+    border-bottom: 1px solid var(--1inch-border);
+}
+
+.navbar__item {
+    padding: 0;
+    margin-right: 48px;
+}
+
+.navbar__link {
+    color: var(--1inch-text);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 16px;
+}
+
+.navbar__item:hover .navbar__link {
+    color: var(--1inch-title);
+}
+
+.dropdown__menu {
+    background: var(--1inch-bg-1);
+    padding: 14px 24px;
+    border-radius: 16px;
+    min-width: 156px;
+    box-shadow: none;
+}
+
+.navbar-sidebar {
+    background: var(--1inch-bg-1);
+}
+
+.dropdown__link {
+    font-size: 16px;
+    color: var(--1inch-text);
+}
+
+.dropdown__link:hover {
+    background: none;
+    color: var(--1inch-title);
 }
 
 .swagger-ui pre.version {
-  background-color: transparent!important;
+    background-color: transparent!important;
 }
 
-.main-page-tags {
-  text-align: center;
-  margin-top: 20px;
+@media (max-width: 1200px) {
+    .page-container {
+        margin: 0 20px;
+    }
 }

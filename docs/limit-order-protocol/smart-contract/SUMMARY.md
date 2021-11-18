@@ -19,8 +19,6 @@
 	* [Permitable](libraries/Permitable.md)
 	* [RevertReasonParser](libraries/RevertReasonParser.md)
 * [mocks](mocks/README.md)
-	* [interfaces](mocks/interfaces/README.md)
-		* [IWithdrawable](mocks/interfaces/IWithdrawable.md)
 	* [AggregatorMock](mocks/AggregatorMock.md)
 	* [InteractiveNotificationReceiverMock](mocks/InteractiveNotificationReceiverMock.md)
 	* [TokenMock](mocks/TokenMock.md)

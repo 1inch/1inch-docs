@@ -50,32 +50,57 @@ const config = {
         },
         items: [
           {
-            href: 'https://app.1inch.io',
-            label: 'App',
+            label: 'Protocols',
             position: 'left',
+            items: [
+              {
+                label: 'Aggregation protocol',
+                href: '/docs/aggregation-protocol/introduction',
+              },
+              {
+                label: 'Limit order protocol',
+                href: '/docs/limit-order-protocol/introduction'
+              },
+              {
+                label: 'Liquidity protocol',
+                href: '/'
+              }
+            ]
           },
           {
-            href: '/docs/aggregation-protocol/introduction',
-            label: 'Do swaps',
+            label: 'Opensource',
             position: 'left',
+            items: [
+              {
+                label: 'Grants Program',
+                href: '/'
+              },
+              {
+                label: 'Bug bounty',
+                href: '/'
+              },
+              {
+                label: 'Smartcontracts',
+                href: '/'
+              },
+              {
+                label: 'Web 3.0',
+                href: '/'
+              }
+            ]
           },
-          {
-            href: '/docs/limit-order-protocol/introduction',
-            label: 'Trade limit orders',
-            position: 'left',
-          },
+          // {
+          //   label: 'More',
+          //   position: 'left',
+          //   items: [
+          //   ]
+          // },
           {
             href: 'https://github.com/1inch',
             label: 'GitHub',
             position: 'right',
           },
         ],
-      },
-      footer: {
-        style: 'dark',
-        links: [
-        ],
-        copyright: `Copyright © ${new Date().getFullYear()} 1inch Network.`,
       },
       prism: {
         theme: lightCodeTheme,
