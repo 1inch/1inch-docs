@@ -21,6 +21,11 @@
     text-decoration: none;
 }
 
+.developerCardLink:hover .developerCardText {
+    color: var(--1inch-title);
+    transition: 0.2s;
+}
+
 .developerCardImage {
     width: 64px;
     height: 64px;
@@ -37,6 +42,15 @@
     color: var(--1inch-text);
     font-size: 16px;
     line-height: 26px;
+}
+
+.developerCardListLink {
+    color: var(--1inch-text);
+}
+
+.developerCardListLink:hover {
+    color: var(--1inch-bg-3);
+    text-decoration: none;
 }
 
 .developerCardList {

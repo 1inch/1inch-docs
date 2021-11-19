@@ -4,7 +4,6 @@ import styles from './HomepageFeatures.module.css';
 import Link from '@docusaurus/Link';
 import aggregationProtocolImage from '../../../static/img/aggregationProtocol.png';
 import limitOrderProtocolImage from '../../../static/img/limit-order-protocol.png';
-import liquidityProtocolImage from '../../../static/img/liquidity-protocol.png';
 import GithubImage from '../../../static/img/icons/github-link.svg';
 import ArrowOutside from '../../../static/img/icons/arrow-outside.svg';
 
@@ -59,7 +58,6 @@ function Feature({title, description, image, hrefGithub, links}) {
                     <h3 className={styles.featureCardTitle}>{title}</h3>
                     <Link className={styles.featureCardGithubLink} to={hrefGithub}>
                         <GithubImage/>
-                        {/*<img className='icons-card' src='img/icons/github-link.svg' alt="github"/>*/}
                     </Link>
                 </div>
                 <p className={styles.featureCardText}>{description}</p>
@@ -70,7 +68,7 @@ function Feature({title, description, image, hrefGithub, links}) {
                     links.map((link, index) => (
                         <Link to={link.href} className={styles.featureCardLinkWrap} key={index}>
                             <p>{link.title}</p>
-                            <ArrowOutside/>
+                            <ArrowOutside className={styles.featureCardLinkIcon} />
                         </Link>
                     ))
                 }

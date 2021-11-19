@@ -1,5 +1,6 @@
 :root {
     --1inch-common-title: #FBFBFB;
+    --1inch-common-bg: rgba(108, 134, 173, 0.55);
 
     --1inch-page-bg: #06070A;
     --1inch-bg-image: rgba(255, 255, 255, 0.09);
@@ -9,6 +10,7 @@
     --1inch-button: #2F8AF5;
     --1inch-bg-1: #000000;
     --1inch-bg-2: #202835;
+    --1inch-bg-3: #FBFBFB;
     --1inch-shadow-1: 0 0 4px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.25);
 }
 
@@ -21,6 +23,7 @@
     --1inch-button: #2F8AF5;
     --1inch-bg-1: #FFFFFF;
     --1inch-bg-2: #FFFFFF;
+    --1inch-bg-3: #06070A;
     --1inch-shadow-1: 0 0 4px rgba(71, 73, 79, 0.05), 0 1px 2px rgba(71, 73, 79, 0.05);
 
 }

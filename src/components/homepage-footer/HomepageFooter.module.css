@@ -85,6 +85,10 @@
     margin-right: 6px;
 }
 
+.socialMediaLink:hover {
+    color: var(--1inch-bg-3);
+}
+
 .socialMediaLink:last-child {
     margin-right: 0;
 }
@@ -117,7 +121,7 @@
 
 @media (max-width: 768px) {
     .footer {
-       flex-direction: column-reverse;
+        flex-direction: column-reverse;
     }
 
     .footerColumnWrap {
