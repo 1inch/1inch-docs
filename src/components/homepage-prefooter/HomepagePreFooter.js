@@ -2,7 +2,7 @@ import React from 'react';
 import clsx from 'clsx';
 import styles from './HomepagePreFooter.module.css';
 import Link from "@docusaurus/Link";
-import chevronRightImg from '../../../static/img/chevron-right.svg';
+import ChevronRightImg from '../../../static/img/chevron-right.svg';
 
 const PreFooterData = {
     title: '1inch dApp',
@@ -22,7 +22,7 @@ export default function homepageFooter() {
                 <p className={styles.prefooterText}>{PreFooterData.text}</p>
                 <Link to={PreFooterData.button.href} className={styles.prefooterButton}>
                     <span>{PreFooterData.button.title}</span>
-                    <img src={chevronRightImg}/>
+                    <ChevronRightImg/>
                 </Link>
             </div>
             <img className={styles.prefooterImage} src={PreFooterData.image} alt={PreFooterData.title}/>

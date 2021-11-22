@@ -34,24 +34,37 @@
 
 .mainLayout {
     position: relative;
+    z-index: 2;
+    overflow: hidden;
 }
 
-.topGradient {
+.mainLayout::before {
+    content: url("../../static/img/topbg-dark.svg");
     position: absolute;
     right: 0;
     left: 0;
-    top: 0;
+    top: -50px;
     z-index: -1;
     width: 100%;
 }
 
-.bottomGradient {
+
+.mainLayout::after {
+    content: url("../../static/img/footer-gradient-dark.svg");
     position: absolute;
     right: 0;
     left: 0;
-    bottom: 0;
+    bottom: -50px;
     z-index: -1;
     width: 100%;
+}
+
+html[data-theme='light'] .mainLayout::before {
+    content: url("../../static/img/topbg-light.svg");
+}
+
+html[data-theme='light'] .mainLayout::after {
+    content: url("../../static/img/footer-gradient-light.svg");
 }
 
 .section {
@@ -82,4 +95,9 @@
         font-size: 36px;
         line-height: 42px;
     }
+
+    .mainLayout::before {
+        content: url("../../static/img/top-bg-mobile.svg");
+    }
+
 }

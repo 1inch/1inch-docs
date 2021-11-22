@@ -43,7 +43,9 @@
 
 .prefooterButton:hover {
     text-decoration: none;
-    color: var(--1inch-common-title);
+    background: #4399ff;
+    transition: .2s;
+    color: #FFFFFF;
 }
 
 .prefooterButton img {
