@@ -195,6 +195,26 @@ html[data-theme='dark'] .swagger-ui .model-toggle:after {
     outline: none !important;
 }
 
+.swagger-ui table.model tbody tr td:first-of-type {
+    padding: 16px !important;
+}
+
+.swagger-ui .prop-type {
+    padding: 8px;
+}
+
+.model {
+    border-radius: 16px;
+}
+
+.renderedMarkdown {
+    padding-left: 8px ;
+}
+
+.swagger-ui .model .property.primitive{
+    padding-left: 8px !important;
+}
+
 .swagger-ui button,
 .swagger-ui select {
     fill: var(--1inch-bg-3) !important;
