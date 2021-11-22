@@ -152,7 +152,7 @@ export default function HomepageFooter() {
                     <p className={styles.footerSubscribeText}>Get the latest news and updates</p>
                     <Link to='https://cdn.forms-content.sg-form.com/b14fb08e-939b-11eb-873a-46ac7bfee17b'
                           className={styles.footerSubscribeButton}>
-                        <span>Subscribe</span>
+                        <span className={styles.footerSubscribeButtonText}>Subscribe</span>
                         <ChevronRightImg/>
                     </Link>
                     <div className={styles.socialMediaWrap}>

@@ -138,7 +138,75 @@ p, a, h1, h2, h3 {
 }
 
 .swagger-ui pre.version {
-    background-color: transparent!important;
+    background-color: transparent !important;
+}
+
+.swagger-ui .info .title {
+    color: var(--1inch-title) !important;
+}
+
+.swagger-ui .info h1, .swagger-ui .info h2, .swagger-ui .info h3, .swagger-ui .info h4, .swagger-ui .info h5 {
+    color: var(--1inch-title) !important;
+}
+
+.renderedMarkdown {
+    color: var(--1inch-title) !important;
+}
+
+.swagger-ui .border-box, .swagger-ui a, .swagger-ui article, .swagger-ui body, .swagger-ui code, .swagger-ui dd,
+.swagger-ui div, .swagger-ui dl, .swagger-ui dt, .swagger-ui fieldset, .swagger-ui footer, .swagger-ui form,
+.swagger-ui h1, .swagger-ui h2, .swagger-ui h3, .swagger-ui h4, .swagger-ui h5, .swagger-ui h6, .swagger-ui header,
+.swagger-ui html, .swagger-ui input[type=email], .swagger-ui input[type=number], .swagger-ui input[type=password],
+.swagger-ui input[type=tel], .swagger-ui input[type=text], .swagger-ui input[type=url], .swagger-ui legend,
+.swagger-ui li, .swagger-ui main, .swagger-ui ol, .swagger-ui p, .swagger-ui pre, .swagger-ui section, .swagger-ui table,
+.swagger-ui td, .swagger-ui textarea, .swagger-ui th, .swagger-ui tr, .swagger-ui ul {
+    color: var(--1inch-title) !important;
+}
+
+.arrow, button {
+    fill: var(--1inch-bg-3);
+}
+
+.models-control:hover {
+    text-decoration: none;
+}
+
+.swagger-ui .model-title {
+    color: var(--1inch-title) !important;
+}
+
+.model-box-control, .model-box {
+    color: var(--1inch-title) !important;
+}
+
+html[data-theme='dark'] .swagger-ui .model-toggle:after {
+    filter: invert(100%);
+}
+
+.model-box-control:focus {
+    outline: none !important;
+}
+
+.opblock-summary-control:focus {
+    outline: none !important;
+}
+
+.models-control:focus {
+    outline: none !important;
+}
+
+.swagger-ui button,
+.swagger-ui select {
+    fill: var(--1inch-bg-3) !important;
+}
+
+.swagger-ui .opblock
+.opblock-section-header {
+    background-color: var(--1inch-bg-2) !important;
+}
+
+.swagger-ui .btn {
+  color: var(--1inch-text)!important;
 }
 
 @media (max-width: 1200px) {
