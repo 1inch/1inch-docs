@@ -61,22 +61,10 @@
 
 html[data-theme='light'] .mainLayout::before {
     content: url("../../static/img/topbg-light.svg");
-    position: absolute;
-    right: 0;
-    left: 0;
-    top: -50px;
-    z-index: -1;
-    width: 100%;
 }
 
 html[data-theme='light'] .mainLayout::after {
     content: url("../../static/img/footer-gradient-light.svg");
-    position: absolute;
-    right: 0;
-    left: 0;
-    bottom: -50px;
-    z-index: -1;
-    width: 100%;
 }
 
 .section {
@@ -110,12 +98,6 @@ html[data-theme='light'] .mainLayout::after {
 
     .mainLayout::before {
         content: url("../../static/img/top-bg-mobile.svg");
-        position: absolute;
-        right: 0;
-        left: 0;
-        top: -50px;
-        z-index: -1;
-        width: 100%;
     }
 
 }
