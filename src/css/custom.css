@@ -220,8 +220,7 @@ html[data-theme='dark'] .swagger-ui .model-toggle:after {
     fill: var(--1inch-bg-3) !important;
 }
 
-.swagger-ui .opblock
-.opblock-section-header {
+.swagger-ui .opblock .opblock-section-header {
     background-color: var(--1inch-bg-2) !important;
 }
 
