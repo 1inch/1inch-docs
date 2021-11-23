@@ -1,0 +1,82 @@
+.prefooterWrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.prefooterFirstColumn {
+    max-width: 415px;
+    margin-right: 28px;
+}
+
+.prefooterTitle {
+    color: var(--1inch-title);
+    font-weight: 900;
+    font-size: 54px;
+    line-height: 63px;
+    margin-bottom: 16px;
+}
+
+.prefooterText {
+    color: var(--1inch-text-2);
+    font-size: 16px;
+    line-height: 26px;
+    margin-bottom: 48px;
+}
+
+.prefooterImage {
+    max-width: 530px;
+}
+
+.prefooterButton {
+    display: inline-flex;
+    align-items: center;
+    padding: 16px 32px 16px 40px;
+    border-radius: 16px;
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--1inch-common-title);
+    cursor: pointer;
+    text-decoration: none;
+    background-color: var(--1inch-button);
+}
+
+.prefooterButton:hover {
+    text-decoration: none;
+    background: #4399ff;
+    transition: .2s;
+    color: #FFFFFF;
+}
+
+.prefooterButton img {
+    margin-bottom: -4px;
+}
+
+@media (max-width: 900px) {
+    .prefooterImage {
+        max-width: 360px;
+    }
+}
+
+@media (max-width: 768px) {
+    .prefooterWrap {
+        flex-direction: column-reverse;
+    }
+
+    .prefooterFirstColumn {
+        max-width: 100%;
+        margin-right: 0;
+    }
+
+    .prefooterImage {
+        max-width: 530px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .prefooterTitle {
+        font-size: 36px;
+        line-height: 42px;
+    }
+}

@@ -6,6 +6,7 @@ import HomepageFeatures from '../components/homepage-features/HomepageFeatures';
 import HomepageDeveloperLinks from '../components/homepage-developer-links/HomepageDeveloperLinks';
 import HomepagePreFooter from '../components/homepage-prefooter/HomepagePreFooter';
 import HomepageFooter from '../components/homepage-footer/HomepageFooter';
+import HomepageGrantProgram from '../components/homepage-grant-program/HomepageGrantProgram';
 
 function HomepageHeader() {
     return (
@@ -29,7 +30,7 @@ export default function Home() {
                     <HomepageDeveloperLinks/>
                 </div>
                 <div className={styles.section3}>
-                    <HomepagePreFooter/>
+                    <HomepageGrantProgram/>
                 </div>
                 <HomepageFooter/>
             </main>
