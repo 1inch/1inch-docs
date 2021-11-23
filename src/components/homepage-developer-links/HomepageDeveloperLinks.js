@@ -1,16 +1,14 @@
 import React from 'react';
 import styles from './HomepageDeveloperLinks.module.css';
 import Link from '@docusaurus/Link';
-import grantsProgramImage from '../../../static/img/grants-program.png';
-import bugBountyImage from '../../../static/img/bug-bounty.png';
-import smartImage from '../../../static/img/smart.png';
-import web3Image from '../../../static/img/web3.png';
 import clsx from "clsx";
 
 const DeveloperList = [
     {
         link: 'https://1inch.io/foundation-grant-program/',
-        image: grantsProgramImage,
+        image: (
+            <div className={clsx(styles.developerCardImage, styles.foundationGrantProgramImage)}/>
+        ),
         title: 'Grants program',
         description: (
             <>
@@ -21,7 +19,9 @@ const DeveloperList = [
     },
     {
         link: 'https://airtable.com/shrddQOOkm3hOLuzd',
-        image: bugBountyImage,
+        image: (
+            <div className={clsx(styles.developerCardImage, styles.bugBountyImage)}/>
+        ),
         title: 'Bug bounty',
         description: (
             <>
@@ -32,7 +32,9 @@ const DeveloperList = [
     },
     {
         link: '',
-        image: smartImage,
+        image: (
+            <div className={clsx(styles.developerCardImage, styles.smartContractsImage)}/>
+        ),
         title: 'Smartcontracts',
         description: (
             <ul className={styles.developerCardList}>
@@ -50,7 +52,9 @@ const DeveloperList = [
     },
     {
         link: '',
-        image: web3Image,
+        image: (
+            <div className={clsx(styles.developerCardImage, styles.web3Image)}/>
+        ),
         title: 'Web 3.0',
         description: (
             <ul className={styles.developerCardList}>
@@ -72,14 +76,14 @@ function DeveloperLink({image, title, description, link}) {
     return link
         ? (
             <Link className={clsx(styles.developerCard, styles.developerCardLink)} to={link}>
-                <img className={styles.developerCardImage} src={image} alt={title}/>
+                <div>{image}</div>
                 <h3 className={styles.developerCardTitle}>{title}</h3>
                 <div className={styles.developerCardText}>{description}</div>
             </Link>
         )
         : (
             <div className={styles.developerCard}>
-                <img className={styles.developerCardImage} src={image} alt={title}/>
+                <div>{image}</div>
                 <h3 className={styles.developerCardTitle}>{title}</h3>
                 <div className={styles.developerCardText}>{description}</div>
             </div>
