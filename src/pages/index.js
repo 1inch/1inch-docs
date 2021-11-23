@@ -11,7 +11,6 @@ function HomepageHeader() {
     return (
         <header className={clsx('page-container', styles.headerWrap)}>
             <h1 className={styles.mainTitle}>Documentation Portal</h1>
-            <div className={styles.searchWrap}>Search</div>
         </header>
     );
 }

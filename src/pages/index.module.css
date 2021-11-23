@@ -10,18 +10,6 @@
     color: var(--1inch-title);
 }
 
-.searchWrap {
-    margin-top: 32px;
-    width: 275px;
-    height: 50px;
-    padding: 15px 19px;
-    background: var(--1inch-bg-2);
-    box-shadow: var(--1inch-shadow-1);
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-}
-
 .bgImage {
     position: absolute;
     width: 552px;

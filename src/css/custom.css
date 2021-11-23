@@ -59,6 +59,10 @@ p, a, h1, h2, h3 {
     text-decoration: none;
 }
 
+html {
+    background: var(--1inch-page-bg);
+}
+
 .main-wrapper:not(.docs-wrapper) {
     background: var(--1inch-page-bg);
     color: var(--1inch-text);
@@ -82,17 +86,12 @@ p, a, h1, h2, h3 {
     border-bottom: 1px solid var(--1inch-border);
 }
 
-.navbar__inner {
-    max-width: 1320px;
-    margin: 0 auto;
-}
-
 .navbar__title {
     font-size: 24px;
 }
 
 .navbar__brand {
-    margin-right: 64px;
+    margin-right: 48px;
 }
 
 .navbar-sidebar__brand {
@@ -136,6 +135,14 @@ p, a, h1, h2, h3 {
 .dropdown__link:hover {
     background: none;
     color: var(--1inch-title);
+}
+
+.docSidebarContainer_node_modules-\@docusaurus-theme-classic-lib-next-theme-DocPage-styles-module {
+    border-right-color: var(--1inch-border) !important;
+}
+
+.table-of-contents__left-border {
+    border-left-color: var(--1inch-border) !important;
 }
 
 .swagger-ui pre.version {

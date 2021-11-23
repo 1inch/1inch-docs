@@ -43,7 +43,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: '1inch',
+        title: '1inch Network Docs',
         logo: {
           alt: '1inch',
           src: 'https://app.1inch.io/assets/images/1inch_logo_without_text.svg',
