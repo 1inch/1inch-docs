@@ -2,8 +2,6 @@ import React from 'react';
 import clsx from 'clsx';
 import styles from './HomepageFeatures.module.css';
 import Link from '@docusaurus/Link';
-import aggregationProtocolImage from '../../../static/img/aggregationProtocol.png';
-import limitOrderProtocolImage from '../../../static/img/limit-order-protocol.png';
 import GithubImage from '../../../static/img/icons/github-link.svg';
 import ArrowOutside from '../../../static/img/icons/arrow-outside.svg';
 
@@ -11,7 +9,9 @@ const FeatureList = [
     {
         title: 'Aggregation protocol',
         description: 'Engaging adopters and maximizing the network\'s decentralization through growing stakeowner numbers',
-        image: aggregationProtocolImage,
+        image: (
+            <div className={clsx(styles.featureCardImage, styles.aggregationProtocolImage)}/>
+        ),
         hrefGithub: 'https://github.com/1inch',
         links: [
             {
@@ -31,7 +31,9 @@ const FeatureList = [
     {
         title: 'Limit order protocol',
         description: 'Running yield farming programs that have proven to be efficient bootstrapping tools for potential bluechips of the DeFi space',
-        image: limitOrderProtocolImage,
+        image: (
+            <div className={clsx(styles.featureCardImage, styles.limitOrderProtocolImage)}/>
+        ),
         hrefGithub: 'https://github.com/1inch',
         links: [
             {
@@ -62,7 +64,7 @@ function Feature({title, description, image, hrefGithub, links}) {
                 </div>
                 <p className={styles.featureCardText}>{description}</p>
             </div>
-            <img className={styles.featureCardImage} src={image} alt={title}/>
+            {image}
             <div>
                 {
                     links.map((link, index) => (

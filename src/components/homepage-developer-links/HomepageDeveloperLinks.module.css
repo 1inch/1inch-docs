@@ -17,6 +17,12 @@
     display: block;
 }
 
+html[data-theme="light"] .developerCard {
+    background-color: var(--1inch-bg-card);
+    border: none;
+    box-shadow: 0 0 4px rgba(71, 73, 79, 0.1), 0 1px 2px rgba(71, 73, 79, 0.25);
+}
+
 .developerCard:hover {
     text-decoration: none;
 }
@@ -58,6 +64,51 @@
     margin-bottom: 0;
 }
 
+.developerCardImage {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 24px;
+}
+
+.developerCardImage::after {
+    content: '';
+    transform: scale(.5) translate(-64px, -64px);
+    width: 128px;
+    height: 128px;
+    display: block;
+}
+
+.foundationGrantProgramImage::after {
+    content: url("../../../static/img/grant-program-dark.png");
+}
+
+html[data-theme='light'] .foundationGrantProgramImage::after {
+    content: url("../../../static/img/grant-program-light.png");
+}
+
+.bugBountyImage::after {
+    content: url("../../../static/img/bug-bounty-dark.png");
+}
+
+html[data-theme='light'] .bugBountyImage::after {
+    content: url("../../../static/img/bug-bounty-light.png");
+}
+
+.smartContractsImage::after {
+    content: url("../../../static/img/smart-contracts-dark.png");
+}
+
+html[data-theme='light'] .smartContractsImage::after {
+    content: url("../../../static/img/smart-contracts-light.png");
+}
+
+.web3Image::after {
+    content: url("../../../static/img/web3-dark.png");
+}
+
+html[data-theme='light'] .web3Image::after{
+    content: url("../../../static/img/web3-light.png");
+}
 
 @media (max-width: 1200px) {
     .developerLinksWrap {
