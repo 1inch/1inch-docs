@@ -167,8 +167,8 @@ export default function HomepageFooter() {
                 </div>
             </div>
             <div className={clsx('page-container', styles.afterFooter)}>
-                <span>{new Date().getFullYear()} 1inch Network</span>
-                <span>ENS: 1inch.eth</span>
+                <span>&#169; {new Date().getFullYear()} 1inch, All Rights Reserved.</span>
+                <a href="https://etherscan.io/address/1inch.eth" target="_blank">ENS: 1inch.eth</a>
                 <span>BUIDL @ETHNewYork 2019</span>
             </div>
         </section>

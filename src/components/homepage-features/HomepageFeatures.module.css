@@ -29,18 +29,11 @@ html[data-theme='light'] .featureCard {
     text-decoration: none;
 }
 
-.featureCardTitleWrap {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 16px;
-    grid-column-gap: 16px;
-}
-
 .featureCardTitle {
     color: var(--1inch-title);
     font-weight: 500;
     font-size: 24px;
+    margin-bottom: 16px;
 }
 
 .featureCardGithubLink {
@@ -86,14 +79,14 @@ html[data-theme='light'] .limitOrderProtocolImage::after {
 .featureCardLinkWrap {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     font-size: 16px;
     line-height: 26px;
     margin-bottom: 4px;
-    color: rgba(108, 134, 173, 0.55);
 }
 
 .featureCardLinkWrap p {
-    color: var(--1inch-title);
+    color: var(--1inch-text);
 }
 
 .featureCardLinkWrap:last-child {
@@ -109,6 +102,12 @@ html[data-theme='light'] .limitOrderProtocolImage::after {
 
 .featureCardLinkIcon {
     color: var(--1inch-common-bg);
+}
+
+.featureCardLinks {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 28px;
 }
 
 @media (max-width: 1200px) {

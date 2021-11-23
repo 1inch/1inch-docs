@@ -6,6 +6,7 @@
     --1inch-bg-image: rgba(255, 255, 255, 0.09);
     --1inch-title: #FBFBFB;
     --1inch-text: rgba(255, 255, 255, 0.6);
+    --1inch-text-2: #6C86AD;
     --1inch-border: rgba(255, 255, 255, 0.25);
     --1inch-button: #2F8AF5;
     --1inch-bg-1: #000000;
@@ -13,11 +14,13 @@
     --1inch-bg-3: #FBFBFB;
     --1inch-bg-card: #FFFFFF;
     --1inch-shadow-1: 0 0 4px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.25);
+    --1inch-text-2-hover: #FBFBFB;
 }
 
 :root[data-theme='light'] {
     --1inch-page-bg: #f3f5fa;
-    --1inch-text: #6C86AD;
+    --1inch-text: #222222;
+    --1inch-text-2: #6C86AD;
     --1inch-bg-image: rgba(108, 134, 173, 0.12);
     --1inch-title: #1c1e21;
     --1inch-border: rgba(0, 0, 0, 0.24);
@@ -26,7 +29,7 @@
     --1inch-bg-2: #FFFFFF;
     --1inch-bg-3: #06070A;
     --1inch-shadow-1: 0 0 4px rgba(71, 73, 79, 0.05), 0 1px 2px rgba(71, 73, 79, 0.05);
-
+    --1inch-text-2-hover: #222222;
 }
 
 @font-face {
@@ -64,7 +67,6 @@ html {
 }
 
 .main-wrapper:not(.docs-wrapper) {
-    background: var(--1inch-page-bg);
     color: var(--1inch-text);
     font-family: 'Roboto', sans-serif;
 }
