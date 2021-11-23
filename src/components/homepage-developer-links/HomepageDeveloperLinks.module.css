@@ -42,6 +42,7 @@ html[data-theme="light"] .developerCard {
     color: var(--1inch-title);
     margin-bottom: 16px;
     font-weight: 500;
+    font-size: 24px;
 }
 
 .developerCardText {

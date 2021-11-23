@@ -81,12 +81,15 @@ function Feature({title, description, image, hrefGithub, links}) {
 
 export default function HomepageFeatures() {
     return (
-        <section className={clsx('page-container', styles.featureList)}>
-            {
-                FeatureList.map((props, idx) => (
-                    <Feature key={idx} {...props} />
-                ))
-            }
+        <section className="page-container">
+            <h2 className={styles.featureListTitle}>Protocols</h2>
+            <div className={styles.featureList}>
+                {
+                    FeatureList.map((props, idx) => (
+                        <Feature key={idx} {...props} />
+                    ))
+                }
+            </div>
         </section>
     );
 }

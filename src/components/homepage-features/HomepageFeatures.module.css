@@ -1,6 +1,12 @@
+.featureListTitle {
+    font-size: 32px;
+    margin-bottom: 24px;
+    color: var(--1inch-title);
+}
+
 .featureList {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-column-gap: 28px;
 }
 
@@ -34,6 +40,7 @@ html[data-theme='light'] .featureCard {
 .featureCardTitle {
     color: var(--1inch-title);
     font-weight: 500;
+    font-size: 24px;
 }
 
 .featureCardGithubLink {
