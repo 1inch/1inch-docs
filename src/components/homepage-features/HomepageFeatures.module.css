@@ -117,8 +117,44 @@ html[data-theme='light'] .limitOrderProtocolImage::after {
     }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 780px) {
     .featureList {
         grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 400px) {
+    .aggregationProtocolImage::after {
+        zoom: 0.8;
+    }
+
+    html[data-theme='light'] .aggregationProtocolImage::after {
+        zoom: 0.8;
+    }
+
+    .limitOrderProtocolImage::after {
+        zoom: 0.8;
+    }
+
+    html[data-theme='light'] .limitOrderProtocolImage::after {
+        zoom: 0.8;
+    }
+}
+
+@media (max-width: 340px) {
+    .aggregationProtocolImage::after {
+        zoom: 0.6;
+    }
+
+    html[data-theme='light'] .aggregationProtocolImage::after {
+        zoom: 0.6;
+    }
+
+    .limitOrderProtocolImage::after {
+        zoom: 0.6;
+    }
+
+    html[data-theme='light'] .limitOrderProtocolImage::after {
+        zoom: 0.6;
     }
 }
