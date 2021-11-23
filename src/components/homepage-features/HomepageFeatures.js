@@ -14,29 +14,25 @@ const FeatureList = [
         ),
         links: [
             {
-                title: 'Documentation',
+                title: 'Introduction',
                 href: '/docs/aggregation-protocol/introduction'
+            },
+            {
+                title: 'Dune analytics',
+                href: '/docs/aggregation-protocol/introduction'
+            },
+            {
+                title: 'Smart contract',
+                href: ''
+            },
+            {
+                title: 'Enterprise API',
+                href: '/docs/aggregation-protocol/api/swagger'
             },
             {
                 title: 'API (swagger)',
                 href: '/docs/aggregation-protocol/api/swagger'
             },
-            {
-                title: 'Contracts',
-                href: ''
-            },
-            {
-                title: 'Documentation',
-                href: '/docs/aggregation-protocol/introduction'
-            },
-            {
-                title: 'API (swagger)',
-                href: '/docs/aggregation-protocol/api/swagger'
-            },
-            {
-                title: 'Contracts',
-                href: ''
-            }
         ]
     },
     {
@@ -47,29 +43,25 @@ const FeatureList = [
         ),
         links: [
             {
-                title: 'Documentation',
-                href: '/docs/limit-order-protocol/introduction'
+                title: 'Introduction',
+                href: '/docs/aggregation-protocol/introduction'
+            },
+            {
+                title: 'Dune analytics',
+                href: '/docs/aggregation-protocol/introduction'
+            },
+            {
+                title: 'Smart contract',
+                href: '/'
+            },
+            {
+                title: 'Enterprise API',
+                href: '/docs/aggregation-protocol/api/swagger'
             },
             {
                 title: 'API (swagger)',
-                href: '/docs/limit-order-protocol/api'
+                href: '/docs/aggregation-protocol/api/swagger'
             },
-            {
-                title: 'Contracts',
-                href: '/docs/limit-order-protocol/smart-contract/LimitOrderProtocol'
-            },
-            {
-                title: 'Documentation',
-                href: '/docs/limit-order-protocol/introduction'
-            },
-            {
-                title: 'API (swagger)',
-                href: '/docs/limit-order-protocol/api'
-            },
-            {
-                title: 'Contracts',
-                href: '/docs/limit-order-protocol/smart-contract/LimitOrderProtocol'
-            }
         ]
     },
 ];

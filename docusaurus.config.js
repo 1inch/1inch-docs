@@ -95,13 +95,18 @@ const config = {
           },
           {
             label: 'Grants Program',
-            position: 'left',
-            href: '/'
+            position: 'right',
+            href: 'https://www.npmjs.com/'
           },
           {
             label: 'Bug bounty',
-            position: 'left',
-            href: '/'
+            position: 'right',
+            href: 'https://www.npmjs.com/'
+          },
+          {
+            href: 'https://www.npmjs.com/',
+            label: 'NPM',
+            position: 'right',
           },
           {
             href: 'https://github.com/1inch',
