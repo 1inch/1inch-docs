@@ -64,33 +64,45 @@ const config = {
             ]
           },
           {
-            label: 'Opensource',
+            label: 'Open Source',
             position: 'left',
             items: [
               {
-                label: 'Grants Program',
-                href: '/'
+                label: 'Router contract',
+                href: '/',
               },
               {
-                label: 'Bug bounty',
-                href: '/'
+                label: 'Limit order contract',
+                href: '/',
               },
               {
-                label: 'Smartcontracts',
-                href: '/'
+                label: 'Off-chain oracle',
+                href: '/',
               },
               {
-                label: 'Web 3.0',
-                href: '/'
-              }
+                label: 'Multicall',
+                href: '/',
+              },
+              {
+                label: 'EIP-2612 utils library',
+                href: '/',
+              },
+              {
+                label: 'Cumulative merkle drop',
+                href: '/',
+              },
             ]
           },
-          // {
-          //   label: 'More',
-          //   position: 'left',
-          //   items: [
-          //   ]
-          // },
+          {
+            label: 'Grants Program',
+            position: 'left',
+            href: '/'
+          },
+          {
+            label: 'Bug bounty',
+            position: 'left',
+            href: '/'
+          },
           {
             href: 'https://github.com/1inch',
             label: 'GitHub',

@@ -30,46 +30,6 @@ const DeveloperList = [
             </>
         ),
     },
-    {
-        link: '',
-        image: (
-            <div className={clsx(styles.developerCardImage, styles.smartContractsImage)}/>
-        ),
-        title: 'Smartcontracts',
-        description: (
-            <ul className={styles.developerCardList}>
-                <li>
-                    <a className={styles.developerCardListLink} href="https://github.com/1inch/merkle-distribution">cumulative-merkle-drop</a>
-                </li>
-                <li>
-                    <a className={styles.developerCardListLink} href="https://github.com/1inch/offchain-oracle">off-chain-oracle</a>
-                </li>
-                <li>
-                    <a className={styles.developerCardListLink} href="https://github.com/1inch">more</a>
-                </li>
-            </ul>
-        ),
-    },
-    {
-        link: '',
-        image: (
-            <div className={clsx(styles.developerCardImage, styles.web3Image)}/>
-        ),
-        title: 'Web 3.0',
-        description: (
-            <ul className={styles.developerCardList}>
-                <li>
-                    <a className={styles.developerCardListLink} href="https://github.com/1inch/permit-signed-approvals-utils">permit-signed-approvals-utils</a>
-                </li>
-                <li>
-                    <a className={styles.developerCardListLink} href="https://github.com/1inch/multicall">multicall</a>
-                </li>
-                <li>
-                    <a className={styles.developerCardListLink} href="https://github.com/1inch">more</a>
-                </li>
-            </ul>
-        ),
-    }
 ];
 
 function DeveloperLink({image, title, description, link}) {
