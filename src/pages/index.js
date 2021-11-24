@@ -7,6 +7,7 @@ import HomepageDeveloperLinks from '../components/homepage-developer-links/Homep
 import HomepagePreFooter from '../components/homepage-prefooter/HomepagePreFooter';
 import HomepageFooter from '../components/homepage-footer/HomepageFooter';
 import HomepageGrantProgram from '../components/homepage-grant-program/HomepageGrantProgram';
+import HomepageCardsGrantProgram from "../components/homepage-grant-program-cards/HomepageCardsGrantProgram";
 
 function HomepageHeader() {
     return (
@@ -31,6 +32,9 @@ export default function Home() {
                 </div>
                 <div className={styles.section3}>
                     <HomepageGrantProgram/>
+                </div>
+                <div className={styles.section4}>
+                    <HomepageCardsGrantProgram/>
                 </div>
                 <HomepageFooter/>
             </main>

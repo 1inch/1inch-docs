@@ -67,6 +67,10 @@ html[data-theme='light'] .mainLayout::after {
     margin-bottom: 86px;
 }
 
+.section4 {
+    margin-bottom: 86px;
+}
+
 @media (max-width: 768px) {
     .section {
         margin-bottom: 80px;

@@ -1,0 +1,111 @@
+.developerLinksTitle {
+    font-size: 32px;
+    margin-bottom: 24px;
+    color: var(--1inch-title);
+}
+
+.developerLinksWrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 28px;
+}
+
+.developerCard {
+    border: 1px solid var(--1inch-border);
+    border-radius: 16px;
+    padding: 32px 24px;
+    display: block;
+}
+
+html[data-theme="light"] .developerCard {
+    background-color: var(--1inch-bg-card);
+    border: none;
+    box-shadow: 0 0 4px rgba(71, 73, 79, 0.1), 0 1px 2px rgba(71, 73, 79, 0.25);
+}
+
+.developerCard:hover {
+    text-decoration: none;
+}
+
+.developerCardLink:hover .developerCardText {
+    color: var(--1inch-title);
+    transition: 0.2s;
+}
+
+.grantProgramCardImage {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 24px;
+}
+
+.developerCardTitle {
+    color: var(--1inch-title);
+    margin-bottom: 16px;
+    font-weight: 500;
+    font-size: 24px;
+}
+
+.developerCardText {
+    color: var(--1inch-text);
+    font-size: 16px;
+    line-height: 26px;
+}
+
+.developerCardListLink {
+    color: var(--1inch-text);
+}
+
+.developerCardListLink:hover {
+    color: var(--1inch-bg-3);
+    text-decoration: none;
+}
+
+.developerCardList {
+    padding-left: 24px;
+    margin-bottom: 0;
+}
+
+.developerCardImage {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 24px;
+}
+
+.developerCardImage::after {
+    content: '';
+    width: 128px;
+    height: 128px;
+    display: block;
+}
+
+.networkGrantProgramImage::after {
+    content: url("../../../static/img/network-developer.png");
+}
+
+.communityGrantProgramImage::after {
+    content: url("../../../static/img/community.png");
+}
+
+.researchGrantProgramImage::after {
+    content: url("../../../static/img/research-dark.png");
+}
+
+@media (max-width: 1200px) {
+    .developerLinksWrap {
+        grid-column-gap: 16px;
+    }
+}
+
+@media (max-width: 900px) {
+    .developerLinksWrap {
+        grid-template-columns: 1fr 1fr;
+        grid-row-gap: 16px;
+    }
+}
+
+
+@media (max-width: 600px) {
+    .developerLinksWrap {
+        grid-template-columns: 1fr;
+    }
+}
