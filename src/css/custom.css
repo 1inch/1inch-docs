@@ -218,10 +218,10 @@ html[data-theme='dark'] .swagger-ui .model-toggle:after {
 }
 
 .renderedMarkdown {
-    padding-left: 8px ;
+    padding-left: 8px;
 }
 
-.swagger-ui .model .property.primitive{
+.swagger-ui .model .property.primitive {
     padding-left: 8px !important;
 }
 
@@ -235,11 +235,55 @@ html[data-theme='dark'] .swagger-ui .model-toggle:after {
 }
 
 .swagger-ui .btn {
-  color: var(--1inch-text)!important;
+    color: var(--1inch-text) !important;
+}
+
+@media (max-width: 1247px) {
+    .navbar__item {
+        margin-right: 40px;
+    }
+
+    .navbar__brand {
+        margin-right: 40px;
+    }
 }
 
 @media (max-width: 1200px) {
     .page-container {
         margin: 0 20px;
+    }
+
+    .navbar__item {
+        margin-right: 30px;
+    }
+
+    .navbar__brand {
+        margin-right: 30px;
+    }
+}
+
+@media (max-width: 1140px) {
+    .navbar__item {
+        margin-right: 20px;
+    }
+
+    .navbar__brand {
+        margin-right: 20px;
+    }
+}
+
+@media (max-width: 1080px) {
+    .navbar__brand {
+        margin-right: 10px;
+    }
+
+    .navbar__link {
+        font-size: 14px !important;
+    }
+}
+
+@media (max-width: 345px) {
+    .navbar__title {
+        font-size: 22px;
     }
 }
