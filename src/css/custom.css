@@ -7,13 +7,18 @@
     --1inch-title: #FBFBFB;
     --1inch-text: rgba(255, 255, 255, 0.6);
     --1inch-text-2: #6C86AD;
+    --1inch-text-3: #FBFBFB;
     --1inch-border: rgba(255, 255, 255, 0.25);
     --1inch-button: #2F8AF5;
     --1inch-bg-1: #000000;
     --1inch-bg-2: #202835;
     --1inch-bg-3: #FBFBFB;
+    --1inch-bg-4: rgba(6, 10, 16, 0.5);
+    --1inch-bg-5: #131823;
     --1inch-bg-card: #FFFFFF;
+    --1inch-bg-header: #06070A;
     --1inch-shadow-1: 0 0 4px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.25);
+    --1inch-shadow-2: none;
     --1inch-text-2-hover: #FBFBFB;
 }
 
@@ -21,6 +26,7 @@
     --1inch-page-bg: #f3f5fa;
     --1inch-text: #222222;
     --1inch-text-2: #6C86AD;
+    --1inch-text-3: #2F8AF5;
     --1inch-bg-image: rgba(108, 134, 173, 0.12);
     --1inch-title: #1c1e21;
     --1inch-border: rgba(0, 0, 0, 0.24);
@@ -28,7 +34,11 @@
     --1inch-bg-1: #FFFFFF;
     --1inch-bg-2: #FFFFFF;
     --1inch-bg-3: #06070A;
+    --1inch-bg-4: #ECF0F9;
+    --1inch-bg-5: #FFFFFF;
+    --1inch-bg-header: #FFFFFF;
     --1inch-shadow-1: 0 0 4px rgba(71, 73, 79, 0.05), 0 1px 2px rgba(71, 73, 79, 0.05);
+    --1inch-shadow-2: 0 0 4px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.25);
     --1inch-text-2-hover: #222222;
 }
 
@@ -83,7 +93,7 @@ html {
 }
 
 .navbar {
-    background: var(--1inch-page-bg);
+    background: var(--1inch-bg-header);
     box-shadow: none;
     border-bottom: 1px solid var(--1inch-border);
 }
@@ -104,6 +114,9 @@ html {
 .navbar__item {
     padding: 0;
     margin-right: 48px;
+    align-self: stretch;
+    display: flex;
+    align-items: center;
 }
 
 .navbar__link {
@@ -117,26 +130,33 @@ html {
     color: var(--1inch-title);
 }
 
+.navbar__link:hover {
+    color: var(--1inch-text-3);
+}
+
 .dropdown__menu {
-    background: var(--1inch-bg-1);
-    padding: 14px 24px;
+    background: var(--1inch-bg-5);
+    padding: 16px 0;
     border-radius: 16px;
     min-width: 156px;
     box-shadow: none;
 }
 
-.navbar-sidebar {
-    background: var(--1inch-bg-1);
-}
-
 .dropdown__link {
     font-size: 16px;
     color: var(--1inch-text);
+    transition: .2s;
+    padding: 8px 16px;
+    border-radius: 0;
+    margin-top: 0;
 }
 
 .dropdown__link:hover {
-    background: none;
-    color: var(--1inch-title);
+    background: var(--1inch-bg-4);
+}
+
+.navbar-sidebar {
+    background: var(--1inch-bg-1);
 }
 
 .docSidebarContainer_node_modules-\@docusaurus-theme-classic-lib-next-theme-DocPage-styles-module {
