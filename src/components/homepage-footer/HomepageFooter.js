@@ -10,6 +10,7 @@ import YoutubeImage from '../../../static/img/icons/youtube.svg';
 import TelegramImage from '../../../static/img/icons/telegram.svg';
 import GithubImage from '../../../static/img/icons/github.svg';
 import ChevronRightImg from '../../../static/img/chevron-right.svg';
+import FooterLogoImage from '../../../static/img/footer-logo.svg'
 
 
 const FooterLinks = {
@@ -167,9 +168,12 @@ export default function HomepageFooter() {
                 </div>
             </div>
             <div className={clsx('page-container', styles.afterFooter)}>
-                <span>&#169; {new Date().getFullYear()} 1inch, All Rights Reserved.</span>
+                <div className={styles.footerLogoContainer}>
+                    <FooterLogoImage className={styles.footerLogo}/>
+                    <span>&#169; {new Date().getFullYear()} 1inch, All Rights Reserved.</span>
+                </div>
                 <a href="https://etherscan.io/address/1inch.eth" target="_blank">ENS: 1inch.eth</a>
-                <span>BUIDL @ETHNewYork 2019</span>
+                <a href="https://ethglobal.com/" target="_blank">BUIDL @ETHNewYork 2019</a>
             </div>
         </section>
     );

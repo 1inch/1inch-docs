@@ -121,6 +121,17 @@
     color: var(--1inch-text-2-hover);
 }
 
+.footerLogoContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.footerLogo {
+    margin-right: 4px !important;
+    color: var(--1inch-text-2);
+}
+
 @media (max-width: 1124px) {
     .footerColumn {
         margin-right: 20px;
