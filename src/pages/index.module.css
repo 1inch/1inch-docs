@@ -67,6 +67,24 @@ html[data-theme='light'] .mainLayout::after {
     margin-bottom: 86px;
 }
 
+@media (max-width: 996px) {
+    .mainTitle {
+        width: 500px;
+    }
+}
+
+@media (max-width: 820px) {
+    .mainTitle {
+        margin-top: 172px;
+    }
+
+    .bgImage {
+        width: 500px;
+        top: -50px;
+        left: 100px;
+    }
+}
+
 @media (max-width: 768px) {
     .section {
         margin-bottom: 80px;
