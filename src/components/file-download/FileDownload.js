@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './FileDownload.module.css';
+import FileDownloadIcon from '../../../static/img/file-icon.svg'
 
 export class FileDownload extends React.Component {
     render() {
@@ -11,8 +12,7 @@ export class FileDownload extends React.Component {
         return <a className={styles.fileDownload}
                   href={link}
                   target="_blank">
-            <img className={styles.fileDownloadIcon}
-                 src="../../../static/img/file-icon.svg"/>
+            <FileDownloadIcon className={styles.fileDownloadIcon}/>
             <p className={styles.fileDownloadTitle}>{title}</p>
         </a>;
     }
