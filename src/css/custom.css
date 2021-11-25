@@ -138,6 +138,23 @@ html {
     color: var(--1inch-text-3);
 }
 
+.navbar__item.navbar__link {
+    position: relative;
+    padding-right: 14px;
+}
+
+.navbar__item.navbar__link::after {
+    content: "\2197";
+    height: 17px;
+    font-size: 12px;
+    position: absolute;
+    right: 0;
+}
+
+.navbar__item.navbar__link svg {
+    display: none;
+}
+
 .dropdown__menu {
     background: var(--1inch-bg-5);
     padding: 16px 0;
@@ -208,6 +225,7 @@ html[data-theme='dark'] .dropdown > .navbar__link:after {
     color: var(--1inch-title) !important;
 }
 
+/* swagger */
 .swagger-ui .border-box, .swagger-ui a, .swagger-ui article, .swagger-ui body, .swagger-ui code, .swagger-ui dd,
 .swagger-ui div, .swagger-ui dl, .swagger-ui dt, .swagger-ui fieldset, .swagger-ui footer, .swagger-ui form,
 .swagger-ui h1, .swagger-ui h2, .swagger-ui h3, .swagger-ui h4, .swagger-ui h5, .swagger-ui h6, .swagger-ui header,

@@ -1,8 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
 import styles from './HomepageFeatures.module.css';
-import Link from '@docusaurus/Link';
-import GithubImage from '../../../static/img/icons/github-link.svg';
 import ArrowOutside from '../../../static/img/icons/arrow-outside.svg';
 
 const FeatureList = [
