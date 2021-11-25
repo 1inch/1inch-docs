@@ -1,6 +1,8 @@
 # Website
 
 This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
+This repo contains submodules that you need to pull `git submodule update --recursive`
+
 
 ### Installation
 
@@ -36,8 +38,8 @@ If you are using GitHub pages for hosting, this command is a convenient way to b
 ## Domains
 - Trading (Aggregation Protocol) (https://docs.1inch.io/api/)
     - Overview
-        - Referal program & Spread Surplus & Governance
-    - Smartcontract (markdown import)
+        - Referral program & Spread Surplus & Governance
+    - Smart Contract (markdown import)
         - Front contract (audited & secured)
         - Implementation (extendable)
     - API (markdown import + swagger)
@@ -46,7 +48,7 @@ If you are using GitHub pages for hosting, this command is a convenient way to b
 
 - Limit Order Protocol (https://docs.1inch.io/limit-order-protocol/)
     - Overview
-    - Smartcontract (markdown import)
+    - Smart Contract (markdown import)
     - API (markdown import + swagger)
     - Guide (using SDK/Utils)
 
@@ -54,15 +56,15 @@ If you are using GitHub pages for hosting, this command is a convenient way to b
 - Liquidity Protocol
     - Overview
         - Whitepaper & changes
-    - Smartcontract (markdown import)
+    - Smart Contract (markdown import)
     - API (markdown import + swagger)
     - Guide (using SDK/Utils)
 
 
 - Opensource
-    - Smartcontracts
+    - Smart Contract
         - cumulative-merkle-drop
-        - offchain-oracle
+        - off-chain-oracle
         - ...
     - Web3
         - permit-signed-approvals-utils
