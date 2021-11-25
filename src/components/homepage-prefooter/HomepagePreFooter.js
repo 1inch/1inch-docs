@@ -1,5 +1,4 @@
 import React from 'react';
-import clsx from 'clsx';
 import styles from './HomepagePreFooter.module.css';
 import Link from "@docusaurus/Link";
 import ChevronRightImg from '../../../static/img/chevron-right.svg';
@@ -16,7 +15,7 @@ const PreFooterData = {
 
 export default function homepageFooter() {
     return (
-        <section className={clsx('page-container', styles.prefooterWrap)}>
+        <section className={styles.prefooterWrap}>
             <div className={styles.prefooterFirstColumn}>
                 <h2 className={styles.prefooterTitle}>{PreFooterData.title}</h2>
                 <p className={styles.prefooterText}>{PreFooterData.text}</p>

@@ -88,7 +88,7 @@ function Feature({title, description, image, hrefGithub, links}) {
 
 export default function HomepageFeatures() {
     return (
-        <section className="page-container">
+        <section>
             <h2 className={styles.featureListTitle}>Protocols</h2>
             <div className={styles.featureList}>
                 {

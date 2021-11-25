@@ -52,7 +52,7 @@ function DeveloperLink({image, title, description, link}) {
 
 export default function HomepageDeveloperLinks() {
     return (
-        <section className="page-container">
+        <section>
             <h2 className={styles.developerLinksTitle}>Developer links</h2>
             <div className={styles.developerLinksWrap}>
                 {
