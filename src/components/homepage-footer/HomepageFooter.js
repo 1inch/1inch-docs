@@ -29,10 +29,6 @@ const FooterLinks = {
                 {
                     title: 'Limit Order Protocol',
                     link: 'https://1inch.io/limit-order-protocol/'
-                },
-                {
-                    title: 'Tokens',
-                    link: 'https://1inch.io/token/'
                 }
             ]
         },

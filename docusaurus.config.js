@@ -76,7 +76,7 @@ const config = {
                 href: '/',
               },
               {
-                label: 'Off-chain oracle',
+                label: 'Transactions parsing library',
                 href: '/',
               },
               {
@@ -85,6 +85,10 @@ const config = {
               },
               {
                 label: 'EIP-2612 utils library',
+                href: '/',
+              },
+              {
+                label: 'Off-chain oracle',
                 href: '/',
               },
               {
