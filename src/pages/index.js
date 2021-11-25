@@ -10,7 +10,7 @@ import HomePageBackgroundImage from '../../static/img/logo-background.svg'
 
 function HomepageHeader() {
     return (
-        <header className={clsx('page-container', styles.headerWrap)}>
+        <header className={styles.headerWrap}>
             <h1 className={styles.mainTitle}>Documentation Portal</h1>
         </header>
     );
@@ -21,9 +21,9 @@ export default function Home() {
         <Layout pageClassName={styles.mainLayout}
                 title="1inch Network | Leading high capital efficient DeFi protocols"
                 description="The 1inch Network unites decentralized protocols whose synergy enables the most lucrative, fastest and protected operations in the DeFi space.">
-            <HomepageHeader/>
-            <main>
+            <main className={clsx('page-container', styles.mainContainer)}>
                 <HomePageBackgroundImage className={styles.bgImage}/>
+                <HomepageHeader/>
                 <div className={styles.section}>
                     <HomepageFeatures/>
                 </div>

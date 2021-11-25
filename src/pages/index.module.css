@@ -1,5 +1,5 @@
 .headerWrap {
-    margin-top: 88px;
+    padding-top: 88px;
     margin-bottom: 80px;
 }
 
@@ -10,14 +10,17 @@
     color: var(--1inch-title);
 }
 
+.mainContainer {
+    position: relative;
+}
+
 .bgImage {
     position: absolute;
     width: 441px;
-    right: 91px;
-    top: -32px;
+    right: 0;
+    top: -28px;
     z-index: -1;
     color: var(--1inch-bg-image);
-    /*color: var(--1inch-bg-image);*/
 }
 
 .mainLayout {
