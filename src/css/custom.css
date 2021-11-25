@@ -71,6 +71,18 @@
     src: url('../../static/fonts/KFOlCnqEu92Fr1MmYUtfBBc4AMP6lQ.woff2') format('woff2');
 }
 
+[data-theme-mode='dark'], [data-theme-mode='light'] {
+    display: none;
+}
+
+html[data-theme='dark'] [data-theme-mode='dark'] {
+    display: block;
+}
+
+html[data-theme='light'] [data-theme-mode='light'] {
+    display: block;
+}
+
 p, a, h1, h2, h3 {
     margin: 0;
     text-decoration: none;
