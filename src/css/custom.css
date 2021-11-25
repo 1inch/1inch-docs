@@ -1,6 +1,8 @@
 :root {
     --1inch-common-title: #FBFBFB;
     --1inch-common-bg: rgba(108, 134, 173, 0.55);
+    --1inch-common-shadow: 0 0 4px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.25);
+
 
     --1inch-page-bg: #06070A;
     --1inch-bg-image: rgba(255, 255, 255, 0.09);
@@ -141,7 +143,9 @@ html {
     padding: 16px 0;
     border-radius: 16px;
     min-width: 156px;
-    box-shadow: none;
+    box-shadow: var(--1inch-common-shadow);
+    margin-bottom: 0 !important;
+    top: 100%;
 }
 
 .dropdown__link {
@@ -155,6 +159,25 @@ html {
 
 .dropdown__link:hover {
     background: var(--1inch-bg-4);
+}
+
+.dropdown > .navbar__link:after {
+    content: url("../../static/img/icons/chevron-dark.svg");
+    border: none;
+    transform: none;
+    color: currentColor;
+    fill: currentColor;
+    top: 3px;
+}
+
+html[data-theme='dark'] .dropdown > .navbar__link:after {
+    content: url("../../static/img/icons/chevron-light.svg");
+    opacity: 0.6;
+}
+
+.navbar__item.dropdown:hover .navbar__link:after {
+    opacity: 1;
+    transition: 0.2s;
 }
 
 .navbar-sidebar {
