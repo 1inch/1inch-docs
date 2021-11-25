@@ -1,0 +1,95 @@
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/**
+ * Styles for React Toggle
+ * copied over because we want to allow user to swizzle it and modify the css
+ * and also to make sure its compatible with our dark mode
+ * https://github.com/aaronshaf/react-toggle/blob/master/style.css
+ */
+.react-toggle {
+  touch-action: pan-x;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.react-toggle-screenreader-only {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+}
+
+.react-toggle--disabled {
+  cursor: not-allowed;
+}
+
+.react-toggle-track {
+  width: 59px;
+  height: 31px;
+  border-radius: 30px;
+  background-color: var(--1inch-bg-toggle);
+  transition: all 0.2s ease;
+}
+
+.react-toggle-track-check {
+  position: absolute;
+  width: 17px;
+  height: 17px;
+  top: 0;
+  bottom: 2px;
+  margin: auto 0;
+  left: 8px;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+[data-theme='dark'] .react-toggle .react-toggle-track-check,
+.react-toggle--checked .react-toggle-track-check {
+  opacity: 1;
+  transition: opacity 0.25s ease;
+}
+
+.react-toggle-track-x {
+  position: absolute;
+  width: 17px;
+  height: 17px;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  right: 8px;
+  opacity: 1;
+  transition: opacity 0.25s ease;
+}
+
+[data-theme='dark'] .react-toggle .react-toggle-track-x,
+.react-toggle--checked .react-toggle-track-x {
+  opacity: 0;
+}
+
+.react-toggle-thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+  background-color: #fafafa;
+  transition: all 0.25s ease;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15), 0 3px 1px rgba(0, 0, 0, 0.06);
+}
+
+[data-theme='dark'] .react-toggle .react-toggle-thumb,
+.react-toggle--checked .react-toggle-thumb {
+  left: 30px;
+  box-shadow: none;
+}
