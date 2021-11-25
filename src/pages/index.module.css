@@ -12,12 +12,12 @@
 
 .bgImage {
     position: absolute;
-    width: 552px;
-    height: 637px;
-    right: 80px;
-    top: -72px;
+    width: 441px;
+    right: 91px;
+    top: -32px;
     z-index: -1;
     color: var(--1inch-bg-image);
+    /*color: var(--1inch-bg-image);*/
 }
 
 .mainLayout {

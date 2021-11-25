@@ -6,6 +6,7 @@ import HomepageFeatures from '../components/homepage-features/HomepageFeatures';
 import HomepageDeveloperLinks from '../components/homepage-developer-links/HomepageDeveloperLinks';
 import HomepagePreFooter from '../components/homepage-prefooter/HomepagePreFooter';
 import HomepageFooter from '../components/homepage-footer/HomepageFooter';
+import HomePageBackgroundImage from '../../static/img/logo-background.svg'
 
 function HomepageHeader() {
     return (
@@ -22,6 +23,7 @@ export default function Home() {
                 description="The 1inch Network unites decentralized protocols whose synergy enables the most lucrative, fastest and protected operations in the DeFi space.">
             <HomepageHeader/>
             <main>
+                <HomePageBackgroundImage className={styles.bgImage}/>
                 <div className={styles.section}>
                     <HomepageFeatures/>
                 </div>
