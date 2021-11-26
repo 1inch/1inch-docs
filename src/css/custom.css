@@ -140,6 +140,10 @@ html[data-theme='light'] .main-wrapper::after {
     content: url("../../static/img/footer-gradient-light.svg");
 }
 
+.docs-wrapper {
+    overflow: hidden;
+}
+
 .main-wrapper:not(.docs-wrapper) {
     color: var(--1inch-text);
     font-family: 'Roboto', sans-serif;
