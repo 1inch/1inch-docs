@@ -138,6 +138,7 @@ html[data-theme='light'] .main-wrapper::after {
 .page-container {
     max-width: 1160px;
     margin: 0 auto;
+    position: relative;
 }
 
 .navbar {
