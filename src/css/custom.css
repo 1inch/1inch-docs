@@ -17,7 +17,7 @@
     --1inch-bg-2: #202835;
     --1inch-bg-3: #FBFBFB;
     --1inch-bg-4: rgba(6, 10, 16, 0.5);
-    --1inch-bg-5: #131823;
+    --1inch-bg-5: #202835;
     --1inch-bg-card: #FFFFFF;
     --1inch-bg-header: #06070A;
     --1inch-bg-toggle: #202835;
@@ -328,18 +328,6 @@ html[data-theme='dark'] .swagger-ui .model-toggle:after {
     outline: none !important;
 }
 
-/*html[data-theme='light'] .hljs-attr {*/
-/*    color: white;*/
-/*}*/
-
-/*.language-json span {*/
-/*    color: white !important;*/
-/*}*/
-
-/*.example.microlight {*/
-/*    color: red !important;*/
-/*}*/
-
 .models-control:focus {
     outline: none !important;
 }
@@ -375,6 +363,10 @@ html[data-theme='dark'] .swagger-ui .model-toggle:after {
 
 .swagger-ui .btn {
     color: var(--1inch-text) !important;
+}
+
+html[data-theme='light'] .swagger-ui .opblock-body pre.microlight {
+    background: var(--1inch-bg-4) !important;
 }
 
 @media (max-width: 1247px) {
