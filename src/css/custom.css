@@ -10,13 +10,14 @@
     --1inch-text: rgba(255, 255, 255, 0.6);
     --1inch-text-2: #6C86AD;
     --1inch-text-3: #FBFBFB;
+    --1inch-text-4: #FBFBFB;
     --1inch-border: rgba(255, 255, 255, 0.25);
     --1inch-button: #2F8AF5;
     --1inch-bg-1: #000000;
     --1inch-bg-2: #202835;
     --1inch-bg-3: #FBFBFB;
     --1inch-bg-4: rgba(6, 10, 16, 0.5);
-    --1inch-bg-5: #131823;
+    --1inch-bg-5: #202835;
     --1inch-bg-card: #FFFFFF;
     --1inch-bg-header: #06070A;
     --1inch-bg-toggle: #202835;
@@ -30,6 +31,7 @@
     --1inch-text: #222222;
     --1inch-text-2: #6C86AD;
     --1inch-text-3: #2F8AF5;
+    --1inch-text-4: #6C86AD;
     --1inch-bg-image: rgba(108, 134, 173, 0.12);
     --1inch-title: #1c1e21;
     --1inch-border: rgba(0, 0, 0, 0.24);
@@ -361,6 +363,10 @@ html[data-theme='dark'] .swagger-ui .model-toggle:after {
 
 .swagger-ui .btn {
     color: var(--1inch-text) !important;
+}
+
+html[data-theme='light'] .swagger-ui .opblock-body pre.microlight {
+    background: var(--1inch-bg-4) !important;
 }
 
 @media (max-width: 1247px) {
