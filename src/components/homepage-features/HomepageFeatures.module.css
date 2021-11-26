@@ -53,11 +53,16 @@ html[data-theme='light'] .featureCard {
 .featureCardImage {
     display: block;
     margin: 0 auto 24px;
-    max-height: 172px;
+    width: 319px;
+    height: 172px;
 }
 
 .featureCardImage::after {
     content: '';
+    display: block;
+    width: 319px;
+    height: 172px;
+    transform: scale(0.5) translate(-160px, -86px);
 }
 
 .aggregationProtocolImage::after {
@@ -131,37 +136,18 @@ html[data-theme='light'] .limitOrderProtocolImage::after {
 }
 
 @media (max-width: 400px) {
-    .aggregationProtocolImage::after {
-        zoom: 0.8;
+    .featureCardLinks {
+        grid-template-columns: 1fr;
     }
 
-    html[data-theme='light'] .aggregationProtocolImage::after {
-        zoom: 0.8;
+    .featureCardImage {
+        width: 240px;
+        height: 130px;
     }
 
-    .limitOrderProtocolImage::after {
-        zoom: 0.8;
-    }
-
-    html[data-theme='light'] .limitOrderProtocolImage::after {
-        zoom: 0.8;
-    }
-}
-
-@media (max-width: 340px) {
-    .aggregationProtocolImage::after {
-        zoom: 0.6;
-    }
-
-    html[data-theme='light'] .aggregationProtocolImage::after {
-        zoom: 0.6;
-    }
-
-    .limitOrderProtocolImage::after {
-        zoom: 0.6;
-    }
-
-    html[data-theme='light'] .limitOrderProtocolImage::after {
-        zoom: 0.6;
+    .featureCardImage::after {
+        width: 240px;
+        height: 130px;
+        transform: scale(0.4) translate(-230px, -100px);;
     }
 }
