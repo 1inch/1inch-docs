@@ -9575,6 +9575,10 @@
     margin: 3em auto
 }
 
+html[data-theme='light'] .swagger-ui .opblock-body pre.microlight {
+    background: #696969 !important;
+}
+
 .swagger-ui .opblock-body pre.microlight {
     word-wrap: break-word;
     background: #333;
@@ -9589,8 +9593,6 @@
     margin: 0;
     padding: 10px;
     white-space: pre-wrap;
-    word-break: break-all;
-    word-break: break-word
 }
 
 .swagger-ui .opblock-body pre.microlight .headerline {
