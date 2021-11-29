@@ -87,6 +87,7 @@
     src: url('../../static/fonts/KFOlCnqEu92Fr1MmYUtfBBc4AMP6lQ.woff2') format('woff2');
 }
 
+/* Switch images to match the theme color */
 [data-theme-mode='dark'], [data-theme-mode='light'] {
     display: none;
 }
@@ -98,6 +99,7 @@ html[data-theme='dark'] [data-theme-mode='dark'] {
 html[data-theme='light'] [data-theme-mode='light'] {
     display: block;
 }
+/* */
 
 p, a, h1, h2, h3 {
     margin: 0;
@@ -110,6 +112,7 @@ html {
 
 .main-wrapper {
     position: relative;
+    overflow: hidden;
 }
 
 .main-wrapper::before {
@@ -138,10 +141,6 @@ html[data-theme='light'] .main-wrapper::before {
 
 html[data-theme='light'] .main-wrapper::after {
     content: url("../../static/img/footer-gradient-light.svg");
-}
-
-.docs-wrapper {
-    overflow: hidden;
 }
 
 .main-wrapper:not(.docs-wrapper) {
