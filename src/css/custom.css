@@ -112,7 +112,6 @@ html {
 
 .main-wrapper {
     position: relative;
-    overflow: hidden;
 }
 
 .main-wrapper::before {
@@ -476,6 +475,17 @@ html[data-theme='dark'] .swagger-ui .model-toggle:after {
 @media (max-width: 600px) {
     .main-wrapper::before {
         content: url("../../static/img/top-bg-mobile.svg");
+    }
+
+    .tabs-container {
+        display: none;
+    }
+
+    .warning {
+        text-align: center;
+        border: 1px solid var(--1inch-border);
+        border-radius: 16px;
+        padding: 16px;
     }
 }
 /* Adaptive END */
