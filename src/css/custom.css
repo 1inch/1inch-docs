@@ -110,38 +110,6 @@ html {
     background: var(--1inch-page-bg);
 }
 
-.main-wrapper {
-    position: relative;
-}
-
-.main-wrapper::before {
-    content: url("../../static/img/topbg-dark.svg");
-    position: absolute;
-    right: 0;
-    left: 0;
-    top: -50px;
-    z-index: -1;
-    width: 100%;
-}
-
-.main-wrapper::after {
-    content: url("../../static/img/footer-gradient-dark.svg");
-    position: absolute;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    z-index: -1;
-    width: 100%;
-}
-
-html[data-theme='light'] .main-wrapper::before {
-    content: url("../../static/img/topbg-light.svg");
-}
-
-html[data-theme='light'] .main-wrapper::after {
-    content: url("../../static/img/footer-gradient-light.svg");
-}
-
 .main-wrapper:not(.docs-wrapper) {
     color: var(--1inch-text);
     font-family: 'Roboto', sans-serif;

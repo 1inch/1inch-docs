@@ -12,6 +12,35 @@
 
 .mainContainer {
     position: relative;
+    overflow: hidden;
+}
+
+.mainContainer::before {
+    content: url("../../static/img/topbg-dark.svg");
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: -50px;
+    z-index: -1;
+    width: 100%;
+}
+
+.mainContainer::after {
+    content: url("../../static/img/footerbg-dark.svg");
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    width: 100%;
+}
+
+html[data-theme='light'] .mainContainer::before {
+    content: url("../../static/img/topbg-light.svg");
+}
+
+html[data-theme='light'] .mainContainer::after {
+    content: url("../../static/img/footer-gradient-light.svg");
 }
 
 .bgImage {
