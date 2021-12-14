@@ -1,0 +1,27 @@
+---
+sidebar_position: 5
+---
+# Instant Governance
+Instant Governance is a feature that allows the community to vote for specific protocol settings. The Aggregation Protocol and Liquidity Protocol each have their own Instant Governance module.
+
+## Aggregation Protocol Instant Governance
+The [Aggregation Protocol Instant Governance](https://app.1inch.io/#/1/dao/governance/aggregation?action=stake) module allows community members to vote on how the Swap Surplus revenue stream is split between the Treasury and the referrers. 
+
+## Liquidity Protocol Instant Governance
+The [Liquidity Protocol Instant Governance](https://app.1inch.io/#/1/dao/governance) module allows the community to vote directly on major Liquidity Protocol parameters: the price impact fee, the swap fee, the Treasury  accrual rate, the referral reward, and the decay period. 
+
+There are two levels of Liquidity Protocol Instance Governance:
+
+* **Pool governance** only allows for the configuration of parameters specific to each pool. These include the swap fee, the price impact fee and the decay period.
+
+* **Factory governance** is responsible for parameters shared by all pools. These include the default swap fee, the default price impact fee, the default decay period, the referral reward and the Treasury accrual rate.
+
+### Decay period
+The decay period is a unique feature that protects traders from front-running attacks and prevents arbitrage traders from easily extracting value from pools. Longer decay periods lead to a wider price spread in the pool after trades. 1INCH stakers can set a decay period between 15 seconds and 1 hour.
+
+### Referral reward
+This reward is a part of the swap fee and the price impact fee which will be dedicated to referrers (dApps and wallets that attract users and trading volume). Referrers can subsequently claim their share of 1INCH tokens from all pools in one gas-efficient claim transaction.
+
+### Treasury accrual rate
+All protocol revenue not sent to the referrers is instead sent to the Treasury.
+

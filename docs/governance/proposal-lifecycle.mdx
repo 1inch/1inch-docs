@@ -1,0 +1,71 @@
+---
+sidebar_position: 2
+---
+# Proposal Lifecycle
+The 1inch Network DAO governance process takes place in the governance forum at [gov.1inch.io](https://gov.1inch.io/). Proposals are formally ratified through the 1inch Improvement Proposal (1IPs). There are no requirements for participating in the 1inch Network DAO discussion. Anyone can sign up for the 1inch Governance forum, or [Discord](https://discord.com/invite/1inch), and engage in the conversation. 
+
+## Phase 1: Discussion
+The purpose of this phase is to vet ideas with the broader 1inch community. Each unique idea should have its own thread so that the conversation can stay on topic, it should be as narrowly focused as possible. Anyone can participate in this phase of governance, and it occurs entirely off-chain. The goal of Phase 1 discussion is to gain a rough community consensus, and refine the idea so that it can be formalized. The thread author should make an effort to address all comments and take them into consideration.
+
+**Duration:** Open-Ended
+
+## Phase 2: 1IP Formalization
+Phase 2 is where the idea is formalized into an 1IP that includes all of the criteria specified in the [1inch Improvement Proposal (1IP) Template](#1inch-Improvement-Proposal-(1IP)-Template). It must be a clear and complete description of the proposed enhancement. It is a requirement that a single 1IP contains a single proposal. All 1IPs must have the following components (refer to the template for a detailed breakdown):
+* **Simple Summary**
+* **Abstract**
+* **Motivation**
+* **Specification** 
+* **Rationale**
+* **Considerations**
+
+
+The forum is the formal arena to debate the merits of each 1IP. Once the 1IP has been drafted, the author must post it on the 1inch governance forum and use the tag: Phase-2. 
+
+While the 1IP is in a draft state, the 1IP author is free to make modifications to the proposal based on feedback from the community's review.
+
+**Duration**: Open-Ended
+
+## Phase 3: 1IP Temperature Check
+
+At any point during Phase-2, the author may finalize the 1IP by initiating a community temperature check. To do this, the author must change the tag of the forum post to Phase-3, and add a forum poll to gauge the community’s sentiment. 
+
+1IPs should only be progressed to Phase 3 once the author has considered all community comments and believes the 1IP is prepared for incorporation.
+Phase-3 represents the final proposal. Other than correcting errata, 1IPs in Phase 3 may not be edited.
+
+The poll must be open for 5 days and only have the following options: 
+* (Yes) In favor of this proposal.
+* (No) Against this proposal.
+
+Note: This process is irreversible, i.e., an author may not revert an 1IP back to Stage-2 if it fails the temperature check vote.
+
+**Duration:** Exactly 5 days
+
+## Phase 4: Snapshot Vote
+
+All 1IPs are confirmed, or rejected, by the 1inch Network DAO via an off-chain [Snapshot](https://snapshot.org/#/1inch.eth) vote. The Snapshot vote must link to the results of the successful Phase-2 forum poll and include the full text of the finalized 1IP. Anyone can initiate the Snapshot vote as long as all requirements of Phase-2 were met (it does not have to be the 1IP author).
+
+The Snapshot voting period must last exactly seven days. During this period, addresses with voting power may vote for or against the proposal using the same two voting options as the Phase-2 poll:
+* (Yes) In favor of this proposal.
+* (No) Against this proposal.
+
+[Voting Weight](#Voting-Weight) is proportional to the amount of governance tokens held by, or delegated to, an address. To prevent griefing of the 1inch governance process, a minimum of 25,000 Voting Weight is required to create a Snapshot vote (e.g., 25,000 st1INCH or 125,000 v1INCH).
+
+In order for a vote to be considered successful, both of the following must be met:
+* A minimum quorum of 10 million weighted votes must be cast.
+* A majority of the votes must be (Yes) I am in favor of this proposal.
+
+See [Voting Process](#Voting-Process) for a detailed description of how Voting Weight is calculated and how Vote Delegation works.
+
+**Duration:** Exactly 7 days
+
+## Phase 5: Implementation
+After the Snapshot voting period has concluded, the results will be posted on [1IPs section](#1IPs) of the governance documentation site. If the proposal has passed, it will move from the Active to Passed category. Unsuccessful proposals will move to Not-Passed. 
+
+[SafeSnap](https://github.com/gnosis/zodiac-module-reality) allows for on-chain execution of the off-chain Snapshot vote by using the [reality.eth](https://reality.eth.link/) oracle. Reality.eth’s bonded escalation period lasts at least 72 hours (this period is reset if the resolution is challenged). The SafeSnap process officially concludes once a full 72 hour escalation period has elapsed without challenge.
+
+There is an additional 72 hour period of time between the SafeSnap resolution and the incorporation of said 1IP into the protocol -- this is known as the Timelock. During the Timelock period, the [1inch Network DAO Treasury](#1inch-Network-DAO-Treasury) multisig owners will have the ability to veto malicious transactions in a 7-of-12 fashion.
+
+For more involved 1IPs, the implementation will vary on a case-by-case basis.
+
+**Duration:** 6 days, minimum
+
