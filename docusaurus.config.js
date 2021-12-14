@@ -60,6 +60,10 @@ const config = {
               {
                 label: 'Limit order protocol',
                 href: '/docs/limit-order-protocol/introduction'
+              },
+              {
+                label: 'Governance',
+                href: '/docs/governance/overview'
               }
             ]
           },
