@@ -77,7 +77,7 @@ const config = {
               },
               {
                 label: 'Limit order contract',
-                href: '/',
+                href: 'https://github.com/1inch/limit-order-protocol',
               },
               {
                 label: 'Transactions parsing library',
@@ -104,15 +104,15 @@ const config = {
           {
             label: 'Grants Program',
             position: 'right',
-            href: 'https://www.npmjs.com/'
+            href: 'https://1inch.io/foundation-grant-program/'
           },
           {
             label: 'Bug bounty',
             position: 'right',
-            href: 'https://www.npmjs.com/'
+            href: 'https://airtable.com/shrddQOOkm3hOLuzd'
           },
           {
-            href: 'https://www.npmjs.com/',
+            href: 'https://www.npmjs.com/search?q=%401inch',
             label: 'NPM',
             position: 'right',
           },

@@ -58,7 +58,7 @@ const FooterLinks = {
                 },
                 {
                     title: 'API',
-                    link: '/'
+                    link: 'https://1inch.io/api/'
                 },
                 {
                     title: 'Press room',
@@ -74,23 +74,23 @@ const FooterLinks = {
                 }
             ]
         },
-        {
-            title: 'Legacy',
-            links: [
-                {
-                    title: '1inch v.1 (Legacy)',
-                    link: '/'
-                },
-                {
-                    title: '1inch v.2 (Legacy)',
-                    link: '/'
-                },
-                {
-                    title: 'Earn (Legacy)',
-                    link: '/'
-                }
-            ]
-        }
+        // {
+        //     title: 'Legacy',
+        //     links: [
+        //         {
+        //             title: '1inch v.1 (Legacy)',
+        //             link: '/'
+        //         },
+        //         {
+        //             title: '1inch v.2 (Legacy)',
+        //             link: '/'
+        //         },
+        //         {
+        //             title: 'Earn (Legacy)',
+        //             link: '/'
+        //         }
+        //     ]
+        // }
     ],
     socialMedia: [
         {

@@ -17,15 +17,15 @@ const FeatureList = [
             },
             {
                 title: 'Dune analytics',
-                href: '/docs/aggregation-protocol/introduction'
+                href: 'https://dune.xyz/k06a/1inch-exchange'
             },
             {
                 title: 'Smart contract',
-                href: ''
+                href: 'https://etherscan.io/address/0x1111111254fb6c44bac0bed2854e76f90643097d'
             },
             {
                 title: 'Enterprise API',
-                href: '/docs/aggregation-protocol/api/swagger'
+                href: 'https://1inch.io/api/'
             },
             {
                 title: 'API (swagger)',
@@ -42,23 +42,23 @@ const FeatureList = [
         links: [
             {
                 title: 'Introduction',
-                href: '/docs/aggregation-protocol/introduction'
+                href: '/docs/limit-order-protocol/introduction'
             },
             {
                 title: 'Dune analytics',
-                href: '/docs/aggregation-protocol/introduction'
+                href: 'https://dune.xyz/k06a/1inch-Limit-Order-Protocol'
             },
             {
                 title: 'Smart contract',
-                href: '/'
+                href: 'https://etherscan.io/address/0x119c71d3bbac22029622cbaec24854d3d32d2828'
             },
             {
                 title: 'Enterprise API',
-                href: '/docs/aggregation-protocol/api/swagger'
+                href: 'https://1inch.io/api/'
             },
             {
                 title: 'API (swagger)',
-                href: '/docs/aggregation-protocol/api/swagger'
+                href: '/docs/limit-order-protocol/api'
             },
         ]
     },
