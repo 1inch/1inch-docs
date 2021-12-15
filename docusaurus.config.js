@@ -74,7 +74,7 @@ const config = {
             items: [
               {
                 label: 'Router contract',
-                href: '/',
+                href: 'https://github.com/1inch/1inch-contract/blob/master/contracts/AggregationRouterV4.sol',
               },
               {
                 label: 'Limit order contract',
@@ -82,23 +82,23 @@ const config = {
               },
               {
                 label: 'Transactions parsing library',
-                href: '/',
+                href: 'https://github.com/1inch/tx-decoder',
               },
               {
                 label: 'Multicall',
-                href: '/',
+                href: 'https://github.com/1inch/multicall',
               },
               {
                 label: 'EIP-2612 utils library',
-                href: '/',
+                href: 'https://github.com/1inch/permit-signed-approvals-utils',
               },
               {
                 label: 'Off-chain oracle',
-                href: '/',
+                href: 'https://github.com/1inch/offchain-oracle',
               },
               {
                 label: 'Cumulative merkle drop',
-                href: '/',
+                href: 'https://github.com/1inch/merkle-distribution',
               },
             ]
           },
