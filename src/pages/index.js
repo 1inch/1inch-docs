@@ -30,9 +30,6 @@ export default function Home() {
                     <div className={styles.section2}>
                         <HomepageDeveloperLinks/>
                     </div>
-                    <div className={styles.section3}>
-                        <HomepagePreFooter/>
-                    </div>
                 </div>
                 <HomepageFooter/>
             </main>
