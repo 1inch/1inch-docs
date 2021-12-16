@@ -13,12 +13,13 @@ sidebar_position: 3
 | `makerAssetAddress` | `String`  | the address of the asset you want to sell (address of a token contract)                                                                                                                        |
 | `takerAssetAddress` | `String`  | the address of the asset you want to buy (address of a token contract)                                                                                                                         |
 | `makerAddress`      | `String`  | an address of the maker (wallet address)                                                                                                                                                       |
-| `takerAddress`      | `String?` | the address of the taker for whom the limit order is being created. _This is an optional parameter_, if it is not specified, then the limit order will be available for execution for everyone |
+| `takerAddress`      | `String?` | by default contains a zero address, which means that a limit order is available for everyone to fill. If you set a value, then the limit order will be available for execution only for the specified address (private limit order) |
+| `reciever`          | `String?` | by default contains a zero address, which means that taker asset will be sent to the address of the creator of the limit order. If you set a value, then taker asset will be sent to the specified address |
 | `makerAmount`       | `String`  | the number of maker asset tokens that you want to sell (in token units). For example: 5 DAI = 5000000000000000000 units                                                                        |
 | `takerAmount`       | `String`  | the number of taker asset tokens that you want to receive for selling the maker asset (in token units). For example: 5 DAI = 5000000000000000000 units                                         |
 | `predicate`         | `String?` | a predicate call data. Default: `0x`. See [Predicate docs](./predicate.md)                                                                                                                     |
-| `permit`            | `String?` | a permit call data. Default: `0x`                                                                                                                                                              |
-| `interaction`       | `String?` | an interaction call data. Default: `0x`                                                                                                                                                        |
+| `permit`            | `String?` | a permit (`EIP-2612`) call data. Could be built using [utility library](https://github.com/1inch/permit-signed-approvals-utils). Default: `0x`                                                                                                                                                              |
+| `interaction`       | `String?` | a call data for InteractiveNotificationReceiver. See more [Interaction receiver docs](./interactive-receiver.md). Default: `0x`                                                                                                                                                        |
 
 ## Example:
 
@@ -74,11 +75,16 @@ As result you will receive a structure of [limit order](./limit-order-structure.
     "salt": "1",
     "makerAsset": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
     "takerAsset": "0x6b175474e89094c44da98b954eedeac495271d0f",
+    "maker": "0xfb3c7ebccccAA12B5A884d612393969Adddddddd",
+    "receiver": "0x0000000000000000000000000000000000000000",
+    "allowedSender": "0x0000000000000000000000000000000000000000",
+    "makingAmount": "100",
+    "takingAmount": "200",
+    "makerAssetData": "0x",
+    "takerAssetData": "0x",
     "getMakerAmount": "0xf4a215c300000...0000",
     "getTakerAmount": "0x296637bf00000...0000",
-    "makerAssetData": "0x23b872dd00000...0000",
-    "takerAssetData": "0x23b872dd00000...0000",
-    "predicate": "0x961d5b1e0000000000...0000",
+    "predicate": "0x",
     "permit": "0x",
     "interaction": "0x"
 }
