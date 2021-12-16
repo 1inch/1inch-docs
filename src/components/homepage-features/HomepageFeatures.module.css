@@ -91,6 +91,21 @@ html[data-theme='light'] .limitOrderProtocolImage::after {
     margin-bottom: 4px;
 }
 
+.featureCardLinkTitle {
+    position: relative;
+}
+
+.featureCardLinkSwagger {
+    position: absolute;
+    left: calc(100% + 4px);
+    font-size: 10px;
+    line-height: 10px;
+    padding: 3px 6px;
+    border-radius: 8px;
+    font-weight: 500;
+    background: var(--1inch-bg-6);
+}
+
 .featureCardLinkWrap {
     color: var(--1inch-text);
 }
@@ -104,6 +119,12 @@ html[data-theme='light'] .limitOrderProtocolImage::after {
     text-decoration: none;
     transition: 0.2s;
     color: var(--1inch-text-3);
+}
+
+.featureCardLinkWrap:hover .featureCardLinkSwagger {
+    background: #85eb2b;
+    color: var(--1inch-common-text);
+    transition: .2s;
 }
 
 .featureCardLinkIcon {

@@ -38,7 +38,7 @@
     color: var(--1inch-common-title);
     cursor: pointer;
     text-decoration: none;
-    background-color: var(--1inch-button);
+    background-color: var(--1inch-common-button);
 }
 
 .prefooterButton:hover {

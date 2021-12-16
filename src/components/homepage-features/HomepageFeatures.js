@@ -28,7 +28,8 @@ const FeatureList = [
                 href: 'https://1inch.io/api/'
             },
             {
-                title: 'API (swagger)',
+                title: 'API',
+                isSwagger: true,
                 href: '/docs/aggregation-protocol/api/swagger'
             },
         ]
@@ -53,18 +54,15 @@ const FeatureList = [
                 href: 'https://etherscan.io/address/0x119c71d3bbac22029622cbaec24854d3d32d2828'
             },
             {
-                title: 'Enterprise API',
-                href: 'https://1inch.io/api/'
-            },
-            {
-                title: 'API (swagger)',
+                title: 'API',
+                isSwagger: true,
                 href: '/docs/limit-order-protocol/api'
             },
         ]
     },
 ];
 
-function Feature({title, description, image, hrefGithub, links}) {
+function Feature({title, description, image, links}) {
     return (
         <div className={styles.featureCard}>
             <div>
@@ -76,7 +74,11 @@ function Feature({title, description, image, hrefGithub, links}) {
                 {
                     links.map((link, index) => (
                         <a href={link.href} className={styles.featureCardLinkWrap} key={index}>
-                            <p>{link.title}</p>
+                            <p className={styles.featureCardLinkTitle}>
+                                <span>{link.title}</span>
+                                {link.isSwagger && <span className={styles.featureCardLinkSwagger}>Swagger</span>}
+                                {link.versionLabel && <span className={styles.featureCardLinkVersionLabel}>{link.versionLabel}</span>}
+                            </p>
                             <ArrowOutside className={styles.featureCardLinkIcon} />
                         </a>
                     ))
