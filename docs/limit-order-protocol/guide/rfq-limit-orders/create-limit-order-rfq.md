@@ -9,7 +9,7 @@ sidebar_position: 2
 | Field                | Type      | Description                                                                                                                                                                                    |
 | -------------------- | --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `id`                 | `Number`  | is a pass-through, integer identifier starting at 1                                                                                                                                            |
-| `wrapEth`            | `Boolean?`| if this flag is enabled, then in the case of a limit order, the taker asset of which is `WETH`, the taker will receive `ETH` instead of `WETH`                    |
+| `wrapEth`            | `Boolean?`| when is true, then in case of a limit order with `WETH` as maker asset, taker will receive `ETH` instead of `WETH`                    |
 | `expiresInTimestamp` | `Number`  | is the timestamp in seconds when the limit order will no longer be available for execution. For example: 1623166270029                                                                         |
 | `makerAssetAddress`  | `String`  | the address of the asset you want to sell (address of a token contract)                                                                                                                        |
 | `takerAssetAddress`  | `String`  | the address of the asset you want to buy (address of a token contract)                                                                                                                         |
