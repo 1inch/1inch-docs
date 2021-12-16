@@ -11,6 +11,7 @@
 }
 
 .developerCard {
+    position: relative;
     border: 1px solid var(--1inch-border);
     border-radius: 16px;
     padding: 32px 24px;
@@ -25,6 +26,26 @@ html[data-theme="light"] .developerCard {
 
 .developerCard:hover {
     text-decoration: none;
+}
+
+.developerCardButton {
+    position: absolute;
+    right: 24px;
+    top: 32px;
+    background: var(--1inch-common-button);
+    color: var(--1inch-common-title);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 20px 8px 20px;
+    border-radius: 12px;
+    font-size: 16px;
+    line-height: 26px;
+}
+
+.developerCardButton:hover {
+    text-decoration: none;
+    color: var(--1inch-common-title);
+    background: var(--1inch-common-button-hover);
 }
 
 .developerCardLink:hover .developerCardText {

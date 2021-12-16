@@ -6,6 +6,10 @@ import clsx from "clsx";
 const DeveloperList = [
     {
         link: 'https://1inch.io/foundation-grant-program/',
+        button: {
+            title: 'Apply',
+            href: 'https://airtable.com/shr899d3K9Bw963CP'
+        },
         image: (
             <div className={clsx(styles.developerCardImage, styles.foundationGrantProgramImage)}/>
         ),
@@ -18,7 +22,10 @@ const DeveloperList = [
         )
     },
     {
-        link: 'https://airtable.com/shrddQOOkm3hOLuzd',
+        button: {
+            title: 'Report Bug',
+            href: 'https://airtable.com/shrddQOOkm3hOLuzd'
+        },
         image: (
             <div className={clsx(styles.developerCardImage, styles.bugBountyImage)}/>
         ),
@@ -32,7 +39,7 @@ const DeveloperList = [
     },
 ];
 
-function DeveloperLink({image, title, description, link}) {
+function DeveloperLink({image, title, description, link, button}) {
     return (
         <div className={styles.developerCard}>
             <div>{image}</div>
@@ -40,8 +47,10 @@ function DeveloperLink({image, title, description, link}) {
             <div className={styles.developerCardText}>
                 {description}
                 &nbsp;
-                <Link className={styles.developerCardLink} to={link}>Read more</Link>
+                {link && <Link className={styles.developerCardLink} to={link}>Read more</Link>}
             </div>
+
+            <Link className={styles.developerCardButton} to={button.href}>{button.title}</Link>
         </div>
     )
 }
