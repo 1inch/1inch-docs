@@ -51,6 +51,15 @@ html[data-theme="light"] .developerCard {
     line-height: 26px;
 }
 
+.developerCardLink {
+    color: var(--1inch-common-button);
+    text-decoration: none;
+}
+
+.developerCardLink:hover {
+    text-decoration: none;
+}
+
 .developerCardListLink {
     color: var(--1inch-text);
 }
