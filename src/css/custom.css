@@ -191,6 +191,7 @@ html {
 
 .menu__link {
     display: inline-block;
+    width: 100%;
 }
 
 .menu__list-item--collapsed .menu__link,

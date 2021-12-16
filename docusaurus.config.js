@@ -66,16 +66,13 @@ const config = {
           {
             label: 'Governance',
             position: 'left',
-            href: '/docs/governance/overview'
+            type: 'doc',
+            docId: 'governance/overview',
           },
           {
             label: 'Open Source',
             position: 'left',
             items: [
-              {
-                label: 'Router contract',
-                href: 'https://github.com/1inch/1inch-contract/blob/master/contracts/AggregationRouterV4.sol',
-              },
               {
                 label: 'Limit order contract',
                 href: 'https://github.com/1inch/limit-order-protocol',
