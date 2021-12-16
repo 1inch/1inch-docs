@@ -7,7 +7,7 @@ const DeveloperList = [
     {
         link: 'https://1inch.io/foundation-grant-program/',
         button: {
-            title: 'Apply',
+            title: 'Apply for Grant',
             href: 'https://airtable.com/shr899d3K9Bw963CP'
         },
         image: (
@@ -23,7 +23,7 @@ const DeveloperList = [
     },
     {
         button: {
-            title: 'Report Bug',
+            title: 'Report a Bug',
             href: 'https://airtable.com/shrddQOOkm3hOLuzd'
         },
         image: (
