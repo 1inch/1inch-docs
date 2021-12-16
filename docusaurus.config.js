@@ -24,13 +24,13 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          editUrl: 'https://github.com/1inch/1inch-docs/edit/master/website/',
+          editUrl: 'https://github.com/1inch/1inch-docs/edit/master/',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           editUrl:
-            'https://github.com/1inch/1inch-docs/edit/master/website/blog/',
+            'https://github.com/1inch/1inch-docs/edit/master/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
