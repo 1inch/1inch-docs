@@ -75,7 +75,7 @@ function Feature({title, description, image, hrefGithub, links}) {
             <div className={styles.featureCardLinks}>
                 {
                     links.map((link, index) => (
-                        <a href={link.href} target="_blank" className={styles.featureCardLinkWrap} key={index}>
+                        <a href={link.href} className={styles.featureCardLinkWrap} key={index}>
                             <p>{link.title}</p>
                             <ArrowOutside className={styles.featureCardLinkIcon} />
                         </a>
