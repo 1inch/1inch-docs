@@ -169,6 +169,6 @@ html[data-theme='light'] .limitOrderProtocolImage::after {
     .featureCardImage::after {
         width: 240px;
         height: 130px;
-        transform: scale(0.4) translate(-230px, -100px);;
+        transform: scale(0.4) translate(-210px, -100px);;
     }
 }

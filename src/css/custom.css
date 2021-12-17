@@ -152,7 +152,7 @@ html {
 
 .navbar__item {
     padding: 0;
-    margin-right: 48px;
+    margin-right: 32px;
     align-self: stretch;
     display: flex;
     align-items: center;
@@ -445,10 +445,6 @@ html[data-theme='dark'] .swagger-ui .model-toggle:after {
 }
 
 @media (max-width: 600px) {
-    .main-wrapper::before {
-        content: url("../../static/img/top-bg-mobile.svg");
-    }
-
     .tabs-container {
         display: none;
     }

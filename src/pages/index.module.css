@@ -20,8 +20,8 @@
     position: absolute;
     right: 0;
     left: 0;
-    top: -50px;
-    z-index: -1;
+    top: -60px;
+    z-index: 0;
     width: 100%;
 }
 
@@ -31,7 +31,7 @@
     right: 0;
     left: 0;
     bottom: 0;
-    z-index: -1;
+    z-index: 0;
     width: 100%;
 }
 
@@ -115,6 +115,10 @@ html[data-theme='light'] .mainContainer::after {
         top: 0;
         height: 300px;
         width: 270px;
+    }
+
+    .mainContainer::before {
+        content: url("../../static/img/top-bg-mobile.svg");
     }
 }
 
