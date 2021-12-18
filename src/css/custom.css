@@ -267,6 +267,10 @@ html[data-theme='dark'] .dropdown > .navbar__link:after {
 }
 
 /* swagger START */
+.warning-swagger {
+    display: none;
+}
+
 .swagger-ui pre.version {
     background-color: transparent !important;
 }
@@ -450,6 +454,7 @@ html[data-theme='dark'] .swagger-ui .model-toggle:after {
     }
 
     .warning-swagger {
+        display: block;
         text-align: center;
         border: 1px solid var(--1inch-border);
         border-radius: 16px;
