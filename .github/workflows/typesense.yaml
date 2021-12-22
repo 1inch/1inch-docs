@@ -1,0 +1,80 @@
+name: Rebuild Search Index
+
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows:
+    - pages build and deployment
+    types:
+    - completed
+
+jobs:
+  scrape:
+    name: Rebuild Index
+    runs-on: ubuntu-latest
+    container:
+      image: typesense/docsearch-scraper:latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node:
+        - hel
+        - fsn
+    steps:
+    -
+      name: Run scraper
+      env:
+        HOME: /root
+        TYPESENSE_API_KEY: ${{ secrets.TYPESENSE_SCRAPER_API_KEY }}
+        TYPESENSE_HOST: ${{ matrix.node }}-typesense.1inch.io
+        TYPESENSE_PORT: '443'
+        TYPESENSE_PROTOCOL: https
+        CONFIG: |
+          {
+            "index_name": "1inch-docs",
+            "start_urls": [
+              "https://docs.1inch.io/"
+            ],
+            "sitemap_urls": [
+              "https://docs.1inch.io/sitemap.xml"
+            ],
+            "sitemap_alternate_links": true,
+            "stop_urls": [],
+            "selectors": {
+              "lvl0": {
+                "selector": ".menu__link--sublist.menu__link--active",
+                "global": true,
+                "default_value": "Documentation"
+              },
+              "lvl1": "header h1",
+              "lvl2": "article h2",
+              "lvl3": "article h3",
+              "lvl4": "article h4",
+              "lvl5": "article h5, article td:first-child",
+              "lvl6": "article h6",
+              "text": "article p, article li, article td:last-child"
+            },
+            "strip_chars": " .,;:#",
+            "custom_settings": {
+              "separatorsToIndex": "_",
+              "attributesForFaceting": [
+                "language",
+                "version",
+                "type"
+              ],
+              "attributesToRetrieve": [
+                "hierarchy",
+                "content",
+                "anchor",
+                "url",
+                "url_without_anchor",
+                "type"
+              ]
+            },
+            "conversation_id": [
+              "1090805758"
+            ],
+            "nb_hits": 8687
+          }
+      run: pipenv run python -m src.index
+      working-directory: /root
