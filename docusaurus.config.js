@@ -15,7 +15,7 @@ const config = {
   favicon: 'img/favicon/favicon.ico',
   organizationName: '1inch', // Usually your GitHub org/user name.
   projectName: '1inch-docs', // Usually your repo name.
-
+  themes: ['docusaurus-theme-search-typesense'],
   presets: [
     [
       '@docusaurus/preset-classic',
@@ -120,6 +120,33 @@ const config = {
             position: 'right',
           },
         ],
+      },
+      typesense: {
+        typesenseCollectionName: '1inch-docs',
+        typesenseServerConfig: {
+          nearestNode: {
+            host: 'fsn-typesense.1inch.io',
+            port: 443,
+            protocol: 'https',
+          },
+          nodes: [
+            {
+              host: 'fsn-typesense.1inch.io',
+              port: 443,
+              protocol: 'https',
+            },
+            {
+              host: 'hel-typesense.1inch.io',
+              port: 443,
+              protocol: 'https',
+            },
+          ],
+          apiKey: 'PkWe6bmCzamVA4lw1Z5ZmRjdG0BQ7Cvh',
+        },
+
+        typesenseSearchParameters: {},
+
+        contextualSearch: false,
       },
       prism: {
         theme: lightCodeTheme,
