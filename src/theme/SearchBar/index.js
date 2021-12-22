@@ -207,9 +207,13 @@ function DocSearch({contextualSearch, externalUrlRegex, ...props}) {
   );
 }
 
-function SearchBar() {
+function SearchBar({size}) {
   const {siteConfig} = useDocusaurusContext();
-  return <DocSearch {...siteConfig.themeConfig.algolia} />;
+  return (
+      <div className={size === 'large' ? 'largeSearch' : 'smallSearch'}>
+        <DocSearch {...siteConfig.themeConfig.algolia} />
+      </div>
+  );
 }
 
 export default SearchBar;

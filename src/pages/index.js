@@ -11,6 +11,7 @@ function HomepageHeader() {
     return (
         <header className={styles.headerWrap}>
             <h1 className={styles.mainTitle}>Documentation Portal</h1>
+            <SearchBar size="large"/>
         </header>
     );
 }
@@ -24,9 +25,6 @@ export default function Home() {
                 <div className="page-container">
                     <HomePageBackgroundImage className={styles.bgImage}/>
                     <HomepageHeader/>
-                    <div>
-                        <SearchBar/>
-                    </div>
                     <div className={styles.section}>
                         <HomepageFeatures/>
                     </div>
