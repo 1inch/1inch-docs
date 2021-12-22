@@ -12,10 +12,10 @@ import {useHistory} from '@docusaurus/router';
 import {useBaseUrlUtils} from '@docusaurus/useBaseUrl';
 import Link from '@docusaurus/Link';
 import Head from '@docusaurus/Head';
-import useSearchQuery from '@theme/hooks/useSearchQuery';
+import useSearchQuery from '@docusaurus/preset-classic/node_modules/@docusaurus/theme-search-algolia/src/theme/hooks/useSearchQuery.js';
 import {isRegexpStringMatch} from '@docusaurus/theme-common';
 import {DocSearchButton, useDocSearchKeyboardEvents} from '@docsearch/react';
-import useAlgoliaContextualFacetFilters from '@theme/hooks/useAlgoliaContextualFacetFilters';
+import useAlgoliaContextualFacetFilters from '@docusaurus/preset-classic/node_modules/@docusaurus/theme-search-algolia/src/theme/hooks/useAlgoliaContextualFacetFilters.js';
 import {translate} from '@docusaurus/Translate';
 import styles from './styles.module.css';
 
