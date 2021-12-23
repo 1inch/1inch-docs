@@ -1,11 +1,18 @@
 name: CI
 
-on: [push]
+on:
+  push:
+    branches-ignore:
+      - master
+    paths-ignore:
+      - .github/**
+  # manual trigger
+  workflow_dispatch:
 
 jobs:
   build:
     name: Build
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - name: Clone source code
         uses: actions/checkout@v2
