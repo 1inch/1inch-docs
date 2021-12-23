@@ -3,7 +3,7 @@ import Layout from '@theme/Layout';
 import styles from './index.module.css';
 import HomepageFeatures from '../components/homepage-features/HomepageFeatures';
 import HomepageDeveloperLinks from '../components/homepage-developer-links/HomepageDeveloperLinks';
-import HomepagePreFooter from '../components/homepage-prefooter/HomepagePreFooter';
+import SearchBar from '@theme/SearchBar';
 import HomepageFooter from '../components/homepage-footer/HomepageFooter';
 import HomePageBackgroundImage from '../../static/img/logo-background.svg'
 
@@ -11,6 +11,7 @@ function HomepageHeader() {
     return (
         <header className={styles.headerWrap}>
             <h1 className={styles.mainTitle}>Documentation Portal</h1>
+            <SearchBar size="large"/>
         </header>
     );
 }
