@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   workflow_run:
     workflows:
-    - pages build and deployment
+    - pages-build-deployment
     types:
     - completed
 
