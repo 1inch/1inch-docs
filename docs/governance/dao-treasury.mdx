@@ -10,7 +10,31 @@ All protocol revenues are directed to the Treasury and referral rewards.
 The 1inch Network DAO Treasury is a [Gnosis Safe](https://gnosis-safe.io/app/eth:0x7951c7ef839e26F63DA87a42C9a87986507f1c07/balances) smart contract wallet with multi-signature (multisig) functionality on the Ethereum mainnet. 12 multisig owners have initially been selected by the 1inch Foundation from the core contributor team and other well-known projects, such as [Tornado Cash](https://tornado.cash/), [Synthetix](https://synthetix.io/), [Opium](https://opium.network/), [NEAR protocol](https://near.org/), and [zkSync](https://zksync.io/), to name a few. These signers are able to veto malicious transactions in a 7 of 12 fashion. 
 
 ## Gnosis Safe + Snapshot + SafeSnap
-Snapshot allows for gasless voting. SafeSnap is a Snapshot module that allows for on-chain execution of off-chain voting. The combination of these tools gives the DAO’s votes direct control over the Gnosis Safe that holds the Treasury funds.
+
+Snapshot allows for gasless voting. SafeSnap, also known as [Reality Module](https://gnosis.github.io/zodiac/docs/tutorial-module-reality/get-started), is a Snapshot module that allows for on-chain execution of off-chain voting. The combination of these tools gives the DAO’s votes direct control over the Gnosis Safe that holds the Treasury funds.
+
+
+SafeSnap has been integrated into the 1inch Snapshot space. 1IPs that call for payment(s) from the treasury must have the "Transactions" container filled out by the individual proposing the Phase 4 Snapshot vote. Required fields include transaction type, Asset, recipient address, and amount.
+
+Once the Snapshot vote closes, and the vote has met the minimum quorum (more in [Phase 4: Snapshot Vote](https://docs.1inch.io/docs/governance/proposal-lifecycle#phase-4-snapshot-vote)), anyone can use the Snapshot UI to "Request execution" in the "SafeSnap Execution" window -- this is an on-chain transaction that initializes the reality.eth Oracle.
+
+After the reality.eth Oracle has been initialized, anyone can set the outcome by putting up a bond of 0.1 ETH to be used in the escalation-game-based Oracle. This bond is returned if their answer correctly identifies the passing result of the Snapshot proposal as specified in the 1inch Network DAO Acceptance Criteria.
+
+The bonded escalation game concludes once a 72-hour period has elapsed without challenge. Challenging the outcome requires a bond that is at least double the size of the current one, and it restarts the 72-hour period.
+
+Once the reality.eth bonded oracle resolves in favor of the proposal, there is an additional 72 hour period of time between the SafeSnap resolution and the ability for the underlying transaction to be executed -- this is known as the Timelock. During the Timelock period, the 1inch Network DAO Treasury multisig owners will have the ability to veto malicious transactions in a 7-of-12 fashion. 
+
+After all steps have successfully completed, the proposal will be executable by anyone who calls the function. The reality.eth participants may then retrieve their bond.
+
+For a comprehensive explanation of the reality.eth Oracle game, refer to the [reality.eth whitepaper](http://reality.eth.link/app/docs/html/whitepaper.html).
+
+
+#### External References
+
+* **1inch reality.eth module** -- [0xa62D2a75eb39C12e908e9F6BF50f189641692F2E](https://etherscan.io/address/0xa62D2a75eb39C12e908e9F6BF50f189641692F2E)
+* **1inch Network DAO Treasury** -- [0x7951c7ef839e26F63DA87a42C9a87986507f1c07](https://etherscan.io/address/0x7951c7ef839e26F63DA87a42C9a87986507f1c07)
+* **1inch Network DAO Acceptance Criteria** -- [IPFS deployment](https://ipfs.io/ipfs/QmbNkL7ZpUsP2w7m1bCimkPKqJeSyUxM2K4VkxbaFB8ek5)
+
 
 ## Revenue stream
 The 1inch Pathfinder algorithm always provides users the most current and best possible prices on a swap. However, the swap price sometimes moves between the time of the quote and the time that the transaction is mined — resulting in a Swap Surplus. 
