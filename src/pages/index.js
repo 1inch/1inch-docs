@@ -4,7 +4,7 @@ import HomepageFeatures from '../components/homepage-features/HomepageFeatures';
 import HomepageDeveloperLinks from '../components/homepage-developer-links/HomepageDeveloperLinks';
 import HomepageFooter from '../components/homepage-footer/HomepageFooter';
 import HomePageBackgroundImage from '../../static/img/logo-background.svg'
-import Layout from "@docusaurus/core/lib/client/theme-fallback/Layout";
+import Layout from '@theme/Layout';
 import Head from "@docusaurus/core/lib/client/exports/Head";
 import Cover from '../../static/img/cover.png';
 
