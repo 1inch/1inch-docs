@@ -21,9 +21,19 @@ export default function Home() {
         <Layout pageClassName={styles.mainLayout}
                 description="The 1inch Network unites decentralized protocols whose synergy enables the most lucrative, fastest and protected operations in the DeFi space.">
             <Head>
-                <meta property="og:image" content={Cover} />
-                <meta name="twitter:image" content={Cover} />
                 <title>1inch Network | Leading high capital efficient DeFi protocols</title>
+                <meta property="og:title" content="1inch Network | Leading high capital efficient DeFi protocol" />
+                <meta property="og:description" content="The 1inch Network unites decentralized protocols whose synergy enables the most lucrative, fastest and protected operations in the DeFi space." />
+                <meta property="og:url" content="https://docs.1inch.io/" />
+                <meta property="og:image" content={Cover} />
+                <meta property="og:site_name" content="1inch Network Docs" />
+                <meta property="og:type" content="website" />
+                <meta property="twitter:title" content="1inch Network | Leading high capital efficient DeFi protocols" />
+                <meta name="twitter:description" content="The 1inch Network unites decentralized protocols whose synergy enables the most lucrative, fastest and protected operations in the DeFi space." />
+                <meta name="twitter:image:alt" content="1inch Network | Leading high capital efficient DeFi protocols" />
+                <meta name="twitter:image" content={Cover} />
+                <meta name="twitter:site" content="@1inchNetwork" />
+                <meta name="twitter:card" content="summary_large_image" />
             </Head>
             <main className={styles.mainContainer}>
                 <div className="page-container">
