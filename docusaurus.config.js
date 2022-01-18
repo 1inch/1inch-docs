@@ -42,6 +42,7 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      metadata: [{name: 'twitter:image', content: 'img/cover.png'}],
       navbar: {
         title: '1inch Network Docs',
         logo: {
