@@ -17,7 +17,7 @@ const FeatureList = [
             },
             {
                 title: 'Dune analytics',
-                href: 'https://dune.xyz/k06a/1inch-exchange'
+                href: 'https://dune.xyz/k06a/1inch'
             },
             {
                 title: 'Smart contract',
