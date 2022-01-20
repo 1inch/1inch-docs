@@ -4,7 +4,8 @@ sidebar_position: 1
 
 # Introduction
 
-1inch limit order protocol is a set of smart contracts, that can work on any EVM based blockchains (Ethereum, Binance Smart Chain, Polygon, etc.). Key features of the protocol is **extreme flexibility** and high **gas efficiency** that achieved by using two different order types - regular _Limit Order_ and _RFQ Order_.
+1inch limit order protocol is a set of smart contracts, that can work on any EVM based blockchains
+(Ethereum, Binance Smart Chain, Polygon, Arbitrum, Optimism, Gnosis chain, Avalanche). Key features of the protocol is **extreme flexibility** and high **gas efficiency** that achieved by using two different order types - regular _Limit Order_ and _RFQ Order_.
 
 Smart Contract allows users to place limit orders and RFQ Orders, that later could be filled on-chain.
 Both type of orders is a data structure created off-chain and signed according to [EIP-712](https://eips.ethereum.org/EIPS/eip-712).
@@ -12,8 +13,16 @@ Both type of orders is a data structure created off-chain and signed according t
 ## Limit Order
 
 1inch users can place their limit orders via 1inch [dApp](https://app.1inch.io/#/1/limit-order/WETH/DAI).
-Anyone can fetch this signed orders using REST API endpoint ([Ethereum](https://limit-orders.1inch.exchange/swagger/ethereum/), [BSC](https://limit-orders.1inch.exchange/swagger/binance/), [Polygon](https://limit-orders.1inch.exchange/swagger/polygon/)) to perform trade by filling order on-chain.
-To do that he or she pass signed order to the `fillOrder` method on the contract ([Ethereum](https://etherscan.io/address/0x119c71d3bbac22029622cbaec24854d3d32d2828), [BSC](https://bscscan.com/address/0x1e38eff998df9d3669e32f4ff400031385bf6362), [Polygon](https://polygonscan.com/address/0x94bc2a1c732bcad7343b25af48385fe76e08734f), [Optimism](https://polygonscan.com/address/0x11431a89893025d2a48dca4eddc396f8c8117187), [Arbitrum](https://polygonscan.com/address/0x7f069df72b7a39bce9806e3afaf579e54d8cf2b9)).
+Anyone can fetch this signed orders using [REST API endpoint](./api) to perform trade by filling order on-chain.
+To do that he or she pass signed order to the `fillOrder` method on the contract:
+ - [Ethereum](https://etherscan.io/address/0x119c71d3bbac22029622cbaec24854d3d32d2828)
+ - [BSC](https://bscscan.com/address/0x1e38eff998df9d3669e32f4ff400031385bf6362)
+ - [Polygon](https://polygonscan.com/address/0x94bc2a1c732bcad7343b25af48385fe76e08734f)
+ - [Optimism](https://polygonscan.com/address/0x11431a89893025d2a48dca4eddc396f8c8117187)
+ - [Arbitrum](https://polygonscan.com/address/0x7f069df72b7a39bce9806e3afaf579e54d8cf2b9)
+ - [Gnosis chain](https://polygonscan.com/address/0x54431918cec22932fcf97e54769f4e00f646690f)
+ - [Avalanche](https://polygonscan.com/address/0x0f85a912448279111694f4ba4f85dc641c54b594)
+
 _Note: trades buyer and seller should approve their asset to be used by 1inch limit order contract._
 
 Pathfinder algorithm use limit orders placed via `dApp` and REST API, as a liquidity source, and make it available to fill to any 1inch user.
