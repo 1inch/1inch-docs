@@ -14,11 +14,13 @@ sidebar_position: 3
 1INCH must be [staked](https://app.1inch.io/#/1/dao/governance) in the governance contract to participate in voting. Staking is an on-chain event in which the user temporarily locks their 1INCH up and receives non-transferable st1INCH. At any point the user may reverse the process by using the [Unstake token](https://app.1inch.io/#/1/dao/governance?action=unstake) UI.
 
 ## Vote Delegation
-Holders of the 1inch governance tokens may delegate their Voting Weight to an address of their choice. Those who choose to delegate their voting rights to another address are known as Delegators, while those who receive delegation are known as delegatees.
+Holders of the 1inch governance tokens may delegate their Voting Weight to an address of their choice. Those who choose to delegate their voting rights to another address are known as Delegators, while those who receive delegation are known as Delegatees. 1inch Network DAO uses [Snapshot's supported delegation strategy](https://snapshot.org/#/strategy/delegation).
 
 Anybody can participate in 1inch DAO governance if their address has received delegation, even if the address of the delegatee holds no governernance tokens.
 
-1inch governance token holders may choose to delegate their voting powers using the governance UI, or by interacting directly with the Snapshot delegation smart contract.
+1inch governance token holders may choose to delegate their voting powers in the [Snapshot 1inch space](https://snapshot.org/#/delegate/1inch.eth), or, by interacting directly with the Snapshot delegation smart contract. Both locations can also be used to remove delegation from a previously assigned address. 
+
+If a Delegator delegates their voting power to a Delegatee and both of them vote on the same proposal, then the delegated voting power is ignored for that vote. In other words, even if a Delegator has allotted their voting power to another address, said Delegator always has the option to temporarily override that delegation by voting themselves.
 
 ## Supported Networks
 Currently, 1inch DAO voting uses governance token balances and delegations on the Ethereum mainnet.
