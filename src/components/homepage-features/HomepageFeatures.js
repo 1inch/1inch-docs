@@ -5,7 +5,7 @@ import ArrowOutside from '../../../static/img/icons/arrow-outside.svg';
 
 const FeatureList = [
     {
-        title: 'Aggregation protocol V4',
+        title: 'Aggregation Protocol V4',
         description: 'The 1inch Aggregation Protocol facilitates cost-efficient and secure swap transactions across multiple liquidity sources',
         image: (
             <div className={clsx(styles.featureCardImage, styles.aggregationProtocolImage)}/>
@@ -35,7 +35,7 @@ const FeatureList = [
         ]
     },
     {
-        title: 'Limit order protocol V2',
+        title: 'Limit Order Protocol V2',
         description: 'The 1inch Limit Order Protocol facilitates the most innovative and flexible limit order swap opportunities in DeFi',
         image: (
             <div className={clsx(styles.featureCardImage, styles.limitOrderProtocolImage)}/>
