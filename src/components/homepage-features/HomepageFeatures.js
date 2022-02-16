@@ -76,6 +76,10 @@ const FeatureList = [
                 title: 'Github',
                 href: 'https://github.com/1inch/spot-price-aggregator'
             },
+            {
+                title: 'Smart contract',
+                href: 'https://etherscan.io/address/0x07D91f5fb9Bf7798734C3f606dB065549F6893bb'
+            },
         ]
     },
 ];
@@ -92,16 +96,23 @@ function Feature({title, description, image, links}) {
             </div>
             <div className={styles.featureCardLinks}>
                 {
-                    links.map((link, index) => (
-                        <Link href={link.href} className={styles.featureCardLinkWrap} key={index}>
-                            <p className={styles.featureCardLinkTitle}>
-                                <span>{link.title}</span>
-                                {link.isSwagger && <span className={styles.featureCardLinkSwagger}>Swagger</span>}
-                                {link.versionLabel && <span className={styles.featureCardLinkVersionLabel}>{link.versionLabel}</span>}
-                            </p>
-                            <ArrowOutside className={styles.featureCardLinkIcon} />
-                        </Link>
-                    ))
+                    links.map((link, index) => {
+                        if (link.title) {
+                            return (
+                                <Link href={link.href} className={styles.featureCardLinkWrap} key={index}>
+                                    <p className={styles.featureCardLinkTitle}>
+                                        <span>{link.title}</span>
+                                        {link.isSwagger && <span className={styles.featureCardLinkSwagger}>Swagger</span>}
+                                        {link.versionLabel && <span className={styles.featureCardLinkVersionLabel}>{link.versionLabel}</span>}
+                                    </p>
+                                    <ArrowOutside className={styles.featureCardLinkIcon} />
+                                </Link>
+                            )
+                        } else {
+                            return <span/>
+                        }
+
+                    })
                 }
             </div>
         </div>
