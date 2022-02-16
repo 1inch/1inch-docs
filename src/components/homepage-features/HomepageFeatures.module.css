@@ -82,6 +82,22 @@ html[data-theme='light'] .limitOrderProtocolImage::after {
     content: url("../../../static/img/limit-order-protocol-light.png");
 }
 
+.limitOrderProtocolImage::after {
+    content: url("../../../static/img/limit-order-protocol-dark.png");
+}
+
+html[data-theme='light'] .limitOrderProtocolImage::after {
+    content: url("../../../static/img/limit-order-protocol-light.png");
+}
+
+.spotPriceAggregatorImage::after {
+    content: url("../../../static/img/spot-price-aggregator-dark.png");
+}
+
+html[data-theme='light'] .spotPriceAggregatorImage::after {
+    content: url("../../../static/img/spot-price-aggregator-light.png");
+}
+
 
 .featureCardLinkWrap {
     display: flex;

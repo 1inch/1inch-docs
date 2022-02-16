@@ -2,6 +2,7 @@ import React from 'react';
 import clsx from 'clsx';
 import styles from './HomepageFeatures.module.css';
 import ArrowOutside from '../../../static/img/icons/arrow-outside.svg';
+import Link from "@docusaurus/core/lib/client/exports/Link";
 
 const FeatureList = [
     {
@@ -64,12 +65,16 @@ const FeatureList = [
         title: 'Spot price aggregator',
         description: 'The 1inch spot price aggregator is a set of smart contracts that extract price data for tokens traded on DEXes from the blockchain',
         image: (
-            <div className={clsx(styles.featureCardImage, styles.limitOrderProtocolImage)}/>
+            <div className={clsx(styles.featureCardImage, styles.spotPriceAggregatorImage)}/>
         ),
         links: [
             {
                 title: 'Introduction',
                 href: '/docs/spot-price-aggregator/introduction'
+            },
+            {
+                title: 'Github',
+                href: 'https://github.com/1inch/spot-price-aggregator'
             },
         ]
     },
@@ -79,21 +84,23 @@ function Feature({title, description, image, links}) {
     return (
         <div className={styles.featureCard}>
             <div>
-                <h3 className={styles.featureCardTitle}>{title}</h3>
-                <p className={styles.featureCardText}>{description}</p>
+                <div>
+                    <h3 className={styles.featureCardTitle}>{title}</h3>
+                    <p className={styles.featureCardText}>{description}</p>
+                </div>
+                {image}
             </div>
-            {image}
             <div className={styles.featureCardLinks}>
                 {
                     links.map((link, index) => (
-                        <a href={link.href} className={styles.featureCardLinkWrap} key={index}>
+                        <Link href={link.href} className={styles.featureCardLinkWrap} key={index}>
                             <p className={styles.featureCardLinkTitle}>
                                 <span>{link.title}</span>
                                 {link.isSwagger && <span className={styles.featureCardLinkSwagger}>Swagger</span>}
                                 {link.versionLabel && <span className={styles.featureCardLinkVersionLabel}>{link.versionLabel}</span>}
                             </p>
                             <ArrowOutside className={styles.featureCardLinkIcon} />
-                        </a>
+                        </Link>
                     ))
                 }
             </div>
