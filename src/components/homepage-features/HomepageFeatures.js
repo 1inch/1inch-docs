@@ -60,6 +60,19 @@ const FeatureList = [
             },
         ]
     },
+    {
+        title: 'Spot price aggregator',
+        description: 'The 1inch spot price aggregator is a set of smart contracts that extract price data for tokens traded on DEXes from the blockchain',
+        image: (
+            <div className={clsx(styles.featureCardImage, styles.limitOrderProtocolImage)}/>
+        ),
+        links: [
+            {
+                title: 'Introduction',
+                href: '/docs/spot-price-aggregator/introduction'
+            },
+        ]
+    },
 ];
 
 function Feature({title, description, image, links}) {
