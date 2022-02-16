@@ -6,7 +6,7 @@
 
 .featureList {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-column-gap: 28px;
 }
 
@@ -24,6 +24,7 @@ html[data-theme='light'] .featureCard {
     background-color: var(--1inch-bg-card);
     border: none;
     box-shadow: 0 0 4px rgba(71, 73, 79, 0.1), 0 1px 2px rgba(71, 73, 79, 0.25);
+    margin-bottom: 20px;
 }
 
 .featureCard:hover {
@@ -79,6 +80,22 @@ html[data-theme='light'] .aggregationProtocolImage::after {
 
 html[data-theme='light'] .limitOrderProtocolImage::after {
     content: url("../../../static/img/limit-order-protocol-light.png");
+}
+
+.limitOrderProtocolImage::after {
+    content: url("../../../static/img/limit-order-protocol-dark.png");
+}
+
+html[data-theme='light'] .limitOrderProtocolImage::after {
+    content: url("../../../static/img/limit-order-protocol-light.png");
+}
+
+.spotPriceAggregatorImage::after {
+    content: url("../../../static/img/spot-price-aggregator-dark.png");
+}
+
+html[data-theme='light'] .spotPriceAggregatorImage::after {
+    content: url("../../../static/img/spot-price-aggregator-light.png");
 }
 
 
@@ -139,7 +156,8 @@ html[data-theme='light'] .limitOrderProtocolImage::after {
 
 @media (max-width: 1200px) {
     .featureList {
-        grid-column-gap: 16px;
+        grid-gap: 16px;
+        grid-template-columns: 1fr 1fr;
     }
 }
 
