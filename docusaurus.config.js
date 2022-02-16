@@ -94,10 +94,6 @@ const config = {
                 href: 'https://github.com/1inch/permit-signed-approvals-utils',
               },
               {
-                label: 'Spot price aggregator',
-                href: 'https://github.com/1inch/offchain-oracle',
-              },
-              {
                 label: 'Cumulative merkle drop',
                 href: 'https://github.com/1inch/merkle-distribution',
               },
