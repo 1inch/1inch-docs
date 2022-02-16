@@ -94,7 +94,7 @@ const config = {
                 href: 'https://github.com/1inch/permit-signed-approvals-utils',
               },
               {
-                label: 'Off-chain oracle',
+                label: 'Spot price aggregator',
                 href: 'https://github.com/1inch/offchain-oracle',
               },
               {
