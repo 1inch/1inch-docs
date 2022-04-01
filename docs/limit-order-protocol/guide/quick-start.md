@@ -40,9 +40,9 @@ const limitOrder = limitOrderBuilder.buildLimitOrder({
     makerAddress: walletAddress,
     makerAmount: '100',
     takerAmount: '200',
-    predicate: '0x0',
-    permit: '0x0',
-    interaction: '0x0',
+    predicate: '0x',
+    permit: '0x',
+    interaction: '0x',
 });
 const limitOrderTypedData = limitOrderBuilder.buildLimitOrderTypedData(
     limitOrder
