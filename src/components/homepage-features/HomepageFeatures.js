@@ -2,11 +2,12 @@ import React from 'react';
 import clsx from 'clsx';
 import styles from './HomepageFeatures.module.css';
 import ArrowOutside from '../../../static/img/icons/arrow-outside.svg';
+import Link from "@docusaurus/core/lib/client/exports/Link";
 
 const FeatureList = [
     {
-        title: 'Aggregation protocol V4',
-        description: 'Engaging adopters and maximizing the network\'s decentralization through growing stakeowner numbers',
+        title: 'Aggregation Protocol V4',
+        description: 'The 1inch Aggregation Protocol facilitates cost-efficient and secure swap transactions across multiple liquidity sources',
         image: (
             <div className={clsx(styles.featureCardImage, styles.aggregationProtocolImage)}/>
         ),
@@ -35,8 +36,8 @@ const FeatureList = [
         ]
     },
     {
-        title: 'Limit order protocol V2',
-        description: 'Running yield farming programs that have proven to be efficient bootstrapping tools for potential bluechips of the DeFi space',
+        title: 'Limit Order Protocol V2',
+        description: 'The 1inch Limit Order Protocol facilitates the most innovative and flexible limit order swap opportunities in DeFi',
         image: (
             <div className={clsx(styles.featureCardImage, styles.limitOrderProtocolImage)}/>
         ),
@@ -60,28 +61,58 @@ const FeatureList = [
             },
         ]
     },
+    {
+        title: 'Spot price aggregator',
+        description: 'The 1inch spot price aggregator is a set of smart contracts that extract price data for tokens traded on DEXes from the blockchain',
+        image: (
+            <div className={clsx(styles.featureCardImage, styles.spotPriceAggregatorImage)}/>
+        ),
+        links: [
+            {
+                title: 'Introduction',
+                href: '/docs/spot-price-aggregator/introduction'
+            },
+            {
+                title: 'Github',
+                href: 'https://github.com/1inch/spot-price-aggregator'
+            },
+            {
+                title: 'Smart contract',
+                href: 'https://etherscan.io/address/0x07D91f5fb9Bf7798734C3f606dB065549F6893bb'
+            },
+        ]
+    },
 ];
 
 function Feature({title, description, image, links}) {
     return (
         <div className={styles.featureCard}>
             <div>
-                <h3 className={styles.featureCardTitle}>{title}</h3>
-                <p className={styles.featureCardText}>{description}</p>
+                <div>
+                    <h3 className={styles.featureCardTitle}>{title}</h3>
+                    <p className={styles.featureCardText}>{description}</p>
+                </div>
+                {image}
             </div>
-            {image}
             <div className={styles.featureCardLinks}>
                 {
-                    links.map((link, index) => (
-                        <a href={link.href} className={styles.featureCardLinkWrap} key={index}>
-                            <p className={styles.featureCardLinkTitle}>
-                                <span>{link.title}</span>
-                                {link.isSwagger && <span className={styles.featureCardLinkSwagger}>Swagger</span>}
-                                {link.versionLabel && <span className={styles.featureCardLinkVersionLabel}>{link.versionLabel}</span>}
-                            </p>
-                            <ArrowOutside className={styles.featureCardLinkIcon} />
-                        </a>
-                    ))
+                    links.map((link, index) => {
+                        if (link.title) {
+                            return (
+                                <Link href={link.href} className={styles.featureCardLinkWrap} key={index}>
+                                    <p className={styles.featureCardLinkTitle}>
+                                        <span>{link.title}</span>
+                                        {link.isSwagger && <span className={styles.featureCardLinkSwagger}>Swagger</span>}
+                                        {link.versionLabel && <span className={styles.featureCardLinkVersionLabel}>{link.versionLabel}</span>}
+                                    </p>
+                                    <ArrowOutside className={styles.featureCardLinkIcon} />
+                                </Link>
+                            )
+                        } else {
+                            return <span/>
+                        }
+
+                    })
                 }
             </div>
         </div>

@@ -60,6 +60,10 @@ const config = {
               {
                 label: 'Limit order protocol',
                 href: '/docs/limit-order-protocol/introduction'
+              },
+              {
+                label: 'Spot Price Aggregator',
+                href: '/docs/spot-price-aggregator/introduction'
               }
             ]
           },
@@ -88,10 +92,6 @@ const config = {
               {
                 label: 'EIP-2612 utils library',
                 href: 'https://github.com/1inch/permit-signed-approvals-utils',
-              },
-              {
-                label: 'Off-chain oracle',
-                href: 'https://github.com/1inch/offchain-oracle',
               },
               {
                 label: 'Cumulative merkle drop',
