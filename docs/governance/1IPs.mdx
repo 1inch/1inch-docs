@@ -17,6 +17,70 @@ All 1IPs that have successfully passed the Phase-4 vote. These 1IPs have already
 <details>
 <summary>
 
+### [1IP-07] Integrate Balancer Boosted Pools in the 1inch Aggregation Protocol
+
+</summary>
+<div>
+
+<u>
+
+- **[Phase-3: Temperature Check](https://gov.1inch.io/t/1inch-balancer-boosted-pools/3012)**
+
+- **[Phase-4: Snapshot Vote](https://snapshot.org/#/1inch.eth/proposal/0x6358c27cd2d5a95e58095e5cc3b1b9a85d2c9af2a363b259431b53718b26dbb6)**
+
+</u>
+
+</div>
+
+<details>
+<summary>
+
+**Full Proposal Description**
+
+</summary>
+
+<div>
+  <div class="sc-eYmodA kEKCYt"><h2>Simple Summary</h2>
+<p>This proposal calls for the integration of <a href="https://docs.balancer.fi/products/balancer-pools/boosted-pools" target="_blank">Balancer Boosted Pools</a> into the 1inch Aggregation Protocol.</p>
+<h2>Abstract</h2>
+<p>This proposal aims to grow the kinds of liquidity sources compatible with the 1inch Aggregation Protocol by integrating Balancer Boosted Pools. To fund this development, a BAL grant from Balancer DAO and Balancer DAO will be awarded to 1inch Labs upon the successful completion of the integration. Specifically, the following</p>
+<ol>
+<li>1inch Labs shall integrate the Balancer Boosted Pools into the 1inch smart contracts, the 1inch dApp, and the 1inch API.</li>
+<li>The integration shall be live on the Ethereum main-net no later than 3 weeks after this proposal passes the Phase-4 snapshot vote.</li>
+<li>If both conditions 1 and 2 are met, Balancer DAO and Balancer DAO will transfer 20k BAL or the equivalent in stablecoins (as determined by Balancer DAO) to 1inch Labs.</li>
+</ol>
+<h2>Motivation</h2>
+<p>Balancer Boosted Pools are a new pool type that have been gaining traction from many DeFi protocols. These pools were previously discussed with the 1inch community on the <a href="https://gov.1inch.io/t/1inch-balancer-boosted-pools/3012" target="_blank">1inch Governance Forum</a> as well as the <a href="https://youtu.be/OQF0wqgQXDg" target="_blank">1inch Network DAO Community Call #02</a>.</p>
+<p>Given that this is a new pool type and requires effort from 1inch Labs, Balancer seeks to fund this integration via a payment of 20,000 BAL to 1inch Labs.</p>
+<h2>Specification</h2>
+<p>At a high level, integration of Balancer Boosted Pools would require support for Balancer’s BatchSwap function, the routing of trades through multiple Balancer pools including linear pools nested in the boosted pool and the math in the linear pools. This proposal hopes that the support for Boosted Pools is general and can later be expanded to new future Boosted Pools. The integration of Balancer’s BatchSwap function within the 1inch Network will also be able to be used for pools other than Boosted Pools which would benefit both the 1inch Network and Balancer as it would allow for cheaper execution of trades from the wider Balancer pool types. In the near future we expect to see meta pools created with the BPT of Boosted Pools, an example would be a bbaUSD/WETH pool. Routing trades through such pools would include one or more extra hop through Balancer’s BatchSwap function.</p>
+<p>We expect that there will be many new Boosted Pools across all networks in near future, namely poos in collaboration with Ampleforth and Olympus although, below is a non-exhaustive list of currently live Boosted Pools on Ethereum L1:</p>
+<ol>
+<li>bbaUSD, containing 300mm of DAI/USDC/USDT TVL</li>
+<li>bbfUSD, <a href="https://tribe.fei.money/t/fip-90-fuse-boosted-usd-balancer-pool-bb-f-usd/4023" target="_blank">expected</a> to contain at least 50mm of FEI/LUSD/DAI</li>
+</ol>
+<p>This is contingent on the same proposal passing through the BalancerDAO.</p>
+<p>Upon satisfactory integration <sup><em>Note1</em></sup>, 20,000 BAL shall be sent to 1inch Labs ETH address:</p>
+<p>0x2DF104682A61241C79eBB3ce3b2C293578bF6A9D.</p>
+<p><em>Note 1</em>: Satisfactory integration is defined as the 1inch Aggregation Protocol accurately forwarding trades through the bbaUSD and the bbfUSD pools, on Ethereum main-net, when those pools offer the optimal pricing for the end-user.</p>
+<h2>Rationale</h2>
+<p>Support for the mentioned pools will unlock $350mm of efficient TVL for the 1inch Aggregation Protocol and allow it to have access to cheap liquidity for trade routing at the moment of integration and much more TVL in the future as Boosted Pool continue their adoption. Additionally, Boosted Pools have been adapted by BeethovenX, Balancer’s Friendly Fork on Fantom and, integrating them would provide a good source for volume to 1inch on Fantom as well.</p>
+<p>Balancer Boosted Pools are in much demand from other DeFi protocols due to their innovation in capital efficiency thus, it is expected to see many more Balancer Boosted Pools with high TVL in collaboration with other DAOs, some of which were mentioned in the discussion on the forum. Supporting Boosted Pools will position the 1inch aggregator to be able to rapidly integrate any new Boosted Pools launched.</p>
+<p>This BAL grant would be used by 1inch Labs to fund the development of this integration.</p>
+<h2>Considerations</h2>
+<p>The technical specifics of this integration will be defined by 1inch Labs. Like all new modules they have launched, a complete internal security review and audit should be performed before this change is implemented on main-net.</p>
+<p>Because Balancer DAO is directly funding this integration, other upgrades to the 1inch Network can be made in parallel.</p>
+</div>
+</div>
+
+</details>
+
+</details>
+
+<details>
+<summary>
+
+
 ### [1IP-05] Add Derivative Aggregation to 1inch Network
 
 </summary>
