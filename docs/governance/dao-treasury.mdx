@@ -4,15 +4,14 @@ sidebar_position: 4
 # 1inch Network DAO Treasury
 The 1inch Network DAO Treasury is the pool of funds under the direct domain and ownership of the community. 
 
-All protocol revenues are directed to the Treasury and referral rewards.
+All protocol revenues are directed to the DAO Treasury and referral rewards.
 
 ## DAO Treasury 
-The 1inch Network DAO Treasury is a [Gnosis Safe](https://gnosis-safe.io/app/eth:0x7951c7ef839e26F63DA87a42C9a87986507f1c07/balances) smart contract wallet with multi-signature (multisig) functionality on the Ethereum mainnet. 12 multisig owners have initially been selected by the 1inch Foundation from the core contributor team and other well-known projects, such as [Tornado Cash](https://tornado.cash/), [Synthetix](https://synthetix.io/), [Opium](https://opium.network/), [NEAR protocol](https://near.org/), and [zkSync](https://zksync.io/), to name a few. These signers are able to veto malicious transactions in a 7 of 12 fashion. 
+The 1inch Network DAO Treasury is a [Gnosis Safe](https://gnosis-safe.io/app/eth:0x7951c7ef839e26F63DA87a42C9a87986507f1c07/balances) smart contract wallet with multi-signature (multisig) functionality on the Ethereum mainnet. 12 multisig owners have initially been selected by the 1inch Foundation from the core contributor team and other well-known projects, such as [Tornado Cash](https://tornado.cash/), [Synthetix](https://synthetix.io/), [Opium](https://opium.network/), [NEAR protocol](https://near.org/), and [zkSync](https://zksync.io/), to name a few. These signers are able to veto malicious transactions in a 7-of-12 fashion. 
 
 ## Gnosis Safe + Snapshot + SafeSnap
 
 Snapshot allows for gasless voting. SafeSnap, also known as [Reality Module](https://gnosis.github.io/zodiac/docs/tutorial-module-reality/get-started), is a Snapshot module that allows for on-chain execution of off-chain voting. The combination of these tools gives the DAO’s votes direct control over the Gnosis Safe that holds the Treasury funds.
-
 
 SafeSnap has been integrated into the 1inch Snapshot space. 1IPs that call for payment(s) from the treasury must have the "Transactions" container filled out by the individual proposing the Phase 4 Snapshot vote. Required fields include transaction type, Asset, recipient address, and amount.
 
@@ -26,20 +25,33 @@ Once the reality.eth bonded oracle resolves in favor of the proposal, there is a
 
 After all steps have successfully completed, the proposal will be executable by anyone who calls the function. The reality.eth participants may then retrieve their bond.
 
-For a comprehensive explanation of the reality.eth Oracle game, refer to the [reality.eth whitepaper](http://reality.eth.link/app/docs/html/whitepaper.html).
+### Kleros Arbitration
+The Kleros DAO Governance Arbitrator is set as the default Anyone can request Kleros arbitration for the reality.eth bonded escalation game at any point after the first answer is submitted. This can be done in the [reality.eth app](https://realityeth.github.io/) or by [interacting directly with the smart contract](https://reality.eth.limo/app/docs/html/contracts.html). Once arbitration is called, the bonded escalation is paused and no further answers are accepted.
 
+Kleros Oracle combines Kleros's dispute resolution court system with reality.eth's cryptoeconomic bonded escalation game for verifying off-chain events on-chain. The [Kleros DAO Governance Arbitrator](https://github.com/kleros/realitio-arbitrator-with-appeals) acts as a proxy between reality.eth and Kleros Court contract. It creates a corresponding dispute in Kleros Courts and submits the final ruling as an answer in the proper reality.eth format. There are 5 votes in the DAO Governance Arbitrator subcourt, each vote has a juror fee of 0.072 ETH, so the total cost of arbitration is 0.36 ETH (fee numbers are from the [October 2021 Kleros Pramater Update vote](https://snapshot.org/#/kleros.eth/proposal/QmbM6KjjCbib9eD23WYhKeC2GhRCHjKoY59GZL6eqbZisp) and are subject to change).
 
-#### External References
+If the result of the Kleros arbitration is to affirm the answer given by the final answerer, that person receives the question reward. If the result of arbitration is to change the final answer, the individual who paid for arbitration receives the question reward.
+
+### External References
 
 * **1inch reality.eth module** -- [0xa62D2a75eb39C12e908e9F6BF50f189641692F2E](https://etherscan.io/address/0xa62D2a75eb39C12e908e9F6BF50f189641692F2E)
 * **1inch Network DAO Treasury** -- [0x7951c7ef839e26F63DA87a42C9a87986507f1c07](https://etherscan.io/address/0x7951c7ef839e26F63DA87a42C9a87986507f1c07)
 * **1inch Network DAO Acceptance Criteria** -- [IPFS deployment](https://ipfs.io/ipfs/QmbNkL7ZpUsP2w7m1bCimkPKqJeSyUxM2K4VkxbaFB8ek5)
 
+* **reality.eth:** 
+	* [App](https://realityeth.github.io/)
+	* [Whitepaper](http://reality.eth.link/app/docs/html/whitepaper.html)
+	* [Reality Module Governance Oracle Question Resolution Policy](https://ipfs.io/ipfs/QmXyo9M4Z2XY6Nw9UfuuUNzKXXNhvt24q6pejuN9RYWPMr/Reality_Module_Governance_Oracle-Question_Resolution_Policy.pdf)
+*  **Kleros:**  
+	* [Documentation site](https://kleros.gitbook.io/docs/products/oracle)
+	* [DAO Governance Arbitrator Github](https://github.com/kleros/realitio-arbitrator-with-appeals)
+	* [Kleros DAO Governance Arbitrator Proxy -- 0xf72CfD1B34a91A64f9A98537fe63FBaB7530AdcA](https://etherscan.io/address/0xf72cfd1b34a91a64f9a98537fe63fbab7530adca)
 
 ## Revenue stream
 The 1inch Pathfinder algorithm always provides users the most current and best possible prices on a swap. However, the swap price sometimes moves between the time of the quote and the time that the transaction is mined — resulting in a Swap Surplus. 
 
-Funds are collected from the Swap Surplus on all chains. A portion of these funds are paid out to the referral program on the chain the swaps were performed. The remainder are sent to the Ethereum mainnet, swapped for USDC and sent directly to the 1inch Network DAO Treasury. 
+Funds are collected from the Swap Surplus on all chains. A portion of these funds are paid out to the referral program on the chain the swaps were performed. The majority are sent to the Ethereum mainnet, swapped for USDC, and sent directly to the 1inch Network DAO Treasury.
 
 Governance participants are able to control the revenue split of the [Aggregation protocol](https://app.1inch.io/#/1/dao/governance/aggregation?action=stake) and [Liquidity protocol](https://app.1inch.io/#/1/dao/governance?action=stake) by voting with Instant Governance.
 
+Note that none of the revenue funds ever go to the 1inch Foundation -- they are 100% controlled by the 1inch DAO.
