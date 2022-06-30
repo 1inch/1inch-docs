@@ -26,7 +26,7 @@ const FeatureList = [
             },
             {
                 title: 'Enterprise API',
-                href: 'https://1inch.io/api/'
+                href: 'https://docs.google.com/forms/d/e/1FAIpQLSdU7Ahn3YmbssoQiTbs0Fk0TB_7al9O_4ZQIUiZp3OxYzfWtg/viewform'
             },
             {
                 title: 'API',
