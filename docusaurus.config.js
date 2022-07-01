@@ -10,7 +10,7 @@ const config = {
   tagline: 'The 1inch Network unites decentralized protocols whose synergy enables the most lucrative, fastest and protected operations in the DeFi space.',
   url: 'https://1inch.io',
   baseUrl: '/',
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon/favicon.ico',
   organizationName: '1inch', // Usually your GitHub org/user name.
