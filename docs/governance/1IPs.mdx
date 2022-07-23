@@ -17,6 +17,140 @@ All 1IPs that have successfully passed the Phase-4 vote. These 1IPs have already
 <details>
 <summary>
 
+### [1IP-09] Collect 1inch DAO Treasury Revenue in 1INCH Token in Addition to USDC
+
+</summary>
+<div>
+
+<u>
+
+- **[Phase-3: Temperature Check](https://gov.1inch.io/t/1ip-09-collect-1inch-dao-treasury-revenue-in-1inch-token-in-addition-to-usdc/3292)**
+
+- **[Phase-4: Snapshot Vote](https://snapshot.org/#/1inch.eth/proposal/0xf232c7f50925954d32f2def1d64d31905346dd96a0fc8bcb6f029d29d0e6208e)**
+
+</u>
+
+</div>
+
+<details>
+<summary>
+
+**Full Proposal Description**
+
+</summary>
+
+<div><div class="sc-gFCZzz gYcqAq"><h2>Simple Summary</h2>
+<p>This proposal seeks to modify the 1inch Network DAO Treasury’s revenue collection strategy by enacting the following changes:</p>
+<ul>
+<li>Switch from buying USDC with Swap Surplus revenue to buying 1INCH when the price is lower than $1.30.</li>
+<li>Switch from buying 1INCH with Swap Surplus revenue to buying USDC the price of 1INCH is greater than or equal to $1.70.</li>
+</ul>
+<h2>Abstract</h2>
+<p>Currently, the Swap Surplus <a href="https://docs.1inch.io/docs/governance/dao-treasury#revenue-stream" target="_blank">revenue stream</a> is collected in varying tokens and swapped to <a href="https://etherscan.io/token/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48" target="_blank">USDC</a> before it is then sent to the 1inch DAO <a href="https://gnosis-safe.io/app/eth:0x7951c7ef839e26F63DA87a42C9a87986507f1c07/transactions/history" target="_blank">Treasury</a>. Once enacted, this proposal will instead swap these tokens to <a href="https://etherscan.io/token/0x111111111117dc0aa78b770fa6a738034120c302" target="_blank">1INCH</a> as long as the market price of 1INCH is below the $1.30 to $1.70 range (see the Specification section for a detailed explanation). All swaps will be done using the <a href="https://docs.1inch.io/docs/aggregation-protocol/introduction" target="_blank">1inch Aggregation Protocol</a> to ensure the best pricing.</p>
+<h2>Motivation</h2>
+<p>Benefits to the 1inch Network DAO include:</p>
+<ul>
+<li>Investing the DAO’s revenue stream into the protocol’s governance token while the governance token is lower than it was previously valued.</li>
+<li>Potential upward pressure on the 1INCH token as the DAO Treasury will be a net buyer of cheap 1INCH.</li>
+<li>When the token is trading at higher valuations, the Treasury will automatically de-risk by collecting revenue in stable coins.</li>
+<li>Holding 1INCH within the 1inch DAO Treasury will allow the Treasury to scale its value with the performance of the token.</li>
+</ul>
+<h2>Specification</h2>
+<p>This proposal serves as a signal from the 1inch Network DAO to 1inch Labs. Once passed, the 1inch Network DAO calls for 1inch Labs to modify the fee collection strategy with the following changes:</p>
+<ul>
+<li>When the price of 1INCH moves is below $1.30, Swap Surplus revenue shall start to be collected in 1INCH.</li>
+<li>When the price of 1INCH moves above $1.70, Swap Surplus revenue shall be collected in USDC.</li>
+</ul>
+<p>Once the modifications have been made and tested, 1inch Labs shall deploy them. All future modifications to these will need to be done by a 1inch DAO Governance vote.</p>
+<h2>Rationale</h2>
+<p>This proposal aims to purchase 1INCH with treasury revenue when the price is lower than ~$1.50. $0.20 bands are used on either side of this buying point in order to dampen the impact that market volatility could have.</p>
+<p>This price point of 1INCH that triggers the switch can be changed in the future via a governance vote.</p>
+<h2>Considerations</h2>
+<h3>Market Risk</h3>
+<p>The USDC stablecoin composition of the 1inch DAO Treasury puts the Treasury in a very good position during any bearish market cycles — the Treasury constantly grows in dollar value while, in contrast, projects that primarily hold their own token, have had the real value of their Treasury shrink in the last 6 months.</p>
+<p>Adding 1INCH to the Treasury composition will increase both the potential risk and potential returns. This proposal dampens the volatility by maintaining a mix of risk-on and risk-off assets.</p>
+<h3>Added Complexity</h3>
+<p>If enacted, this proposal will add complexity to the Treasury Revenue collection strategy.</p>
+</div>
+</div>
+
+</details>
+
+</details>
+
+<details>
+<summary>
+
+### [1IP-08] Simple diversification mechanism for 1inch DAO Treasury
+
+</summary>
+<div>
+
+<u>
+
+- **[Phase-3: Temperature Check](https://gov.1inch.io/t/1ip-08-simple-diversification-mechanism-for-1inch-dao-treasury/3289)**
+
+- **[Phase-4: Snapshot Vote](https://snapshot.org/#/1inch.eth/proposal/0xddcbeb800fb1ba01c4a4963ab25dc702245c97e10e5c6f74a36e1f5e18e2f97a)**
+
+</u>
+
+</div>
+
+<details>
+<summary>
+
+**Full Proposal Description**
+
+</summary>
+
+<div><div class="sc-gFCZzz gYcqAq"><h2>Simple Summary</h2>
+<p>This proposal seeks to diversify the 1inch Network DAO’s Treasury composition be enacting the following strategy:</p>
+<ul>
+<li>Do not exchange a whitelisted set of tokens for USDC before sending to the 1inch DAO Treasury.</li>
+<li>These whitelisted tokens shall be: ETH, WETH, WBTC, DAI, and USDT.</li>
+</ul>
+<h2>Abstract</h2>
+<p>Currently, all of the Swap Surplus revenue stream is collected in varying tokens and swapped to USDC before being sent to the 1inch DAO Treasury. To start the diversification process of the treasury funds, the protocol can keep some incoming Swap Surplus tokens as collected (not swapping them for USDC).</p>
+<p>This proposal aims to whitelist the following tokens for this treasury collection strategy:</p>
+<ul>
+<li>ETH</li>
+<li>WETH</li>
+<li>WBTC</li>
+<li>DAI</li>
+<li>USDT</li>
+</ul>
+<h2>Motivation</h2>
+<p>The 1inch DAO Treasury is 100% composed of USDC. USDC is a fiat-backed stablecoin pegged to USD managed by Circle.</p>
+<p>USD experienced record inflation over the last 12 months, and will experience some degree of inflation for perpetuity. As such, the marginal spending power of the 1inch DAO Treasury is weakened unless the DAO deploys the funds in a manner that can outpace inflation.</p>
+<p>These assets are viewed as risk-on diversification assets for the treasury:</p>
+<ul>
+<li>ETH – the native asset of the Ethereum blockchain</li>
+<li>WETH – ETH wrapped in an ERC20 wrapper</li>
+<li>WBTC – Bitcoin (BTC) is the oldest and largest digital asset. WBTC is Bitcoin wrapped in an ERC20 wrapper</li>
+</ul>
+<p>Stablecoins also have inherent risks such as smart contract risks and centralization risks. Diversifying the stable coin holdings of the 1inch DAO Treasury aims to hedge against these risks. These assets are viewed as risk-off assets for the treasury:</p>
+<ul>
+<li>DAI – the decentralized collateral-backed stablecoin issued by the Maker Protocol. DAI is soft-pegged to USD</li>
+<li>USDT – the fiat-backed stablecoin pegged to USD and managed by Tether</li>
+</ul>
+<h2>Specification</h2>
+<p>To implement this proposal, GovernanceLeftoverExchanger should transfer ETH, WETH, WBTC, DAI and USDT directly to the treasury the same way it transfers USDC. All other tokens should still be converted to USDC as they are now.</p>
+<h2>Rationale</h2>
+<p>The crypto market cap took a decline in recent months. With token valuations depressed, it may be a good time to start accumulating non-stable tokens to grow the treasury.</p>
+<p>Since exchange transactions cost some Ether to pay for the gas fees, eliminating the swapping step for these whitelisted tokens will increase the capital efficiency of this operation. It is also for this reason that large stable coins such as DAI and USDT, should be sent directly to the treasury.</p>
+<h2>Considerations</h2>
+<p>The current stablecoin composition of the 1inch DAO Treasury ensures that the Treasury is insulated from bearish market cycles. However, this also means the treasury’s funds have no way to keep pace with the rise in inflation. Adding ETH, WETH and WBTC increase both the risk and the potential rewards.</p>
+<p>This proposal does not call for any actions to be taken with the funds currently held by the 1inch DAO Treasury.</p>
+</div>
+</div>
+
+</details>
+
+</details>
+
+<details>
+<summary>
+
 ### [1IP-07] Integrate Balancer Boosted Pools in the 1inch Aggregation Protocol
 
 </summary>
