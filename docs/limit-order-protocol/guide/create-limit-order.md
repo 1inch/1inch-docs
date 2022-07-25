@@ -126,8 +126,7 @@ To place a limit order in python requires more work since there's no library
 
 In this example we'll place a limit order on ETH mainnet for 100 USDC to 100 USDT
 
-In this example the predicate only uses the timestamp to determine when the order should expire but there are many more functions that can be used for the predicate including and, arbitraryStaticCall, eq, gt, it, or, and nonceEquals
-An important note is that the increase nonce function is how a user can cancel all orders if the nonceEquals call is in the predicate
+In this example the predicate only uses the timestamp to determine when the order should expire but there are many more functions that can be used for the predicate including and, arbitraryStaticCall, eq, gt, it, or, and nonceEquals. An important note is that the increase nonce function in the limit order contract is how a user can cancel all orders if the nonceEquals function is in the predicate. timestampBelow and nonceEquals checks can be combined with the and function.
 
 ```python
 from eth_account.messages import encode_structured_data
