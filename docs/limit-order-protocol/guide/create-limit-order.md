@@ -257,8 +257,7 @@ eip712_data = {
 Finally the private key will be used to sign the encoded data and broadcast to the API
 
 If you are having problems signing please run the following commands:
-pip install web3 --upgrade
-pip install eth-account==0.6.1
+``pip install web3 --upgrade; pip install eth-account==0.6.1``
 
 ```python
 encoded_message = encode_structured_data(eip712_data)
