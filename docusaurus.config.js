@@ -97,10 +97,6 @@ const config = {
                 label: 'Cumulative merkle drop',
                 href: 'https://github.com/1inch/merkle-distribution',
               },
-              {
-                label: 'Embedded swap widget',
-                href: 'https://github.com/1inch/embedded-widget',
-              },
             ]
           },
           {
