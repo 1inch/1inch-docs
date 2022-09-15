@@ -82,10 +82,6 @@ const config = {
                 href: 'https://github.com/1inch/limit-order-protocol',
               },
               {
-                label: 'Transactions parsing library',
-                href: 'https://github.com/1inch/tx-decoder',
-              },
-              {
                 label: 'Multicall',
                 href: 'https://github.com/1inch/multicall',
               },
