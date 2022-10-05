@@ -1,0 +1,29 @@
+---
+sidebar_position: 1
+---
+
+
+# How to implement the wallet auto-connect
+
+Web3 browser in 1inch Wallet injects JavaScript code/objects when opening a webpage.
+
+So first it is necessary to find out if the provider has been injected:
+
+```javascript
+export function isOneInchWalletProviderInjected(): boolean {
+		return Boolean(ethereum?.isOneInchIOSWallet || ethereum?.isOneInchAndroidWallet);
+}
+```
+The next step is to retrieve the net/address, thus it would be classified as a connection.
+
+```javascript
+// Retrieving accounts: eth_requestAccounts returns the current one, it gives an array containing single address
+const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+```
+
+```javascript
+// returns id of the network in hex-format
+const currentChain = await ethereum.request({ method: 'eth_chainId' });
+```
+
+#
