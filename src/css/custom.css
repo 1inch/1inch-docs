@@ -257,6 +257,11 @@ html[data-theme='dark'] .dropdown > .navbar__link:after {
 .theme-doc-sidebar-menu .menu__link::after {
     right: 10px;
     top: 6px;
+    display: none;
+}
+
+.theme-doc-sidebar-menu .menu__link.menu__link--sublist::after {
+    display: block;
 }
 
     /* header END */
