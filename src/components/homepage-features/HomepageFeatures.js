@@ -6,7 +6,7 @@ import Link from "@docusaurus/core/lib/client/exports/Link";
 
 const FeatureList = [
     {
-        title: 'Aggregation Protocol V4',
+        title: 'Aggregation Protocol V5',
         description: 'The 1inch Aggregation Protocol facilitates cost-efficient and secure swap transactions across multiple liquidity sources',
         image: (
             <div className={clsx(styles.featureCardImage, styles.aggregationProtocolImage)}/>
@@ -18,11 +18,15 @@ const FeatureList = [
             },
             {
                 title: 'Dune analytics',
-                href: 'https://dune.xyz/k06a/1inch'
+                href: 'https://dune.com/1inch/aggregator'
             },
             {
-                title: 'Smart contract',
-                href: 'https://etherscan.io/address/0x1111111254fb6c44bac0bed2854e76f90643097d'
+                title: 'Smart contract v4',
+                href: 'https://etherscan.io/address/0x1111111254fb6c44bAC0beD2854e76F90643097d'
+            },
+            {
+                title: 'Smart contract v5',
+                href: 'https://etherscan.io/address/0x1111111254EEB25477B68fb85Ed929f73A960582'
             },
             {
                 title: 'Enterprise API',
