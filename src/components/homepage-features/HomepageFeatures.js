@@ -21,7 +21,11 @@ const FeatureList = [
                 href: 'https://dune.com/1inch/aggregator'
             },
             {
-                title: 'Smart contract',
+                title: 'Smart contract v4',
+                href: 'https://etherscan.io/address/0x1111111254fb6c44bAC0beD2854e76F90643097d'
+            },
+            {
+                title: 'Smart contract v5',
                 href: 'https://etherscan.io/address/0x1111111254EEB25477B68fb85Ed929f73A960582'
             },
             {
