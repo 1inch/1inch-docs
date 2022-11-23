@@ -10,7 +10,7 @@ sidebar_position: 5
 
 | Parameter | Type         | Description                                                                       |
 | --------- | ------------ | --------------------------------------------------------------------------------- |
-| `order`   | `LimitOrder` | Structure of limit order. See [Limit order structure](./limit-order-structure.md) |
+| `order`   | `LimitOrder` | Structure of limit order. See [Limit order structure](./limit-order-structure) |
 
 ## Example:
 
@@ -20,7 +20,7 @@ import {
     LimitOrderProtocolFacade,
     LimitOrder,
     Web3ProviderConnector
-} from '@1inch/limit-order-protocol';
+} from '@1inch/limit-order-protocol-utils';
 
 const walletAddress = '0xhhh...';
 const contractAddress = '0x5fa31604fc5dcebfcac2481f9fa59d174126e5e6';
@@ -28,7 +28,7 @@ const contractAddress = '0x5fa31604fc5dcebfcac2481f9fa59d174126e5e6';
 const order: LimitOrder = {...};
 
 const connector = new Web3ProviderConnector(new Web3('...'));
-const limitOrderProtocolFacade = new LimitOrderProtocolFacade(contractAddress, connector);
+const limitOrderProtocolFacade = new LimitOrderProtocolFacade(contractAddress, cainId, connector);
 
 const callData = limitOrderProtocolFacade.cancelLimitOrder(order);
 

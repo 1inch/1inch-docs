@@ -1,8 +1,21 @@
 ---
-sidebar_position: 4
+sidebar_position: 6
 ---
 
-# API
+# Liquidity Source and API
+
+## I. [**1inch Aggregation Protocol**](https://1inch.io/aggregation-protocol/)
+The protocol sources liquidity from various exchanges and is capable of splitting a single trade transaction across multiple DEXes to ensure the best rates.
+
+You can send your limit orders through Limit Orders API to the 1inch database and then your order will participate in the 1inch Aggregation Protocol.
+
+[Docs](/docs/aggregation-protocol/introduction).
+
+
+## II. Limit Orders API
+
+Allows you to directly publish orders and fetch listed orders.
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import {SwaggerDoc} from '../../src/components/swagger-doc/SwaggerDoc';

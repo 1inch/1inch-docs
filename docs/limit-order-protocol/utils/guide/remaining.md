@@ -1,5 +1,5 @@
 ---
-sidebar_position: 9
+sidebar_position: 10
 ---
 
 # Limit order remaining
@@ -20,7 +20,7 @@ import {
     LimitOrderProtocolFacade,
     LimitOrderHash,
     Web3ProviderConnector,
-} from '@1inch/limit-order-protocol';
+} from '@1inch/limit-order-protocol-utils';
 import {BigNumber} from 'ethers/utils';
 
 const orderMakerAmount = '400000000000'; // initial amount of the limit order
@@ -30,7 +30,8 @@ const contractAddress = '0x5fa31604fc5dcebfcac2481f9fa59d174126e5e6';
 const connector = new Web3ProviderConnector(new Web3('...'));
 const limitOrderProtocolFacade = new LimitOrderProtocolFacade(
     contractAddress,
-    connector
+    chainId,
+    connector,
 );
 
 const remaining = await getRemaining(orderHash);
@@ -41,7 +42,7 @@ async function getRemaining(orderHash: string): string {
             orderHash
         );
 
-        return remaining.toString();
+        return remaining.tostring();
     } catch (error) {
         const errorMessage = typeof error === 'string' ? error : error.message;
 
