@@ -1,0 +1,24 @@
+---
+sidebar_position: 2
+---
+
+# Flow
+
+When MetaMask is connected and the network with ID = 1 (Mainnet or RabbitHole) is chosen, the “RabbitHole transaction” option is displayed in the confirmation swap window.
+When the user selects the “RabbitHole transaction,“ an additional pre-selected option called “Rabbit“ appears in the gas settings:
+* The price for a gas unit is twice as high as that for the “Aggressive“ option to make sure that the transaction is successful;
+* All other gas options are also available.
+
+When the user hovers over the info icon, the following tooltip is displayed:
+RabbitHole transactions wouldn't appear in the Ethereum mempool. That protects your transaction from sandwich attacks. RabbitHole transactions require higher fees that are paid directly to the mining pool.
+
+<img src='/img/rabbithole/rabbit-hole-flow.png'/>
+
+The front-end can distinguish, to which network MetaMask is connected, the Ethereum Mainnet or the RabbitHole, despite they have the same ID:
+* At the moment of MetaMask connection, the dApp sends a viewCall request to the node that interacts with the blockchain (this request only gets information from the blockchain, without making any changes) at the address https://etherscan.io/address/0x0000000000000000000000000000000000000000;
+request
+* Depending on the response, the front-end detects, which network is connected. If the RabbitHole is connected, the response is '0xeeeeeeee';
+* Every 10 seconds, the front-end sends a viewCall request in the background to check if the network hasn’t changed;
+* If the network is detected as “RabbitHole,“ the title is displayed in the network selector instead of Ethereum Mainnet but the icon remains the same as for Ethereum;
+
+<img src='/img/rabbithole/rabbit-hole-header.png'/>
