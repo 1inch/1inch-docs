@@ -10,24 +10,29 @@ sidebar_position: 1
 Smart Contract allows users to place limit orders and RFQ Orders, that later could be filled on-chain.
 Both type of orders is a data structure created off-chain and signed according to [EIP-712](https://eips.ethereum.org/EIPS/eip-712).
 
-## Limit Order
+## I. Limit order
+A limit order is a financial instrument with which you can put up an ERC-20 token for sale at a fixed price.  
+For example, you can put up for sale 2 WBTC tokens at the price of 82415 DAI tokens.
 
-1inch users can place their limit orders via 1inch [dApp](https://app.1inch.io/#/1/limit-order/WETH/DAI).
-Anyone can fetch this signed orders using [REST API endpoint](./api) to perform trade by filling order on-chain.
-To do that he or she pass signed order to the `fillOrder` method on the contract:
- - [Ethereum](https://etherscan.io/address/0x119c71d3bbac22029622cbaec24854d3d32d2828)
- - [BSC](https://bscscan.com/address/0x1e38eff998df9d3669e32f4ff400031385bf6362)
- - [Polygon](https://polygonscan.com/address/0x94bc2a1c732bcad7343b25af48385fe76e08734f)
- - [Optimism](https://optimistic.etherscan.io/address/0x11431a89893025d2a48dca4eddc396f8c8117187)
- - [Arbitrum](https://arbiscan.io/address/0x7f069df72b7a39bce9806e3afaf579e54d8cf2b9)
- - [Gnosis chain](https://blockscout.com/xdai/mainnet/address/0x54431918cEC22932fCF97E54769F4E00f646690F/transactions)
- - [Avalanche](https://snowtrace.io/address/0x0f85a912448279111694f4ba4f85dc641c54b594)
- - [Klaytn](https://scope.klaytn.com/account/0xe295ad71242373c37c5fda7b57f26f9ea1088afe)
- - [Aurora](https://aurorascan.dev/address/0xA31bB36c5164B165f9c36955EA4CcBaB42B3B28E)
+1inch limit orders protocol has many tools for flexible trade management:
 
-_Note: trades buyer and seller should approve their asset to be used by 1inch limit order contract._
+-   Partial fill
+-   Predicates
+-   Single cancellation
+-   Bunch cancellation
+-   Fullness check
+-   Validation
 
-Pathfinder algorithm use limit orders placed via `dApp` and REST API, as a liquidity source, and make it available to fill to any 1inch user.
+> **Note:** For market making, there are **RFQ orders** that have special optimization that does not require a large amount of gas for execution.
+
+### Limit order execution
+
+1. 1inch users can place their limit orders via 1inch [dApp](https://app.1inch.io/#/1/limit-order/WETH/DAI).
+1. Anyone can fetch this signed orders using [1inch Limit Orders Liquidity Source API](./api) to perform trade by filling order on-chain.
+1. To do that he or she pass signed order to the `fillOrder` method on the contract:
+    - Latest addresses is always [here](https://github.com/1inch/limit-order-protocol-utils/blob/master/src/limit-order-protocol.const.ts)
+    > ***Note:*** Trades buyer and seller should approve their asset to be used by 1inch limit order contract.
+4. Pathfinder algorithm use limit orders placed via `dApp` and REST API, as a liquidity source, and make it available to fill to any 1inch user.
 So, 1inch limit orders are integrated into the DeFi ecosystem from the day one.
 
 Limit orders are extremely **flexible** limit order, can be configured with:
@@ -39,7 +44,9 @@ Limit orders are extremely **flexible** limit order, can be configured with:
     - Function that will allow to extract assets price from arbitrary on-chain source
 3. Callback, for to notify maker on order execution.
 
-## RFQ order
+## II. RFQ order
+
+**A request for quotation (RFQ)** is a business process in which a customer requests a quote from a supplier (market maker) for the purchase of some tokens.
 
 RFQ orders has different use case, and dedicated to market makers at first place. Typical scenario is following:
 Market maker create a bunch of RFQ Orders, and expose it via API.

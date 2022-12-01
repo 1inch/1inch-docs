@@ -1,0 +1,164 @@
+---
+sidebar_position: 2
+---
+
+# Order creation examples
+
+## Through `@1inch/limit-order-protocol-utils`
+> **This is the recomended option!**
+
+There is [JavaScript and Typescript compatible library](./utils/about) that solves everything for you, we taking care on it to make everything up to date and make you migration over Limit Order Protocol Versions as smooth as possible.
+
+- See [docs on order creation](./utils/guide/quick-star)
+- See [library docs](./utils/about)
+
+<br/>
+
+---
+
+<br/>
+
+
+## Python Example
+
+To place a limit order in python requires more work since there's no library
+
+In this example we'll place a limit order on ETH mainnet for 100 USDC to 100 USDT
+
+In this example the predicate only uses the timestamp to determine when the order should expire but there are many more functions that can be used for the predicate including and, arbitraryStaticCall, eq, gt, it, or, and nonceEquals. An important note is that the increase nonce function in the limit order contract is how a user can cancel all orders if the nonceEquals function is in the predicate. timestampBelow and nonceEquals checks can be combined with the and function.
+
+```python
+from eth_account.messages import encode_structured_data
+from web3 import Web3
+import requests
+import time
+w3 = Web3(Web3.HTTPProvider("https://cloudflare-eth.com"))  # you can customize the RPC
+wallet_key = "0x0000000000000000000000000000000000000000" # Your wallet private key
+wallet_address = "0x0000000000000000000000000000000000000000" # Your wallet address
+limit_order_contract = "0x1111111254EEB25477B68fb85Ed929f73A960582" # the limit order contract
+ETHERSCAN_API_KEY = "" # Etherscan API key, this may not be required or should be changed if the ABIs are changed to literals or a different blockchain API is used like api.bscscan.com or api.polygonscan.com
+
+# create the limit order contract object
+limit_order_contract_abi_response = (requests.get('https://api.etherscan.io/api?module=contract&action=getabi&address=' + limit_order_contract +'&apikey=' + ETHERSCAN_API_KEY))
+limit_order_contract_abi = limit_order_contract_abi_response.json()['result']
+contract = w3.eth.contract(address=limit_order_contract, abi=limit_order_contract_abi)
+
+# wait for 5 second to avoid rate limiting, this can be removed if the API key is specified and not the free api key
+time.sleep(5)
+
+# the ERC20 abi is used for getting information from the maker asset and taker asset
+erc20_abi_response = (requests.get('https://api.etherscan.io/api?module=contract&action=getabi&address=0x6b175474e89094c44da98b954eedeac495271d0f&apikey=' + ETHERSCAN_API_KEY)) #DAI ABI since it's ERC20 standard
+erc20_abi = erc20_abi_response.json()["result"]
+
+# here we define the parameters of the limit order
+makerAddress = Web3.toChecksumAddress(wallet_address)
+takerAddress = "0x0000000000000000000000000000000000000000" # if specified only this address can be a taker
+makerAsset = Web3.toChecksumAddress("0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48")
+takerAsset = Web3.toChecksumAddress("0xdac17f958d2ee523a2206206994597c13d831ec7")
+makingAmount = "100000000"
+takingAmount = "100000000"
+
+makerAssetContract = w3.eth.contract(address=makerAsset, abi=erc20_abi)
+takerAssetContract = w3.eth.contract(address=takerAsset, abi=erc20_abi)
+
+# this is required information for the order to be valid
+makerAssetData = makerAssetContract.encodeABI(fn_name="transferFrom", args=[makerAddress, takerAddress, int(makingAmount)])
+takerAssetData = takerAssetContract.encodeABI(fn_name="transferFrom", args=[takerAddress, makerAddress, int(takingAmount)])
+getMakingAmount = contract.encodeABI(fn_name="getMakingAmount", args=[int(makingAmount), int(takingAmount), 0])
+getMakingAmount = getMakingAmount[:-64] # [:-64] removes the last parameter to match the javascript library's output for getMakingAmount
+getTakingAmount = contract.encodeABI(fn_name="getTakingAmount", args=[int(makingAmount), int(takingAmount), 0])
+getTakingAmount = getTakingAmount[:-64] # [:-64] removes the last parameter to match the javascript library's output for getTakingAmount
+
+# lets build the predicate
+# contract encode abi with the timestamp below function and the current time + 180 seconds
+predicate = contract.encodeABI(fn_name="timestampBelow", args=[w3.eth.getBlock('latest').timestamp + 180])
+
+# lets build the order data
+order_data = {
+    "makerAsset": makerAsset,
+    "takerAsset": takerAsset,
+    "maker": makerAddress,
+    "allowedSender": "0x0000000000000000000000000000000000000000",
+    "receiver": "0x0000000000000000000000000000000000000000",
+    "makingAmount": makingAmount,
+    "takingAmount": takingAmount,
+    "offsets": "0x",
+    "interactions": "0x",
+    "salt": "1", # random number to make the order unique, please do not leave it as 1
+}
+```
+
+a limit order can't be signed properly if all the types are strings here we define what each field is and the type it should be
+
+```python
+
+order_types = [
+    {"name": "salt", "type": "uint256"},
+    {"name": "makerAsset", "type": "address"},
+    {"name": "takerAsset", "type": "address"},
+    {"name": "maker", "type": "address"},
+    {"name": "receiver", "type": "address"},
+    {"name": "allowedSender", "type": "address"},
+    {"name": "makingAmount", "type": "uint256"},
+    {"name": "takingAmount", "type": "uint256"},
+    {"name": "interactions", "type": "bytes"},
+]
+
+# this function will fix the order_data to be a typed object instead of only strings
+def fix_data_types(data, types):
+    """
+    Order data values are all strings as this is what the API expects. This function fixes their types for
+    encoding purposes.
+    """
+    fixed_data = {}
+    for dictionary in types:
+        if "bytes" in dictionary["type"]:
+            fixed_data[dictionary["name"]] = (Web3.toBytes(hexstr=data[dictionary["name"]]))
+        elif "int" in dictionary["type"]:
+            fixed_data[dictionary["name"]] = int(data[dictionary["name"]])
+        else:
+            fixed_data[dictionary["name"]] = data[dictionary["name"]]
+    return fixed_data
+
+# this is a typed data that the private key will be signing, it conforms to the EIP 712 standard
+eip712_data = {
+    "primaryType": "Order",
+    "types": {
+        "EIP712Domain": [
+            {"name": "name", "type": "string"},
+            {"name": "version", "type": "string"},
+            {"name": "chainId", "type": "uint256"},
+            {"name": "verifyingContract", "type": "address"},
+        ],
+        "Order": order_types
+    },
+    "domain": {
+        "name": "1inch Limit Order Protocol",
+        "version": "2",
+        "chainId": 1,
+        "verifyingContract": limit_order_contract,
+    },
+    "message": fix_data_types(order_data, order_types),
+}
+```
+
+Finally the private key will be used to sign the encoded data and broadcast to the API
+
+If you are having problems signing please run the following commands:
+``pip install web3 --upgrade; pip install eth-account==0.6.1``
+
+```python
+encoded_message = encode_structured_data(eip712_data)
+signed_message = w3.eth.account.sign_message(encoded_message, wallet_key)
+# this is the limit order that will be broadcast to the limit order API
+limit_order = {
+    "orderHash": signed_message.messageHash.hex(),
+    "signature": signed_message.signature.hex(),
+    "data": order_data,
+}
+
+limit_order_url = "https://limit-orders.1inch.io/v2.0/1/limit-order" # make sure to change the endpoint if you are not using ETH mainnet
+response = requests.post(url=limit_order_url,headers={"accept": "application/json, text/plain, */*", "content-type": "application/json"}, json=limit_order)
+# print the full response
+print(response.text)
+```

@@ -36,7 +36,7 @@ contract WethUnwrapper is InteractiveNotificationReceiver {
 }
 ```
 
-And create a limit order with `interaction` field:
+And create a limit order with `preInteraction` and/or `postInteraction` field:
 ```typescript
 const interactiveReceiverAddress = '0x1282d0c06368c40c8d4a4d818d78f258d982437b';
 const walletAddress = '0xfb3c7ebccccAA12B5A884d612393969Adddddddd';
@@ -46,15 +46,17 @@ const limitOrder = limitOrderBuilder.buildLimitOrder({
     takerAssetAddress: '0x111111111117dc0aa78b770fa6a738034120c302',
     makerAddress: walletAddress,
     reciever: interactiveReceiverAddress,
-    interaction: interactiveReceiverAddress + walletAddress.slice(2),
     makerAmount: '100',
     takerAmount: '200',
-    predicate: '0x0',
-    permit: '0x0',
+
+    // What to do before the transfer
+    preInteraction: '0x',
+    // What tot do after the trasnfer has been made
+    postInteraction: interactiveReceiverAddress + walletAddress.slice(2),
 });
 ```
 
-> As you can see, the interaction field consists of two parts - the `contract address` and the `interactiveData` (which contains the wallet address).
+> As you can see, the `postInteraction` field consists of two parts - the `contract address` and the `interactiveData` (which contains the wallet address).
 
 > We also set the `interactiveReceiverAddress` as the `reciever`.
 > This is necessary in order for this contract to receive a `WETH` when filling out an limit order and return `ETH` to the creator of the limit order.

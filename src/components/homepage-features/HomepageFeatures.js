@@ -40,7 +40,7 @@ const FeatureList = [
         ]
     },
     {
-        title: 'Limit Order Protocol V2',
+        title: 'Limit Order Protocol V3',
         description: 'The 1inch Limit Order Protocol facilitates the most innovative and flexible limit order swap opportunities in DeFi',
         image: (
             <div className={clsx(styles.featureCardImage, styles.limitOrderProtocolImage)}/>
@@ -56,7 +56,7 @@ const FeatureList = [
             },
             {
                 title: 'Smart contract',
-                href: 'https://etherscan.io/address/0x119c71d3bbac22029622cbaec24854d3d32d2828'
+                href: 'https://etherscan.io/address/0x1111111254fb6c44bac0bed2854e76f90643097d'
             },
             {
                 title: 'API',

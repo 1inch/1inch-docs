@@ -11,7 +11,7 @@ But, if it becomes necessary to cancel the created RFQ order, then this can be d
 
 | Parameter | Type     | Description                                                                                           |
 | --------- | -------- | ----------------------------------------------------------------------------------------------------- |
-| `info`    | `String` | information about an RFQ order (see above in section [RFQ structure](./limit-order-rfq-structure.md)) |
+| `info`    | `string` | information about an RFQ order (see above in section [RFQ structure](./limit-order-rfq-structure))    |
 
 ## Creating with a typescript/javascript:
 
@@ -21,7 +21,7 @@ import {
     LimitOrderProtocolFacade,
     Web3ProviderConnector,
     RFQOrder
-} from '@1inch/limit-order-protocol';
+} from '@1inch/limit-order-protocol-utils';
 
 const contractAddress = '0x7643b8c2457c1f36dc6e3b8f8e112fdf6da7698a';
 const walletAddress = '0xd337163ef588f2ee7cdd30a3387660019be415c9';
@@ -32,7 +32,8 @@ const connector = new Web3ProviderConnector(web3);
 
 const limitOrderProtocolFacade = new LimitOrderProtocolFacade(
     contractAddress,
-    connector
+    chainId,
+    connector,
 );
 
 const RFQorder: RFQOrder = {...};

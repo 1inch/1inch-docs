@@ -54,11 +54,11 @@ const config = {
             position: 'left',
             items: [
               {
-                label: 'Aggregation protocol',
+                label: 'Aggregation Protocol',
                 href: '/docs/aggregation-protocol/introduction',
               },
               {
-                label: 'Limit order protocol',
+                label: 'Limit Order Protocol',
                 href: '/docs/limit-order-protocol/introduction'
               },
               {

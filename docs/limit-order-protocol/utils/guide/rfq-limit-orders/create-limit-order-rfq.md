@@ -8,15 +8,15 @@ sidebar_position: 2
 
 | Field                | Type      | Description                                                                                                                                                                                    |
 | -------------------- | --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `id`                 | `Number`  | is a pass-through, integer identifier starting at 1                                                                                                                                            |
-| `wrapEth`            | `Boolean?`| when is true, then in case of a limit order with `WETH` as maker asset, taker will receive `ETH` instead of `WETH`                    |
-| `expiresInTimestamp` | `Number`  | is the timestamp in seconds when the limit order will no longer be available for execution. For example: 1623166270029                                                                         |
-| `makerAssetAddress`  | `String`  | the address of the asset you want to sell (address of a token contract)                                                                                                                        |
-| `takerAssetAddress`  | `String`  | the address of the asset you want to buy (address of a token contract)                                                                                                                         |
-| `makerAddress`       | `String`  | an address of the maker (wallet address)                                                                                                                                                       |
-| `takerAddress`       | `String?` | the address of the taker for whom the limit order is being created. _This is an optional parameter_, if it is not specified, then the limit order will be available for execution for everyone |
-| `makerAmount`        | `String`  | the number of maker asset tokens that you want to sell (in token units). For example: 5 DAI = 5000000000000000000 units                                                                        |
-| `takerAmount`        | `String`  | the number of taker asset tokens that you want to receive for selling the maker asset (in token units). For example: 5 DAI = 5000000000000000000 units                                         |
+| `id`                 | `number`  | is a pass-through, integer identifier starting at 1                                                                                                                                            |
+| `wrapEth`            | `boolean?`| when is true, then in case of a limit order with `WETH` as maker asset, taker will receive `ETH` instead of `WETH`                                                                             |
+| `expiresInTimestamp` | `number`  | is the timestamp in seconds when the limit order will no longer be available for execution. For example: 1623166270029                                                                         |
+| `makerAssetAddress`  | `string`  | the address of the asset you want to sell (address of a token contract)                                                                                                                        |
+| `takerAssetAddress`  | `string`  | the address of the asset you want to buy (address of a token contract)                                                                                                                         |
+| `makerAddress`       | `string`  | an address of the maker (wallet address)                                                                                                                                                       |
+| `takerAddress`       | `string?` | the address of the taker for whom the limit order is being created. _This is an optional parameter_, if it is not specified, then the limit order will be available for execution for everyone |
+| `makerAmount`        | `string`  | the number of maker asset tokens that you want to sell (in token units). For example: 5 DAI = 5000000000000000000 units                                                                        |
+| `takerAmount`        | `string`  | the number of taker asset tokens that you want to receive for selling the maker asset (in token units). For example: 5 DAI = 5000000000000000000 units                                         |
 
 ## Creating with a typescript/javascript:
 
@@ -25,7 +25,7 @@ import Web3 from 'web3';
 import {
     LimitOrderBuilder,
     Web3ProviderConnector,
-} from '@1inch/limit-order-protocol';
+} from '@1inch/limit-order-protocol-utils';
 
 const contractAddress = '0x7643b8c2457c1f36dc6e3b8f8e112fdf6da7698a';
 const walletAddress = '0xd337163ef588f2ee7cdd30a3387660019be415c9';
@@ -74,7 +74,7 @@ npx limit-order-rfq-utils --\
 npx limit-order-rfq-utils
 ```
 
-As result you will receive a structure of [RFQ order](./limit-order-rfq-structure.md). Example:
+As result you will receive a structure of [RFQ order](./limit-order-rfq-structure). Example:
 
 ```json
 {

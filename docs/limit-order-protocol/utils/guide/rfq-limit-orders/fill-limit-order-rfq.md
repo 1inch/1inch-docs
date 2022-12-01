@@ -12,7 +12,7 @@ A RFQ order can be filled in whole or in part.
 
 | Field         | Description                                                                                                             |
 | ------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| `order`       | structure of the RFQ order (see [RFQ order structure] ( ./docs/limit-order-rfq-structure.md))                           |
+| `order`       | structure of the RFQ order (see [RFQ order structure] ( ./docs/limit-order-rfq-structure))                              |
 | `signature`   | signature of the typed date of the RFQ order (signTypedData_v4)                                                         |
 | `makerAmount` | the number of maker asset tokens that you want to fill (in token units). For example: 5 DAI = 5000000000000000000 units |
 | `takerAmount` | the number of taker asset tokens that you want to fill (in token units). For example: 5 DAI = 5000000000000000000 units |
@@ -29,7 +29,7 @@ import {
     LimitOrderProtocolFacade,
     RFQOrder,
     Web3ProviderConnector
-} from '@1inch/limit-order-protocol';
+} from '@1inch/limit-order-protocol-utils';
 
 const contractAddress = '0x7643b8c2457c1f36dc6e3b8f8e112fdf6da7698a';
 const walletAddress = '0xd337163ef588f2ee7cdd30a3387660019be415c9';
@@ -46,7 +46,8 @@ const limitOrderBuilder = new LimitOrderBuilder(
 
 const limitOrderProtocolFacade = new LimitOrderProtocolFacade(
     contractAddress,
-    connector
+    chainId,
+    connector,
 );
 
 const RFQorder: RFQOrder = {...};
