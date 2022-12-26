@@ -68,6 +68,11 @@ const config = {
             ]
           },
           {
+            label: 'Fusion',
+            position: 'left',
+            href: '/docs/fusion-swap/introduction'
+          },
+          {
             label: 'Governance',
             position: 'left',
             type: 'doc',
