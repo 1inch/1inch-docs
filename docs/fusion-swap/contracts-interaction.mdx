@@ -4,6 +4,46 @@ sidebar_position: 3
 
 # Contract interaction
 
+## Setup script example
+
+```javascript
+// Ethers setup script
+
+// approve 1inch staking
+await (await inch.connect(resolver).approve(st1inch.address, stakeAmount));
+// stake 1inch token
+await (await st1inch.connect(resolver).deposit(stakeAmount, lockTime)).wait();
+// add delegation pod to
+// 1. make it possible for any user to delegate staking power to
+// the resolver's account
+// 2. make it possible for a resolver to allocate its staking power for itself
+await (await st1inch.connect(resolver).addPod(delegation.address)).wait();
+
+// register resolver's delegation token to count stakers' shares and rewards
+await (
+    await delegation
+        .connect(resolver)
+        .functions['register(string,string)'](
+            'MyShareTokenName',
+            'MST',
+        )
+).wait();
+
+// Set default rewards farm
+// Optional, needed to incentivize staker for delegation
+await (await delegation.connect(resolver).setDefaultFarm(farm.address)).wait();
+
+// Delegate staked power to self
+await (await delegation.connect(resolver).delegate(resolver.address)).wait();
+
+// Whitelist resolver (there should be enough staked power to be in top 5)
+await (await whitelist.connect(resolver).register()).wait();
+
+// Add worker address from which order settlement will be executed
+await (await whitelist.connect(resolver).promote(1, worker.address)).wait();
+```
+
+
 ### 1. Stake 1inch
 
 <table>
@@ -456,42 +496,3 @@ struct Order {
         </td>
     </tr>
 </table>
-
-### Setup script example
-
-```javascript
-// Ethers setup script
-
-// approve 1inch staking
-await (await inch.connect(resolver).approve(st1inch.address, stakeAmount));
-// stake 1inch token
-await (await st1inch.connect(resolver).deposit(stakeAmount, lockTime)).wait();
-// add delegation pod to
-// 1. make it possible for any user to delegate staking power to
-// the resolver's account
-// 2. make it possible for a resolver to allocate its staking power for itself
-await (await st1inch.connect(resolver).addPod(delegation.address)).wait();
-
-// register resolver's delegation token to count stakers' shares and rewards
-await (
-    await delegation
-        .connect(resolver)
-        .functions['register(string,string)'](
-            'MyShareTokenName',
-            'MST',
-        )
-).wait();
-
-// Set default rewards farm
-// Optional, needed to incentivize staker for delegation
-await (await delegation.connect(resolver).setDefaultFarm(farm.address)).wait();
-
-// Delegate staked power to self
-await (await delegation.connect(resolver).delegate(resolver.address)).wait();
-
-// Whitelist resolver (there should be enough staked power to be in top 5)
-await (await whitelist.connect(resolver).register()).wait();
-
-// Add worker address from which order settlement will be executed
-await (await whitelist.connect(resolver).promote(1, worker.address)).wait();
-```
