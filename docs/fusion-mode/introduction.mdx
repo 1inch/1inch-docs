@@ -1,0 +1,15 @@
+---
+sidebar_position: 1
+---
+
+# Introduction
+
+1inch Fusion Mode offer users a way to execute swaps without gas spend and risks of being front-run. Fusion Mode looks like a swap for a user but technically it is a limit order with a variable exchange rate filled by a third-party called Resolver. Starting from the moment order is placed, the exchange rate is decreasing from desired rate to minimal return amount (Dutch auction) until it becomes profitable for Resolvers to fill the order. Multiple resolvers compete for the order to ensure it is filled before the rate falls to minimal return amount.
+
+Below are the examples of opportunities to gain profit for resolvers:
+
++ Dutch auction decreases order rate constantly;
++ Gas economy when filling matching orders;
++ Gas economy due to batch filling;
+
+
