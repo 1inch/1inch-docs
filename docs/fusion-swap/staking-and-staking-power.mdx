@@ -1,0 +1,548 @@
+---
+sidebar_position: 3
+---
+
+# Staking
+
+## Staking and staking power
+
+The whitelisted top-5 stakers are determined by the staking power. Stakers can lock 1inch tokens in the staking contract to get st1inch tokens. The lock period is between 1 day and 4 years. st1inch tokens grants a staker “staking power.” The longer the locking period the more “staking power” a resolver gets. However, the increase in power is not linear:
+
+* 2-years lock will give the staker 1 “staking power” for each 1inch
+* 1.5-years lock will give the staker 0.47 “staking power” for each 1inch
+* 1-years lock will give the staker 0.22 “staking power” for each 1inch
+* 0.5-year lock will give the staker 0.1 “staking power” for each 1inch
+* Expired lock will give the staker only 0.05 “staking power” for each 1inch
+
+
+<img src='/img/fusion/staking-image.png' alt="staking-image"/>
+
+
+## Delegation
+
+To help overcome the entry barrier to get into the whitelist a resolver can engage 1inch stakers to delegate their “staking power” to him.
+
+When a staker delegates his “staking power” to a resolver, his power is added to the resolver’s “staking power” and helps him to enter and remain in the whitelist. Delegated “staking power” is decreased over time with a lock period in the same manner as a resolver’s “staking power”.
+
+A staker can delegate all its power to a single resolver at one moment of time.
+
+## Farmings
+
+To incentivize stakers to delegate their voting power Fusion infrastructure creates a default farm for each resolver and any staker delegated his “staking power” to a resolver is automatically joined the farm. The resolver who owns the farm may provide rewards for joined delegates which are distributed to them proportionally to the delegated “staking power” and time spent delegating.
+
+## Register as a resolver
+
+It is not enough to have sufficient “staking power” but a Resolver should also be enlisted as a resolver which involves two actions: 1) register a delegation pod and 2) register for whitelisting. Optionally, a resolver may define the default farm that a delegating staker will automatically join after delegation.
+
+If a resolver wants to fill orders from another address then that is whitelisted then he should define a worker address for this purpose. Otherwise, if a resolver wants to fill orders from its own address he should register his own address as a worker.
+
+The whitelist contains top-5 resolvers by staking power. The position in the list defines the access priority for resolving. The Dutch auction duration is split equally into 6 intervals.
+
+For example, if Dutch auction is lasted 6 minutes, then 1st minute the top-1 resolver is allowed to fill the order, on the 2nd minute top-1 and top-2 resolvers are allowed to fill the order and so on. On the 5th minute all the resolvers from the whitelist are allowed to fill the order. On the 5th minute the order becomes public and all the resolvers despite of the whitelist are allowed to fill it.
+
+Below is an example of 7 minutes long auction
+
+<img src='/img/fusion/auction.png' alt="auction-image"/>
+
+## Fee bank
+
+For each order filled, a resolver should pay a fee. This fee is automatically substructed from a resolver’s account at the fee bank. Order fill will be reverted if there is not enough account balance at the fee bank. So a resolver should deposit enough 1inch tokens to fill orders.
+
+If a worker is defined for filling orders then a deposit should be made to this worker account at the FeeBank.
+
+## Resolving
+
+If all the previously described requirements are met and steps are done, then a resolver may start filling orders by calling resolve method of the settlement contract. If a resolver wants to fill several orders in one transaction then he should add taker’s interactions with chain order fill in it. See limit orders documentation for details.
+
+## Setup script example
+
+```javascript
+// Ethers setup script
+
+// approve 1inch staking
+await (await inch.connect(resolver).approve(st1inch.address, stakeAmount));
+// stake 1inch token
+await (await st1inch.connect(resolver).deposit(stakeAmount, lockTime)).wait();
+// add delegation pod to
+// 1. make it possible for any user to delegate staking power to
+// the resolver's account
+// 2. make it possible for a resolver to allocate its staking power for itself
+await (await st1inch.connect(resolver).addPod(delegation.address)).wait();
+
+// register resolver's delegation token to count stakers' shares and rewards
+await (
+    await delegation
+        .connect(resolver)
+        .functions['register(string,string)'](
+            'MyShareTokenName',
+            'MST',
+        )
+).wait();
+
+// Set default rewards farm
+// Optional, needed to incentivize staker for delegation
+await (await delegation.connect(resolver).setDefaultFarm(farm.address)).wait();
+
+// Delegate staked power to self
+await (await delegation.connect(resolver).delegate(resolver.address)).wait();
+
+// Whitelist resolver (there should be enough staked power to be in top 5)
+await (await whitelist.connect(resolver).register()).wait();
+
+// Add worker address from which order settlement will be executed
+await (await whitelist.connect(resolver).promote(1, worker.address)).wait();
+```
+
+### 1. Stake 1inch
+
+<table>
+    <tr>
+        <td>
+            Repository
+        </td>
+        <td>
+            <a href="https://github.com/1inch/limit-order-settlement/">limit-order-settlement</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Contract
+        </td>
+        <td>
+            st1inch.sol
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Contract address
+        </td>
+        <td>
+            0x9A0C8Ff858d273f57072D714bca7411D717501D7
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Methods
+        </td>
+        <td>
+            <ul>
+                <li>deposit(uint256 amount, uint256 duration)</li>
+                <li>depositWithPermit(uint256 amount, uint256 duration, bytes calldata permit)</li>
+                <li>depositFor(address account, uint256 amount, uint256 duration)</li>
+                <li>depositForWithPermit(address account, uint256 amount, uint256 duration, bytes calldata permit)</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Description
+        </td>
+        <td>
+            Stakes 1inch to get staking power according to the lock time
+        </td>
+    </tr>
+</table>
+
+```javascript
+//Deposits 100 1inch with 1 day lock
+await st1inch.deposit(ether('100'), time.duration.days('1'));
+```
+
+### 2. Register as a Resolver
+
+#### 2.1  Register delegation pod
+
+<table>
+    <tr>
+        <td>
+            Repository
+        </td>
+        <td>
+            <a href="https://github.com/1inch/limit-order-settlement/">limit-order-settlement</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Contract
+        </td>
+        <td>
+            PowerPod.sol
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Contract address
+        </td>
+        <td>
+            0x9A0C8Ff858d273f57072D714bca7411D717501D7
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Methods
+        </td>
+        <td>
+            addPod(address pod)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Description
+        </td>
+        <td>
+            Register pod usage for the tx sender. Needed for
+            <ul>
+                <li>
+                    Resolvers to enable resolver’s and delegated staking power usage for whitelisting
+                </li>
+                <li>
+                    Stakers to enable staking power delegation
+                </li>
+            </ul>
+        </td>
+    </tr>
+</table>
+
+```javascript
+// register `delegation` pod usage a `resolver`
+await st1inch.connect(resolver).addPod(delegation.address);
+```
+
+#### 2.2. Register delegation share token
+
+<table>
+    <tr>
+        <td>
+            Repository
+        </td>
+        <td>
+            <a href="https://github.com/1inch/limit-order-settlement/">limit-order-settlement</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Contract
+        </td>
+        <td>
+            st1inch.sol
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Contract address
+        </td>
+        <td>
+            0xDAf782667d98d5069eE7ba139932945C4D08fDE9
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Methods
+        </td>
+        <td>
+            register(string memory name, string memory symbol, uint256 maxUserFarms)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Description
+        </td>
+        <td>
+            Creates a resolvers share token to count delegated staked power shares and accrue rewards
+        </td>
+    </tr>
+</table>
+
+```javascript
+// Register resolver's token with name 'resolver token share' and symbol 'RTS'
+// allowing the maximum 3 farms running
+await delegation.register('resolver token share', 'RTS');
+```
+
+
+#### 2.3. Set default farm
+
+
+<table>
+    <tr>
+        <td>
+            Repository
+        </td>
+        <td>
+            <a href="https://github.com/1inch/limit-order-settlement/">limit-order-settlement</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Contract
+        </td>
+        <td>
+            PowerPod.sol
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Contract address
+        </td>
+        <td>
+            0xDAf782667d98d5069eE7ba139932945C4D08fDE9
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Methods
+        </td>
+        <td>
+            setDefaultFarm(address farm)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Description
+        </td>
+        <td>
+            Setups the default farm to which all users delegating to this resolver are automatically joined
+        </td>
+    </tr>
+</table>
+
+```javascript
+// Setups the default farm to which all users delegating to this resolver
+// are automatically joined
+await delegation.connect(resolver).setDefaultFarm(farm.address);
+```
+
+#### 2.4. Delegate resolver’s staking power to self
+
+<table>
+    <tr>
+        <td>
+            Repository
+        </td>
+        <td>
+            <a href="https://github.com/1inch/limit-order-settlement/">limit-order-settlement</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Contract
+        </td>
+        <td>
+            PowerPod.sol
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Contract address
+        </td>
+        <td>
+            0xDAf782667d98d5069eE7ba139932945C4D08fDE9
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Methods
+        </td>
+        <td>
+            delegate(address delegatee)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Description
+        </td>
+        <td>
+            delegate(address delegatee)
+        </td>
+    </tr>
+</table>
+
+```javascript
+// Delegates all staking power to self
+await delegation.connect(resolver).delegate(resolver.address);
+```
+
+#### 2.5. Whitelist resolver
+
+<table>
+    <tr>
+        <td>
+            Repository
+        </td>
+        <td>
+            <a href="https://github.com/1inch/limit-order-settlement/">limit-order-settlement</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Contract
+        </td>
+        <td>
+            WhitelistRegistry.sol
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Contract address
+        </td>
+        <td>
+            0xA49ECb28CC8ab39659be2bFB6F7b86f0c4461A0b
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Methods
+        </td>
+        <td>
+            register()
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Description
+        </td>
+        <td>
+            Checks if sender is eligible to be whitelisted and put it into the whitelist sorted by staking power descending
+        </td>
+    </tr>
+</table>
+
+
+```javascript
+// Try to put the sender to the whitelist
+await whitelist.connect(resolver).register();
+```
+
+### 3. FeeBank
+
+
+<table>
+    <tr>
+        <td>
+            Repository
+        </td>
+        <td>
+            <a href="https://github.com/1inch/limit-order-settlement/">limit-order-settlement</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Contract
+        </td>
+        <td>
+            FeeBank.sol
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Contract address
+        </td>
+        <td>
+            0xa0844e046a5B7Db55Bb8DcdFfbF0bBF9c6dc6546
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Methods
+        </td>
+        <td>
+            <ul>
+                <li>
+                    deposit(uint256 amount)
+                </li>
+                <li>
+                    depositFor(address account, uint256 amount)
+                </li>
+                <li>
+                    depositWithPermit(uint256 amount, bytes calldata permit)
+                </li>
+                <li>
+                    depositForWithPermit
+                </li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Description
+        </td>
+        <td>
+            Deposits 1inch for fee deduction when filling orders
+        </td>
+    </tr>
+</table>
+
+```javascript
+// Deposit fees to fee bank
+await feeBank.connect(resolver).deposit(amount)
+```
+
+
+### Resolving
+
+```Solidity
+struct Order {
+        uint256 salt;
+        address makerAsset;
+        address takerAsset;
+        address maker;
+        address receiver;
+        address allowedSender;  // equals to Zero address on public orders
+        uint256 makingAmount;
+        uint256 takingAmount;
+        uint256 offsets;
+        // bytes makerAssetData;
+        // bytes takerAssetData;
+        // bytes getMakingAmount; // this.staticcall(abi.encodePacked(bytes, swapTakerAmount)) => (swapMakerAmount)
+        // bytes getTakingAmount; // this.staticcall(abi.encodePacked(bytes, swapMakerAmount)) => (swapTakerAmount)
+        // bytes predicate;       // this.staticcall(bytes) => (bool)
+        // bytes permit;          // On first fill: permit.1.call(abi.encodePacked(permit.selector, permit.2))
+        // bytes preInteraction;
+        // bytes postInteraction;
+        bytes interactions; // concat(makerAssetData, takerAssetData, getMakingAmount, getTakingAmount, predicate, permit, preIntercation, postInteraction)
+    }
+```
+
+<table>
+    <tr>
+        <td>
+            Repository
+        </td>
+        <td>
+            <a href="https://github.com/1inch/limit-order-settlement/">limit-order-settlement</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Contract
+        </td>
+        <td>
+            Settlement.sol
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Contract address
+        </td>
+        <td>
+            0xA88800CD213dA5Ae406ce248380802BD53b47647
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Methods
+        </td>
+        <td>
+            .settleOrders(bytes calldata data)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Description
+        </td>
+        <td>
+            Settles an order
+        </td>
+    </tr>
+</table>
+
