@@ -2,96 +2,7 @@
 sidebar_position: 3
 ---
 
-# Staking
-
-## Staking and staking power
-
-The whitelisted top-5 stakers are determined by the staking power. Stakers can lock 1inch tokens in the staking contract to get st1inch tokens. The lock period is between 1 day and 4 years. st1inch tokens grants a staker “staking power.” The longer the locking period the more “staking power” a resolver gets. However, the increase in power is not linear:
-
-* 2-years lock will give the staker 1 “staking power” for each 1inch
-* 1.5-years lock will give the staker 0.47 “staking power” for each 1inch
-* 1-years lock will give the staker 0.22 “staking power” for each 1inch
-* 0.5-year lock will give the staker 0.1 “staking power” for each 1inch
-* Expired lock will give the staker only 0.05 “staking power” for each 1inch
-
-
-<img src='/img/fusion/staking-image.png' alt="staking-image"/>
-
-
-## Delegation
-
-To help overcome the entry barrier to get into the whitelist a resolver can engage 1inch stakers to delegate their “staking power” to him.
-
-When a staker delegates his “staking power” to a resolver, his power is added to the resolver’s “staking power” and helps him to enter and remain in the whitelist. Delegated “staking power” is decreased over time with a lock period in the same manner as a resolver’s “staking power”.
-
-A staker can delegate all its power to a single resolver at one moment of time.
-
-## Farmings
-
-To incentivize stakers to delegate their voting power Fusion infrastructure creates a default farm for each resolver and any staker delegated his “staking power” to a resolver is automatically joined the farm. The resolver who owns the farm may provide rewards for joined delegates which are distributed to them proportionally to the delegated “staking power” and time spent delegating.
-
-## Register as a resolver
-
-It is not enough to have sufficient “staking power” but a Resolver should also be enlisted as a resolver which involves two actions: 1) register a delegation pod and 2) register for whitelisting. Optionally, a resolver may define the default farm that a delegating staker will automatically join after delegation.
-
-If a resolver wants to fill orders from another address then that is whitelisted then he should define a worker address for this purpose. Otherwise, if a resolver wants to fill orders from its own address he should register his own address as a worker.
-
-The whitelist contains top-5 resolvers by staking power. The position in the list defines the access priority for resolving. The Dutch auction duration is split equally into 6 intervals.
-
-For example, if Dutch auction is lasted 6 minutes, then 1st minute the top-1 resolver is allowed to fill the order, on the 2nd minute top-1 and top-2 resolvers are allowed to fill the order and so on. On the 5th minute all the resolvers from the whitelist are allowed to fill the order. On the 5th minute the order becomes public and all the resolvers despite of the whitelist are allowed to fill it.
-
-Below is an example of 7 minutes long auction
-
-<img src='/img/fusion/auction.png' alt="auction-image"/>
-
-## Fee bank
-
-For each order filled, a resolver should pay a fee. This fee is automatically substructed from a resolver’s account at the fee bank. Order fill will be reverted if there is not enough account balance at the fee bank. So a resolver should deposit enough 1inch tokens to fill orders.
-
-If a worker is defined for filling orders then a deposit should be made to this worker account at the FeeBank.
-
-## Resolving
-
-If all the previously described requirements are met and steps are done, then a resolver may start filling orders by calling resolve method of the settlement contract. If a resolver wants to fill several orders in one transaction then he should add taker’s interactions with chain order fill in it. See limit orders documentation for details.
-
-## Setup script example
-
-```javascript
-// Ethers setup script
-
-// approve 1inch staking
-await (await inch.connect(resolver).approve(st1inch.address, stakeAmount));
-// stake 1inch token
-await (await st1inch.connect(resolver).deposit(stakeAmount, lockTime)).wait();
-// add delegation pod to
-// 1. make it possible for any user to delegate staking power to
-// the resolver's account
-// 2. make it possible for a resolver to allocate its staking power for itself
-await (await st1inch.connect(resolver).addPod(delegation.address)).wait();
-
-// register resolver's delegation token to count stakers' shares and rewards
-await (
-    await delegation
-        .connect(resolver)
-        .functions['register(string,string)'](
-            'MyShareTokenName',
-            'MST',
-        )
-).wait();
-
-// Set default rewards farm
-// Optional, needed to incentivize staker for delegation
-await (await delegation.connect(resolver).setDefaultFarm(farm.address)).wait();
-
-// Delegate staked power to self
-await (await delegation.connect(resolver).delegate(resolver.address)).wait();
-
-// Whitelist resolver (there should be enough staked power to be in top 5)
-await (await whitelist.connect(resolver).register()).wait();
-
-// Add worker address from which order settlement will be executed
-await (await whitelist.connect(resolver).promote(1, worker.address)).wait();
-```
+# Contract interaction
 
 ### 1. Stake 1inch
 
@@ -478,7 +389,7 @@ await feeBank.connect(resolver).deposit(amount)
 ```
 
 
-### Resolving
+### 4. Resolving
 
 ```Solidity
 struct Order {
@@ -546,3 +457,41 @@ struct Order {
     </tr>
 </table>
 
+### Setup script example
+
+```javascript
+// Ethers setup script
+
+// approve 1inch staking
+await (await inch.connect(resolver).approve(st1inch.address, stakeAmount));
+// stake 1inch token
+await (await st1inch.connect(resolver).deposit(stakeAmount, lockTime)).wait();
+// add delegation pod to
+// 1. make it possible for any user to delegate staking power to
+// the resolver's account
+// 2. make it possible for a resolver to allocate its staking power for itself
+await (await st1inch.connect(resolver).addPod(delegation.address)).wait();
+
+// register resolver's delegation token to count stakers' shares and rewards
+await (
+    await delegation
+        .connect(resolver)
+        .functions['register(string,string)'](
+            'MyShareTokenName',
+            'MST',
+        )
+).wait();
+
+// Set default rewards farm
+// Optional, needed to incentivize staker for delegation
+await (await delegation.connect(resolver).setDefaultFarm(farm.address)).wait();
+
+// Delegate staked power to self
+await (await delegation.connect(resolver).delegate(resolver.address)).wait();
+
+// Whitelist resolver (there should be enough staked power to be in top 5)
+await (await whitelist.connect(resolver).register()).wait();
+
+// Add worker address from which order settlement will be executed
+await (await whitelist.connect(resolver).promote(1, worker.address)).wait();
+```
