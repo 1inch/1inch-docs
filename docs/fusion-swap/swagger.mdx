@@ -1,0 +1,24 @@
+---
+sidebar_position: 2
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import {SwaggerDoc} from '../../src/components/swagger-doc/SwaggerDoc';
+
+# Swagger Fusion mode
+
+<Tabs>
+    <TabItem value="ethereum" label="Rеlayer Ethereum" default>
+        <SwaggerDoc url="https://fusion.1inch.io/relayer/swagger/ethereum" />
+    </TabItem>
+    <TabItem value="ethereum" label="Orders Ethereum" default>
+        <SwaggerDoc url="https://fusion.1inch.io/orders/swagger/ethereum" />
+    </TabItem>
+</Tabs>
+
+
+<div class="warning-swagger">
+    <p>Swagger module isn't available on mobile.</p>
+    <p>You can access this page from desktop.</p>
+</div>
