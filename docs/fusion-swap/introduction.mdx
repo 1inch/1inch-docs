@@ -4,6 +4,8 @@ sidebar_position: 1
 
 # Introduction
 
+## Overview
+
 1inch Fusion Mode offer users a way to execute swaps without gas spend and risks of being front-run. Fusion Mode looks like a swap for a user but technically it is a limit order with a variable exchange rate filled by a third-party called Resolver. Starting from the moment order is placed, the exchange rate is decreasing from desired rate to minimal return amount (Dutch auction) until it becomes profitable for Resolvers to fill the order. Multiple resolvers compete for the order to ensure it is filled before the rate falls to minimal return amount.
 
 Below are the examples of opportunities to gain profit for resolvers:
@@ -12,4 +14,18 @@ Below are the examples of opportunities to gain profit for resolvers:
 + Gas economy when filling matching orders;
 + Gas economy due to batch filling;
 
+## Dutch auction filling rate
 
+The order filling rate is a piecewise linear function that depends on multiple parameters, such as swap volume, gas costs, and the chosen preset (e.g., fast, fair, auction). It is calculated separately for each order and typically contains two breaking points that divide it into three intervals for fast preset, and three breaking point for fair and auction presets. The example logic for fast preset. the rate is decreased by
+
++ 1st interval: estimated gas costs (first block);
++ 2nd interval: 1/6 of estimated gas costs each block (2/3 of the auction time);
++ 3rd interval: linearly to the min return value (the rest of auction time);
+
+Depending on the market state, swap volumes, and order expiration time, there may be fewer than two breaking points (e.g., swap 30 dollars at a time of high gas costs).
+The logic and algorithms used to build the curve aim to maximize return for the user while still maintaining order fillability, and they are constantly improving.
+Below are some real-life examples
+
+<img src='/img/fusion/auction-1.png' alt="auction1-image"/>
+<img src='/img/fusion/auction-2.png' alt="auction1-image"/>
+<img src='/img/fusion/auction-3.png' alt="auction1-image"/>
