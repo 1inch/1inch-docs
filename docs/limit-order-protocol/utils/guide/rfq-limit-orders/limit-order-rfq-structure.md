@@ -6,7 +6,7 @@ sidebar_position: 1
 
 | Field            | Type     | Inner Solidity type | Description                                                                         |
 | ---------------- | -------- | ------------------- | ----------------------------------------------------------------------------------- |
-| `info`           | `string` | `uint256`           | information about a limit order RFQ, encoded as a decimal number. Reade more bellow |
+| `info`           | `string` | `uint256`           | information about a limit order RFQ is encoded as a decimal number. Read more below |
 | `makerAsset`     | `string` | `address`           | the address of the asset you want to sell (address of a token contract)             |
 | `takerAsset`     | `string` | `address`           | the address of the asset you want to buy (address of a token contract)              |
 | `maker`          | `string` | `address`           | the address of the limit order creator                                              |
