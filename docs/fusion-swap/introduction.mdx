@@ -6,8 +6,7 @@ sidebar_position: 1
 
 ## Overview
 
-1inch Fusion Mode offer users a way to execute swaps without gas spend and risks of being front-run. Fusion Mode looks like a swap for a user but technically it is a limit order with a variable exchange rate filled by a third-party called Resolver. Starting from the moment order is placed, the exchange rate is decreasing from desired rate to minimal return amount (Dutch auction) until it becomes profitable for Resolvers to fill the order. Multiple resolvers compete for the order to ensure it is filled before the rate falls to minimal return amount.
-
+1inch Fusion Mode offer users a way to execute swaps without gas spend and risks of being front-run. Fusion Mode looks like a swap for a user but technically it is a limit order with a variable exchange rate filled by a third-party called Resolver. An order’s exchange rate is decreasing from desired rate to minimal return amount (Dutch auction) until it becomes profitable for Resolvers to fill the order. Multiple resolvers compete for the order to ensure it is filled before the rate falls to minimal return amount.
 Below are the examples of opportunities to gain profit for resolvers:
 
 + Dutch auction decreases order rate constantly;
@@ -16,7 +15,9 @@ Below are the examples of opportunities to gain profit for resolvers:
 
 ## Dutch auction filling rate
 
-The order filling rate is a piecewise linear function that depends on multiple parameters, such as swap volume, gas costs, and the chosen preset (e.g., fast, fair, auction). It is calculated separately for each order and typically contains two breaking points that divide it into three intervals for fast preset, and three breaking point for fair and auction presets. The example logic for fast preset. the rate is decreased by
+Each order has an auction start timestamp, which is the time at which the order's auction begins. The auction start timestamp is defined as the order's signature timestamp plus a waiting period. The waiting period is a delay which is set compensate different block generation speed on different networks. Before the auction starts, an order can be filled at the auction start rate, which is the maximum rate that a user can receive. After the auction begins, the order filling rate decreases over time.
+
+The order filling rate is a piecewise linear function that depends on multiple parameters, such as swap volume, gas costs, and the chosen preset (e.g., fast, fair, auction). It is calculated separately for each order and typically contains two breaking points that divide it into three intervals for fast preset, and three breaking points for fair and auction presets. The example logic for fast preset. the rate is decreased by
 
 + 1st interval: estimated gas costs (first block);
 + 2nd interval: 1/6 of estimated gas costs each block (2/3 of the auction time);
