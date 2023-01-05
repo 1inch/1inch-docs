@@ -12,7 +12,7 @@ Both type of orders is a data structure created off-chain and signed according t
 
 ## I. Limit order
 A limit order is a financial instrument with which you can put up an ERC-20 token for sale at a fixed price.  
-For example, you can put up for sale 2 WBTC tokens at the price of 82415 DAI tokens.
+For example, you can put up 2 WBTC tokens for sale at the price of 82415 DAI tokens.
 
 1inch limit orders protocol has many tools for flexible trade management:
 
@@ -48,14 +48,14 @@ Limit orders are extremely **flexible** limit order, can be configured with:
 
 **A request for quotation (RFQ)** is a business process in which a customer requests a quote from a supplier (market maker) for the purchase of some tokens.
 
-RFQ orders has different use case, and dedicated to market makers at first place. Typical scenario is following:
-Market maker create a bunch of RFQ Orders, and expose it via API.
-Trading or platform / algorithm ask market maker quotes, and if it match his needs, he receives signed RFQ order from market maker.
+RFQ orders have different use cases, and are dedicated to market makers in the first place. The typical scenario is following:
+Market maker creates a bunch of RFQ Orders, and exposes it via the API.
+Trader or the platform algorithm ask for market maker quotes. If the quotes match traders' needs, the trader receives signed RFQ order from the market maker.
 
 **Gas optimized order** with restricted capabilities suitable **for market makers**
 
--   Support expiration time
--   Support cancelation by order id
+-   Supports expiration time
+-   Supports cancelation by order id
 -   RFQ Order could be filled only once
 -   Partial Fill is possible (once)
 
