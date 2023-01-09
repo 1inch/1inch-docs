@@ -400,13 +400,33 @@ html[data-theme='dark'] .swagger-ui .model-toggle:after {
 /* swagger END */
 
 /* Adaptive START */
-@media (max-width: 1247px) {
+@media (max-width: 1440px) {
+    .navbar__link {
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+    }
+
     .navbar__item {
-        margin-right: 40px;
+        margin-right: 16px;
+    }
+}
+
+@media (max-width: 1350px) {
+    .navbar__link {
+        font-size: 13px;
+    }
+
+    .navbar__item {
+        margin-right: 14px;
     }
 
     .navbar__brand {
-        margin-right: 40px;
+        margin-right: 8px;
+    }
+
+    .navbar__item.navbar__link {
+        padding-right: 8px;
     }
 }
 
@@ -444,7 +464,7 @@ html[data-theme='dark'] .swagger-ui .model-toggle:after {
     }
 }
 
-@media (max-width: 997px) {
+@media (max-width: 1047px) {
     .navbar__title {
         font-size: 18px;
     }
@@ -452,6 +472,10 @@ html[data-theme='dark'] .swagger-ui .model-toggle:after {
    .navbar__item {
        display: none;
    }
+
+    .navbar__toggle {
+        display: block !important;
+    }
 }
 
 @media (max-width: 600px) {
