@@ -6,8 +6,9 @@
 
 .featureList {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-column-gap: 28px;
+    row-gap: 24px;
 }
 
 .featureCard {
@@ -96,6 +97,14 @@ html[data-theme='light'] .limitOrderProtocolImage::after {
 
 html[data-theme='light'] .spotPriceAggregatorImage::after {
     content: url("../../../static/img/spot-price-aggregator-light.png");
+}
+
+.fusion::after {
+    content: url("../../../static/img/fusion-dark.png");
+}
+
+html[data-theme='light'] .fusion::after {
+    content: url("../../../static/img/fusion-light.png");
 }
 
 
