@@ -86,6 +86,31 @@ const FeatureList = [
             },
         ]
     },
+    {
+        title: '1inch Fusion mode',
+        description: '1inch Fusion Mode offer users a way to execute swaps without gas spend and risks of being front-run.',
+        image: (
+            <div className={clsx(styles.featureCardImage, styles.fusion)}/>
+        ),
+        links: [
+            {
+                title: 'Introduction',
+                href: '/docs/fusion-swap/introduction'
+            },
+            {
+                title: 'How to become a resolver',
+                href: '/docs/fusion-swap/how-to-become-resolver'
+            },
+            {
+                title: 'Resolver’s setup script example',
+                href: 'docs/fusion-swap/resolver-setup-script-example'
+            },
+            {
+                title: 'Contract interaction',
+                href: 'docs/fusion-swap/contracts-interaction'
+            },
+        ]
+    },
 ];
 
 function Feature({title, description, image, links}) {
