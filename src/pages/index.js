@@ -46,7 +46,7 @@ export default function Home() {
                     <div className={styles.section2}>
                         <HomepageDeveloperLinks/>
                     </div>
-                    <div className={styles.section2}>
+                    <div className={styles.section4}>
                         <HomepagePreFooter/>
                     </div>
                 </div>
