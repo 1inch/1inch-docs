@@ -63,11 +63,15 @@ html[data-theme='light'] .mainContainer::after {
 }
 
 .section2 {
-    margin-bottom: 100px;
+    margin-bottom: 220px;
 }
 
 .section3 {
     margin-bottom: 86px;
+}
+
+.section4 {
+    margin-bottom: 122px;
 }
 
 @media (max-width: 996px) {
@@ -88,7 +92,11 @@ html[data-theme='light'] .mainContainer::after {
     }
 
     .section2 {
-        margin-bottom: 152px;
+        margin-bottom: 64px;
+    }
+
+    .section4 {
+        margin-bottom: 64px;
     }
 }
 
