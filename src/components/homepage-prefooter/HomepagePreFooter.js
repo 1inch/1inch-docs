@@ -10,10 +10,11 @@ const PreFooterData = {
         title: 'Launch dApp',
         href: 'https://app.1inch.io/#/1/swap/ETH/1INCH'
     },
-    image: require('../homepage-prefooter/img/image-footer.png').default
+    imageLight: require('../../../static/img/prefooter-light.png').default,
+    imageDark: require('../../../static/img/prefooter-dark.png').default
 }
 
-export default function homepageFooter() {
+export default function HomepagePreFooter() {
     return (
         <section className={styles.prefooterWrap}>
             <div className={styles.prefooterFirstColumn}>
@@ -24,7 +25,8 @@ export default function homepageFooter() {
                     <ChevronRightImg/>
                 </Link>
             </div>
-            <img className={styles.prefooterImage} src={PreFooterData.image} alt={PreFooterData.title}/>
+            <img data-theme-mode="light" className={styles.prefooterImage} src={PreFooterData.imageLight} alt={PreFooterData.title}/>
+            <img data-theme-mode="dark" className={styles.prefooterImage} src={PreFooterData.imageDark} alt={PreFooterData.title}/>
         </section>
     );
 }
