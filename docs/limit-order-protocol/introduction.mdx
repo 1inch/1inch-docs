@@ -10,7 +10,6 @@ sidebar_position: 1
 Smart Contract allows users to place limit orders and RFQ Orders, that later could be filled on-chain.
 Both type of orders is a data structure created off-chain and signed according to [EIP-712](https://eips.ethereum.org/EIPS/eip-712).
 
-## I. Limit order
 A limit order is a financial instrument with which you can put up an ERC-20 token for sale at a fixed price.  
 For example, you can put up for sale 2 WBTC tokens at the price of 82415 DAI tokens.
 
@@ -23,41 +22,22 @@ For example, you can put up for sale 2 WBTC tokens at the price of 82415 DAI tok
 -   Fullness check
 -   Validation
 
-> **Note:** For market making, there are **RFQ orders** that have special optimization that does not require a large amount of gas for execution.
+> There is an extensive set of utilities for creating and managing limit orders available [here](https://github.com/1inch/limit-order-protocol-utils/)
+
+
+
+> **Note:** For market makers, there is a specialised **RFQ order** that has been optimized to decrease the gas required for execution. For more detals see: [The Difference Between Limit and RFQ Orders](/docs/limit-order-protocol/limitvsrfq)
 
 ### Limit order execution
 
-1. 1inch users can place their limit orders via 1inch [dApp](https://app.1inch.io/#/1/limit-order/WETH/DAI).
-1. Anyone can fetch this signed orders using [1inch Limit Orders Liquidity Source API](./api) to perform trade by filling order on-chain.
-1. To do that he or she pass signed order to the `fillOrder` method on the contract:
+1. 1inch users can place their limit orders via 1inch [dApp](https://app.1inch.io/#/1/limit-order/WETH/DAI) or via the [1inch Limit Orders Liquidity Source API](./api).
+1. Anyone can fetch this signed orders using [1inch Limit Orders Liquidity Source API](./api) and trade by filling the order on-chain.
+1. To do that they pass signed order to the `fillOrder` method on the contract:
     - Latest addresses is always [here](https://github.com/1inch/limit-order-protocol-utils/blob/master/src/limit-order-protocol.const.ts)
-    > ***Note:*** Trades buyer and seller should approve their asset to be used by 1inch limit order contract.
-4. Pathfinder algorithm use limit orders placed via `dApp` and REST API, as a liquidity source, and make it available to fill to any 1inch user.
+    > ***Note:*** Limit order users (buyers and sellers) should approve the asset to be used by 1inch limit order contract.
+4. The Pathfinder Algorithm use limit orders placed via `dApp` and REST API as a liquidity source, making them available to fill be any 1inch user..
 So, 1inch limit orders are integrated into the DeFi ecosystem from the day one.
 
-Limit orders are extremely **flexible** limit order, can be configured with:
-
-1. Order execution predicate.
-    - Typical usage is checking that certain time stamp or block number. With this you can set certain expiration time.
-    - You can specify construct any predicate that you want, for example check that certain price is higher than oracle price, to implement stop loss or take profit stategies
-2. Helper function for asset price evaluation.
-    - Function that will allow to extract assets price from arbitrary on-chain source
-3. Callback, for to notify maker on order execution.
-
-## II. RFQ order
-
-**A request for quotation (RFQ)** is a business process in which a customer requests a quote from a supplier (market maker) for the purchase of some tokens.
-
-RFQ orders has different use case, and dedicated to market makers at first place. Typical scenario is following:
-Market maker create a bunch of RFQ Orders, and expose it via API.
-Trading or platform / algorithm ask market maker quotes, and if it match his needs, he receives signed RFQ order from market maker.
-
-**Gas optimized order** with restricted capabilities suitable **for market makers**
-
--   Support expiration time
--   Support cancelation by order id
--   RFQ Order could be filled only once
--   Partial Fill is possible (once)
 
 ## Supported tokens
 - ERC 20
@@ -67,6 +47,6 @@ Trading or platform / algorithm ask market maker quotes, and if it match his nee
 
 ## More resources
 
--   You can use it right in [1inch dApp](https://app.1inch.io/#/1/limit-order/WETH/DAI)
+-   You can use it right in the [1inch dApp](https://app.1inch.io/#/1/limit-order/WETH/DAI)
 -   Smart Contracts [repository](https://github.com/1inch/limit-order-protocol/)
 -   Utils library [repository](https://github.com/1inch/limit-order-protocol-utils/)

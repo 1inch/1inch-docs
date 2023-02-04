@@ -1,0 +1,28 @@
+# The Difference Between Limit and RFQ Orders
+
+## Limit Orders
+
+Limit orders are extremely **flexible** and can be configured with:
+
+1. Order execution predicates.
+    - Typical usage is checking that certain time stamp or block number has occured. With this you can set a specific expiration time.
+    - You can construct any predicate that you want, for example:
+        - check that your price is higher than an oracle price
+        - implement stop loss or take profit stategies
+2. Helper functions for asset price evaluation.
+    - Function that will allow to extract assets price from arbitrary on-chain source
+3. Callbacks, to notify maker on order execution.
+
+## RFQ Orders
+
+RFQ orders have a different use case, and aimed at professional market makers (MMs). The typical use case is as follows:
+
+- The market maker create a series of RFQ Orders, and expose it via the [API](/docs/limit-order-protocol/api).
+    - This is similar in struture to how they would place bid and ask orders on a traditional, centralised exchange with the prices based on their unique MM strategy.
+- The end user (platform, trader or algorithm) queries open limit orders and fills signed order if it meets their market need (in much the same way normal limit orders are filled)
+
+In order to minimize gas costs, RFQ orders only support the following:
+-   Expiration time
+-   Cancelation by order id
+-   Single fill
+    -   Partial Fill is possible (once)
