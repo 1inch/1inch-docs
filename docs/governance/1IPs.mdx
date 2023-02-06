@@ -17,6 +17,272 @@ All 1IPs that have successfully passed the Phase-4 vote. These 1IPs have already
 <details>
 <summary>
 
+### [1IP-13] Governance Process Improvements
+
+</summary>
+<div>
+
+<u>
+
+- **[Phase-3: Temperature Check](https://gov.1inch.io/discussion/9363-1ip13-governance-process-improvements)**
+
+- **[Phase-4: Snapshot Vote](https://snapshot.org/#/1inch.eth/proposal/0x9c7eb76e844af2a4c76a4f73dbddb88a9dd9282064d66d3b3a6b9f9d9fa96c6a)**
+
+</u>
+
+</div>
+
+<details>
+<summary>
+
+**Full Proposal Description**
+
+</summary>
+
+<div class="sc-aVUuG fVABEa"><p>Author:&nbsp;Bobbay_StableNode</p>
+<p>References</p>
+<p><a href="https://gov.1inch.io/t/1inch-dao-governance-process/1973/7" target="_blank">1inch governance process</a></p>
+<h2>Simple Summary</h2>
+<p>1IP-13 “Governance Process Improvements” introduces changes to the current governance process to create a more agile yet robust process.</p>
+<h2>Abstract</h2>
+<p>It takes around 12 days to implement a change via governance. This is time-consuming, especially since there is no express pathway to execute proposals in time-sensitive situations.</p>
+<p>1IP-13 will reduce the current governance timeline in different ways to ensure that governance changes can be enacted swiftly without compromising security.</p>
+<h2>Motivation</h2>
+<p>The current 1inch governance framework is far too long, which can hinder the DAOs ability to execute quickly.</p>
+<h2>Specification</h2>
+<ol>
+<li>Current Process</li>
+<li>Amendments</li>
+<li>New Process</li>
+</ol>
+<p>Current Process</p>
+<p>The current process can be found&nbsp;<a href="https://gov.1inch.io/t/1inch-dao-governance-process/1973" target="_blank">here</a>, but here is a summary.</p>
+<p>Phase 1 (Discussion) &amp; Phase 2 (1IP formalization) have an open-ended duration, so they have no specific deadline.</p>
+<p>Phase 3 (temperature check) lasts five days. Proposals stay unchanged in this phase.</p>
+<p>Phase 4 (Snapshot Vote) lasts seven days.</p>
+<p>Phase 5 (Implementation) lasts a minimum of six days - This can be ignored since it does not involve the community.</p>
+<p>This means that the current governance process (ignoring phase 5) totals a minimum of 12 days to pass a proposal.</p>
+<p>Amendments</p>
+<p>We recommend the following amendments:</p>
+<ul>
+<li>Phase 3 - &nbsp;Reduce from five days to three days.</li>
+<li>Phase 4 &nbsp;- Reduce from seven days to five days</li>
+</ul>
+<p>These changes ensure enough time to cast a forum and snapshot vote without compromising security. Across other DAOs, having a Snapshot vote last around five days is common practice. It provides a grey area between 3 days (too short) and 7 days (too long).</p>
+<p>New Process</p>
+<ul>
+<li>Phase 1 &amp; Phase 2 &nbsp;- Open-ended</li>
+<li>Phase 3 - &nbsp;Lasts three days</li>
+<li>Phase 4 &nbsp;- Lasts five days</li>
+<li>Phase 5 - Lasts seven days</li>
+</ul>
+<p>This new governance process (ignoring phase 5) totals a minimum of 8 days to pass a proposal instead of the original 12 days.</p>
+<h2>Rationale</h2>
+<p>The lengthy process has hindered the DAOs’ ability to execute promptly in the past. This reduction will still ensure a suitable amount of time for DAO members to participate in the DAO without sacrificing security.</p>
+<p>Considerations</p>
+<p>This will make it easier for the DAO to pass proposals that could open a security risk to malicious actors.</p>
+<h2>Next Steps</h2>
+<ol>
+<li>Discuss the Proposal</li>
+<li>Forum temperature check</li>
+<li>Move it to a vote
+<ol>
+<li>[Yes]: Implement these governance changes</li>
+<li>[No]: Do not implement these governance changes</li>
+</ol>
+</li>
+</ol>
+</div>
+
+</details>
+
+
+</details>
+
+<details>
+<summary>
+
+### [1IP-12] Improve Fusion Auction Resolver Competition
+
+</summary>
+<div>
+
+<u>
+
+- **[Phase-3: Temperature Check](https://gov.1inch.io/discussion/9394-1ip12-improve-fusion-auction-resolver-competition)**
+
+- **[Phase-4: Snapshot Vote](https://snapshot.org/#/1inch.eth/proposal/0x4cccc905118f77038cafc65ff41d700c7cc696d4644a74a792c67ea590397941)**
+
+</u>
+
+</div>
+
+<details>
+<summary>
+
+**Full Proposal Description**
+
+</summary>
+
+<div class="sc-ihYDVE fWyHxM"><div><div class="sc-aVUuG fVABEa"><h2>Simple Summary</h2>
+<p>This proposal seeks to modify 1inch Fusion to allow all five of the top resolvers to fill orders during the entire duration of the Dutch Auction.</p>
+<h2>Abstract</h2>
+<p>If passed, this proposal will change the way that 1inch Fusion orders are filled by allowing all five resolvers to participate in every stage of the Dutch auction. This change will increase competition amongst resolvers and ensure that users are getting the best rates.</p>
+<h2>Motivation</h2>
+<p>Currently, the top five resolvers are given fill priority according to their Unicorn Power. For the first minute of the Dutch auction, only the resolver with the highest Unicorn Power can fill the order. Then, the resolver with the second most Unicorn Power joins them for the second minute, and so forth… This proposal will foster a more competitive auction by giving all resolvers equal priority.</p>
+<p>This proposal aims to increase competition amongst resolvers and thus provide better rates for users when they make swaps via the 1inch Network.</p>
+<h2>Specification</h2>
+<p>This proposal serves as a signal from the 1inch Network DAO to 1inch Labs. Once passed, the 1inch Network DAO calls for 1inch Labs to modify the Fusion logic to allow all five resolvers to participate in every stage of the Dutch auction.</p>
+<p><img src="https://commonwealth-uploads.s3.us-east-2.amazonaws.com/b073b75d-dd10-43b3-a412-0c4cf34291eb.1673961561035" alt=""/></p>
+<p>Above is the existing Fusion auction order structure.</p>
+<p>Below is the modified Fusion auction order structure that this proposal calls for.</p>
+<p><img src="https://commonwealth-uploads.s3.us-east-2.amazonaws.com/2b41ffab-c2e6-4b18-b864-e97d73719f7e.1673961577666" alt=""/></p>
+<h2>Rationale</h2>
+<p>Allowing for pure competition amongst the five resolvers, rather than giving preferential access based on staking power, will facilitate better swap rates and faster execution times.</p>
+<p>This change will also make it more attractive for professional market makers to become resolvers, which may lead to a greater demand for 1INCH token as they accumulate the necessary Unicorn Power.</p>
+<h2>Considerations</h2>
+<p>1inch Fusion mode has already been audited and deployed. This proposal will have no negative security implications as it will only change the structure of the Dutch auction.</p>
+<p>An increase in the number of resolvers participating in the Fusion auctions should reduce the likelihood of resolver collusion.</p>
+</div></div></div>
+
+</details>
+
+</details>
+
+
+<details>
+<summary>
+
+### [1IP-11] 1inch Staking Pods
+
+</summary>
+<div>
+
+<u>
+
+- **[Phase-3: Temperature Check](https://gov.1inch.io/discussion/9305-1ip11-1inch-staking-pods)**
+
+- **[Phase-4: Snapshot Vote](https://snapshot.org/#/1inch.eth/proposal/0xece08908c3e10e5125557bc52caac70e5cdc862c391bf02f870da9d1bcc40542)**
+
+</u>
+
+</div>
+
+<details>
+<summary>
+
+**Full Proposal Description**
+
+</summary>
+
+<div class="sc-aVUuG fVABEa"><p>Author: <a href="https://gov.1inch.io/u/bobbay_stablenode" target="_blank">@Bobbay_stablenode</a></p>
+<p>References:</p>
+<p><a href="https://github.com/1inch/erc20-pods" target="_blank">GitHub - 1inch/erc20-pods 7</a>,
+<a href="https://github.com/1inch/farming" target="_blank">GitHub - 1inch/farming 5</a>,
+<a href="https://github.com/1inch/delegating" target="_blank">GitHub - 1inch/delegating 1</a></p>
+<h2>Simple Summary</h2>
+<p>This proposal seeks to implement a new Staking Pod mechanic for the 1INCH token. This system will consist of:</p>
+<ul>
+<li>Incentivised time-locked 1INCH staking</li>
+<li>Permissionless delegation pods</li>
+<li>Reward distribution compatibility</li>
+<li>50% of all current, and future, 1inch DAO protocol revenue shall be distributed to stakers</li>
+</ul>
+<h2>Abstract</h2>
+<p>With the Staking Pod system, users lock their 1INCH tokens in a staking contract to get st1INCH tokens — the longer the lock period, the more st1INCH tokens the user gets. st1INCH tokens can be used by stakers for 1inch DAO governance, and the 1inch DAO can choose to use these token balances for reward distribution. The system is modular as anyone can launch a new Modular Delegation Pod and can use the reward functionality to incentivize certain actions and/or assign utility to the 1INCH token. 50% of all current, and future, 1inch DAO revenue shall be distributed to stakers.</p>
+<h2>Motivation</h2>
+<p>1INCH token is the governance token of the 1inch Network. It provides voting rights within the 1inch DAO’s governance system, and users can stake it to receive a <a href="https://blog.1inch.io/the-extended-gas-refund-program-is-now-available-to-yet-more-users-1d48de21aae3" target="_blank">refund 3</a> on their transaction fees. However, despite these functions, the amount of 1INCH tokens currently being held in <a href="https://etherscan.io/token/0xa0446d8804611944f1b527ecd37d7dcbe442caba" target="_blank">staking contracts is quite low</a> and governance participation is even lower. We believe that this is due to a lack of incentives to participate in governance and a lack of additional utility for staked 1INCH.</p>
+<p>By introducing Modular Staking Pods, we hope to give stakers more direct control over how their stake is used to power the 1inch Network. This change will allow them to independently select how their stake governs each of the protocols and will allow for rewards to permissionlessly be distributed based on the actions of the stakers. We envision that this will improve the goverance by aligning incentives between people who want to stake to earn rewards and those who are interested in protocol governance – both players will have direct incentives to participate in the same system.</p>
+<p>We believe that this proposal represents a step forward for the 1inch Network and that it will help increase adoption and usage of the network’s future protocols.</p>
+<h2>Specification</h2>
+
+<h3>Staking</h3>
+<p>Like the existing 1INCH staking contract, users will be able to lock their 1INCH tokens in the staking contract to get st1INCH tokens that can be used for 1inch DAO governance. However, unlike the current system, Modular Staking will require users to lock their 1INCH for a set amount of time.</p>
+<h3>Locking</h3>
+<p>The minimum and maximum lock periods are chosen by the DAO through — for the purposes of analysis, we’ll use 1 month and 2 years as the minimum and maximum staking periods respectively. st1INCH tokens grant users “voting power” which they can use for various use cases. The longer the locking period the more “voting power” resolver can get. However, the increase in power is not linear.</p>
+
+<p>There will be a minimum locking period of 1 month.</p>
+<p>Note that st1INCH voting power will decay over time according to the locking curve. Also note that users can re-lock their stake at any time to refresh their st1INCH balance. Users will be able to withdraw their stake early but will forfeit a portion of their rewards.</p>
+
+<p>Orange is the amount lost when a staker withdraws earlier than they originally committed.</p>
+<p>Example:</p>
+<ul>
+<li>
+<p>In 2023, Sally stakes 100 1INCH and selects a 2-year lock period.</p>
+</li>
+<li>
+<p>They receive 100 st1INCH from the staking contract and this balance decays over time.</p>
+</li>
+<li>
+<p>By 2024 Sally’s st1INCH balance has decayed to 22.36</p>
+</li>
+<li>
+<p>Sally then chooses to re-lock her stake for the maximum amount of time, 2-years, and her st1INCH balance is increased to 100.</p>
+</li>
+<li>
+<p>Sally chose not to re-lock, and in 2026, after the lock period, she withdraws her original 100 1INCH.</p>
+</li>
+</ul>
+<h3>Unlocking</h3>
+<p>If a st1INCH staker wishes to unlock they will forfeit some of their tokens based on the following equation:</p>
+<p>withdrawalAmount = (balance - votingPower) / 0.9</p>
+<p>penalty = balance - withdrawalAmount</p>
+<p>In this setting, the maximum early withdrawal loss is 90% as the minimum locking period is 1 month</p>
+<h3>Admin Control</h3>
+<p>The 1inch DAO Treasury Address, <a href="https://gnosis-safe.io/app/eth:0x7951c7ef839e26F63DA87a42C9a87986507f1c07/balances" target="_blank">0x7951c7ef839e26F63DA87a42C9a87986507f1c07</a>, would act as admin of the staking contract with control over the following functions:</p>
+<ul>
+<li>
+<p>setFeeReceiver – this would allow the DAO to change the vault to collect the rewards for later distribution between stakers and the DAO treasury.</p>
+</li>
+<li>
+<p>setDefaultFarm – this would allow the DAO to change the default reward distribution contract for 1INCH staking.</p>
+</li>
+<li>
+<p>setMaxLossRatio – this would allow the DAO to change the earliest point at which people can early withdraw their stake by disallowing withdrawals with larger withdrawal fees.</p>
+</li>
+<li>
+<p>setEmergencyExit – This is basically an abort function and would allow the DAO to end the staking scheme. All stakers can reclaim the entire amount of their original stake regardless of their remaining locking period. This would be used if the DAO wanted to migrate to a new staking contract to change key variables, like the maximum lock period.</p>
+</li>
+</ul>
+<h3>Modular Delegation</h3>
+<p>The Modular Delegation system provides users with a set of delegation contracts that are specific to a topic. The set of delegation contracts is permissionless, meaning that anyone can deploy one and allow users to delegate their st1INCH within it.</p>
+<p>The 1inch DAO will have the power to endorse a delegation contract and feature it in the 1inch staking UI.</p>
+<p>For the start, we propose just two delegation topics:</p>
+<p><strong>Snapshot governance delegation</strong></p>
+<ul>
+<li>This will allow users to delegate their Snapshot voting power to a recognized delegate from the UI, or manually enter an Ethereum/ENS address.</li>
+<li>Nested within this is the vanilla<a href="https://docs.snapshot.org/guides/delegation" target="_blank"> Snapshot space-specific delegation contract 1</a>.</li>
+</ul>
+<p><strong>st1INCH utility delegation</strong></p>
+<ul>
+<li>As part of this staking upgrade, there will be a new protocol added to 1inch’s suite of DeFi tools that will substantially improve the utility of st1INCH.</li>
+<li>Service providers that want to tap into the utility of st1INCH can proposition the community for delegated power.</li>
+</ul>
+<h3>Rewards</h3>
+<p>Modular Staking will have two levels of reward functionality: Generic st1INCH rewards and Modular Delegation rewards.</p>
+<h4>Generic st1INCH rewards</h4>
+<p>The st1INCH contract will allow anyone to run a farm to distribute rewards to everyone holding st1INCH tokens.</p>
+<p>Users also have the ability to to join as many farms as they want as it does not required a user to move their st1inch to a specific farm. Along as a user holds st1inch in their account, they can receive rewards from multiple farms.</p>
+<p>This proposal calls for 50% of all current, and future, 1inch DAO revenue to be distributed to stakers in the form of 1INCH.</p>
+<h4>Modular Delegation rewards</h4>
+<p>Some Modular Delegation contracts have&nbsp; an integrated rewards function that anyone can run a farm atop.</p>
+<p>The main advantage to this type of reward is that it is not limited to being proportional to a user’s st1INCH holdings. Any action, onchain or offchain, can be used as the basis of reward distribution. This functionality could be used by the 1inch DAO to incentivize anything from editing 1IPs to using a new 1inch protocol (and everything in between).</p>
+<p>Example: The 1inch DAO may use the Snapshot governance delegation contract to incentivize active governance participation by boosting the st1INCH rewards of people who vote on proposals, delegate their st1INCH to active voters, etc…</p>
+<h2>Rationale</h2>
+<p>The rationale for this proposal is to provide a more flexible staking system that can be used to incentivize various activities within the 1inch Network. The new Modular Delegation contracts will allow for rewards to be distributed based on anything from voting on proposals to using new 1inch protocols. This will provide a greater incentive for users to participate in the network and help drive adoption of new 1inch products and services.</p>
+<h2>Considerations</h2>
+<p>The security considerations for this proposal are mainly around the potential for abuse of the new staking and delegation contracts. It is important to ensure that there are adequate safeguards in place to prevent users from delegating their voting power to malicious actors.</p>
+<p>The governance considerations for this proposal include the impact on revenue streams and changes to the governance processes. This proposal could potentially increase revenue for the 1inch DAO if it is successful in incentivizing more users to participate in the network. It is also worth considering how these changes will impact existing voting processes within the 1inch DAO since the existing staking contract will be deprecated.</p>
+</div>
+
+</details>
+
+
+</details>
+
+<details>
+<summary>
+
 ### [1IP-09] Collect 1inch DAO Treasury Revenue in 1INCH Token in Addition to USDC
 
 </summary>
@@ -325,6 +591,26 @@ All 1IPs that have successfully passed the Phase-4 vote. These 1IPs have already
 ## Not-Passed
 
 All 1IPs that did not pass the Phase-4 vote. These 1IPs did not meet the minimum quorum, and/or a majority of the voting weight was opposed to the change:
+
+<details>
+<summary>
+
+### [1IP-10] 1inch DAO SAFE Airdrop Claim
+
+</summary>
+<div>
+
+<u>
+
+- **[Phase-3: Temperature Check](https://gov.1inch.io/discussion/9208-1ip10-1inch-dao-safe-airdrop-claim)**
+
+- **[Phase-4: Snapshot Vote](https://snapshot.org/#/1inch.eth/proposal/0xba191f6be8b6700a432a632dcac25ab67019baaf7791bcc4ed76218d43e05d82)**
+
+</u>
+
+</div>
+
+</details>
 
 <details>
 <summary>
