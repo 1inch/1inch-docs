@@ -41,7 +41,13 @@ To incentivize stakers to delegate their unicorn power Fusion infrastructure cre
 
 ## Register as a resolver
 
-It is not enough to have sufficient “unicorn power” but a Resolver should also be enlisted as a resolver which involves two actions: 1) register a delegation pod and 2) register for whitelisting. Optionally, a resolver may define the default farm that a delegating staker will automatically join after delegation.
+It is not enough to have sufficient “unicorn power” but a Resolver should also be enlisted as a resolver which involves the following actions:
+
+1. [complete resolver verification process](./resolver-verification)
+1. register a delegation pod
+2. register for whitelisting
+
+Optionally, a resolver may define the default farm that a delegating staker will automatically join after delegation.
 
 If a resolver wants to fill orders from another address then that is whitelisted then he should define a worker address for this purpose. Otherwise, if a resolver wants to fill orders from its own address he should register his own address as a worker.
 
