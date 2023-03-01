@@ -1,0 +1,22 @@
+---
+sidebar_position: 2
+---
+
+# Differences between Limit Order and RFQ Order
+
+The Limit Order Protocol offers users to place Limit orders and Request For Quote (RFQ) orders, you should choose
+the order type based on your needs. The following table shows the differences between Limit Order and RFQ Order.
+
+| Criteria                                    | Limit Order                                                                                                                                             | RFQ Order                                                                                                                                                                                                                         |
+| :------------------------------------------ | :------------------------------------------------------------------------------------------------------------------------------------------------------ | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Suitable for                                | Traders                                                                                                                                                 | Market Makers                                                                                                                                                                                                                     |
+| Flexibility of adding features to the order | More, including features like Order execution predicate and Callback, more details [here](/docs/limit-order-protocol/introduction#limit-order-features) | Comparatively less, as these orders need to be highly Gas Optimised. Features like expiration time, partial filling(once) and more are available, more details [here](/docs/limit-order-protocol/introduction#rfq-order-features) |
+| Execution of the Order                      | The Pathfinder algorithm uses the orders as a source of liquidity to match with incoming orders.                                                        | The orders are exposed via API and later a Trader or the platform asks for the quotes to match.                                                                                                                                   |
+
+Both the order types support ERC20, ERC721 and ERC1155 tokens. Other token standards could be supported via external extension.
+
+## More resources
+
+- Use it right away at [1inch dApp](https://app.1inch.io/#/1/limit-order/WETH/DAI)
+- Smart Contracts [repository](https://github.com/1inch/limit-order-protocol/)
+- Utils library [repository](https://github.com/1inch/limit-order-protocol-utils/)
