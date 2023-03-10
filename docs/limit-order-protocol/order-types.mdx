@@ -1,0 +1,51 @@
+---
+sidebar_position: 2
+---
+
+
+# Request For Quote (RFQ) v.s. Limit Order
+
+
+## Brief Summary
+The primary distinction between 1inch's **[Limit Order](#limit-order)** and **[Request for Quote (RFQ)](#rfq-order)**:
+- **Limit orders** are available to the public via the 1inch dapp; when submitted, limit orders are added to the 1inch database, where they can be retrieved via the [1inch Limit Order API](limit-order-protocol/api/) and subsequently executed on-chain. They also offer a robust set of features allowing substantial customization.
+- **RFQ orders** are only available market makers, and are primarily intended to solicit quotes from 1inch’s [robust network of liquidity providers](https://help.1inch.io/en/articles/4585125-what-are-liquidity-sources-and-how-many-of-them-does-1inch-aggregate-from). RFQs were designed with efficiency in mind, offering low gas fees at the expense of complex features.
+
+Both types of orders are intended to facilitate the exchange of two distinct on-chain assets (ERC 20, ERC 721, ERC 1155). They can also be structured and signed off-chain using (EIP-712)[https://eips.ethereum.org/EIPS/eip-712], allowing gasless order placement using the 1inch database or alternate external method. Gas fees are incurred when the order is executed on-chain. Both order types support expiration and cancellation by order id.
+
+
+:::note
+
+1inch orders do not reserve funds when the order is placed, therefore no tokens will be returned upon order cancellation or expiration. An order cannot be filled when the associated address has insufficient funds to complete it (i.e. assets were moved after the order was placed).
+:::
+
+
+-----
+
+## **Limit Order**
+
+
+A Limit Order represents a signed offer to exchange one asset for another in defined amounts prior to a defined expiry. The maker specifies a pair of asset, amounts to be exchanged, an expiration point, and other order conditions as permitted by the smart contract. Typically these orders are sent via API to the 1inch database where they can be retrieved and filled by any third party, including the [1inch Aggregation Protocol](/docs/aggregation-protocol/introduction). 1inch's Limit Order Protocol permits a variety of optional order conditions when defining a Limit Order, such as a direct peer-to-peer orders that can only be filled by a specified address. A Limit Order remains open until it is filled, canceled, or expires.
+
+
+:warning: Note: limit orders will always fill at the price specified be careful when entering the token in the 'You receive' field.
+
+#### Key Features Unique to Limit Orders
+
+- **Order execution predicate:** custom order logic such as checking for a specified timestamp or block height (i.e. for order expiration), checking against an oracle for current market pricing, to implement stop loss or take profit strategies
+- **Helper function** enables assets price extraction from arbitrary on-chain source
+- **Callback** notify the maker upon successful order execution
+- **Partial fill** to allow multiple partial executions that do not cumulatively exceed the full order amount
+- **Batch cancellation** for mass order cancelations
+- **Integrated as a liquidity source** in the DeFi ecosystem via the Pathfinder algorithm
+   Extremely flexible order type and can be configured with order execution predicates, helper functions for asset price evaluation, and callbacks for maker notification.
+
+-----------
+
+## RFQ Order
+An **RFQ Order** is a financial instrument designed for mid to large scale market makers. It solicits quotes from liquidity providers and allows the maker to fill their order with a quote of their choosing. It is important to note that each RFQ order can only be filled once - regardless of whether it is filled in part or in full. The RFQ system was built to make it easy, profitable, and low-risk to provide large amounts of liquidity to DEX traders. Unlike Limit Orders, RFQ orders allow market makers to choose when and with whom they transact. For example, a professional market maker (PMM) could leverage RFQ orders to solicit large OTC-like transactions, minimizing their risk and market impact while maximizing profit from arbitrage. RFQ orders enables PMMs who normally trade crypto assets on CEXes or OTC to trade large amounts of crypto with low risk on DEXes. RFQ orders are optimized for gas efficiency and have limited features compared to Limit Orders.
+
+
+#### Key Limitations
+Refer to [Key Features Unique to Limit Orders](#key-features-unique-to-limit-orders)
+Note: RFQ orders do support partial order fill, but this can only be executed once per order.
