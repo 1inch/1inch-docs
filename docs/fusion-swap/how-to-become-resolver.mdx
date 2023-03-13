@@ -43,13 +43,15 @@ To encourage stakers to delegate their "unicorn power," Fusion infrastructure cr
 
 Having sufficient "unicorn power" is not enough for a Resolver. They must also be enlisted as a resolver, which involves the following actions:
 
-1. Complete the Resolver Verification Process.
+1. Read and agree to [1inch Network Fusion Swap Terms of Use for Resolvers](/img/fusion/1inch-Network-Fusion-Swap-Terms-of-Use-for-Resolvers.pdf).
+By following and completing the following actions and registration steps to become a Resolver, you agree that you read, understood, and consent to 1inch Network Fusion Swap Terms of Use for Resolvers.
+2. Complete the Resolver Verification Process.
 More details can be found [here](resolver-verification).
-2. Register a delegation pod.
+3. Register a delegation pod.
 A delegation pod is a smart contract that manages the accounting for delegatee and delegates unicorn power and shares. Whitelist queries the delegation pod to obtain the resulting resolver's unicorn power. After registering, a resolver should delegate its unicorn power to itself, so that it will be taken into account by the whitelist.
-3. Register at whitelist
+4. Register at whitelist
 If a resolver has sufficient delegated unicorn power, it can be whitelisted and given the ability to fill orders from the start of an action. Only 5 resolvers can be whitelisted. The whitelist is recalculated only when someone attempts to register. So, if the unicorn power of a whitelisted resolver drops below that of a resolver who is not whitelisted, the whitelist will change only if someone calls `register` on a whitelist contract.
-4. Define worker address 
+5. Define worker address 
 If a resolver wants to fill orders from an address other that is whitelisted, they should define a worker address for this purpose. If a resolver wants to fill orders from their own address, they should register their own address as a worker.
 
 If a resolver is not whitelisted, it can still fill orders when they become public. Orders become public starting from 2/3 of the auction time, and every resolver can fill them regardless of their whitelist status.
