@@ -46,7 +46,7 @@ const config = {
         title: '1inch Network Docs',
         logo: {
           alt: '1inch',
-          src: './static/img/1inch_logo_without_text.svg',
+          src: 'https://avatars.githubusercontent.com/u/43341157',
         },
         items: [
           {
