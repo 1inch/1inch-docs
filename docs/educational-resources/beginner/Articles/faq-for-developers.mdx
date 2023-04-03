@@ -1,0 +1,69 @@
+---
+sidebar_label: 'Developer FAQ'
+---
+FAQ Dev questions
+
+
+Q: Is it possible to specify the function we want to use with the 1inch API? 
+
+> A: Unfortunately this is not possible at this time. The most you can do is use the `compatibility mode` parameter to force the API to use the `swap` function. This is the least gas efficient function but is sometimes required when trading tokens with a commission/tax on trade or transfer along with consistency when integrating with a smart contract. 
+
+Q: Is it possible to get the result of all paths like the comparison chart on app.1inch.io?
+
+> A: This is not returned by the API, instead you would need to individually quote these sources yourself. 
+
+Q: I’m trying to use the 1inch router in a smart contract, is there an example?
+
+> A: Yes, you can find an example here: https://github.com/smye/1inch-swap/
+
+> A: If you need more help please reach out to https://discord.gg/1inch
+
+Q: I’m trying to use the 1inch router without the API, is this possible?
+
+> A: This is possible but not recommended. The functions "unoswap", "uniswapV3Swap", "fillOrderTo" and "clipperSwap" can all be used without the API but require proper bit masking and encoding. You would also lose the power of the aggregation protocol if you're using such functions. It's recommended to use the API in almost all cases. 
+
+Q: Why am I getting 0 for the gas in my API response? 
+
+> A: This could be happening if you're using the "disableEstimate" parameter with true assigned to it. This will disable the gas estimation and return 0 for the gas.
+
+Q: What token address should I use if I want to trade ETH? 
+
+> A: Use the address 0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE, this applies to the native asset of the chain, so MATIC on polygon, BNB on BNB chain, AVAX on Avalanche, etc.
+
+Q: How can I use Request for Quotation (RFQ) orders?
+
+> A: RFQ order are intended for market makers and can't be submitted by users to the limit order API. They can be used to offer private OTC deals in a gas efficient manner. 
+
+Q: How can I get integrated into your aggregator? 
+
+> A: Please reach out via this form: https://docs.google.com/forms/d/e/1FAIpQLScPbwZ3uVekqXTEoR7wmcCMCn9XkIBta26aaOyYoAsqlswcxQ/viewform?hl=en
+
+Q: What are 500 internal server errors? (tx-gateway, aggregation API, limit order API)
+
+> A: 500 errors can happen for a multitude of reasons, most commonly due to an incorrectly formatted request parameter. Make sure you're using the `amount` field in the token's minimum divisible units, for ETH it's wei. 
+
+> A: Some other reasons might be random errors with the API or the underlying protocols being aggregated. If you're getting 500 errors consistently, please reach out to us on https://discord.gg/1inch
+
+Q: What is the rate limit? 
+
+> A: The rate limit varies based on the load of the API, but generally it's 1 request per 2 seconds. This is across all endpoints and not specific to each endpoint.
+
+Q: Why is the value field 0 in the API response? 
+
+> A: The value field is the amount of ETH sent with the transaction to the 1inch router, when trading tokens this should always be 0. When you're trading ETH, the value field will reflect the amount of ETH sent to the 1inch router.
+
+Q: Is there a simple swap UI that I can embed in my website?
+
+> A: Currently there is no swap widget that is maintained, but you can use the API to build your own.
+
+Q: If I don't have the user's private key, how do I send the transaction if the example requires a private key?
+
+> A: here is a simple guide provided by metamask to sign and send transactions without the user's private key: https://docs.metamask.io/guide/sending-transactions.html#example
+
+Q: How can I get the gas price for a transaction?
+
+> A: You can use a gas oracle like https://www.blocknative.com/gas-estimator for the gas price. For the gas limit you must use the eth_estimateGas rpc call.  https://ethereum.org/en/developers/docs/apis/json-rpc/#eth_estimategas
+
+Q: How can I find the contract address being used in the route?
+
+> A: Currently this is not possible with the consumer api, it will only provide the protocol and the from and to token address used in the part. 
