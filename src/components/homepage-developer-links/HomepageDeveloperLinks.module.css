@@ -8,6 +8,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 28px;
+    grid-row-gap: 28px;
 }
 
 .developerCard {
@@ -16,6 +17,7 @@
     border-radius: 16px;
     padding: 32px 24px;
     display: block;
+
 }
 
 html[data-theme="light"] .developerCard {

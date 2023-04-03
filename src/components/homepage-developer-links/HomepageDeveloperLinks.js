@@ -37,6 +37,21 @@ const DeveloperList = [
             </>
         )
     },
+    {
+        button:{
+            title: 'View Articles',
+            href: './docs/educational-resources/overview'
+        },
+        image: (
+            <div className={clsx(styles.developerCardImage, styles.educationalResourcesImage)}/>
+        ),
+        title: 'Educational resources',
+        description: (
+            <>
+                A collection of educational resources for developers, including guides, tutorials, and articles.
+            </>
+        )
+    }
 ];
 
 function DeveloperLink({image, title, description, link, button}) {
