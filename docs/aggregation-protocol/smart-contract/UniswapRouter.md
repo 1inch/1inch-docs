@@ -1,4 +1,4 @@
-# UnoswapRouter
+# UniswapRouter
 
 
 
@@ -10,9 +10,9 @@
 - [EthReceiver](helpers/EthReceiver.md)
 
 ## Functions
-### unoswapWithPermit
+### uniswapWithPermit
 ```solidity
-function unoswapWithPermit(
+function uniswapWithPermit(
   contract IERC20 srcToken,
   uint256 amount,
   uint256 minReturn,
@@ -20,7 +20,7 @@ function unoswapWithPermit(
   bytes permit
 ) external returns (uint256 returnAmount)
 ```
-Same as `unoswap` but calls permit first,
+Same as `uniswap` but calls permit first,
 allowing to approve token spending and make a swap in one transaction.
 
 
@@ -34,9 +34,9 @@ allowing to approve token spending and make a swap in one transaction.
 |`permit` | bytes | Should contain valid permit that can be used in `IERC20Permit.permit` calls. See tests for examples
 
 
-### unoswap
+### uniswap
 ```solidity
-function unoswap(
+function uniswap(
   contract IERC20 srcToken,
   uint256 amount,
   uint256 minReturn,
