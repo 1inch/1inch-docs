@@ -1,4 +1,4 @@
-# AggregationRouterV5
+# AggregationRouterV6
 
 
 
@@ -6,57 +6,30 @@
 
 
 ## Derives
+- [GenericRouter](GenericRouter.md)
 - [ClipperRouter](ClipperRouter.md)
-- [LimitOrderProtocolRFQ](LimitOrderProtocolRFQ.md)
-- [UnoswapV3Router](UnoswapV3Router.md)
-- [IUniswapV3SwapCallback](interfaces/IUniswapV3SwapCallback.md)
 - [UnoswapRouter](UnoswapRouter.md)
+- [LimitOrderProtocolRFQ](LimitOrderProtocolRFQ.md)
+- [IUniswapV3SwapCallback](interfaces/IUniswapV3SwapCallback.md)
 - [Permitable](helpers/Permitable.md)
 - [EIP712](https://docs.openzeppelin.com/contracts/3.x/api/drafts#EIP712)
 - [EthReceiver](helpers/EthReceiver.md)
 - [Ownable](https://docs.openzeppelin.com/contracts/3.x/api/access#Ownable)
-- [Context](https://docs.openzeppelin.com/contracts/3.x/api/utils#Context)
 
 ## Functions
 ### constructor
 ```solidity
 function constructor(
-  address weth,
-  contract IClipperExchangeInterface _clipperExchange
-) public
+    contract IWETH weth
+)
 ```
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`weth` | address |
-|`_clipperExchange` | contract IClipperExchangeInterface |
+|`weth` | contract IWETH |
 
-
-### swap
-```solidity
-function swap(
-  contract IAggregationExecutor caller,
-  struct AggregationRouterV4.SwapDescription desc,
-  bytes data
-) external returns (uint256 returnAmount, uint256 gasLeft)
-```
-Performs a swap, delegating all calls encoded in `data` to `caller`. See tests for usage examples
-
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`caller` | contract IAggregationExecutor | Aggregation executor that executes calls described in `data`
-|`desc` | struct AggregationRouterV4.SwapDescription | Swap description
-|`data` | bytes | Encoded calls that `caller` should execute in between of swaps
-
-#### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`returnAmount`| uint256 | Resulting token amount
-|`gasLeft`| uint256 | Gas left
 
 ### rescueFunds
 ```solidity
@@ -65,13 +38,14 @@ function rescueFunds(
   uint256 amount
 ) external
 ```
+Retrieves funds accidently sent directly to the contract address.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`token` | contract IERC20 |
-|`amount` | uint256 |
+|`token` | contract IERC20 | ERC20 token to retrieve
+|`amount` | uint256 | amount to retrieve
 
 
 ### destroy
@@ -79,7 +53,7 @@ function rescueFunds(
 function destroy(
 ) external
 ```
-
+Destroys the contract and sends eth to sender. Use with caution. The only case when the use of the method is justified is if there is an exploit found. And the damage from the exploit is greater than from just an urgent contract change.
 
 
 
