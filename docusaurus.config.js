@@ -58,12 +58,20 @@ const config = {
                 href: '/docs/aggregation-protocol/introduction',
               },
               {
+                label: 'Fusion Swap',
+                href: '/docs/fusion-swap/introduction'
+              },
+              {
                 label: 'Limit Order Protocol',
                 href: '/docs/limit-order-protocol/introduction'
               },
               {
                 label: 'Spot Price Aggregator',
                 href: '/docs/spot-price-aggregator/introduction'
+              },
+              {
+                label: 'RabbitHole',
+                href: '/docs/rabbithole/summary'
               }
             ]
           },
