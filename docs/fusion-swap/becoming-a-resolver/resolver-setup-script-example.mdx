@@ -61,7 +61,7 @@ await (
 // Delegate staked power to self
 await (await powerPod.connect(resolver).delegate(resolver.address)).wait();
 
-// Whitelist resolver (there should be enough unicorn power to be in top 5)
+// Whitelist resolver (there should be enough unicorn power to be in top 10)
 await (await whitelist.connect(resolver).register()).wait();
 
 // Add worker address from which order settlement will be executed
