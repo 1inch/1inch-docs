@@ -99,15 +99,15 @@ const FeatureList = [
             },
             {
                 title: 'How to become a resolver',
-                href: '/docs/fusion-swap/how-to-become-resolver'
+                href: 'docs/fusion-swap/becoming-a-resolver/how-to-become-resolver'
             },
             {
                 title: 'Resolver’s setup script example',
-                href: 'docs/fusion-swap/resolver-setup-script-example'
+                href: 'docs/fusion-swap/becoming-a-resolver/resolver-setup-script-example'
             },
             {
                 title: 'Contract interaction',
-                href: 'docs/fusion-swap/contracts-interaction'
+                href: 'docs/fusion-swap/becoming-a-resolver/contracts-interaction'
             },
         ]
     },
