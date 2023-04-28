@@ -9,12 +9,14 @@
 - [GenericRouter](GenericRouter.md)
 - [ClipperRouter](ClipperRouter.md)
 - [UnoswapRouter](UnoswapRouter.md)
-- [LimitOrderProtocolRFQ](LimitOrderProtocolRFQ.md)
+- [LimitOrderProtocol](LimitOrderProtocol.md)
 - [IUniswapV3SwapCallback](interfaces/IUniswapV3SwapCallback.md)
-- [Permitable](helpers/Permitable.md)
 - [EIP712](https://docs.openzeppelin.com/contracts/3.x/api/drafts#EIP712)
 - [EthReceiver](helpers/EthReceiver.md)
 - [Ownable](https://docs.openzeppelin.com/contracts/3.x/api/access#Ownable)
+- [OnlyWethReceiver](helpers/OnlyWethReceiver.md)
+- [PredicateHelper](helpers/PredicateHelper.md)
+- [SeriesEpochManager](helpers/SeriesEpochManager.md)
 
 ## Functions
 ### constructor
