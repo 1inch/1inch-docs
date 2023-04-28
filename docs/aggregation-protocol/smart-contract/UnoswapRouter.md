@@ -462,22 +462,7 @@ function uniswapV3SwapCallback(
     bytes 
 ) external
 ```
-Called to `msg.sender` after executing a swap via IUniswapV3Pool#swap.
+See {IUniswapV3SwapCallback-uniswapV3SwapCallback} 
+Called by UniswapV3 pool during the swap operation initiated by UnoswapRouter's methods with UniswapV3. This callback function ensures the proper transfer of tokens based on the swap's configuration. It handles the transfer of tokens by either directly transferring the tokens from the payer to the recipient, or by using a secondary permit contract to transfer the tokens if required by the pool. It verifies the correct pool is calling the function and uses inline assembly for efficient execution and to access low-level EVM features.
 
-In the implementation you must pay the pool tokens owed for the swap.
-The caller of this method must be checked to be a UniswapV3Pool deployed by the canonical UniswapV3Factory.
-amount0Delta and amount1Delta can both be 0 if no tokens were swapped.
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`amount0Delta` | int256 | The amount of token0 that was sent (negative) or must be received (positive) by the pool by the end of the swap. If positive, the callback must send that amount of token0 to the pool.
-|`amount1Delta` | int256 | The amount of token1 that was sent (negative) or must be received (positive) by the pool by the end of the swap. If positive, the callback must send that amount of token1 to the pool.
-|`` | bytes | Any data passed through by the caller via the IUniswapV3PoolActions#swap call 
-
-
-#### Return values
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`returnAmount` | uint256 |  The actual amount of tokens received after the swap through all three pools
 
