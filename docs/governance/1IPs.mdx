@@ -11,6 +11,308 @@ This section tracks all 1IPs that have made it to the [Phase-4: Snapshot Vote](h
 
 All 1IPs that have successfully passed the Phase-4 vote. These 1IPs have already been implemented or are in the process of being implemented:
 
+<details>
+<summary>
+
+### [1IP-27] Allocate 1M USDC stables in treasury to lending pool on AAVE V3
+
+</summary>
+<div>
+
+<u>
+
+- **[Phase-3: Temperature Check](https://gov.1inch.io/discussion/9310-1ip-27-allocate-1m-usdc-stables-in-treasury-to-lending-pool-on-aave-v3)**
+
+- **[Phase-4: Snapshot Vote](https://snapshot.org/#/1inch.eth/proposal/0x3f0f0b21f2841698f5919246fc0a1e6d4f952a46504cae228c98974316878e66)**
+
+</u>
+
+</div>
+
+<details>
+<summary>
+
+**Full Proposal Description**
+
+</summary>
+
+<div class="sc-ivmvlL hCiYTB"><div class="sc-jWquRx kABXJY"><div><div class="sc-jclSIp hmA-DnJ"><p><strong>Author: @DAOplomats.eth  (@Baer, @jengajojo)</strong></p>
+<h2>Simple-summary</h2>
+<p>This proposal suggests allocating 1M USDC of the current USDC balance into AAVE V3 to generate passive yield.</p>
+<h2>Motivation</h2>
+<p>~95% of the current 1inch DAO treasury is in USDC, earning exactly 0% interest or fees. The only source of income is the 1inch DEX. At the same time, there is ~15.5M USDC which could potentially generate income for the DAO with relatively low risk. The current average variable yield in AAVE markets is between 1-2%</p>
+<h2>Specification</h2>
+<p><strong>What is lending and borrowing?</strong></p>
+<p><a href="https://www.youtube.com/watch?v=aTp9er6S73M" target="_blank">https://www.youtube.com/watch?v=aTp9er6S73M</a></p>
+<h2>AAVE V3</h2>
+<p>Aave is a decentralised non-custodial liquidity protocol where users can participate as depositors or borrowers. Depositors provide liquidity to the market to earn a passive income, while borrowers can borrow in an overcollateralized (perpetually) or undercollateralized (one-block liquidity) fashion.</p>
+<h2>Expected Yield</h2>
+<p>The current average variable yield in both markets is between 1-2%, which means that the DAO can potentially earn between ~ 6000 &amp; ~12000 USDC per month.</p>
+<p><strong>Update (13.05.23) :Current  yield in Aave is more than 3%</strong></p>
+<h2>Why AAVE?</h2>
+<p>The AAVE team has been building since 2017 and the contracts have hosted one of the highest TVLs in DeFi at the moment. This makes depositing in AAVE V3 relatively less risky than any other lending/borrowing protocol.</p>
+<h2>Considerations</h2>
+<p>There are several ways to earn a yield on idel treasury assets such as:</p>
+<p><strong>Yield Farming on yield aggregators such as Yearn.Finance</strong></p>
+<p>In this approach, tokens are deposited into contracts which run the best risk-adjusted farming strategies to earn native tokens, which are swapped back to the original token. This strategy’s upside is that yield is farmed automatically and is independent of market activity; however, this comes with slightly higher smart contract risks than the other two options. Another con here is that the Yearn.finance team is completely anonymous, which can be considered a con in some cases</p>
+<p><strong>Being a liquidity provider on DEXes</strong></p>
+<p>As highlighted in the Stablenode proposal, being a liquidity provider for the native token has several advantages and disadvantages. Since this strategy is already being proposed in another RFC we won’t dive into the details here. The only con we see here is that to provide a significant proportion of the treasury to LPing would mean taking on losses in the form of slippage on top of the risks mentioned in the proposal.</p>
+<h2>Depositing into a Lending pool</h2>
+<p>Based on the analysis provided in this proposal, we suggest that depositing in lending pools is the best risk-adjusted strategy for a large treasury allocation. In the current approach, there is no need to do any other complicated swap resulting in slippage or engaging in unnecessary smart contract risks.</p>
+<h2>Risks and Disclaimers:</h2>
+<p>AAVE  Audit report</p>
+<ul>
+<li><a href="https://consensys.net/diligence/audits/2020/09/aave-protocol-v2" target="_blank">https://consensys.net/diligence/audits/2020/09/aave-protocol-v2</a></li>
+<li><a href="https://docs.aave.com/developers/deployed-contracts/security-and-audits" target="_blank">https://docs.aave.com/developers/deployed-contracts/security-and-audits</a></li>
+</ul>
+<p>DAOplomats will monitor the position and provide an update to the DAO regularly</p>
+</div></div></div><a class="sc-dGHKFW bNNvsL">Show Less...</a></div>
+
+</details>
+
+</details>
+
+<details>
+<summary>
+
+### [1IP-26] Remove st1INCH(v1) Voting | Modify st1INCH(v2) and v1INCH Voting Weight Calculations
+
+</summary>
+<div>
+
+<u>
+
+- **[Phase-3: Temperature Check](https://gov.1inch.io/discussion/10555-1ip26-remove-st1inchv1-voting-modify-st1inchv2-and-v1inch-voting-weight-calculations)**
+
+- **[Phase-4: Snapshot Vote](https://snapshot.org/#/1inch.eth/proposal/0x7e0bb3a5c4a130405b0c7c2cabfefd615e0c18d9b5463bd4d8c846c700a8c046)**
+
+</u>
+
+</div>
+
+<details>
+<summary>
+
+**Full Proposal Description**
+
+</summary>
+
+<div class="sc-ivmvlL hCiYTB">
+<div class="sc-jWquRx kABXJY"><div><div class="sc-jclSIp hmA-DnJ"><p><strong>Author:</strong></p>
+<p><a href="/profile/id/81421" target="_blank">@RoundElephant</a></p>
+<p><strong>References:</strong></p>
+<ul>
+<li>
+<p><a href="https://snapshot.org/#/1inch.eth/proposal/0xece08908c3e10e5125557bc52caac70e5cdc862c391bf02f870da9d1bcc40542" target="_blank">[1IP-11] 1inch Staking Pods</a></p>
+</li>
+<li>
+<p><a href="https://snapshot.org/#/1inch.eth/proposal/0x130dd7505f863786fa378f041b018342511974524c0de4c9b79fdf95da9df3ae" target="_blank">[1IP-14] Update 1inch DAO Voting Process to Include st1INCH(v2)</a></p>
+</li>
+</ul>
+<h1>Simple Summary</h1>
+<p>This proposal seeks to modify the 1inch DAO governance process with the following changes:</p>
+<ul>
+<li>
+<p>Remove st1INCH(v1) voting and delegation strategies from the 1inch Snapshot space.</p>
+</li>
+<li>
+<p>Change the st1INCH(v2) voting and delegation strategy to use Unicorn Power instead of token balance.</p>
+</li>
+<li>
+<p>Replace the existing 20% weighted v1INCH strategy with a strategy that emulates the power decay of UnicornPower – i.e., fully vested, and unclaimed, v1INCH, will have greatly diminished voting power. v1INCH that is at the beginning of its vesting contract has full 1:1 voting parity with st1INCH that is at the beginning of a 2-year lock.</p>
+</li>
+<li>
+<p>Increase the Snapshot proposal creation requirement to require 100,000 Voting Weight (currenlty 25,000).</p>
+</li>
+</ul>
+<h1>Abstract</h1>
+<p>If passed, this proposal will modify the 1inch Network governance process to better reflect staking changes made alongside Fusion mode:</p>
+<ul>
+<li>
+<p>By removing st1INCH(v1) for the governance process, 1inch Network will fully complete the transition to the new staking contracts.</p>
+</li>
+<li>
+<p>By using Unicorn Power to calculate Voting Weight, instead of token balances, the 1inch DAO governance process is better aligned with the revamped 1INCH staking mechanics.</p>
+</li>
+<li>
+<p>By greatly reducing the voting power of fully vested v1INCH, the DAO will ensure that only those who have a longterm stake in the protocol will be able to make decisions that control 1inch Network.</p>
+</li>
+<li>
+<p>By increasing the proposal creation requirement, we can ensure that proposals which hit the final Snapshot vote already have a non-trivial level of support.</p>
+</li>
+</ul>
+<h1>Motivation</h1>
+<ul>
+<li>
+<p>With the passing of <a href="https://snapshot.org/#/1inch.eth/proposal/0xece08908c3e10e5125557bc52caac70e5cdc862c391bf02f870da9d1bcc40542" target="_blank">[1IP-11] 1inch Staking Pods</a> in December, 2022, the DAO began the transition away from the legacy staking contracts.</p>
+</li>
+<li>
+<p><a href="https://snapshot.org/#/1inch.eth/proposal/0x130dd7505f863786fa378f041b018342511974524c0de4c9b79fdf95da9df3ae" target="_blank">[1IP-14] Update 1inch DAO Voting Process to Include st1INCH(v2)</a> put the infrastructure in place to allow the new st1INCH to participate in governance.</p>
+</li>
+<li>
+<p>This proposal marks the full deprecation of st1INCH(v1) as its only remaining utility has been voting on Snapshot proposals.</p>
+</li>
+<li>
+<p>If st1INCH(v1) is never removed from the voting system, it will have an unfair advantage compared to st1INCH(v2) as the latter’s power diminishes over time.</p>
+</li>
+<li>
+<p>There is currently over 10 times more st1INCH(v2) staked than st1INCH(v1) ← this shows that there has been enough time for all active participants to migrate.</p>
+</li>
+</ul>
+<h1>Specification</h1>
+<h2>v1INCH</h2>
+<p>v1INCH is the non-transferable ERC-20 token which represents 1INCH tokens that are currently locked in the vesting contract. These tokens are held by backers, advisors, and core contributors. Redeeming fully-vested v1INCH for the underlying 1INCH is a manual action that must be taken by the holder.</p>
+<p>Currently, all v1INCH, no matter where it is along its vesting contract, has a flat 20% weighting compared to st1INCH. This proposal calls for a treatment of v1INCH similarly to that of st1INCH(v2) – v1INCH will have more voting power if there is more time remaining on the vesting schedule (with a 2-year maximum). Here is a breakdown of how the voting weight will change according to the unlock schedule:</p>
+<ul>
+<li>
+<p>1-year cliff to full unlock: 22% voting power</p>
+</li>
+<li>
+<p>1.5-year cliff to full unlock: 47% voting power</p>
+</li>
+<li>
+<p>2-year cliff to full unlock: 100% voting power</p>
+</li>
+<li>
+<p>3-year cliff to full unlock: 100% voting power</p>
+</li>
+<li>
+<p>4-year cliff to full unlock: 100% voting power</p>
+</li>
+</ul>
+<p><strong>Example 1</strong></p>
+<ul>
+<li>
+<p>Address: 0x812D157dd6CF4aAc6bEfcEd2CE92B725cBEEc39A</p>
+</li>
+<li>
+<p>v1INCH balance: 37.5M (only 12.5M is locked until June, everything else is fully vested and claimable)</p>
+</li>
+<li>
+<p>VotingPower:</p>
+<ul>
+<li>
+<p>Current scheme = 7.5M votes</p>
+</li>
+<li>
+<p>New scheme = 1.73M votes</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>Example 2</strong></p>
+<ul>
+<li>
+<p>Address: 0xf2d10DBFB999cF85b0D0a81c9ae70fde5B80310f</p>
+</li>
+<li>
+<p>v1INCH balance: 250K</p>
+</li>
+<li>
+<p>VotingPower:</p>
+<ul>
+<li>
+<p>Current scheme = 50K votes</p>
+</li>
+<li>
+<p>New scheme = 17K votes</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>Example 3</strong></p>
+<ul>
+<li>
+<p>Address: 0x317E1b409C0809f0Dd56b8Fb84185e2982106287</p>
+</li>
+<li>
+<p>v1INCH balance: 8.57M (everything is locked)</p>
+</li>
+<li>
+<p>VotingPower:</p>
+<ul>
+<li>
+<p>Current scheme = 1.71M votes</p>
+</li>
+<li>
+<p>New scheme = 2.49M votes</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>Example 4</strong></p>
+<ul>
+<li>
+<p>Address: 0x03429fA2D2Ba986D5b9F619c616fE4077a297B98</p>
+</li>
+<li>
+<p>v1INCH balance: 500K</p>
+</li>
+<li>
+<p>VotingPower:</p>
+<ul>
+<li>
+<p>Current scheme = 100K votes</p>
+</li>
+<li>
+<p>New scheme = 276K votes</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2>Snapshot</h2>
+<p>The <a href="https://snapshot.org/#/1inch.eth" target="_blank">1inch Network Snapshot space</a>, and the<a href="https://snapshot.org/#/signaling.1inch.eth" target="_blank"> 1inch DAO Fast-Track Signaling Subspace</a>, will be updated with the following changes:</p>
+<ul>
+<li>
+<p>Remove st1INCH (v1) voting and delegation strategies</p>
+</li>
+<li>
+<p>Replace existing st1INCH(v2) strategy with one that uses <code>Unicorn Power</code> instead <code>erc20-balance-of</code>.</p>
+</li>
+<li>
+<p>Remove the existing 20% weighted v1INCH strategy</p>
+</li>
+<li>
+<p>Add a new voting-power-weighted strategy for v1INCH using this contract: <a href="https://etherscan.io/address/0xfb7246c98b6e6c8529c06359b237566e5bc4677c" target="_blank">VestedVotingPower | Address 0xfB7246C98B6e6C8529c06359B237566e5Bc4677C | Etherscan</a></p>
+<ul>
+<li>
+<p>This contract gives onchain mapping for the appropriate vesting contract of each v1INCH holder.</p>
+</li>
+<li>
+<p>This is an onchain expression of the logic described in the previous section.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Change the proposal validation strategy to require 100,000 Voting Weight when creating a new proposal.</p>
+</li>
+</ul>
+<h3>Token Contracts</h3>
+<ul>
+<li>
+<p>v1INCH: <a href="https://etherscan.io/token/0x03d1b1a56708fa298198dd5e23651a29b76a16d2" target="_blank">0x03d1b1a56708fa298198dd5e23651a29b76a16d2</a></p>
+</li>
+<li>
+<p>st1INCH (v2): <a href="https://etherscan.io/token/0x9a0c8ff858d273f57072d714bca7411d717501d7" target="_blank">0x9A0C8Ff858d273f57072D714bca7411D717501D7</a></p>
+</li>
+<li>
+<p>st1INCH (legacy): <a href="https://etherscan.io/token/0xa0446d8804611944f1b527ecd37d7dcbe442caba" target="_blank">0xA0446D8804611944F1B527eCD37d7dcbE442caba</a></p>
+</li>
+</ul>
+<h1>Rationale</h1>
+<p>Onchain mapping of vesting contracts to each v1INCH holder was a prerequisite for this proposal as there was no other way of determining if a holder’s v1INCH tokens were fully unvested, partially vested, or fully vested. The 1inch core contributors have deployed the VestedVotingPower smart contract that does this mapping.</p>
+<p>It is important to note that st1INCH(v1) holders will still be able to unstake their 1INCH at any point in the future.</p>
+<h1>Considerations</h1>
+<p>This proposal will have no cost to the 1inch DAO Treasury.</p>
+<p>As opposed to st1INCH(v2), st1INCH(v1) does not require a timelock to participate in governance – a bad actor could use this lack of a time-commitment to abuse the 1inch goverance system. This proposal will prevent that as all votes will only be cast by timelocked tokens.</p>
+<p>Once passed, the <a href="https://ipfs.io/ipfs/QmbNkL7ZpUsP2w7m1bCimkPKqJeSyUxM2K4VkxbaFB8ek5" target="_blank">reality.eth proposal acceptance criteria</a>, and the <a href="https://docs.1inch.io/docs/governance/overview" target="_blank">1inch DAO governance documentation</a>, will need to be updated to reflect the change to v1INCH voting weight and the proposal validation strategy.</p>
+</div></div></div><a class="sc-dGHKFW bNNvsL">Show Less...</a></div>
+
+</details>
+
+</details>
+
+
 
 <details>
 <summary>
@@ -230,7 +532,7 @@ All 1IPs that have successfully passed the Phase-4 vote. These 1IPs have already
 <details>
 <summary>
 
-**Proposal Summary**
+**Full Proposal Description**
 
 </summary>
 
@@ -252,6 +554,7 @@ All 1IPs that have successfully passed the Phase-4 vote. These 1IPs have already
 
 
 </details>
+
 
 </details>
 
