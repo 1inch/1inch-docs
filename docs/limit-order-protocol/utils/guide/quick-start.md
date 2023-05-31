@@ -15,7 +15,7 @@ yarn add @1inch/limit-order-protocol-utils
 
 > ***Note***
 >
-> `@1inch/limit-order-protocol` package is now used for smart contract distribution and no linger contains this library.
+> `@1inch/limit-order-protocol` package is now used for smart contract distribution and no longer contains this library.
 
 <br/>
 
