@@ -7,7 +7,7 @@ The 1inch Network DAO Treasury is the pool of funds under the direct domain and 
 All protocol revenues are directed to the DAO Treasury and referral rewards.
 
 ## DAO Treasury 
-The 1inch Network DAO Treasury is a [Gnosis Safe](https://gnosis-safe.io/app/eth:0x7951c7ef839e26F63DA87a42C9a87986507f1c07/balances) smart contract wallet with multi-signature (multisig) functionality on the Ethereum mainnet. 12 multisig owners have initially been selected by the 1inch Foundation from the core contributor team and other well-known projects, such as [Synthetix](https://synthetix.io/), [Opium](https://opium.network/), [NEAR protocol](https://near.org/), and [zkSync](https://zksync.io/), to name a few. These signers are able to veto malicious transactions in a 7-of-12 fashion. 
+The primary 1inch Network DAO Treasury is a [Gnosis Safe](https://gnosis-safe.io/app/eth:0x7951c7ef839e26F63DA87a42C9a87986507f1c07/balances) smart contract wallet with multi-signature (multisig) functionality on the Ethereum mainnet. 12 multisig owners have initially been selected by the 1inch Foundation from the core contributor team and other well-known projects, such as [Synthetix](https://synthetix.io/), [Opium](https://opium.network/), [NEAR protocol](https://near.org/), and [zkSync](https://zksync.io/), to name a few. These signers are able to veto malicious transactions in a 7-of-12 fashion.
 
 ## Gnosis Safe + Snapshot + SafeSnap
 
@@ -32,22 +32,21 @@ Kleros Oracle combines Kleros's dispute resolution court system with reality.eth
 
 If the result of the Kleros arbitration is to affirm the answer given by the final answerer, that person receives the question reward. If the result of arbitration is to change the final answer, the individual who paid for arbitration receives the question reward.
 
-### External References
+## 1inch DAO Treasury Addresses
 
-* **1inch Network DAO Treasury** 
-   * Ethereum: [0x7951c7ef839e26F63DA87a42C9a87986507f1c07](https://etherscan.io/address/0x7951c7ef839e26F63DA87a42C9a87986507f1c07)
-   * Arbitrum: [0x71890aC6209Fae61E9D66691c47B168B8300a7c5](https://arbiscan.io/address/0x71890ac6209fae61e9d66691c47b168b8300a7c5)
-* **1inch reality.eth module** -- [0xa62D2a75eb39C12e908e9F6BF50f189641692F2E](https://etherscan.io/address/0xa62D2a75eb39C12e908e9F6BF50f189641692F2E)
-* **1inch Network DAO Acceptance Criteria** -- [IPFS deployment](https://ipfs.io/ipfs/QmQHLJ6utJJNr82bthtw6pNjKpZsfnvZDENeHMAxtQidXz)
+| **Network**      | **Address**                                                                                                                   | **Notes** |
+|--------------|---------------------------------------------------------------------------------------------------------------------------|---|
+| Ethereum     | [eth:0x7951c7ef839e26F63DA87a42C9a87986507f1c07](https://app.safe.global/balances?safe=eth:0x7951c7ef839e26F63DA87a42C9a87986507f1c07)               | Primary DAO treasury. SafeSnap allows for trustless execution of spending proposals. 
+| Ethereum     | [eth:0x45e84e10e8E85c583C002A40007D10629EF80fAF](https://app.safe.global/balances?safe=eth:0x45e84e10e8E85c583C002A40007D10629EF80fAF)               | 1inch DAO operations fund. This is a 3-of-4 multisig.
+| Arbitrum     | [arb1:0x71890aC6209Fae61E9D66691c47B168B8300a7c5](https://app.safe.global/balances?safe=arb1:0x71890aC6209Fae61E9D66691c47B168B8300a7c5)               |
+| Gnosis Chain | [gno:0x422B530b30210A1A4C77Bf1aDCd3352b0DfbCDc0](https://app.safe.global/balances?safe=gno:0x422B530b30210A1A4C77Bf1aDCd3352b0DfbCDc0)               |
+| Polygon      | [matic:0x0A777DCD3F7924AD769aB2026b2Bb377bD08F4CA](https://app.safe.global/balances?safe=matic:0x0A777DCD3F7924AD769aB2026b2Bb377bD08F4CA)        |
+| Aurora       | [aurora:0x32865f542bE59b39dEAD7FAda7555734c3305786](https://app.safe.global/balances?safe=aurora:0x32865f542bE59b39dEAD7FAda7555734c3305786)   |
+| Avalanche    | [avax:0x5ef96E97e25dB95B906d56A0A517a6c407FD4083](https://app.safe.global/balances?safe=avax:0x5ef96E97e25dB95B906d56A0A517a6c407FD4083)   |
+| Optimism     | [oeth:0xdCBc42C20B7296BfEA6E47b8D88AdD4f69a6DCCB](https://app.safe.global/balances?safe=oeth:0xdCBc42C20B7296BfEA6E47b8D88AdD4f69a6DCCB)               |
+| BNB Chain    | [bnb:0xb946a9FD3935F3A6364F822e814a15E14b841e67](https://app.safe.global/balances?safe=bnb:0xb946a9FD3935F3A6364F822e814a15E14b841e67)               |
 
-* **reality.eth:** 
-	* [App](https://realityeth.github.io/)
-	* [Whitepaper](http://reality.eth.link/app/docs/html/whitepaper.html)
-	* [Reality Module Governance Oracle Question Resolution Policy](https://ipfs.io/ipfs/QmXyo9M4Z2XY6Nw9UfuuUNzKXXNhvt24q6pejuN9RYWPMr/Reality_Module_Governance_Oracle-Question_Resolution_Policy.pdf)
-*  **Kleros:**  
-	* [Documentation site](https://kleros.gitbook.io/docs/products/oracle)
-	* [DAO Governance Arbitrator Github](https://github.com/kleros/realitio-arbitrator-with-appeals)
-	* [Kleros DAO Governance Arbitrator Proxy -- 0xf72CfD1B34a91A64f9A98537fe63FBaB7530AdcA](https://etherscan.io/address/0xf72cfd1b34a91a64f9a98537fe63fbab7530adca)
+_**Note:** Unless otherwise noted, all 1inch DAO treasuries have the same 12 signers, and 7-of-12 threshold, as the primary treasury on Ethereum mainnet._
 
 ## Revenue stream
 The 1inch Pathfinder algorithm always provides users the most current and best possible prices on a swap. However, the swap price sometimes moves between the time of the quote and the time that the transaction is mined — resulting in a Swap Surplus. 
@@ -57,3 +56,17 @@ Funds are collected from the Swap Surplus on all chains. A portion of these fund
 Governance participants are able to control the revenue split of the [Aggregation Protocol](https://app.1inch.io/#/1/dao/governance/aggregation?action=stake) and [Liquidity protocol](https://app.1inch.io/#/1/dao/governance?action=stake) by voting with Instant Governance.
 
 Note that none of the revenue funds ever go to the 1inch Foundation -- they are 100% controlled by the 1inch DAO.
+
+### External References
+
+* **1inch DAO reality.eth module** -- [0xa62D2a75eb39C12e908e9F6BF50f189641692F2E](https://etherscan.io/address/0xa62D2a75eb39C12e908e9F6BF50f189641692F2E)
+* **1inch  DAO Acceptance Criteria** -- [IPFS deployment](https://ipfs.io/ipfs/QmQHLJ6utJJNr82bthtw6pNjKpZsfnvZDENeHMAxtQidXz)
+* **reality.eth:** 
+	* [App](https://realityeth.github.io/)
+	* [Whitepaper](http://reality.eth.link/app/docs/html/whitepaper.html)
+	* [Reality Module Governance Oracle Question Resolution Policy](https://ipfs.io/ipfs/QmXyo9M4Z2XY6Nw9UfuuUNzKXXNhvt24q6pejuN9RYWPMr/Reality_Module_Governance_Oracle-Question_Resolution_Policy.pdf)
+*  **Kleros:**  
+	* [Documentation site](https://kleros.gitbook.io/docs/products/oracle)
+	* [DAO Governance Arbitrator Github](https://github.com/kleros/realitio-arbitrator-with-appeals)
+	* [Kleros DAO Governance Arbitrator Proxy -- 0xf72CfD1B34a91A64f9A98537fe63FBaB7530AdcA](https://etherscan.io/address/0xf72cfd1b34a91a64f9a98537fe63fbab7530adca)
+
