@@ -1,0 +1,14 @@
+# What is a 'swap surplus'?
+
+#### Everything you need to know about swap dynamics 'surplus' on 1inch Network
+
+### What is a swap surplus?
+
+A swap surplus is the result of a unique market dynamic known as "positive slippage". In other words, if a token pair's rate changes positively from the time of submitting a transaction to the time of its confirmation, an excess aka **"surplus"** amount of tokens is returned (relative to the guaranteed amount entered in the swap window). 
+
+- A swap surplus is not a trading fee, and does not occur with every swap.
+
+- With the 1inch router v4 and v5 update, [optimized routers](https://docs.1inch.io/docs/aggregation-protocol/smart-contract/AggregationRouterV5) such as unoswap, uniswapV3Swap and clipperSwap along with any `fillOrder` function will never take a surplus, only the swap function. If you have more questions on this topic please reach out to our live chat!*
+
+### Where does a surplus amount of tokens end up after a swap is complete?
+As of [1IP-28](https://snapshot.org/#/1inch.eth/proposal/0x62888ad3983a8bdb29e73596b4971a120e6d58ca56929b4a64147a723f6bccc5), swap surplus from 1inch Network trades is no longer sent to the 1inch DAO treasury. Instead, 100% of the tokens go to the user who initiated the swap! 
