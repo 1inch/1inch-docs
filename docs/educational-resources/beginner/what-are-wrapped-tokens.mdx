@@ -1,0 +1,21 @@
+# Wrapped tokens 101
+
+Wrapped tokens are assets on any blockchain that hold the exact same value and tokenomics of another asset. They can provide interoperability with other blockchains and are a critical component of DeFi's infrastructure.
+
+For example, 1 [WETH](https://weth.io/) is pegged to the exact same price as 1 ETH. 
+
+So if we already have ETH, why make another 'copied' version of it? Since ETH itself is the native asset on Ethereum, it follows a different set of rules compared to the ERC20 tokens that are built upon the network. Wrapping ETH into an ERC20 version turns it into WETH, allowing users to swap the value (and associated characteristics) of ETH with other ERC20 standard tokens. 
+
+Additionally, wrapping a token or a native asset can allow it to be interoperable with other external blockchains. For example, the Binance Smart Chain equivalent of ETH, still holds the same value as regular ETH, but follows the BEP20 standard. 
+
+The wrapping process also allows assets to assume the characteristics of the network it is being wrapped on. For example, [wrapped Bitcoin (WBTC)](https://wbtc.network/) is essentially Bitcoin, but built on Ethereum. It still holds the same monetary value as real BTC, however it can be sent at much faster speeds on Ethereum. Not only does wrapping provide higher efficiency, it also can significantly reduce the fees for moving similar forms of value.
+
+### How are wrapped tokens used on 1inch?
+
+As a decentralized exchange aggregator, 1inch utilizes wrapped tokens to quickly transfer assets through a route, achieving the best rates and efficiency for users. 
+
+In this example, you can see that for a USDC to RAD trade, the 1inch v3 router automatically swapped the ETH for WETH (wrapped Ether), then used WETH as a connecter token before completing swap for RAD:
+
+Meanwhile, from the user's perspective, they simply exchanged USD for RAD.
+
+1inch also specifically uses wrapped tokens in its Limit Order protocol to serve as a more compatible and efficient means of executing orders.

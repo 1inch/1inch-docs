@@ -1,0 +1,85 @@
+# What are gas fees?
+
+## Topics covered:
+
+- [What is gas?](#what-is-gas)
+- [Why can't I pay for gas with the tokens I'm swapping?](#why-cant-i-pay-for-gas-with-the-tokens-im-swapping)
+- [Why don't I have to pay gas fees when trading on a centralized exchange?](#why-dont-i-have-to-pay-gas-fees-when-trading-on-a-centralized-exchange)
+- [What is the gas limit?](#what-is-the-gas-limit)
+- [How gas fees changed with EIP 1559](#how-gas-fees-changed-with-eip-1559)
+- [Options for reducing swap gas costs](#options-for-reducing-swap-gas-costs)
+
+---
+
+## What is gas? {#what-is-gas}
+Gas is the lifeblood of any EVM compatible blockchain network. It is a monetary fee that compensates miners/validators of a blockchain in exchange for their computational effort of mining blocks. Depending on the consensus mechanism, this computational effort can be realized to the miner/validator as an electricity cost (Proof of Work) or financial stake (Proof of Stake). 
+
+Like gasoline for a car, blockchain gas fees are what allow a blockchain (ledger) to move forward in time. 
+
+***Please note: 1inch Network does not receive any portion of gas fees. 100% of the fee goes to the miner/validator of the blockchain. Also, gas costs for legacy mode swaps cannot be refunded.
+
+Gas fees are always paid in the native token of the network that the transaction is taking place on. 1inch has integrated with 7 different networks, each of which have their own native token. 
+
+- Arbitrum: ETH (Arbitrum version)
+- Aurora: ETH (Near version)
+- Avalanche: AVAX
+- BNB Chain: BNB
+- Ethereum: ETH
+- Fantom: FTM
+- Gnosis Chain: xDAI
+- Klaytn: KLAY
+- Optimistic Ethereum: ETH (optimistic version)
+- Polygon: MATIC
+- ZK Sync Era: ETH (ZK Sync version)
+
+**To ensure a successful swap, it is recommended to have an approximate amount of these tokens for gas (depending on which network you are using):**
+
+- .01 Arbitrum ETH
+- .001 Aurora ETH
+- .01 AVAX
+- .03 BNB
+- .04 ETH (Ethereum mainnet)
+- .01 FTM
+- .01 xDAI
+- .01 KLAY
+- .01 Optimistic ETH 
+- .02 MATIC  
+- .01 ETH (ZK Sync Era)
+
+If you don't have enough, check out [this guide](https://help.1inch.io/en/articles/4585055-how-can-i-buy-native-assets-to-pay-for-blockchain-gas-fees) on topping up your balance.
+
+## Why can't I pay for gas with the tokens I'm swapping? {#why-cant-i-pay-for-gas-with-the-tokens-im-swapping}
+When swapping through 1inch Legacy mode, all transactions require a gas fee. These operations carry significant costs (of both electricity, equipment, or capital) for the miners/stakers, who rely upon the gas fees to continue validating blocks. Since the miners/stakers are providing this service at a cost, they require payment in the native currency of the network that they are putting time, energy, and capital into supporting.
+
+The size of this gas fee is proportional to the amount of computation required to execute an operation (not the amount of tokens swapped). The more complex the operation is, the more gas it requires to execute. Therefore, it is impossible to calculate the exact amount of gas needed before the transaction has been executed. Thankfully, 1inch provides an "Estimated Fee" to help you have an idea of how much gas you will need to pay for.
+
+For example, as the Ethereum network and its market value grows in size, so do the gas fees required for transactions. At times, Ethereum fees can very high and significantly impact the profitability of trades/swaps. These high Ethereum gas costs have led to the evolution of newer, cheaper blockchains, such as BNB Chain, and Polygon.
+
+***You can view current Ethereum gas prices [here](https://etherscan.io/gastracker#).
+
+## Why don't I have to pay gas fees (and wait for confirmations) when trading on a centralized exchange, like Binance or Coinbase? {#why-dont-i-have-to-pay-gas-fees-when-trading-on-a-centralized-exchange}
+Centralized exchanges use "off-chain" order books to facilitate trades, and therefore do not have to rely upon miners of a blockchain to validate transactions. It is essentially an "IOU" system where the user gives the exchange full custody of their funds. Instead of paying a gas fee to trade, the user instead pays a trading fee, which goes to the exchange's wallet as profit. Unfortunately the user then also has to pay a "Withdrawal fee" for moving any funds on the centralized exchange into their own possession. 
+
+## What is the gas limit? {#what-is-the-gas-limit}
+The gas limit refers to the maximum amount of gas (in gwei) that you are willing to pay for an individual transaction. Most Ethereum transfers require a gas amount of 21,000 gwei; however, swaps (and other interactions with smart contracts such as the 1inch liquidity or staking protocols) can consume significantly higher amounts. 
+
+For reference, the gas limit can be seen as: "the distance you are willing to drive a car vs. the distance to your destination". 
+
+If the gas amount needed is 21k, and your limit is 22k, the Ethereum Virtual Machine (EVM) will use what is needed and send the excess gas back to your wallet. However, if you set the gas limit at 20k, the EVM will attempt to complete the transaction, but ultimately fail at the point of reaching 20k.
+
+Most wallets will set the gas limit automatically, so the user does not have to think about it; however, the 1inch iOS Wallet allows for full gas limit customization. 
+
+## How gas fees changed with EIP 1559 {#how-gas-fees-changed-with-eip-1559}
+Since Ethereum "London" Hardfork event (EIP 1559), the entire structure of gas fees on Ethereum has changed substantially. Now, gas fees are broken down into a base fee, and a priority fee (miner tip). The base fee only changes incrementally based off of network demand, and the priority fee is a crucial incentive for miners to remain profitable for including transactions into blocks. The base fee and the priority tip combined together create the "Max fee", as seen in the 1inch user interface and mobile wallets. 
+
+You can find more details on EIP1559 and how it works [here](https://eips.ethereum.org/EIPS/eip-1559).
+
+## Options for reducing swap gas costs {#options-for-reducing-swap-gas-costs}
+To reduce gas costs, there are several options:
+
+- [1inch Fusion](https://help.1inch.io/en/articles/6796085-what-is-1inch-fusion-and-how-does-it-work): For 1inch Fusion swaps, the resolver pays for 100% of the gas fees when taking your swap order.
+- [Limit orders](https://help.1inch.io/en/articles/4656415-how-to-place-a-limit-order-on-1inch): For these types of swaps, the "taker" pays for 100% of the gas fees, allowing the "maker" to place and order and have it execute with zero outstanding cost.
+
+Wait for the gas prices to decrease, typically during slower periods on the Ethereum Network. 
+
+Questions, comments, concerns? Feel free to reach out to us in the live support chat!
