@@ -329,7 +329,8 @@ if (!ok) {
 }
 
 // Sign and send the swap transaction, and retrieve the transaction hash
-const swapTxHash = await signAndSendTransaction(s
+const swapTxHash = await signAndSendTransaction(swapTransaction);
+console.log('Transaction Signed and Sent: ', swapTxHash);
 ```
 
 After running this code in the console, you should see something like this:
