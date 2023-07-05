@@ -5,7 +5,7 @@
   <Description>Search 1inch Network</Description>
   <InputEncoding>UTF-8</InputEncoding>
   <Image width="16" height="16" type="image/x-icon">https://docs.1inch.io/img/favicon/favicon.ico</Image>
-  <Url type="text/html" method="get" template="https://docs.1inch.io//search?q={searchTerms}"/>
-  <Url type="application/opensearchdescription+xml" rel="self" template="https://docs.1inch.io//opensearch.xml" />
-  <moz:SearchForm>https://docs.1inch.io//</moz:SearchForm>
+  <Url type="text/html" method="get" template="https://docs.1inch.io/search?q={searchTerms}"/>
+  <Url type="application/opensearchdescription+xml" rel="self" template="https://docs.1inch.io/opensearch.xml" />
+  <moz:SearchForm>https://docs.1inch.io/</moz:SearchForm>
 </OpenSearchDescription>
