@@ -6,7 +6,7 @@ sidebar_position: 11
 
 Limit order protocol has the ability to call an **intermediate contract** when an order is filled.
 
-Intermediate contract should implement an interface: [InteractiveNotificationReceiver.sol](https://github.com/1inch/limit-order-protocol/blob/master/contracts/interfaces/InteractiveNotificationReceiver.sol)
+Intermediate contract should implement an interface: [InteractiveNotificationReceiver.sol](https://github.com/1inch/limit-order-protocol/blob/e39cb97bf2cabf1aecf3a1490a73cf0a51822318/contracts/interfaces/IInteractionNotificationReceiver.sol)
 
 ## Use case
 For example, we want to create a limit order `1INCH` - `WETH`, but so that when this order is filled, we will not receive WETH but ETH.
