@@ -24,7 +24,7 @@ sidebar_position: 5
     </thead>
     <tbody>
     <tr>
-        <td><code>fromTokenAddress*</code></td>
+        <td><code>src*</code></td>
         <td>string</td>
         <td>
             contract address of a token to sell<br/>
@@ -32,7 +32,7 @@ sidebar_position: 5
         </td>
     </tr>
     <tr>
-        <td><code>toTokenAddress*</code></td>
+        <td><code>dst*</code></td>
         <td>string</td>
         <td>
             contract address of a token to buy<br/>
@@ -50,10 +50,34 @@ sidebar_position: 5
         </td>
     </tr>
     <tr>
+        <td><code>includeTokensInfo</code></td>
+        <td>boolean</td>
+        <td>
+            if set to <code>true</code>, response will include from token and to token info<br/>
+            <code>default: false</code>
+        </td>
+    </tr> 
+    <tr>
+        <td><code>includeProtocols</code></td>
+        <td>boolean</td>
+        <td>
+            if set to <code>true</code>, response will include protocols used in the quote<br/>
+            <code>default: false</code>
+        </td>
+    </tr>
+    <tr>
+        <td><code>includeGas</code></td>
+        <td>boolean</td>
+        <td>
+            if set to <code>true</code>, response will include gas limit anticipated for the quote<br/>
+            <code>default: false</code>
+        </td>
+    </tr>
+    <tr>
         <td><code>fee</code></td>
         <td>number</td>
         <td>
-            this percentage of <code>fromTokenAddress</code> token amount will be sent to <code>referrerAddress</code>,<br/>
+            this percentage of <code>src</code> token amount will be sent to <code>referrerAddress</code>,<br/>
             the rest will be used as input for a swap<br/>
             <code>min: 0;</code> <code>max: 3;</code> <code>default: 0;</code><br/>
             example to set a fee to 1.5%: <code>&fee=1.5</code>
@@ -163,14 +187,14 @@ sidebar_position: 5
         </td>
     </tr>
     <tr>
-        <td><code>fromTokenAmount</code></td>
+        <td><code>fromAmount</code></td>
         <td>string</td>
         <td>
             input amount of <code>fromToken</code> in minimal divisible units
         </td>
     </tr>
     <tr>
-        <td><code>toTokenAmount</code></td>
+        <td><code>toAmount</code></td>
         <td>string</td>
         <td>
             result amount of <code>toToken</code> in minimal divisible units
@@ -184,11 +208,11 @@ sidebar_position: 5
         </td>
     </tr>
     <tr>
-        <td><code>estimatedGas</code></td>
+        <td><code>gas</code></td>
         <td>string</td>
         <td>
             rough estimated amount of the gas limit for used protocols;<br/>
-            do not use <code>estimatedGas</code> from the quote method as the gas limit of a transaction
+            do not use <code>gas</code> from the quote method as the gas limit of a transaction
         </td>
     </tr>
     </tbody>
