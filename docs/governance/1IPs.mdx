@@ -2247,7 +2247,7 @@ The Governance Doc of 1inch DAO should be updated through a GitHub pull request 
 <h2>Abstract</h2>
 <p>With the Staking Pod system, users lock their 1INCH tokens in a staking contract to get st1INCH tokens — the longer the lock period, the more st1INCH tokens the user gets. st1INCH tokens can be used by stakers for 1inch DAO governance, and the 1inch DAO can choose to use these token balances for reward distribution. The system is modular as anyone can launch a new Modular Delegation Pod and can use the reward functionality to incentivize certain actions and/or assign utility to the 1INCH token. 50% of all current, and future, 1inch DAO revenue shall be distributed to stakers.</p>
 <h2>Motivation</h2>
-<p>1INCH token is the governance token of the 1inch Network. It provides voting rights within the 1inch DAO’s governance system, and users can stake it to receive a <a href="https://blog.1inch.io/the-extended-gas-refund-program-is-now-available-to-yet-more-users-1d48de21aae3" target="_blank">refund 3</a> on their transaction fees. However, despite these functions, the amount of 1INCH tokens currently being held in <a href="https://etherscan.io/token/0xa0446d8804611944f1b527ecd37d7dcbe442caba" target="_blank">staking contracts is quite low</a> and governance participation is even lower. We believe that this is due to a lack of incentives to participate in governance and a lack of additional utility for staked 1INCH.</p>
+<p>1INCH token is the governance token of the 1inch Network. It provides voting rights within the 1inch DAO’s governance system, and users can stake it to receive a <a href="https://blog.1inch.io/the-extended-gas-refund-program-is-now-available-to-yet-more-users/" target="_blank">refund 3</a> on their transaction fees. However, despite these functions, the amount of 1INCH tokens currently being held in <a href="https://etherscan.io/token/0xa0446d8804611944f1b527ecd37d7dcbe442caba" target="_blank">staking contracts is quite low</a> and governance participation is even lower. We believe that this is due to a lack of incentives to participate in governance and a lack of additional utility for staked 1INCH.</p>
 <p>By introducing Modular Staking Pods, we hope to give stakers more direct control over how their stake is used to power the 1inch Network. This change will allow them to independently select how their stake governs each of the protocols and will allow for rewards to permissionlessly be distributed based on the actions of the stakers. We envision that this will improve the goverance by aligning incentives between people who want to stake to earn rewards and those who are interested in protocol governance – both players will have direct incentives to participate in the same system.</p>
 <p>We believe that this proposal represents a step forward for the 1inch Network and that it will help increase adoption and usage of the network’s future protocols.</p>
 <h2>Specification</h2>
@@ -2301,7 +2301,7 @@ The Governance Doc of 1inch DAO should be updated through a GitHub pull request 
 <p>penalty = balance - withdrawalAmount</p>
 <p>In this setting, the maximum early withdrawal loss is 90% as the minimum locking period is 1 month</p>
 <h3>Admin Control</h3>
-<p>The 1inch DAO Treasury Address, <a href="https://gnosis-safe.io/app/eth:0x7951c7ef839e26F63DA87a42C9a87986507f1c07/balances" target="_blank">0x7951c7ef839e26F63DA87a42C9a87986507f1c07</a>, would act as admin of the staking contract with control over the following functions:</p>
+<p>The 1inch DAO Treasury Address, <a href="https://app.safe.global/balances?safe=eth:0x7951c7ef839e26F63DA87a42C9a87986507f1c07" target="_blank">0x7951c7ef839e26F63DA87a42C9a87986507f1c07</a>, would act as admin of the staking contract with control over the following functions:</p>
 <ul>
 <li>
 <p>setFeeReceiver – this would allow the DAO to change the vault to collect the rewards for later distribution between stakers and the DAO treasury.</p>
@@ -2323,7 +2323,7 @@ The Governance Doc of 1inch DAO should be updated through a GitHub pull request 
 <p><strong>Snapshot governance delegation</strong></p>
 <ul>
 <li>This will allow users to delegate their Snapshot voting power to a recognized delegate from the UI, or manually enter an Ethereum/ENS address.</li>
-<li>Nested within this is the vanilla<a href="https://docs.snapshot.org/guides/delegation" target="_blank"> Snapshot space-specific delegation contract 1</a>.</li>
+<li>Nested within this is the vanilla<a href="https://docs.snapshot.org/user-guides/delegation" target="_blank"> Snapshot space-specific delegation contract 1</a>.</li>
 </ul>
 <p><strong>st1INCH utility delegation</strong></p>
 <ul>
@@ -2411,7 +2411,7 @@ The Governance Doc of 1inch DAO should be updated through a GitHub pull request 
       </a>{" "}
       before it is then sent to the 1inch DAO{" "}
       <a
-        href="https://gnosis-safe.io/app/eth:0x7951c7ef839e26F63DA87a42C9a87986507f1c07/transactions/history"
+        href="https://app.safe.global/transactions/history?safe=eth:0x7951c7ef839e26F63DA87a42C9a87986507f1c07"
         target="_blank"
       >
         Treasury
@@ -2675,7 +2675,7 @@ The Governance Doc of 1inch DAO should be updated through a GitHub pull request 
     <p>
       This proposal calls for the integration of{" "}
       <a
-        href="https://docs.balancer.fi/products/balancer-pools/boosted-pools"
+        href="https://docs.balancer.fi/concepts/pools/boosted.html"
         target="_blank"
       >
         Balancer Boosted Pools

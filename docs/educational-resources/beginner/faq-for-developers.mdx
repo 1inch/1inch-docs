@@ -7,7 +7,7 @@ Unfortunately this is not possible at this time. The most you can do is use the 
 This is not returned by the API, instead you would need to individually quote these sources yourself.
 
 **I’m trying to use the 1inch router in a smart contract, is there an example?**  
-Yes, you can find an example [here](https://github.com/smye/1inch-swap/). If you need more help please reach out to [https://discord.gg/1inch](https://discord.gg/1inch).
+Yes, you can find an example [here](https://github.com/smye/1inch-swap/). If you need more help please reach out to [https://discord.com/invite/1inch](https://discord.com/invite/1inch).
 
 **I’m trying to use the 1inch router without the API, is this possible?**  
 This is possible but not recommended. The functions "unoswap", "uniswapV3Swap", "fillOrderTo" and "clipperSwap" can all be used without the API but require proper bit masking and encoding. You would also lose the power of the aggregation protocol if you're using such functions. It's recommended to use the API in almost all cases.
@@ -25,7 +25,7 @@ RFQ order are intended for market makers and can't be submitted by users to the 
 Please reach out via this form: [https://docs.google.com/forms/d/e/1FAIpQLScPbwZ3uVekqXTEoR7wmcCMCn9XkIBta26aaOyYoAsqlswcxQ/viewform?hl=en](https://docs.google.com/forms/d/e/1FAIpQLScPbwZ3uVekqXTEoR7wmcCMCn9XkIBta26aaOyYoAsqlswcxQ/viewform?hl=en)
 
 **What are 500 internal server errors? (tx-gateway, aggregation API, limit order API)**  
-500 errors can happen for a multitude of reasons, most commonly due to an incorrectly formatted request parameter. Make sure you're using the amount field in the token's minimum divisible units, for ETH it's wei. Some other reasons might be random errors with the API or the underlying protocols being aggregated. If you're getting 500 errors consistently, please reach out to us on [https://discord.gg/1inch](https://discord.gg/1inch).
+500 errors can happen for a multitude of reasons, most commonly due to an incorrectly formatted request parameter. Make sure you're using the amount field in the token's minimum divisible units, for ETH it's wei. Some other reasons might be random errors with the API or the underlying protocols being aggregated. If you're getting 500 errors consistently, please reach out to us on [https://discord.com/invite/1inch](https://discord.com/invite/1inch).
 
 **What is the rate limit?**  
 The rate limit varies based on the load of the API, but generally it's 30 request per minute. This is across all public endpoints and not specific to each endpoint. To purchase an enterprise rate limit, please send an email to api@1inch.io with as many details as possible about your project name, size, and usage requirements.
@@ -37,7 +37,7 @@ The value field is the amount of ETH sent with the transaction to the 1inch rout
 Currently there is no swap widget that is maintained, but you can use the API to build your own.
 
 **If I don't have the user's private key, how do I send the transaction if the example requires a private key?**  
-Here is a simple guide provided by metamask to sign and send transactions without the user's private key: [https://docs.metamask.io/guide/sending-transactions.html#example](https://docs.metamask.io/guide/sending-transactions.html#example)
+Here is a simple guide provided by metamask to sign and send transactions without the user's private key: [https://docs.metamask.io/wallet/how-to/send-transactions#example](https://docs.metamask.io/wallet/how-to/send-transactions#example)
 
 **How can I get the gas price for a transaction?**  
 You can use a gas oracle like [https://www.blocknative.com/gas-estimator](https://www.blocknative.com/gas-estimator) for the gas price. For the gas limit you must use the eth_estimateGas rpc call. [https://ethereum.org/en/developers/docs/apis/json-rpc/#eth_estimategas](https://ethereum.org/en/developers/docs/apis/json-rpc/#eth_estimategas)

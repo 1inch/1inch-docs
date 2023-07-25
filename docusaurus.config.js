@@ -55,30 +55,30 @@ const config = {
             items: [
               {
                 label: 'Aggregation Protocol',
-                href: '/docs/aggregation-protocol/introduction',
+                href: '/docs/aggregation-protocol/introduction/',
               },
               {
                 label: 'Fusion Swap',
-                href: '/docs/fusion-swap/introduction'
+                href: '/docs/fusion-swap/introduction/'
               },
               {
                 label: 'Limit Order Protocol',
-                href: '/docs/limit-order-protocol/introduction'
+                href: '/docs/limit-order-protocol/introduction/'
               },
               {
                 label: 'Spot Price Aggregator',
-                href: '/docs/spot-price-aggregator/introduction'
+                href: '/docs/spot-price-aggregator/introduction/'
               },
               {
                 label: 'RabbitHole',
-                href: '/docs/rabbithole/summary'
+                href: '/docs/rabbithole/summary/'
               }
             ]
           },
           {
             label: 'Fusion',
             position: 'left',
-            href: '/docs/fusion-swap/introduction'
+            href: '/docs/fusion-swap/introduction/'
           },
           {
             label: 'Governance',
