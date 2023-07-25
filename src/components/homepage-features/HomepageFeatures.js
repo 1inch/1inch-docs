@@ -52,7 +52,7 @@ const FeatureList = [
             },
             {
                 title: 'Dune analytics',
-                href: 'https://dune.xyz/k06a/1inch-Limit-Order-Protocol'
+                href: 'https://dune.com/k06a/1inch-Limit-Order-Protocol'
             },
             {
                 title: 'Smart contract',
