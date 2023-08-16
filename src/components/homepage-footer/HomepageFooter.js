@@ -4,7 +4,7 @@ import styles from './HomepageFooter.module.css';
 import Link from '@docusaurus/Link';
 import MediumImage from '../../../static/img/icons/medium.svg';
 import RedditImage from '../../../static/img/icons/reddit.svg';
-import TwitterImage from '../../../static/img/icons/twitter.svg';
+import TwitterImage from '../../../static/img/icons/twitter_2.svg';
 import DiscordImage from '../../../static/img/icons/discord.svg';
 import YoutubeImage from '../../../static/img/icons/youtube.svg';
 import TelegramImage from '../../../static/img/icons/telegram.svg';
