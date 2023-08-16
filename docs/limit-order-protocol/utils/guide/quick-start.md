@@ -88,13 +88,13 @@ const limitOrderSignature = limitOrderBuilder.buildOrderSignature(
 );
 
 // Create a call data for fill the limit order
-const callData = limitOrderProtocolFacade.fillLimitOrder(
-    limitOrder,
-    limitOrderSignature,
-    '100',
-    '0',
-    '50'
-);
+const callData = limitOrderProtocolFacade.fillLimitOrder({
+    order: limitOrder,
+    signature: limitOrderSignature,
+    makingAmount: '100',
+    takingAmount: '0',
+    thresholdAmount: '50'
+});
 
 // Send transaction for the order filling
 // Must be implemented
