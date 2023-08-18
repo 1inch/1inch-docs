@@ -1,10 +1,11 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 ---
 
 # Order creation examples
 
 ## Through `@1inch/limit-order-protocol-utils`
+
 > **This is the recomended option!**
 
 There is [JavaScript and Typescript compatible library](./utils/about) that solves everything for you, we taking care on it to make everything up to date and make you migration over Limit Order Protocol Versions as smooth as possible.
@@ -12,12 +13,11 @@ There is [JavaScript and Typescript compatible library](./utils/about) that solv
 - See [docs on order creation](./utils/guide/quick-start)
 - See [library docs](./utils/about)
 
-<br/>
+<br />
 
 ---
 
-<br/>
-
+<br />
 
 ## Python Example for 1inch Limit Order v3
 
@@ -61,8 +61,8 @@ makerAssetContract = w3.eth.contract(address=makerAsset, abi=erc20_abi)
 takerAssetContract = w3.eth.contract(address=takerAsset, abi=erc20_abi)
 
 # other order parameters
-makerAssetData = '0x' 
-takerAssetData = '0x' 
+makerAssetData = '0x'
+takerAssetData = '0x'
 getMakingAmount = '0x'
 getTakingAmount = '0x'
 expiration = 5444440000 # some time in the future
@@ -99,7 +99,7 @@ def getOffsets(interactions):
     index = 0
     UINT32_BITS = 32
     # print(lenghtMap)
-    for lenght in lenghtMap:    
+    for lenght in lenghtMap:
         cumulativeSum += lenght
         # bytesAccumularot + (BigInt(offset) << ((exports.UINT32_BITS * BigInt(index))));
         # print(str(bytesAccumularot) + " + (" + str(cumulativeSum) + " << (" + str(UINT32_BITS) + " * " + str(index) + "))")
@@ -191,7 +191,7 @@ eip712_data = {
 Finally the private key will be used to sign the encoded data and broadcast to the API
 
 If you are having problems signing please run the following commands:
-``pip install web3 --upgrade; pip install eth-account==0.6.1``
+`pip install web3 --upgrade; pip install eth-account==0.6.1`
 
 ```python
 encoded_message = encode_structured_data(eip712_data)
