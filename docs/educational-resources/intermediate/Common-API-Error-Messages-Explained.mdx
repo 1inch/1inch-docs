@@ -10,6 +10,8 @@ If you're encountering issues with our API, this guide will help you understand 
 
 - **503 - Banned IP:** The IP address you're using to access the API is banned. Please ensure you're adhering to 1inch Network's terms of use.
 
+- **The API isn't behaving as expected:** In certain cases you may be passing in a parameter supported by the API but the wrong type or expected value. For example `disableEstimate=true` will work but `disableEstimate=True` will not. All parameters are CAsE SenSiTive. This is especially apparent when stringifying boolean values in python. 
+
 ## Specific Errors
 
 - **Cannot sync token:** The token either doesn't exist on the blockchain or isn't a valid token. Also, double check that you are using the correct chainID in relation to the token used.
