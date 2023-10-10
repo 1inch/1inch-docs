@@ -29,10 +29,6 @@ const FeatureList = [
                 href: 'https://etherscan.io/address/0x1111111254EEB25477B68fb85Ed929f73A960582'
             },
             {
-                title: 'Enterprise API',
-                href: 'https://docs.google.com/forms/d/e/1FAIpQLSdU7Ahn3YmbssoQiTbs0Fk0TB_7al9O_4ZQIUiZp3OxYzfWtg/viewform'
-            },
-            {
                 title: 'API',
                 isSwagger: true,
                 href: '/docs/aggregation-protocol/api/swagger'
