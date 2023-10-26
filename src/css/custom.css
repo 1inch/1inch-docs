@@ -399,6 +399,18 @@ html[data-theme='dark'] .swagger-ui .model-toggle:after {
 }
 /* swagger END */
 
+/* markdown START */
+
+.markdown > header > h1 {
+    color: green;
+}
+
+.markdown > h2 {
+    color: rebeccapurple;
+}
+
+/* markdown END */
+
 /* Adaptive START */
 @media (max-width: 1440px) {
     .navbar__link {

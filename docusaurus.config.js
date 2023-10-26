@@ -34,6 +34,7 @@ const config = {
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
+          mdCss: require.resolve('./src/css/md.css'),
         },
       }),
     ],
