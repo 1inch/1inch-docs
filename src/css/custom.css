@@ -399,6 +399,11 @@ html[data-theme='dark'] .swagger-ui .model-toggle:after {
 }
 /* swagger END */
 
+/* Changed search styles */
+.searchResultsSection_nuUe {
+    max-height: 100% !important;
+}
+
 /* Adaptive START */
 @media (max-width: 1440px) {
     .navbar__link {
@@ -489,6 +494,13 @@ html[data-theme='dark'] .swagger-ui .model-toggle:after {
         border: 1px solid var(--1inch-border);
         border-radius: 16px;
         padding: 16px;
+    }
+}
+
+@media (max-width: 450px) {
+    .searchModalContainer_E1mc {
+        min-width: auto;
+        width: 100%
     }
 }
 /* Adaptive END */

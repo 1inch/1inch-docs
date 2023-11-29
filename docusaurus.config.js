@@ -7,7 +7,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: '1inch Network',
-  tagline: 'The 1inch Network unites decentralized protocols whose synergy enables the most lucrative, fastest and protected operations in the DeFi space.',
+  tagline:
+    'The 1inch Network unites decentralized protocols whose synergy enables the most lucrative, fastest and protected operations in the DeFi space.',
   url: 'https://docs.1inch.io',
   baseUrl: '/',
   onBrokenLinks: 'warn',
@@ -15,7 +16,12 @@ const config = {
   favicon: 'img/favicon/favicon.ico',
   organizationName: '1inch', // Usually your GitHub org/user name.
   projectName: '1inch-docs', // Usually your repo name.
-  themes: ['docusaurus-theme-search-typesense'],
+  plugins: [
+    [
+      require.resolve('docusaurus-plugin-search-local'),
+      { indexPages: true, highlightSearchTermsOnTargetPage: true, searchResultLimits: 10 },
+    ],
+  ],
   presets: [
     [
       '@docusaurus/preset-classic',
@@ -29,8 +35,7 @@ const config = {
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
-          editUrl:
-            'https://github.com/1inch/1inch-docs/edit/master/',
+          editUrl: 'https://github.com/1inch/1inch-docs/edit/master/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -59,26 +64,26 @@ const config = {
               },
               {
                 label: 'Fusion Swap',
-                href: '/docs/fusion-swap/introduction/'
+                href: '/docs/fusion-swap/introduction/',
               },
               {
                 label: 'Limit Order Protocol',
-                href: '/docs/limit-order-protocol/introduction/'
+                href: '/docs/limit-order-protocol/introduction/',
               },
               {
                 label: 'Spot Price Aggregator',
-                href: '/docs/spot-price-aggregator/introduction/'
+                href: '/docs/spot-price-aggregator/introduction/',
               },
               {
                 label: 'RabbitHole',
-                href: '/docs/rabbithole/summary/'
-              }
-            ]
+                href: '/docs/rabbithole/summary/',
+              },
+            ],
           },
           {
             label: 'Fusion',
             position: 'left',
-            href: '/docs/fusion-swap/introduction/'
+            href: '/docs/fusion-swap/introduction/',
           },
           {
             label: 'Governance',
@@ -106,17 +111,17 @@ const config = {
                 label: 'Cumulative merkle drop',
                 href: 'https://github.com/1inch/merkle-distribution',
               },
-            ]
+            ],
           },
           {
             label: 'Grants Program',
             position: 'right',
-            href: 'https://1inch.io/foundation-grant-program/'
+            href: 'https://1inch.io/foundation-grant-program/',
           },
           {
             label: 'Bug bounty',
             position: 'right',
-            href: 'https://airtable.com/shrddQOOkm3hOLuzd'
+            href: 'https://airtable.com/shrddQOOkm3hOLuzd',
           },
           {
             href: 'https://www.npmjs.com/search?q=%401inch',
