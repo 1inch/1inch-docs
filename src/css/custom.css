@@ -400,8 +400,12 @@ html[data-theme='dark'] .swagger-ui .model-toggle:after {
 /* swagger END */
 
 /* Changed search styles */
-.searchResultsSection_nuUe {
+[class*="searchResultsSection_"] {
     max-height: 100% !important;
+}
+
+.container [class*="searchQueryInput_"] {
+    background: var(--ifm-navbar-search-input-background-color);
 }
 
 /* Adaptive START */
