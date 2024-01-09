@@ -51,7 +51,7 @@ const config = {
         title: '1inch Network Docs',
         logo: {
           alt: '1inch',
-          src: '/img/logo_NY.svg',
+          src: '/img/1inch_logo_without_text.svg',
         },
         items: [
           {
