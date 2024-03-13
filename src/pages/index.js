@@ -35,6 +35,7 @@ export default function Home() {
                 <meta name="twitter:image" content="https://docs.1inch.io/img/cover.png" />
                 <meta name="twitter:site" content="@1inchNetwork" />
                 <meta name="twitter:card" content="summary_large_image" />
+                <meta name="naver-site-verification" content="8f8cdf9cd5f17a937992fb11f221c46054c8f5f1" />
             </Head>
             <main className={styles.mainContainer}>
                 <div className="page-container">
