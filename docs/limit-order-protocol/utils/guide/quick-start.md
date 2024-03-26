@@ -43,7 +43,7 @@ const contractAddress = limirOrderProtocolAdresses[chainId];
 const seriesContractAddress = seriesNonceManagerContractAddresses[chainId];
 
 const limitOrderProtocolFacade = new LimitOrderProtocolFacade(contractAddress, chainId, connector);
-const seriesNonceManagerFacade = new SeriesNonceManagerFacade(seriesContractAddress, chainId, connector);]
+const seriesNonceManagerFacade = new SeriesNonceManagerFacade(seriesContractAddress, chainId, connector);
 const seriesNonceManagerPredicateBuilder = new SeriesNonceManagerPredicateBuilder(seriesContractAddress, chainId, connector);
 const erc20Facade = new Erc20Facade(connector);
 
