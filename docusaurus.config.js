@@ -119,20 +119,18 @@ const config = {
               {
                 label: 'Bug bounty',
                 href: 'https://airtable.com/shrddQOOkm3hOLuzd',
+              },
+              {
+                href: 'https://www.npmjs.com/search?q=%401inch',
+                label: 'NPM'
+              },
+              {
+                href: 'https://github.com/1inch',
+                label: 'GitHub'
               }
             ]
-          },
-          {
-            href: 'https://www.npmjs.com/search?q=%401inch',
-            label: 'NPM',
-            position: 'right',
-          },
-          {
-            href: 'https://github.com/1inch',
-            label: 'GitHub',
-            position: 'right',
-          },
-        ],
+          }
+        ]
       },
       typesense: {
         typesenseCollectionName: '1inch-docs',

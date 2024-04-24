@@ -505,63 +505,25 @@ html[data-theme='dark'] .swagger-ui .model-toggle:after {
 }
 
 /* Adaptive START */
-@media (max-width: 1440px) {
-    .navbar__link {
-        font-size: 14px;
-        display: flex;
-        align-items: center;
-    }
-
-    .navbar__item {
-        margin-right: 16px;
-    }
-}
-
-@media (max-width: 1350px) {
-    .navbar__link {
-        font-size: 13px;
-    }
-
-    .navbar__item {
-        margin-right: 14px;
-    }
-
-    .navbar__brand {
-        margin-right: 16px;
-    }
-
-    .navbar__item.navbar__link {
-        padding-right: 8px;
-    }
-}
-
 @media (max-width: 1200px) {
     .page-container {
         margin: 0 20px;
-    }
-
-    .navbar__item {
-        margin-right: 30px;
-    }
-
-    .navbar__brand {
-        margin-right: 30px;
-    }
-}
-
-@media (max-width: 1140px) {
-    .navbar__item {
-        margin-right: 20px;
-    }
-
-    .navbar__brand {
-        margin-right: 20px;
     }
 }
 
 @media (max-width: 1366px) {
     .navbar__title {
         font-size: 18px;
+    }
+
+    .navbar__link {
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+    }
+
+    .navbar__brand {
+        margin-right: 24px;
     }
 }
 
@@ -576,6 +538,11 @@ html[data-theme='dark'] .swagger-ui .model-toggle:after {
 
     .navbar__toggle {
         display: block !important;
+    }
+
+    .searchBox_node_modules-\@docusaurus-theme-classic-lib-theme-Navbar-Search-styles-module {
+        position: relative !important;
+        right: 0 !important;
     }
 }
 
