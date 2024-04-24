@@ -154,17 +154,19 @@ html {
 }
 
 .navbar__brand {
-    margin-right: 48px;
+    margin-right: 32px;
 }
 
 .navbar-sidebar__brand {
     box-shadow: none;
     border-bottom: 1px solid var(--1inch-border);
+    display: grid !important;
+    grid-template-columns: 235px auto 20px;
 }
 
 .navbar__item {
     padding: 0;
-    margin-right: 32px;
+    margin-right: 24px;
     align-self: stretch;
     display: flex;
     align-items: center;
@@ -187,7 +189,6 @@ html {
 
 .navbar__item.navbar__link {
     position: relative;
-    padding-right: 14px;
 }
 
 .navbar__item.navbar__link::after,
@@ -352,6 +353,10 @@ button {
     fill: var(--1inch-bg-3);
 }
 
+button {
+    margin: 0 !important;
+}
+
 .models-control:hover {
     text-decoration: none;
 }
@@ -500,81 +505,44 @@ html[data-theme='dark'] .swagger-ui .model-toggle:after {
 }
 
 /* Adaptive START */
-@media (max-width: 1440px) {
+@media (max-width: 1200px) {
+    .page-container {
+        margin: 0 20px;
+    }
+}
+
+@media (max-width: 1366px) {
+    .navbar__title {
+        font-size: 18px;
+    }
+
     .navbar__link {
         font-size: 14px;
         display: flex;
         align-items: center;
     }
 
-    .navbar__item {
-        margin-right: 16px;
-    }
-}
-
-@media (max-width: 1350px) {
-    .navbar__link {
-        font-size: 13px;
-    }
-
-    .navbar__item {
-        margin-right: 14px;
-    }
-
     .navbar__brand {
-        margin-right: 8px;
-    }
-
-    .navbar__item.navbar__link {
-        padding-right: 8px;
+        margin-right: 24px;
     }
 }
 
-@media (max-width: 1200px) {
-    .page-container {
-        margin: 0 20px;
-    }
-
-    .navbar__item {
-        margin-right: 30px;
-    }
-
-    .navbar__brand {
-        margin-right: 30px;
-    }
-}
-
-@media (max-width: 1140px) {
-    .navbar__item {
-        margin-right: 20px;
-    }
-
-    .navbar__brand {
-        margin-right: 20px;
-    }
-}
-
-@media (max-width: 1080px) {
-    .navbar__brand {
-        margin-right: 10px;
-    }
-
-    .navbar__link {
-        font-size: 14px !important;
-    }
-}
-
-@media (max-width: 1047px) {
-    .navbar__title {
-        font-size: 18px;
-    }
-
+@media (max-width: 996px) {
     .navbar__item {
         display: none;
     }
 
+    .navbar__items {
+        gap: 16px;
+    }
+
     .navbar__toggle {
         display: block !important;
+    }
+
+    .searchBox_node_modules-\@docusaurus-theme-classic-lib-theme-Navbar-Search-styles-module {
+        position: relative !important;
+        right: 0 !important;
     }
 }
 
@@ -596,6 +564,12 @@ html[data-theme='dark'] .swagger-ui .model-toggle:after {
     .searchModalContainer_E1mc {
         min-width: auto;
         width: 100%
+    }
+}
+
+@media (max-width: 400px) {
+    .navbar-sidebar__brand {
+        display: flex !important;
     }
 }
 

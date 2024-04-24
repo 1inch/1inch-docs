@@ -81,11 +81,6 @@ const config = {
             ],
           },
           {
-            label: 'Fusion',
-            position: 'left',
-            href: '/docs/fusion-swap/introduction/',
-          },
-          {
             label: 'Governance',
             position: 'left',
             type: 'doc',
@@ -114,26 +109,28 @@ const config = {
             ],
           },
           {
-            label: 'Grants Program',
-            position: 'right',
-            href: 'https://1inch.io/foundation-grant-program/',
-          },
-          {
-            label: 'Bug bounty',
-            position: 'right',
-            href: 'https://airtable.com/shrddQOOkm3hOLuzd',
-          },
-          {
-            href: 'https://www.npmjs.com/search?q=%401inch',
-            label: 'NPM',
-            position: 'right',
-          },
-          {
-            href: 'https://github.com/1inch',
-            label: 'GitHub',
-            position: 'right',
-          },
-        ],
+            "label": "Developer links",
+            "position": "right",
+            "items": [
+              {
+                label: 'Grants Program',
+                href: 'https://1inch.io/foundation-grant-program/',
+              },
+              {
+                label: 'Bug bounty',
+                href: 'https://airtable.com/shrddQOOkm3hOLuzd',
+              },
+              {
+                href: 'https://www.npmjs.com/search?q=%401inch',
+                label: 'NPM'
+              },
+              {
+                href: 'https://github.com/1inch',
+                label: 'GitHub'
+              }
+            ]
+          }
+        ]
       },
       typesense: {
         typesenseCollectionName: '1inch-docs',
