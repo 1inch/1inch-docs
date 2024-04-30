@@ -6,7 +6,7 @@
 
 
 ## Derives
-- [ImmutableOwner](helpers/ImmutableOwner.md)
+- [ImmutableOwner](ImmutableOwner.md)
 
 ## Functions
 ### constructor
