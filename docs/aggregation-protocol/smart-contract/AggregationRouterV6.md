@@ -40,7 +40,7 @@ function rescueFunds(
   uint256 amount
 ) external
 ```
-Retrieves funds accidently sent directly to the contract address.
+Retrieves funds accidentally sent directly to the contract address.
 
 
 #### Parameters:
