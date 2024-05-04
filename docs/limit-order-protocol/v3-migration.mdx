@@ -107,13 +107,13 @@ as long as `Order.preInteraction` was added.
     })
     ```
     - `interaction` is pre-interaction in fact.
-    - `skipPermit` wether to skip maker's permit evaluation if it was evaluated before.
+    - `skipPermit` whether to skip maker's permit evaluation if it was evaluated before.
         Useful if multiple orders was created with same nonce.
         
-        Tip: you can just check if allowance exsists and then set it to `true`.
+        Tip: you can just check if allowance exists and then set it to `true`.
 
 
-- `simulateCalls(addresses[], calldatas[]): Promise<boolean>` no more avaible.
+- `simulateCalls(addresses[], calldatas[]): Promise<boolean>` no more available.
 
 - `simulate(address, calldata): Promise<{ success, rawResult }>` was introduced insted, so you don't need `catch` block anymore.
 
