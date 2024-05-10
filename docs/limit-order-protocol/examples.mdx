@@ -6,9 +6,9 @@ sidebar_position: 3
 
 ## Through `@1inch/limit-order-protocol-utils`
 
-> **This is the recomended option!**
+> **This is the recommended option!**
 
-There is [JavaScript and Typescript compatible library](./utils/about) that solves everything for you, we taking care on it to make everything up to date and make you migration over Limit Order Protocol Versions as smooth as possible.
+There is [JavaScript and Typescript compatible library](./utils/about) that solves everything for you, we taking care of it to make everything up to date and make your migration over Limit Order Protocol Versions as smooth as possible.
 
 - See [docs on order creation](./utils/guide/quick-start)
 - See [library docs](./utils/about)
@@ -49,7 +49,7 @@ time.sleep(5)
 erc20_abi_response = requests.get(f"https://api.etherscan.io/api?module=contract&action=getabi&address=0x6b175474e89094c44da98b954eedeac495271d0f&apikey={ETHERSCAN_API_KEY}")
 erc20_abi = erc20_abi_response.json()["result"]
 
-#here is were we define parameters for the limit order
+#here is where we define parameters for the limit order
 makerAddress = Web3.toChecksumAddress(wallet_address) # the address of the wallet that will be the maker of the order
 takerAddress = Web3.toChecksumAddress("0x0000000000000000000000000000000000000000") # the address of the taker, if it's address(0) then it's a public order
 makerAsset = Web3.toChecksumAddress("0x6b175474e89094c44da98b954eedeac495271d0f") # the address of the token you want to sell
@@ -65,7 +65,7 @@ makerAssetData = '0x'
 takerAssetData = '0x'
 getMakingAmount = '0x'
 getTakingAmount = '0x'
-expiration = 5444440000 # some time in the future
+expiration = 5444440000 # sometime in the future
 nonce = 0 # the nonce of the order, used to be able to cancel all orders that have the same nonce by increasing the addresses' nonce
 seriesNonceManagerContractAddress = w3.toChecksumAddress('0x303389f541ff2d620e42832f180a08e767b28e10') # https://github.com/1inch/limit-order-protocol-utils/blob/fdbb559509eeb6e22e2697cccb22887d69617652/src/series-nonce-manager.const.ts
 seriesNonceManagerABI_response = requests.get(f"https://api.etherscan.io/api?module=contract&action=getabi&address={seriesNonceManagerContractAddress}&apikey={ETHERSCAN_API_KEY}")
