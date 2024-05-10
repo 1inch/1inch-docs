@@ -45,21 +45,21 @@ const limitOrder = limitOrderBuilder.buildLimitOrder({
     makerAssetAddress: '0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c',
     takerAssetAddress: '0x111111111117dc0aa78b770fa6a738034120c302',
     makerAddress: walletAddress,
-    reciever: interactiveReceiverAddress,
+    receiver: interactiveReceiverAddress,
     makerAmount: '100',
     takerAmount: '200',
 
     // What to do before the transfer
     preInteraction: '0x',
-    // What tot do after the trasnfer has been made
+    // What to do after the transfer has been made
     postInteraction: interactiveReceiverAddress + walletAddress.slice(2),
 });
 ```
 
 > As you can see, the `postInteraction` field consists of two parts - the `contract address` and the `interactiveData` (which contains the wallet address).
 
-> We also set the `interactiveReceiverAddress` as the `reciever`.
-> This is necessary in order for this contract to receive a `WETH` when filling out an limit order and return `ETH` to the creator of the limit order.
+> We also set the `interactiveReceiverAddress` as the `receiver`.
+> This is necessary in order for this contract to receive a `WETH` when filling out a limit order and return `ETH` to the creator of the limit order.
 
 Now the limit order will work according to the following scenario:
  - someone (`taker`) will create a transaction to execute a limit order
