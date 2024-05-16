@@ -5,7 +5,7 @@ sidebar_position: 3
 # Breaking changes in V3
 
 ## [`Limit Order Protocol`](https://github.com/1inch/limit-order-protocol/) itself changes
-- Now contract is pubshed to npm as `@1inch/limit-order-protocol`
+- Now contract is published to npm as `@1inch/limit-order-protocol`
 
 
 - `Order` struct has changed as following:
@@ -71,7 +71,7 @@ as long as `Order.preInteraction` was added.
 - Methods `eq`, `lt`, `gt`, `nonceEquals` no more have address arguments. Use `arbitraryStaticCall` instead in case if you need read value from different smartcontract.
 
 ## `limit-order-protocol-utils` library changes:
-- Now contract is pubshed to npm as `@1inch/limit-order-protocol-utils`
+- Now contract is published to npm as `@1inch/limit-order-protocol-utils`
 
 ### The `LimitOrderProtocolFacade`
 
@@ -108,14 +108,14 @@ as long as `Order.preInteraction` was added.
     ```
     - `interaction` is pre-interaction in fact.
     - `skipPermit` wether to skip maker's permit evaluation if it was evaluated before.
-        Useful if multiple orders was created with same nonce.
+        Useful if multiple orders were created with same nonce.
         
         Tip: you can just check if allowance exsists and then set it to `true`.
 
 
 - `simulateCalls(addresses[], calldatas[]): Promise<boolean>` no more avaible.
 
-- `simulate(address, calldata): Promise<{ success, rawResult }>` was introduced insted, so you don't need `catch` block anymore.
+- `simulate(address, calldata): Promise<{ success, rawResult }>` was introduced instead, so you don't need `catch` block anymore.
 
 ### The `LimitOrderBuilder`
 
