@@ -40,7 +40,7 @@ const DeveloperList = [
     {
         button:{
             title: 'View Articles',
-            href: './docs/educational-resources/introduction'
+            href: './docs/educational-resources/Introduction'
         },
         image: (
             <div className={clsx(styles.developerCardImage, styles.educationalResourcesImage)}/>
