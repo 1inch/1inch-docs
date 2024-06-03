@@ -6,7 +6,7 @@ import Link from "@docusaurus/core/lib/client/exports/Link";
 
 const FeatureList = [
     {
-        title: 'Aggregation Protocol V5',
+        title: 'Aggregation Protocol V6',
         description: 'The 1inch Aggregation Protocol facilitates cost-efficient and secure swap transactions across multiple liquidity sources',
         image: (
             <div className={clsx(styles.featureCardImage, styles.aggregationProtocolImage)}/>
@@ -21,12 +21,12 @@ const FeatureList = [
                 href: 'https://dune.com/1inch/aggregator'
             },
             {
-                title: 'Smart contract v4',
-                href: 'https://etherscan.io/address/0x1111111254fb6c44bAC0beD2854e76F90643097d'
-            },
-            {
                 title: 'Smart contract v5',
                 href: 'https://etherscan.io/address/0x1111111254EEB25477B68fb85Ed929f73A960582'
+            },
+            {
+                title: 'Smart contract v6',
+                href: 'https://etherscan.io/address/0x111111125421ca6dc452d289314280a0f8842a65'
             },
             {
                 title: 'API',
@@ -36,7 +36,7 @@ const FeatureList = [
         ]
     },
     {
-        title: 'Limit Order Protocol V3',
+        title: 'Limit Order Protocol V4',
         description: 'The 1inch Limit Order Protocol facilitates the most innovative and flexible limit order swap opportunities in DeFi',
         image: (
             <div className={clsx(styles.featureCardImage, styles.limitOrderProtocolImage)}/>
