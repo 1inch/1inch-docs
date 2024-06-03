@@ -52,7 +52,7 @@ const FeatureList = [
             },
             {
                 title: 'Smart contract',
-                href: 'https://etherscan.io/address/0x1111111254fb6c44bac0bed2854e76f90643097d'
+                href: 'https://etherscan.io/address/0x111111125421ca6dc452d289314280a0f8842a65'
             },
             {
                 title: 'API',
