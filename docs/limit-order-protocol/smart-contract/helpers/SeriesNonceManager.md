@@ -1,80 +1,77 @@
-# SeriesNonceManager
 
+## SeriesNonceManager
 
-A helper contract to manage nonce with the series
+### Functions list
+- [increaseNonce(series) external](#increasenonce)
+- [advanceNonce(series, amount) public](#advancenonce)
+- [nonceEquals(series, makerAddress, makerNonce) public](#nonceequals)
+- [timestampBelow(time) public](#timestampbelow)
+- [timestampBelowAndNonceEquals(timeNonceSeriesAccount) public](#timestampbelowandnonceequals)
 
+### Events list
+- [NonceIncreased(maker, series, newNonce) ](#nonceincreased)
 
+### Errors list
+- [AdvanceNonceFailed() ](#advancenoncefailed)
 
-
-## Functions
+### Functions
 ### increaseNonce
+
 ```solidity
-function increaseNonce(
-  uint8 series
-) external
+function increaseNonce(uint8 series) external
 ```
 Advances nonce by one
 
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`series` | uint8 | 
-
-
 ### advanceNonce
+
 ```solidity
-function advanceNonce(
-  uint8 series,
-  uint8 amount
-) public
+function advanceNonce(uint256 series, uint256 amount) public
 ```
 Advances nonce by specified amount
 
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`series` | uint8 | 
-|`amount` | uint8 | 
-
-
 ### nonceEquals
+
 ```solidity
-function nonceEquals(
-  uint8 series,
-  address makerAddress,
-  uint256 makerNonce
-) external returns (bool)
+function nonceEquals(uint256 series, address makerAddress, uint256 makerNonce) public view returns (bool)
 ```
 Checks if `makerAddress` has specified `makerNonce` for `series`
 
+#### Return Values
 
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`series` | uint8 | 
-|`makerAddress` | address | 
-|`makerNonce` | uint256 | 
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+[0] | bool | Result True if `makerAddress` has specified nonce. Otherwise, false |
 
-#### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`Result`| bool | True if `makerAddress` has specified nonce. Otherwise, false
+### timestampBelow
 
-## Events
-### NonceIncreased
 ```solidity
-event NonceIncreased(
-  address maker,
-  uint8 series,
-  uint256 newNonce
-)
+function timestampBelow(uint256 time) public view returns (bool)
+```
+Checks passed time against block timestamp
+
+#### Return Values
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+[0] | bool | Result True if current block timestamp is lower than `time`. Otherwise, false |
+
+### timestampBelowAndNonceEquals
+
+```solidity
+function timestampBelowAndNonceEquals(uint256 timeNonceSeriesAccount) public view returns (bool)
 ```
 
+### Events
+### NonceIncreased
 
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`maker` | address | 
-|`series` | uint8 | 
-|`newNonce` | uint256 | 
+```solidity
+event NonceIncreased(address maker, uint256 series, uint256 newNonce)
+```
+
+### Errors
+### AdvanceNonceFailed
+
+```solidity
+error AdvanceNonceFailed()
+```
 

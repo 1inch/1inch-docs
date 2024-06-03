@@ -1,241 +1,117 @@
-# OrderMixin
 
+## OrderMixin
 
-Regular Limit Order mixin
+### Functions list
+- [constructor(weth) internal](#constructor)
+- [bitInvalidatorForOrder(maker, slot) external](#bitinvalidatorfororder)
+- [remainingInvalidatorForOrder(maker, orderHash) external](#remaininginvalidatorfororder)
+- [rawRemainingInvalidatorForOrder(maker, orderHash) external](#rawremaininginvalidatorfororder)
+- [simulate(target, data) external](#simulate)
+- [cancelOrder(makerTraits, orderHash) public](#cancelorder)
+- [cancelOrders(makerTraits, orderHashes) external](#cancelorders)
+- [bitsInvalidateForOrder(makerTraits, additionalMask) external](#bitsinvalidatefororder)
+- [hashOrder(order) external](#hashorder)
+- [checkPredicate(predicate) public](#checkpredicate)
+- [fillOrder(order, r, vs, amount, takerTraits) external](#fillorder)
+- [fillOrderArgs(order, r, vs, amount, takerTraits, args) external](#fillorderargs)
+- [fillContractOrder(order, signature, amount, takerTraits) external](#fillcontractorder)
+- [fillContractOrderArgs(order, signature, amount, takerTraits, args) external](#fillcontractorderargs)
 
+### Functions
+### constructor
 
-
-## Derives
-- [Permitable](libraries/Permitable.md)
-- [PredicateHelper](helpers/PredicateHelper.md)
-- [NonceManager](helpers/NonceManager.md)
-- [ChainlinkCalculator](helpers/ChainlinkCalculator.md)
-- [AmountCalculator](helpers/AmountCalculator.md)
-- [EIP712](https://docs.openzeppelin.com/contracts/3.x/api/utils/cryptography#draft-EIP712)
-
-## Functions
-### remaining
 ```solidity
-function remaining(
-  bytes32 orderHash
-) external returns (uint256)
+constructor(contract IWETH weth) internal
 ```
-Returns unfilled amount for order. Throws if order does not exist
 
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`orderHash` | bytes32 | 
+### bitInvalidatorForOrder
 
-
-### remainingRaw
 ```solidity
-function remainingRaw(
-  bytes32 orderHash
-) external returns (uint256)
+function bitInvalidatorForOrder(address maker, uint256 slot) external view returns (uint256)
 ```
-Returns unfilled amount for order
+See {IOrderMixin-bitInvalidatorForOrder}.
 
+### remainingInvalidatorForOrder
 
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`orderHash` | bytes32 | 
-
-#### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`Result`| uint256 | Unfilled amount of order plus one if order exists. Otherwise 0
-
-### remainingsRaw
 ```solidity
-function remainingsRaw(
-  bytes32[] orderHashes
-) external returns (uint256[])
+function remainingInvalidatorForOrder(address maker, bytes32 orderHash) external view returns (uint256)
 ```
-Same as `remainingRaw` but for multiple orders
+See {IOrderMixin-remainingInvalidatorForOrder}.
 
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`orderHashes` | bytes32[] | 
+### rawRemainingInvalidatorForOrder
 
-
-### simulateCalls
 ```solidity
-function simulateCalls(
-  address[] targets,
-  bytes[] data
-) external
+function rawRemainingInvalidatorForOrder(address maker, bytes32 orderHash) external view returns (uint256)
 ```
-Calls every target with corresponding data. Then reverts with CALL_RESULTS_0101011 where zeroes and ones
-denote failure or success of the corresponding call
+See {IOrderMixin-rawRemainingInvalidatorForOrder}.
 
+### simulate
 
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`targets` | address[] | Array of addresses that will be called  
-|`data` | bytes[] | Array of data that will be passed to each call 
-
+```solidity
+function simulate(address target, bytes data) external
+```
+See {IOrderMixin-simulate}.
 
 ### cancelOrder
+
 ```solidity
-function cancelOrder(
-  struct OrderLib.Order order
-) external
+function cancelOrder(MakerTraits makerTraits, bytes32 orderHash) public
 ```
-Cancels order by setting remaining amount to zero
+See {IOrderMixin-cancelOrder}.
 
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`order` | struct OrderLib.Order | 
+### cancelOrders
 
-
-### fillOrder
 ```solidity
-function fillOrder(
-  struct OrderLib.Order order,
-  bytes signature,
-  bytes interaction,
-  uint256 makingAmount,
-  uint256 takingAmount,
-  uint256 thresholdAmount
-) external returns (uint256, uint256)
+function cancelOrders(MakerTraits[] makerTraits, bytes32[] orderHashes) external
 ```
-Fills an order. If one doesn't exist (first fill) it will be created using order.makerAssetData
+See {IOrderMixin-cancelOrders}.
 
+### bitsInvalidateForOrder
 
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`order` | struct OrderLib.Order | Order quote to fill  
-|`signature` | bytes | Signature to confirm quote ownership  
-|`interaction` | bytes | Making amount  
-|`makingAmount` | uint256 | Taking amount  
-|`takingAmount` | uint256 | Specifies maximum allowed takingAmount when takingAmount is zero, otherwise specifies minimum allowed makingAmount 
-|`thresholdAmount` | uint256 | 
-
-
-### fillOrderToWithPermit
 ```solidity
-function fillOrderToWithPermit(
-  struct OrderLib.Order order,
-  bytes signature,
-  bytes interaction,
-  uint256 makingAmount,
-  uint256 takingAmount,
-  uint256 thresholdAmount,
-  address target,
-  bytes permit
-) external returns (uint256, uint256)
+function bitsInvalidateForOrder(MakerTraits makerTraits, uint256 additionalMask) external
 ```
-Same as `fillOrder` but calls permit first,
-allowing to approve token spending and make a swap in one transaction.
-Also allows to specify funds destination instead of `msg.sender`
-
-See tests for examples
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`order` | struct OrderLib.Order | Order quote to fill  
-|`signature` | bytes | Signature to confirm quote ownership  
-|`interaction` | bytes | Making amount  
-|`makingAmount` | uint256 | Taking amount  
-|`takingAmount` | uint256 | Specifies maximum allowed takingAmount when takingAmount is zero, otherwise specifies minimum allowed makingAmount  
-|`thresholdAmount` | uint256 | Address that will receive swap funds  
-|`target` | address | Should consist of abiencoded token address and encoded `IERC20Permit.permit` call.  
-|`permit` | bytes | 
-
-
-### fillOrderTo
-```solidity
-function fillOrderTo(
-  struct OrderLib.Order order_,
-  bytes signature,
-  bytes interaction,
-  uint256 makingAmount,
-  uint256 takingAmount,
-  uint256 thresholdAmount,
-  address target
-) public returns (uint256, uint256)
-```
-Same as `fillOrder` but allows to specify funds destination instead of `msg.sender`
-
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`order_` | struct OrderLib.Order | Order quote to fill  
-|`signature` | bytes | Signature to confirm quote ownership  
-|`interaction` | bytes | Making amount  
-|`makingAmount` | uint256 | Taking amount  
-|`takingAmount` | uint256 | Specifies maximum allowed takingAmount when takingAmount is zero, otherwise specifies minimum allowed makingAmount  
-|`thresholdAmount` | uint256 | Address that will receive swap funds 
-|`target` | address | 
-
-
-### checkPredicate
-```solidity
-function checkPredicate(
-  struct OrderLib.Order order
-) public returns (bool)
-```
-Checks order predicate
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`order` | struct OrderLib.Order | 
-
+See {IOrderMixin-bitsInvalidateForOrder}.
 
 ### hashOrder
+
 ```solidity
-function hashOrder(
-  struct OrderLib.Order order
-) public returns (bytes32)
+function hashOrder(struct IOrderMixin.Order order) external view returns (bytes32)
 ```
+See {IOrderMixin-hashOrder}.
 
+### checkPredicate
 
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`order` | struct OrderLib.Order | 
-
-
-## Events
-### OrderFilled
 ```solidity
-event OrderFilled(
-  address maker,
-  bytes32 orderHash,
-  uint256 remaining
-)
+function checkPredicate(bytes predicate) public view returns (bool)
 ```
-Emitted every time order gets filled, including partial fills
+See {IOrderMixin-checkPredicate}.
 
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`maker` | address | 
-|`orderHash` | bytes32 | 
-|`remaining` | uint256 | 
+### fillOrder
 
-### OrderCanceled
 ```solidity
-event OrderCanceled(
-  address maker,
-  bytes32 orderHash,
-  uint256 remainingRaw
-)
+function fillOrder(struct IOrderMixin.Order order, bytes32 r, bytes32 vs, uint256 amount, TakerTraits takerTraits) external payable returns (uint256, uint256, bytes32)
 ```
-Emitted when order gets cancelled
+See {IOrderMixin-fillOrder}.
 
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`maker` | address | 
-|`orderHash` | bytes32 | 
-|`remainingRaw` | uint256 | 
+### fillOrderArgs
+
+```solidity
+function fillOrderArgs(struct IOrderMixin.Order order, bytes32 r, bytes32 vs, uint256 amount, TakerTraits takerTraits, bytes args) external payable returns (uint256, uint256, bytes32)
+```
+See {IOrderMixin-fillOrderArgs}.
+
+### fillContractOrder
+
+```solidity
+function fillContractOrder(struct IOrderMixin.Order order, bytes signature, uint256 amount, TakerTraits takerTraits) external returns (uint256, uint256, bytes32)
+```
+See {IOrderMixin-fillContractOrder}.
+
+### fillContractOrderArgs
+
+```solidity
+function fillContractOrderArgs(struct IOrderMixin.Order order, bytes signature, uint256 amount, TakerTraits takerTraits, bytes args) external returns (uint256, uint256, bytes32)
+```
+See {IOrderMixin-fillContractOrderArgs}.
 

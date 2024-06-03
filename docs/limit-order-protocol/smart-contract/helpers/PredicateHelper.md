@@ -1,139 +1,142 @@
-# PredicateHelper
 
+## PredicateHelper
 
-A helper contract for executing boolean functions on arbitrary target call results
+### Functions list
+- [or(offsets, data) public](#or)
+- [and(offsets, data) public](#and)
+- [not(data) public](#not)
+- [eq(value, data) public](#eq)
+- [lt(value, data) public](#lt)
+- [gt(value, data) public](#gt)
+- [arbitraryStaticCall(target, data) public](#arbitrarystaticcall)
+- [_staticcallForUint(target, data) internal](#_staticcallforuint)
 
+### Errors list
+- [ArbitraryStaticCallFailed() ](#arbitrarystaticcallfailed)
 
-
-
-## Functions
+### Functions
 ### or
+
 ```solidity
-function or(
-  address[] targets,
-  bytes[] data
-) external returns (bool)
+function or(uint256 offsets, bytes data) public view returns (bool)
 ```
 Calls every target with corresponding data
 
+#### Return Values
 
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`targets` | address[] | 
-|`data` | bytes[] | 
-
-#### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`Result`| bool | True if call to any target returned True. Otherwise, false
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+[0] | bool | Result True if call to any target returned True. Otherwise, false |
 
 ### and
+
 ```solidity
-function and(
-  address[] targets,
-  bytes[] data
-) external returns (bool)
+function and(uint256 offsets, bytes data) public view returns (bool)
 ```
 Calls every target with corresponding data
 
+#### Return Values
 
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`targets` | address[] | 
-|`data` | bytes[] | 
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+[0] | bool | Result True if calls to all targets returned True. Otherwise, false |
 
-#### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`Result`| bool | True if calls to all targets returned True. Otherwise, false
+### not
+
+```solidity
+function not(bytes data) public view returns (bool)
+```
+Calls target with specified data and tests if it's equal to 0
+
+#### Return Values
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+[0] | bool | Result True if call to target returns 0. Otherwise, false |
 
 ### eq
+
 ```solidity
-function eq(
-  uint256 value,
-  address target,
-  bytes data
-) external returns (bool)
+function eq(uint256 value, bytes data) public view returns (bool)
 ```
 Calls target with specified data and tests if it's equal to the value
 
+#### Parameters
 
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`value` | uint256 | Value to test  
-|`target` | address | 
-|`data` | bytes | 
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | uint256 | Value to test |
+| data | bytes |  |
 
-#### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`Result`| bool | True if call to target returns the same value as `value`. Otherwise, false
+#### Return Values
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+[0] | bool | Result True if call to target returns the same value as `value`. Otherwise, false |
 
 ### lt
+
 ```solidity
-function lt(
-  uint256 value,
-  address target,
-  bytes data
-) external returns (bool)
+function lt(uint256 value, bytes data) public view returns (bool)
 ```
 Calls target with specified data and tests if it's lower than value
 
+#### Parameters
 
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`value` | uint256 | Value to test  
-|`target` | address | 
-|`data` | bytes | 
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | uint256 | Value to test |
+| data | bytes |  |
 
-#### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`Result`| bool | True if call to target returns value which is lower than `value`. Otherwise, false
+#### Return Values
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+[0] | bool | Result True if call to target returns value which is lower than `value`. Otherwise, false |
 
 ### gt
+
 ```solidity
-function gt(
-  uint256 value,
-  address target,
-  bytes data
-) external returns (bool)
+function gt(uint256 value, bytes data) public view returns (bool)
 ```
 Calls target with specified data and tests if it's bigger than value
 
+#### Parameters
 
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`value` | uint256 | Value to test  
-|`target` | address | 
-|`data` | bytes | 
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | uint256 | Value to test |
+| data | bytes |  |
 
-#### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`Result`| bool | True if call to target returns value which is bigger than `value`. Otherwise, false
+#### Return Values
 
-### timestampBelow
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+[0] | bool | Result True if call to target returns value which is bigger than `value`. Otherwise, false |
+
+### arbitraryStaticCall
+
 ```solidity
-function timestampBelow(
-  uint256 time
-) external returns (bool)
+function arbitraryStaticCall(address target, bytes data) public view returns (uint256)
 ```
-Checks passed time against block timestamp
+Performs an arbitrary call to target with data
 
+#### Return Values
 
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`time` | uint256 | 
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+[0] | uint256 | Result Bytes transmuted to uint256 |
 
-#### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`Result`| bool | True if current block timestamp is lower than `time`. Otherwise, false
+### _staticcallForUint
+
+```solidity
+function _staticcallForUint(address target, bytes data) internal view returns (bool success, uint256 res)
+```
+
+### Errors
+### ArbitraryStaticCallFailed
+
+```solidity
+error ArbitraryStaticCallFailed()
+```
 
