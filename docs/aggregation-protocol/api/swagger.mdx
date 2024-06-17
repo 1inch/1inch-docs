@@ -8,6 +8,13 @@ import {SwaggerDoc} from '../../../src/components/swagger-doc/SwaggerDoc';
 
 # Swagger
 
+:::caution
+
+The public Swap API api.1inch.io is deprecated. To continue using the Swap API please migrate to the [**1inch Developer Portal**](https://portal.1inch.dev)
+
+:::
+
+
 <Tabs>
     <TabItem value="ethereum" label="Ethereum" default>
         <SwaggerDoc url="https://api.1inch.io/swagger/ethereum-json" />
@@ -41,6 +48,9 @@ import {SwaggerDoc} from '../../../src/components/swagger-doc/SwaggerDoc';
     </TabItem>
     <TabItem value="zkSync" label="zkSync">
         <SwaggerDoc url="https://api.1inch.io/swagger/era-json" />
+    </TabItem>
+    <TabItem value="base" label="Base">
+        <SwaggerDoc url="https://api.1inch.io/swagger/base-json" />
     </TabItem>
 </Tabs>
 

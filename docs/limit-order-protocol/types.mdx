@@ -1,0 +1,24 @@
+---
+sidebar_position: 2
+---
+# Limit vs. RFQ Orders
+
+The Limit Order Protocol provides users with options to place both Limit orders and Request For Quote (RFQ) orders. Select the appropriate order type based on your specific needs.
+
+## Comparison Table
+
+| Criteria                            | Limit Order                                                                                               | RFQ Order                                                                                                  |
+|:-----------------------------------:|:----------------------------------------------------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------------------:|
+| **Suitable for**                    | Traders                                                                                                   | Market Makers                                                                                              |
+| **Flexibility of features**         | High; includes Order predicates, callbacks. [Details](/docs/limit-order-protocol/introduction#limit-order-features)  | Limited due to gas optimization; Supports expiration time, partial fills (once), and cancellation by ID. [Details](/docs/limit-order-protocol/introduction#rfq-order-features) |
+| **Execution**                       | Uses Pathfinder algorithm for liquidity.                                                                   | Exposed via API; requires quote requests; optimized for one-time fills.                                    |
+| **Key Characteristics**             | Offers at a fixed price (0 slippage); various trading features/tools can be built.                                                                | Mirrors "request for quotation"; designed for market makers and gas efficiency.                           |
+
+Both order types support ERC20, ERC721, and ERC1155 tokens. Other token standards might be supported in the future.
+
+## More resources
+
+**Further Reading**: Explore Limit Order and RFQ Order [here](https://docs.1inch.io/docs/limit-order-protocol/introduction).
+- Try directly at [1inch dApp](https://app.1inch.io/#/1/limit-order/WETH/DAI).
+- View the Smart Contracts [repository](https://github.com/1inch/limit-order-protocol/).
+- Developers, check out the Utils library [repository](https://github.com/1inch/limit-order-protocol-utils/).

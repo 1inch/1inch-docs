@@ -4,6 +4,14 @@ sidebar_position: 4
 
 # Swap params
 
+:::caution
+
+The public Swap API api.1inch.io is deprecated. To continue using the Swap API please migrate to the [**1inch Developer Portal**](https://portal.1inch.dev)
+
+:::
+
+
+
 ## Generate data for calling the 1inch router for exchange: [`/api/swap`](./swagger.mdx)
 
 ### Description of query parameters
@@ -24,7 +32,7 @@ sidebar_position: 4
     </thead>
     <tbody>
     <tr>
-        <td><code>fromTokenAddress *</code></td>
+        <td><code>src *</code></td>
         <td>string</td>
         <td>
             contract address of a token to sell<br/>
@@ -32,7 +40,7 @@ sidebar_position: 4
         </td>
     </tr>
     <tr>
-        <td><code>toTokenAddress *</code></td>
+        <td><code>dst *</code></td>
         <td>string</td>
         <td>
             contract address of a token to buy<br/>
@@ -50,10 +58,10 @@ sidebar_position: 4
         </td>
     </tr>
     <tr>
-        <td><code>fromAddress *</code></td>
+        <td><code>from *</code></td>
         <td>string</td>
         <td>
-            address of a seller, make sure that this address has approved to spend fromTokenAddress in needed amount<br/>
+            address of a seller, make sure that this address has approved to spend src in needed amount<br/>
             e.g.: <code>0x52bc44d5378309ee2abf1539bf71de1b7d7be3b5</code>
         </td>
     </tr>
@@ -77,15 +85,31 @@ sidebar_position: 4
         </td>
     </tr>
     <tr>
-        <td><code>destReceiver</code></td>
+        <td><code>receiver</code></td>
         <td>string</td>
         <td>
             recipient address of a purchased token<br/>
-            if not set, fromAddress will receive a purchased token
+            if not set, from will receive a purchased token
+        </td>
+    </tr>
+     <tr>
+        <td><code>includeTokensInfo</code></td>
+        <td>boolean</td>
+        <td>
+            if set to <code>true</code>, response will include from token and to token info<br/>
+            <code>default: false</code>
+        </td>
+    </tr> 
+    <tr>
+        <td><code>includeProtocols</code></td>
+        <td>boolean</td>
+        <td>
+            if set to <code>true</code>, response will include protocols used in the quote<br/>
+            <code>default: false</code>
         </td>
     </tr>
     <tr>
-        <td><code>referrerAddress</code></td>
+        <td><code>referrer</code></td>
         <td>string</td>
         <td>referrer's address
         </td>
@@ -94,7 +118,7 @@ sidebar_position: 4
         <td><code>fee</code></td>
         <td>number</td>
         <td>
-            this percentage of fromTokenAddress token amount will be sent to referrerAddress, the rest will be used as
+            this percentage of src token amount will be sent to referrer, the rest will be used as
             input for a swap<br/>
             <code>min: 0;</code> <code>max: 3;</code> <code>default: 0</code><br/>
             example to set a fee to 1.5%: <code>&fee=1.5</code>
@@ -118,11 +142,10 @@ sidebar_position: 4
         </td>
     </tr>
     <tr>
-        <td><code>burnChi</code></td>
+        <td><code>compatibility</code></td>
         <td>boolean</td>
         <td>
-            If true, CHI will be burned from fromAddress to compensate gas. Check CHI balance and allowance before
-            turning that on. CHI should be approved for the spender address<br/>
+            If true, the <code>swap</code> function will always be used. This helps when the token being traded has a tax or fee on trade or transfer<br/>
             <code>default: false</code>
         </td>
     </tr>
@@ -151,7 +174,7 @@ sidebar_position: 4
     <tr>
         <td><code>allowPartialFill</code></td>
         <td>boolean</td>
-        <td>if true, the algorithm can cancel part of the route, if the rate has become less attractive. Unswapped tokens will return to the fromAddress<br/>
+        <td>if true, the algorithm can cancel part of the route, if the rate has become less attractive. Unswapped tokens will return to the from<br/>
             <code>default: true</code>
         </td>
     </tr>
@@ -194,6 +217,7 @@ sidebar_position: 4
 
 ### Description of response parameters
 
+#### By default only toAmount and the tx object are returned
 
 <table>
     <thead>
@@ -225,14 +249,14 @@ sidebar_position: 4
         </td>
     </tr>
     <tr>
-        <td><code>fromTokenAmount</code></td>
+        <td><code>fromAmount</code></td>
         <td>string</td>
         <td>
             input amount of <code>fromToken</code> in minimal divisible units
         </td>
     </tr>
     <tr>
-        <td><code>toTokenAmount</code></td>
+        <td><code>toAmount</code></td>
         <td>string</td>
         <td>
             result amount of <code>toToken</code> in minimal divisible units

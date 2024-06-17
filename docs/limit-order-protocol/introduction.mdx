@@ -4,62 +4,71 @@ sidebar_position: 1
 
 # Introduction
 
-1inch limit order protocol is a set of smart contracts, that can work on any EVM based blockchains
-(Ethereum, Binance Smart Chain, Polygon, Arbitrum, Optimism, Gnosis chain, Avalanche). Key features of the protocol is **extreme flexibility** and high **gas efficiency** that achieved by using two different order types - regular _Limit Order_ and _RFQ Order_.
+1inch limit order protocol is a set of smart contracts that work on any [supported EVM based blockchains](https://help.1inch.io/en/articles/5528619-how-to-use-different-networks-on-1inch).
 
-Smart Contract allows users to place limit orders and RFQ Orders, that later could be filled on-chain.
-Both type of orders is a data structure created off-chain and signed according to [EIP-712](https://eips.ethereum.org/EIPS/eip-712).
+Key features of the protocol are **extreme flexibility** and high **gas efficiency** which are achieved by using two different order types - regular _Limit Order_ and _RFQ Order_.
+
+Smart Contracts allow users to place limit orders and RFQ Orders, that later could be filled on-chain.
+Both types of orders are data structures created off-chain and signed according to [EIP-712](https://eips.ethereum.org/EIPS/eip-712).
 
 ## I. Limit order
+
 A limit order is a financial instrument with which you can put up an ERC-20 token for sale at a fixed price.  
 For example, you can put up 2 WBTC tokens for sale at the price of 82415 DAI tokens.
 
-1inch limit orders protocol has many tools for flexible trade management:
+The 1inch limit order protocol has many tools for flexible trade management:
 
--   Partial fill
--   Predicates
--   Single cancellation
--   Bunch cancellation
--   Fullness check
--   Validation
+- Partial fill
+- Predicates
+- Single cancellation
+- Bunch cancellation
+- Fullness check
+- Validation
 
-> **Note:** For market making, there are **RFQ orders** that have special optimization that does not require a large amount of gas for execution.
+> **Note:** For market-making, there are [**RFQ orders**](#ii-rfq-order) that have special optimization which does not require a large amount of gas for execution.
 
 ### Limit order execution
 
-1. 1inch users can place their limit orders via 1inch [dApp](https://app.1inch.io/#/1/limit-order/WETH/DAI).
-1. Anyone can fetch this signed orders using [1inch Limit Orders Liquidity Source API](./api) to perform trade by filling order on-chain.
-1. To do that he or she pass signed order to the `fillOrder` method on the contract:
-    - Latest addresses is always [here](https://github.com/1inch/limit-order-protocol-utils/blob/master/src/limit-order-protocol.const.ts)
-    > ***Note:*** Trades buyer and seller should approve their asset to be used by 1inch limit order contract.
-4. Pathfinder algorithm use limit orders placed via `dApp` and REST API, as a liquidity source, and make it available to fill to any 1inch user.
-So, 1inch limit orders are integrated into the DeFi ecosystem from the day one.
+1. 1inch users can place their limit orders through the 1inch [dApp](https://app.1inch.io/#/1/limit-order/WETH/DAI).
+2. The signed orders placed by the users can be fetched by anyone using the [1inch Limit Orders Liquidity Source API](./api.mdx)
+   to execute trades by filling the order on-chain.
+3. To fill a limit order on-chain, you need to pass the signed order to the `fillOrder` method on the contract.
+   You can find the latest contract addresses [here](https://github.com/1inch/limit-order-protocol-utils/blob/master/src/limit-order-protocol.const.ts).
+   > **_Note:_** Both the buyer and seller of the assets being traded must approve their assets to be used by the 1inch limit order contract.
+4. The Pathfinder algorithm uses the limit orders placed via the 1inch `dApp` and REST API as a liquidity source, making them available for any 1inch
+   user to fill. This integration ensures that 1inch limit orders are available on the DeFi ecosystem from day one.
 
-Limit orders are extremely **flexible** limit order, can be configured with:
+#### Limit order features
 
-1. Order execution predicate.
-    - Typical usage is checking that certain time stamp or block number. With this you can set certain expiration time.
-    - You can specify construct any predicate that you want, for example check that certain price is higher than oracle price, to implement stop loss or take profit stategies
+Limit orders are highly flexible and can be configured with the following features:
+
+1. Order execution predicate: This feature allows you to specify certain conditions to be met before the order can be executed.
+   - For example, you can set an expiration time based on a certain timestamp or block number.
+   - You can also construct any predicate you want, such as checking that a certain price is higher than the oracle price,
+     to implement stop loss or take profit strategies.
 2. Helper function for asset price evaluation.
-    - Function that will allow to extract assets price from arbitrary on-chain source
-3. Callback, for to notify maker on order execution.
+   - Function that will allow to extract assets price from arbitrary on-chain source
+3. Callback: For notifying the maker of the order execution.
 
 ## II. RFQ order
 
-**A request for quotation (RFQ)** is a business process in which a customer requests a quote from a supplier (market maker) for the purchase of some tokens.
+**A request for quotation (RFQ)** is a business process in which a customer requests a quote from a supplier (market-maker) for the purchase of some tokens.
 
-RFQ orders have different use cases, and are dedicated to market makers in the first place. The typical scenario is following:
-Market maker creates a bunch of RFQ Orders, and exposes it via the API.
-Trader or the platform algorithm ask for market maker quotes. If the quotes match traders' needs, the trader receives signed RFQ order from the market maker.
+RFQ orders have different use cases, and are dedicated to market-makers in the first place. The typical scenario is following:
+Market-maker creates a bunch of RFQ Orders, and exposes it via the API.
+Trader or the platform algorithm ask for market maker quotes. If the quotes match traders' needs, the trader receives signed RFQ order from the market-maker.
 
-**Gas optimized order** with restricted capabilities suitable **for market makers**
+#### RFQ order features
 
--   Supports expiration time
--   Supports cancelation by order id
--   RFQ Order could be filled only once
--   Partial Fill is possible (once)
+**Gas optimized order** with restricted capabilities suitable **for market-makers**
+
+- Supports expiration time
+- Supports cancelation by order id
+- RFQ Order could be filled only once
+- Partial Fill is possible (once)
 
 ## Supported tokens
+
 - ERC 20
 - ERC 721
 - ERC 1155
@@ -67,6 +76,6 @@ Trader or the platform algorithm ask for market maker quotes. If the quotes matc
 
 ## More resources
 
--   You can use it right in [1inch dApp](https://app.1inch.io/#/1/limit-order/WETH/DAI)
--   Smart Contracts [repository](https://github.com/1inch/limit-order-protocol/)
--   Utils library [repository](https://github.com/1inch/limit-order-protocol-utils/)
+- You can use Limit Orders within the [1inch dApp](https://app.1inch.io/#/1/limit-order/WETH/DAI)
+- Smart Contracts [repository](https://github.com/1inch/limit-order-protocol/)
+- Utils library [repository](https://github.com/1inch/limit-order-protocol-utils/)

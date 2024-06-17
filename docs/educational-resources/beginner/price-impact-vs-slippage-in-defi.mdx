@@ -39,7 +39,7 @@ Price impact and price slippage are very similar; however, **there is a nuance**
 
 Like price impact, slippage is also highly dependent upon the liquidity in a pool. If the token pair as a low amount of liquidity, it takes smaller collective market movements to cause significant changes to the pool's rate.
 
-Slippage can be positive as well. If the rate changes in a favorable direction, a surplus amount of tokens is returned for the swap. Currently on 1inch network, 100% of the "swap surplus" is[ distributed to the 1inch Network Treasury and Referrers](https://blog.1inch.io/the-road-to-decentralization-ddee58d3b198).
+Slippage can be positive as well. If the rate changes in a favorable direction, a surplus amount of tokens is returned for the swap. Currently on 1inch network, 100% of the "swap surplus" is[ distributed to the 1inch Network Treasury and Referrers](https://blog.1inch.io/the-road-to-decentralization/).
 
 
 ### **How to minimize negative price impact**
@@ -79,7 +79,7 @@ There is often a "sweet spot" for setting the slippage tolerance. This ideal amo
 
 **Too High:**
 
-When the slippage tolerance is set really high, it allows the transaction to still complete despite large price swings. This can open the door to front-running and sandwich attacks. A sandwich attack is a variation of front-running, where an attacker sees a pending transaction, then places a significantly larger transaction (with the same tokens) directly before and after the victim’s transaction. This drives the price of the victim’s transaction up, effectively allowing the front runner to extract the difference in value. Since the victim's slippage tolerance is so high, the attacker can extract that much value from the attack. This could easily be prevented by setting a lower slippage tolerance in combination with enabling the "partial fill" setting, or using the[ 'Flashbots' feature](https://help.1inch.io/en/articles/5300755-what-are-flashbot-transactions-and-how-do-they-work-on-1inch-help-center).
+When the slippage tolerance is set really high, it allows the transaction to still complete despite large price swings. This can open the door to front-running and sandwich attacks. A sandwich attack is a variation of front-running, where an attacker sees a pending transaction, then places a significantly larger transaction (with the same tokens) directly before and after the victim’s transaction. This drives the price of the victim’s transaction up, effectively allowing the front runner to extract the difference in value. Since the victim's slippage tolerance is so high, the attacker can extract that much value from the attack. This could easily be prevented by setting a lower slippage tolerance in combination with enabling the "partial fill" setting, or using the[ 'Flashbots' feature](https://help.1inch.io/en/articles/5300755-what-are-flashbot-transactions-and-how-do-they-work-on-1inch).
 
 
 ![alt_text](./assets/4.png "image_tooltip")

@@ -7,11 +7,11 @@ The 1inch Network DAO Treasury is the pool of funds under the direct domain and 
 All protocol revenues are directed to the DAO Treasury and referral rewards.
 
 ## DAO Treasury 
-The primary 1inch Network DAO Treasury is a [Gnosis Safe](https://gnosis-safe.io/app/eth:0x7951c7ef839e26F63DA87a42C9a87986507f1c07/balances) smart contract wallet with multi-signature (multisig) functionality on the Ethereum mainnet. 12 multisig owners have initially been selected by the 1inch Foundation from the core contributor team and other well-known projects, such as [Synthetix](https://synthetix.io/), [Opium](https://opium.network/), [NEAR protocol](https://near.org/), and [zkSync](https://zksync.io/), to name a few. These signers are able to veto malicious transactions in a 7-of-12 fashion.
+The primary 1inch Network DAO Treasury is a [Safe](https://app.safe.global/balances?safe=eth:0x7951c7ef839e26F63DA87a42C9a87986507f1c07) smart contract wallet with multi-signature (multisig) functionality on the Ethereum mainnet. 12 multisig owners have initially been selected by the 1inch Foundation from the core contributor team and other well-known projects, such as [Synthetix](https://synthetix.io/), [Opium](https://opium.network/), [NEAR protocol](https://near.org/), and [zkSync](https://zksync.io/), to name a few. These signers are able to veto malicious transactions in a 7-of-12 fashion.
 
-## Gnosis Safe + Snapshot + SafeSnap
+## Safe + Snapshot + SafeSnap
 
-Snapshot allows for gasless voting. SafeSnap, also known as [Reality Module](https://gnosis.github.io/zodiac/docs/tutorial-module-reality/get-started), is a Snapshot module that allows for on-chain execution of off-chain voting. The combination of these tools gives the DAO’s votes direct control over the Gnosis Safe that holds the Treasury funds.
+Snapshot allows for gasless voting. SafeSnap, also known as [Reality Module](https://gnosis.github.io/zodiac/docs/tutorial-module-reality/get-started/), is a Snapshot module that allows for on-chain execution of off-chain voting. The combination of these tools gives the DAO’s votes direct control over the Safe that holds the Treasury funds.
 
 SafeSnap has been integrated into the 1inch Snapshot space. 1IPs that call for payment(s) from the treasury must have the "Transactions" container filled out by the individual proposing the Phase 4 Snapshot vote. Required fields include transaction type, Asset, recipient address, and amount.
 
@@ -49,13 +49,11 @@ If the result of the Kleros arbitration is to affirm the answer given by the fin
 _**Note:** Unless otherwise noted, all 1inch DAO treasuries have the same 12 signers, and 7-of-12 threshold, as the primary treasury on Ethereum mainnet._
 
 ## Revenue stream
-The 1inch Pathfinder algorithm always provides users the most current and best possible prices on a swap. However, the swap price sometimes moves between the time of the quote and the time that the transaction is mined — resulting in a Swap Surplus. 
+The 1inch Pathfinder algorithm always provides users the most current and best possible prices on a swap. However, the swap price sometimes moves between the time of the quote and the time that the transaction is mined — resulting in a Swap Surplus. In the past, this Swap Surplus was sent to the 1inch DAO Treasury and served as the DAO's revenue stream.
 
-Funds are collected from the Swap Surplus on all chains. A portion of these funds are paid out to the referral program on the chain the swaps were performed. The majority are sent to the Ethereum mainnet, swapped for USDC, and sent directly to the 1inch Network DAO Treasury.
+  
 
-Governance participants are able to control the revenue split of the [Aggregation Protocol](https://app.1inch.io/#/1/dao/governance/aggregation?action=stake) and [Liquidity protocol](https://app.1inch.io/#/1/dao/governance?action=stake) by voting with Instant Governance.
-
-Note that none of the revenue funds ever go to the 1inch Foundation -- they are 100% controlled by the 1inch DAO.
+As of June 2023, with the ratification of [[1IP-28] Discontinue Swap Surplus Collection](https://snapshot.org/#/1inch.eth/proposal/0x62888ad3983a8bdb29e73596b4971a120e6d58ca56929b4a64147a723f6bccc5), Swap Surplus is no longer directed to the 1inch DAO treasury.
 
 ### External References
 
@@ -63,7 +61,7 @@ Note that none of the revenue funds ever go to the 1inch Foundation -- they are 
 * **1inch  DAO Acceptance Criteria** -- [IPFS deployment](https://ipfs.io/ipfs/QmQHLJ6utJJNr82bthtw6pNjKpZsfnvZDENeHMAxtQidXz)
 * **reality.eth:** 
 	* [App](https://realityeth.github.io/)
-	* [Whitepaper](http://reality.eth.link/app/docs/html/whitepaper.html)
+	* [Whitepaper](https://reality.eth.link/app/docs/html/whitepaper.html)
 	* [Reality Module Governance Oracle Question Resolution Policy](https://ipfs.io/ipfs/QmXyo9M4Z2XY6Nw9UfuuUNzKXXNhvt24q6pejuN9RYWPMr/Reality_Module_Governance_Oracle-Question_Resolution_Policy.pdf)
 *  **Kleros:**  
 	* [Documentation site](https://kleros.gitbook.io/docs/products/oracle)

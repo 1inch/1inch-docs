@@ -38,6 +38,19 @@ $ GIT_USER=<Your GitHub username> USE_SSH=true yarn deploy
 
 If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
 
+### Info about development
+You can see `warning` in time `yarn install` - it's okey
+
+File `docs\limit-order-protocol\smart-contract\_category_.json` changed after `yarn install`. Discard changes in this file before execute some other commands
+
+Search doesn't work in `yarn start`.
+For check working of the search you need:
+- `yarn build`
+- `yarn serve`
+
+If you got some error check that you does all in accordiance with README.
+After that remove `yarn.lock` (`package-lock.json`), `node_modules` and `build` (if there is one). And try again.
+Also check node.js version. All correct worked with node version 16.17.1
 
 ## Domains
 - Trading (Aggregation Protocol) (https://docs.1inch.io/api/)
