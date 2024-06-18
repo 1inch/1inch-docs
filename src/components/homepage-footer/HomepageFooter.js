@@ -114,7 +114,7 @@ const FooterLinks = {
             image: <YoutubeImage/>
         },
         {
-            href: 'https://t.me/OneInchNetwork',
+            href: 'https://t.me/OneInchNetworkNews',
             image: <TelegramImage/>
         },
         {
