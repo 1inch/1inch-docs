@@ -25,7 +25,7 @@ const { ethers } = require('hardhat');
 const inch = await ethers.getContractAt('IERC20', '0x111111111117dc0aa78b770fa6a738034120c302');
 const st1inch = await ethers.getContractAt('IERC20', '0x9a0c8ff858d273f57072d714bca7411d717501d7');
 const powerPod = await ethers.getContractAt('IERC20', '0xaccfac2339e16dc80c50d2fa81b5c2b049b4f947');
-const whitelist = await ethers.getContractAt('WhitelistRegistry', '0xcb8308fcB7BC2f84ed1bEa2C016991D34de5cc77');
+const whitelist = await ethers.getContractAt('WhitelistRegistry', '0xF55684BC536487394B423e70567413faB8e45E26');
 
 const stakeAmount = ether('1000000');
 const lockTime = time.duration.years('2');
